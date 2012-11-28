@@ -1,23 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tLk-by-7gX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="5">
+        <!--Navigation Controller-->
+        <scene sceneID="Pmn-ST-A6L">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="tLk-by-7gX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xxm-eM-eE6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fSj-eF-Zbt" kind="relationship" relationship="rootViewController" id="trq-6k-X10"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8me-Nh-RKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-169" y="78"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7mW-NC-cj0">
+            <objects>
+                <viewController id="fSj-eF-Zbt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e6N-Qk-Dwm">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qY-Ws-24l">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mindigno" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7p-xj-5eu">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="82" id="SWi-tH-Po9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99649234693877553" green="0.99649234693877553" blue="0.99649234693877553" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDb-J7-zFm">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="BvU-9I-dGK"/>
+                                            <constraint firstAttribute="width" constant="36" id="lT9-MT-gbo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23313934948979587" green="0.23313934948979587" blue="0.23313934948979587" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="H7p-xj-5eu" firstAttribute="centerY" secondItem="8qY-Ws-24l" secondAttribute="centerY" type="default" id="MhU-nx-pNJ"/>
+                                    <constraint firstItem="hDb-J7-zFm" firstAttribute="top" secondItem="8qY-Ws-24l" secondAttribute="top" constant="5" id="P52-jk-kmA"/>
+                                    <constraint firstItem="H7p-xj-5eu" firstAttribute="leading" secondItem="8qY-Ws-24l" secondAttribute="leading" constant="5" id="XAX-w1-g57"/>
+                                    <constraint firstItem="hDb-J7-zFm" firstAttribute="centerY" secondItem="H7p-xj-5eu" secondAttribute="centerY" type="default" id="eHD-iO-Cqo"/>
+                                    <constraint firstItem="hDb-J7-zFm" firstAttribute="leading" secondItem="8qY-Ws-24l" secondAttribute="leading" constant="109" id="rfL-mc-AsP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8qY-Ws-24l" firstAttribute="top" secondItem="e6N-Qk-Dwm" secondAttribute="top" type="default" id="6GB-gq-wVJ"/>
+                            <constraint firstItem="8qY-Ws-24l" firstAttribute="trailing" secondItem="e6N-Qk-Dwm" secondAttribute="trailing" type="default" id="JrZ-la-Tiy"/>
+                            <constraint firstItem="8qY-Ws-24l" firstAttribute="leading" secondItem="e6N-Qk-Dwm" secondAttribute="leading" type="default" id="YJE-KL-F8I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0zZ-l2-SR9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xen-xG-HBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219" y="78"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

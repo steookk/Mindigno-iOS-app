@@ -119,7 +119,6 @@
 			children = (
 				D909B48F16662A2F00D66AD3 /* AppDelegate.h */,
 				D909B49016662A2F00D66AD3 /* AppDelegate.m */,
-				D909B49816662A2F00D66AD3 /* MainStoryboard.storyboard */,
 				D909B49B16662A2F00D66AD3 /* ViewController.h */,
 				D909B49C16662A2F00D66AD3 /* ViewController.m */,
 				D909B48716662A2F00D66AD3 /* Supporting Files */,
@@ -130,13 +129,14 @@
 		D909B48716662A2F00D66AD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D909B48816662A2F00D66AD3 /* Mindigno-Info.plist */,
-				D909B48916662A2F00D66AD3 /* InfoPlist.strings */,
-				D909B48C16662A2F00D66AD3 /* main.m */,
-				D909B48E16662A2F00D66AD3 /* Mindigno-Prefix.pch */,
 				D909B49216662A2F00D66AD3 /* Default.png */,
 				D909B49416662A2F00D66AD3 /* Default@2x.png */,
 				D909B49616662A2F00D66AD3 /* Default-568h@2x.png */,
+				D909B4BB16662A6800D66AD3 /* View */,
+				D909B48C16662A2F00D66AD3 /* main.m */,
+				D909B48E16662A2F00D66AD3 /* Mindigno-Prefix.pch */,
+				D909B48916662A2F00D66AD3 /* InfoPlist.strings */,
+				D909B48816662A2F00D66AD3 /* Mindigno-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,6 +158,14 @@
 				D909B4AD16662A2F00D66AD3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D909B4BB16662A6800D66AD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D909B49816662A2F00D66AD3 /* MainStoryboard.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
