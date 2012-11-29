@@ -17,12 +17,19 @@
 		D909B49516662A2F00D66AD3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D909B49416662A2F00D66AD3 /* Default@2x.png */; };
 		D909B49716662A2F00D66AD3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D909B49616662A2F00D66AD3 /* Default-568h@2x.png */; };
 		D909B49A16662A2F00D66AD3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D909B49816662A2F00D66AD3 /* MainStoryboard.storyboard */; };
-		D909B49D16662A2F00D66AD3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D909B49C16662A2F00D66AD3 /* ViewController.m */; };
+		D909B49D16662A2F00D66AD3 /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D909B49C16662A2F00D66AD3 /* RootVC.m */; };
 		D909B4A516662A2F00D66AD3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B4A416662A2F00D66AD3 /* SenTestingKit.framework */; };
 		D909B4A616662A2F00D66AD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48016662A2F00D66AD3 /* UIKit.framework */; };
 		D909B4A716662A2F00D66AD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48216662A2F00D66AD3 /* Foundation.framework */; };
 		D909B4AF16662A2F00D66AD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D909B4AD16662A2F00D66AD3 /* InfoPlist.strings */; };
-		D909B4B216662A2F00D66AD3 /* MindignoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D909B4B116662A2F00D66AD3 /* MindignoTests.m */; };
+		D909B4B216662A2F00D66AD3 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D909B4B116662A2F00D66AD3 /* UserTests.m */; };
+		D97E8AEB1667A0FF0032C773 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEA1667A0FF0032C773 /* User.m */; };
+		D97E8AEC1667A0FF0032C773 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEA1667A0FF0032C773 /* User.m */; };
+		D97E8AEF1667A11A0032C773 /* MicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEE1667A11A0032C773 /* MicroPost.m */; };
+		D97E8AF01667A11A0032C773 /* MicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEE1667A11A0032C773 /* MicroPost.m */; };
+		D97E8AF81667A6970032C773 /* MicroPostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AF61667A6970032C773 /* MicroPostTests.m */; };
+		D97E8B011667CD340032C773 /* JsonParserMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JsonParserMicroPost.m */; };
+		D97E8B021667CD340032C773 /* JsonParserMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JsonParserMicroPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +57,22 @@
 		D909B49416662A2F00D66AD3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D909B49616662A2F00D66AD3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D909B49916662A2F00D66AD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D909B49B16662A2F00D66AD3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D909B49C16662A2F00D66AD3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D909B49B16662A2F00D66AD3 /* RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
+		D909B49C16662A2F00D66AD3 /* RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
 		D909B4A316662A2F00D66AD3 /* MindignoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindignoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909B4A416662A2F00D66AD3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D909B4AC16662A2F00D66AD3 /* MindignoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MindignoTests-Info.plist"; sourceTree = "<group>"; };
 		D909B4AE16662A2F00D66AD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D909B4B016662A2F00D66AD3 /* MindignoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MindignoTests.h; sourceTree = "<group>"; };
-		D909B4B116662A2F00D66AD3 /* MindignoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindignoTests.m; sourceTree = "<group>"; };
+		D909B4B016662A2F00D66AD3 /* UserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTests.h; sourceTree = "<group>"; };
+		D909B4B116662A2F00D66AD3 /* UserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		D97E8AE91667A0FF0032C773 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		D97E8AEA1667A0FF0032C773 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
+		D97E8AED1667A11A0032C773 /* MicroPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MicroPost.h; path = Model/MicroPost.h; sourceTree = "<group>"; };
+		D97E8AEE1667A11A0032C773 /* MicroPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MicroPost.m; path = Model/MicroPost.m; sourceTree = "<group>"; };
+		D97E8AF51667A6970032C773 /* MicroPostTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostTests.h; sourceTree = "<group>"; };
+		D97E8AF61667A6970032C773 /* MicroPostTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostTests.m; sourceTree = "<group>"; };
+		D97E8AFF1667CD340032C773 /* JsonParserMicroPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonParserMicroPost.h; path = Model/JsonParserMicroPost.h; sourceTree = "<group>"; };
+		D97E8B001667CD340032C773 /* JsonParserMicroPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonParserMicroPost.m; path = Model/JsonParserMicroPost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				D909B48616662A2F00D66AD3 /* Mindigno */,
-				D909B4AA16662A2F00D66AD3 /* MindignoTests */,
+				D909B4AA16662A2F00D66AD3 /* LogicTests */,
 				D909B47F16662A2F00D66AD3 /* Frameworks */,
 				D909B47D16662A2F00D66AD3 /* Products */,
 			);
@@ -117,10 +132,11 @@
 		D909B48616662A2F00D66AD3 /* Mindigno */ = {
 			isa = PBXGroup;
 			children = (
+				D97E8AE71667A0A50032C773 /* Model */,
+				D97E8AFA1667A6DE0032C773 /* Control */,
+				D97E8AF91667A6C30032C773 /* View */,
 				D909B48F16662A2F00D66AD3 /* AppDelegate.h */,
 				D909B49016662A2F00D66AD3 /* AppDelegate.m */,
-				D909B49B16662A2F00D66AD3 /* ViewController.h */,
-				D909B49C16662A2F00D66AD3 /* ViewController.m */,
 				D909B48716662A2F00D66AD3 /* Supporting Files */,
 			);
 			path = Mindigno;
@@ -132,7 +148,6 @@
 				D909B49216662A2F00D66AD3 /* Default.png */,
 				D909B49416662A2F00D66AD3 /* Default@2x.png */,
 				D909B49616662A2F00D66AD3 /* Default-568h@2x.png */,
-				D909B4BB16662A6800D66AD3 /* View */,
 				D909B48C16662A2F00D66AD3 /* main.m */,
 				D909B48E16662A2F00D66AD3 /* Mindigno-Prefix.pch */,
 				D909B48916662A2F00D66AD3 /* InfoPlist.strings */,
@@ -141,13 +156,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D909B4AA16662A2F00D66AD3 /* MindignoTests */ = {
+		D909B4AA16662A2F00D66AD3 /* LogicTests */ = {
 			isa = PBXGroup;
 			children = (
-				D909B4B016662A2F00D66AD3 /* MindignoTests.h */,
-				D909B4B116662A2F00D66AD3 /* MindignoTests.m */,
+				D909B4B016662A2F00D66AD3 /* UserTests.h */,
+				D909B4B116662A2F00D66AD3 /* UserTests.m */,
+				D97E8AF51667A6970032C773 /* MicroPostTests.h */,
+				D97E8AF61667A6970032C773 /* MicroPostTests.m */,
 				D909B4AB16662A2F00D66AD3 /* Supporting Files */,
 			);
+			name = LogicTests;
 			path = MindignoTests;
 			sourceTree = "<group>";
 		};
@@ -160,12 +178,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D909B4BB16662A6800D66AD3 /* View */ = {
+		D97E8AE71667A0A50032C773 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D97E8AE91667A0FF0032C773 /* User.h */,
+				D97E8AEA1667A0FF0032C773 /* User.m */,
+				D97E8AED1667A11A0032C773 /* MicroPost.h */,
+				D97E8AEE1667A11A0032C773 /* MicroPost.m */,
+				D97E8AFF1667CD340032C773 /* JsonParserMicroPost.h */,
+				D97E8B001667CD340032C773 /* JsonParserMicroPost.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D97E8AF91667A6C30032C773 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D909B49816662A2F00D66AD3 /* MainStoryboard.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		D97E8AFA1667A6DE0032C773 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				D909B49B16662A2F00D66AD3 /* RootVC.h */,
+				D909B49C16662A2F00D66AD3 /* RootVC.m */,
+			);
+			name = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +320,10 @@
 			files = (
 				D909B48D16662A2F00D66AD3 /* main.m in Sources */,
 				D909B49116662A2F00D66AD3 /* AppDelegate.m in Sources */,
-				D909B49D16662A2F00D66AD3 /* ViewController.m in Sources */,
+				D909B49D16662A2F00D66AD3 /* RootVC.m in Sources */,
+				D97E8AEB1667A0FF0032C773 /* User.m in Sources */,
+				D97E8AEF1667A11A0032C773 /* MicroPost.m in Sources */,
+				D97E8B011667CD340032C773 /* JsonParserMicroPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D909B4B216662A2F00D66AD3 /* MindignoTests.m in Sources */,
+				D909B4B216662A2F00D66AD3 /* UserTests.m in Sources */,
+				D97E8AEC1667A0FF0032C773 /* User.m in Sources */,
+				D97E8AF01667A11A0032C773 /* MicroPost.m in Sources */,
+				D97E8AF81667A6970032C773 /* MicroPostTests.m in Sources */,
+				D97E8B021667CD340032C773 /* JsonParserMicroPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +399,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -373,7 +420,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -386,6 +433,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mindigno/Mindigno-Prefix.pch";
 				INFOPLIST_FILE = "Mindigno/Mindigno-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,6 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mindigno/Mindigno-Prefix.pch";
 				INFOPLIST_FILE = "Mindigno/Mindigno-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,7 +454,6 @@
 		D909B4B916662A2F00D66AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mindigno.app/Mindigno";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -422,7 +470,6 @@
 		D909B4BA16662A2F00D66AD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mindigno.app/Mindigno";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -455,6 +502,7 @@
 				D909B4B716662A2F00D66AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D909B4B816662A2F00D66AD3 /* Build configuration list for PBXNativeTarget "MindignoTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +511,7 @@
 				D909B4BA16662A2F00D66AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

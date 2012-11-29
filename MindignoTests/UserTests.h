@@ -7,7 +7,11 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "User.h"
 
-@interface MindignoTests : SenTestCase
+@interface UserTests : SenTestCase {
+
+    User *user;
+}
 
 @end
