@@ -10,7 +10,7 @@
 
 @implementation User
 
-@synthesize name, urlAvatar;
+@synthesize userID, name, urlAvatar;
 
 - (id) init {
     self = [super init];

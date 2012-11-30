@@ -35,12 +35,20 @@
     [comments addObject:comment];
 }
 
+- (void) addComments:(NSArray *)_comments {
+    [comments addObjectsFromArray:_comments];
+}
+
 - (void) removeAllComments {
     [comments removeAllObjects];
 }
 
 - (int) getNumberOfComments {
     return (int)[comments count];
+}
+
+- (NSString*) getCommentAtIndex:(int)index {
+    return [comments objectAtIndex:index];
 }
 
 @end

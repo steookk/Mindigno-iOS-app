@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9008E9416691F9D00AC90B1 /* ico-home_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E8D16691F9D00AC90B1 /* ico-home_active.png */; };
+		D9008E9516691F9D00AC90B1 /* ico-home_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E8E16691F9D00AC90B1 /* ico-home_hover.png */; };
+		D9008E9616691F9D00AC90B1 /* ico-home.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E8F16691F9D00AC90B1 /* ico-home.png */; };
+		D9008E9716691F9D00AC90B1 /* ico-profile_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9016691F9D00AC90B1 /* ico-profile_active.png */; };
+		D9008E9816691F9D00AC90B1 /* ico-profile_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9116691F9D00AC90B1 /* ico-profile_hover.png */; };
+		D9008E9916691F9D00AC90B1 /* ico-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9216691F9D00AC90B1 /* ico-profile.png */; };
+		D9008E9A16691F9D00AC90B1 /* ico-search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9316691F9D00AC90B1 /* ico-search.png */; };
+		D9008E9C1669266900AC90B1 /* box-ombrato.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9B1669266900AC90B1 /* box-ombrato.jpg */; };
+		D9008E9F1669295B00AC90B1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9E1669295B00AC90B1 /* Icon.png */; };
 		D909B48116662A2F00D66AD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48016662A2F00D66AD3 /* UIKit.framework */; };
 		D909B48316662A2F00D66AD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48216662A2F00D66AD3 /* Foundation.framework */; };
 		D909B48516662A2F00D66AD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48416662A2F00D66AD3 /* CoreGraphics.framework */; };
@@ -30,6 +39,8 @@
 		D97E8AF81667A6970032C773 /* MicroPostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AF61667A6970032C773 /* MicroPostTests.m */; };
 		D97E8B011667CD340032C773 /* JsonParserMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JsonParserMicroPost.m */; };
 		D97E8B021667CD340032C773 /* JsonParserMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JsonParserMicroPost.m */; };
+		D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F4EB261668F4860027D0B9 /* Kenny.png */; };
+		D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +54,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9008E8D16691F9D00AC90B1 /* ico-home_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-home_active.png"; sourceTree = "<group>"; };
+		D9008E8E16691F9D00AC90B1 /* ico-home_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-home_hover.png"; sourceTree = "<group>"; };
+		D9008E8F16691F9D00AC90B1 /* ico-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-home.png"; sourceTree = "<group>"; };
+		D9008E9016691F9D00AC90B1 /* ico-profile_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-profile_active.png"; sourceTree = "<group>"; };
+		D9008E9116691F9D00AC90B1 /* ico-profile_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-profile_hover.png"; sourceTree = "<group>"; };
+		D9008E9216691F9D00AC90B1 /* ico-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-profile.png"; sourceTree = "<group>"; };
+		D9008E9316691F9D00AC90B1 /* ico-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-search.png"; sourceTree = "<group>"; };
+		D9008E9B1669266900AC90B1 /* box-ombrato.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "box-ombrato.jpg"; sourceTree = "<group>"; };
+		D9008E9E1669295B00AC90B1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		D909B47C16662A2F00D66AD3 /* Mindigno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindigno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909B48016662A2F00D66AD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D909B48216662A2F00D66AD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +93,9 @@
 		D97E8AF61667A6970032C773 /* MicroPostTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostTests.m; sourceTree = "<group>"; };
 		D97E8AFF1667CD340032C773 /* JsonParserMicroPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonParserMicroPost.h; path = Model/JsonParserMicroPost.h; sourceTree = "<group>"; };
 		D97E8B001667CD340032C773 /* JsonParserMicroPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonParserMicroPost.m; path = Model/JsonParserMicroPost.m; sourceTree = "<group>"; };
+		D9F4EB261668F4860027D0B9 /* Kenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kenny.png; sourceTree = "<group>"; };
+		D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostDetailVC.h; sourceTree = "<group>"; };
+		D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostDetailVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +122,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9008E8C16691F8D00AC90B1 /* navbar */ = {
+			isa = PBXGroup;
+			children = (
+				D9008E8D16691F9D00AC90B1 /* ico-home_active.png */,
+				D9008E8E16691F9D00AC90B1 /* ico-home_hover.png */,
+				D9008E8F16691F9D00AC90B1 /* ico-home.png */,
+				D9008E9016691F9D00AC90B1 /* ico-profile_active.png */,
+				D9008E9116691F9D00AC90B1 /* ico-profile_hover.png */,
+				D9008E9216691F9D00AC90B1 /* ico-profile.png */,
+				D9008E9316691F9D00AC90B1 /* ico-search.png */,
+			);
+			name = navbar;
+			sourceTree = "<group>";
+		};
+		D9008E9D1669267E00AC90B1 /* box */ = {
+			isa = PBXGroup;
+			children = (
+				D9008E9B1669266900AC90B1 /* box-ombrato.jpg */,
+			);
+			name = box;
+			sourceTree = "<group>";
+		};
 		D909B47116662A2F00D66AD3 = {
 			isa = PBXGroup;
 			children = (
@@ -145,9 +190,11 @@
 		D909B48716662A2F00D66AD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9008E9E1669295B00AC90B1 /* Icon.png */,
 				D909B49216662A2F00D66AD3 /* Default.png */,
 				D909B49416662A2F00D66AD3 /* Default@2x.png */,
 				D909B49616662A2F00D66AD3 /* Default-568h@2x.png */,
+				D9F4EB291668FA250027D0B9 /* Images */,
 				D909B48C16662A2F00D66AD3 /* main.m */,
 				D909B48E16662A2F00D66AD3 /* Mindigno-Prefix.pch */,
 				D909B48916662A2F00D66AD3 /* InfoPlist.strings */,
@@ -204,8 +251,20 @@
 			children = (
 				D909B49B16662A2F00D66AD3 /* RootVC.h */,
 				D909B49C16662A2F00D66AD3 /* RootVC.m */,
+				D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */,
+				D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */,
 			);
 			name = Control;
+			sourceTree = "<group>";
+		};
+		D9F4EB291668FA250027D0B9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D9008E9D1669267E00AC90B1 /* box */,
+				D9008E8C16691F8D00AC90B1 /* navbar */,
+				D9F4EB261668F4860027D0B9 /* Kenny.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +343,16 @@
 				D909B49516662A2F00D66AD3 /* Default@2x.png in Resources */,
 				D909B49716662A2F00D66AD3 /* Default-568h@2x.png in Resources */,
 				D909B49A16662A2F00D66AD3 /* MainStoryboard.storyboard in Resources */,
+				D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */,
+				D9008E9416691F9D00AC90B1 /* ico-home_active.png in Resources */,
+				D9008E9516691F9D00AC90B1 /* ico-home_hover.png in Resources */,
+				D9008E9616691F9D00AC90B1 /* ico-home.png in Resources */,
+				D9008E9716691F9D00AC90B1 /* ico-profile_active.png in Resources */,
+				D9008E9816691F9D00AC90B1 /* ico-profile_hover.png in Resources */,
+				D9008E9916691F9D00AC90B1 /* ico-profile.png in Resources */,
+				D9008E9A16691F9D00AC90B1 /* ico-search.png in Resources */,
+				D9008E9C1669266900AC90B1 /* box-ombrato.jpg in Resources */,
+				D9008E9F1669295B00AC90B1 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +393,7 @@
 				D97E8AEB1667A0FF0032C773 /* User.m in Sources */,
 				D97E8AEF1667A11A0032C773 /* MicroPost.m in Sources */,
 				D97E8B011667CD340032C773 /* JsonParserMicroPost.m in Sources */,
+				D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

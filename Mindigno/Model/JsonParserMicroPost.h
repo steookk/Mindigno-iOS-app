@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
+#import "MicroPost.h"
 
-//#define URL_JSON_MICROPOST @"http://www.mindigno.com/"
+#define URL_JSON_MICROPOST_TEST @"http://192.168.2.90:3000"
 
 @interface JsonParserMicroPost : NSObject {
 
+    User *user;
+    NSMutableArray *microPosts;
 }
+
+@property (nonatomic, readonly) User *user;
+@property (nonatomic, readonly) NSArray *microPosts;
 
 - (void) startDownloadAndParsingJsonAtUrl:(NSString *)urlString;
 

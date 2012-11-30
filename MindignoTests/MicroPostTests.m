@@ -57,6 +57,13 @@
     
     [micropost removeAllComments];
     STAssertTrue([micropost getNumberOfComments] == 0, @"Error: removeAllComments");
+    
+    NSArray *comments = [NSArray arrayWithObjects:@"Commento_1", @"Commento_2", nil];
+    [micropost addComments:comments];
+    
+    STAssertTrue([micropost getNumberOfComments] == 2, @"Error: addComments");
+    STAssertEqualObjects([micropost getCommentAtIndex:0], @"Commento_1", @"Error: getCommentAtIndex");
+    STAssertEqualObjects([micropost getCommentAtIndex:1], @"Commento_2", @"Error: getCommentAtIndex");
 }
 
 @end

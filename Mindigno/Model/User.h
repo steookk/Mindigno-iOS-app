@@ -10,6 +10,7 @@
 
 @interface User : NSObject {
 
+    NSString *userID;
     NSString *name;
     //NSString *password;
     
@@ -19,6 +20,7 @@
     //NSString *numberOfFollower;
 }
 
+@property (nonatomic, copy) NSString *userID;
 @property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, copy) NSString *urlAvatar;

@@ -16,6 +16,7 @@
     // Set-up code here.
     user = [[User alloc] init];
     
+    [user setUserID:@"1234"];
     [user setName:@"Enrico"];
     [user setUrlAvatar:@"fileAvatar.png"];
 }
@@ -32,6 +33,7 @@
 
 - (void)testValues {
     
+    STAssertEqualObjects([user userID], @"1234", @"Error: get userID");
     STAssertEqualObjects([user name], @"Enrico", @"Error: get name");
     STAssertEqualObjects([user urlAvatar], @"fileAvatar.png", @"Error: get urlAvatar");
 }

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootVC : UIViewController {
+@interface RootVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
+    NSArray *arrayMicroPost;
+    
+    IBOutlet UITableView *tableViewMicroPost;
 }
 
 @end

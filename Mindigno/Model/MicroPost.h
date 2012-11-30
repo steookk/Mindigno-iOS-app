@@ -33,7 +33,9 @@
 
 - (NSArray*) getAllComments;
 - (void) addComment:(NSString *)comment;
+- (void) addComments:(NSArray *)comments;
 - (void) removeAllComments;
 - (int) getNumberOfComments;
+- (NSString*) getCommentAtIndex:(int)index;
 
 @end
