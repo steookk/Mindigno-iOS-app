@@ -7,6 +7,7 @@
 //
 
 #import "JParserUserAndMicroPost.h"
+#import "JsonKeys.h"
 
 @interface JParserUserAndMicroPost ()
 
@@ -49,26 +50,26 @@
     
     NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-    NSDictionary *user_dictionary = [root_dictionary objectForKey:@"current_user"];
+    NSDictionary *user_dictionary = [root_dictionary objectForKey: USER_KEY];
     
-    [user setUserID: [user_dictionary objectForKey:@"user_id"]];
-    [user setName: [user_dictionary objectForKey:@"name"]];
-    [user setUrlAvatar: [user_dictionary objectForKey:@"avatar"]];
+    [user setUserID: [user_dictionary objectForKey: USER_ID_KEY]];
+    [user setName: [user_dictionary objectForKey: USER_NAME_KEY]];
+    [user setUrlAvatar: [user_dictionary objectForKey: USER_URL_AVATAR_KEY]];
     
-    NSArray *feeds_array = [root_dictionary objectForKey:@"feed"];
+    NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
     
     for (NSDictionary *feed_dictionary in feeds_array) {
         
         MicroPost *microPost = [[MicroPost alloc] init];
         
-        [microPost setCreatedAtText: [feed_dictionary objectForKey:@"created_at_text"]];
-        [microPost addComments: [feed_dictionary objectForKey:@"default_comments"]];
-        //TODO: [microPost setDescription: [feed_dictionary objectForKey:@"description"]];
-        [microPost setIndignatiText: [feed_dictionary objectForKey:@"indignati_text"]];
-        [microPost setIsLink: [[feed_dictionary objectForKey:@"islink"] boolValue]];
-        [microPost setMicropostID: [feed_dictionary objectForKey:@"micropost_id"]];
-        [microPost setSourceText: [feed_dictionary objectForKey:@"source_text"]];
-        [microPost setTitle: [feed_dictionary objectForKey:@"title"]];
+        [microPost setCreatedAtText: [feed_dictionary objectForKey: MICROPOST_CREATED_AT_TEXT_KEY]];
+        [microPost addComments: [feed_dictionary objectForKey: MICROPOST_COMMENTS_KEY]];
+        //TODO: [microPost setDescription: [feed_dictionary objectForKey: MICROPOST_DESCRIPTION_KEY]];
+        [microPost setIndignatiText: [feed_dictionary objectForKey: MICROPOST_INDIGNATI_TEXT_KEY]];
+        [microPost setIsLink: [[feed_dictionary objectForKey: MICROPOST_IS_LINK_KEY] boolValue]];
+        [microPost setMicropostID: [feed_dictionary objectForKey: MICROPOST_ID_KEY]];
+        [microPost setSourceText: [feed_dictionary objectForKey: MICROPOST_SOURCE_TEXT_KEY]];
+        [microPost setTitle: [feed_dictionary objectForKey: MICROPOST_TITLE]];
         
         //Add to list
         [microPosts addObject:microPost];
