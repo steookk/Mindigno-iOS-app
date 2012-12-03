@@ -10,7 +10,7 @@
 
 @implementation MicroPost
 
-@synthesize title, description, createdAtText, indignatiText, sourceText, isLink;
+@synthesize micropostID, title, description, createdAtText, indignatiText, sourceText, isLink;
 
 - (id) init {
     self = [super init];

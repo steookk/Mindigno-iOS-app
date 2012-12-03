@@ -16,6 +16,7 @@
     // Set-up code here.
     micropost = [[MicroPost alloc] init];
     
+    [micropost setMicropostID:@"123"];
     [micropost setTitle:@"Title"];
     [micropost setDescription:@"Description"];
     [micropost setCreatedAtText:@"Created 3 hours ago"];
@@ -36,6 +37,7 @@
 
 - (void)testValues {
     
+    STAssertEqualObjects([micropost micropostID], @"123", @"Error: micropostID get error");
     STAssertEqualObjects([micropost title], @"Title", @"Error: title get error");
     STAssertEqualObjects([micropost description], @"Description", @"Error: get description");
     STAssertEqualObjects([micropost createdAtText], @"Created 3 hours ago", @"Error: get createdAtText");

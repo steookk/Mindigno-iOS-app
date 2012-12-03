@@ -9,7 +9,7 @@
 #import "RootVC.h"
 #import "MicroPost.h"
 #import "MicroPostDetailVC.h"
-#import "JsonParserMicroPost.h"
+#import "JParserUserAndMicroPost.h"
 
 @interface RootVC ()
 
@@ -22,9 +22,9 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         
-        JsonParserMicroPost *jsonParser = [[JsonParserMicroPost alloc] init];
+        JParserUserAndMicroPost *jsonParser = [[JParserUserAndMicroPost alloc] init];
         //TODO: Non serve l'url per ora.
-        [jsonParser startDownloadAndParsingJsonAtUrl:nil];
+        [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
         
         arrayMicroPost = [jsonParser microPosts];
         
@@ -90,6 +90,12 @@
     [tableViewMicroPost setDelegate:self];
     
     
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //[tableViewMicroPost reloadData];
 }
 
 ///Start UITableViewDataSource

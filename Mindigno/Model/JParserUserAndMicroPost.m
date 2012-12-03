@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Enrico. All rights reserved.
 //
 
-#import "JsonParserMicroPost.h"
+#import "JParserUserAndMicroPost.h"
 
-@interface JsonParserMicroPost ()
+@interface JParserUserAndMicroPost ()
 
 @end
 
-@implementation JsonParserMicroPost
+@implementation JParserUserAndMicroPost
 
 @synthesize user, microPosts;
 
@@ -32,16 +32,23 @@
     
     //
     
-    NSURL *url = [NSURL URLWithString: URL_JSON_MICROPOST_TEST];
-    NSData *data = [NSData dataWithContentsOfURL: url];
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //Necessary for request to server
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    //
     
-    if (data != nil) {
-        NSLog(@"non nil");
-    } else {
-        NSLog(@"nil");
-    }
+    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
+
+    //
+    
+    //For debug
+    //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@", textJson);
     
     NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
     NSDictionary *user_dictionary = [root_dictionary objectForKey:@"current_user"];
     
     [user setUserID: [user_dictionary objectForKey:@"user_id"]];
@@ -56,10 +63,10 @@
         
         [microPost setCreatedAtText: [feed_dictionary objectForKey:@"created_at_text"]];
         [microPost addComments: [feed_dictionary objectForKey:@"default_comments"]];
-        [microPost setDescription: [feed_dictionary objectForKey:@"description"]];
+        //TODO: [microPost setDescription: [feed_dictionary objectForKey:@"description"]];
         [microPost setIndignatiText: [feed_dictionary objectForKey:@"indignati_text"]];
         [microPost setIsLink: [[feed_dictionary objectForKey:@"islink"] boolValue]];
-        //[microPost setMicropostid ?]
+        [microPost setMicropostID: [feed_dictionary objectForKey:@"micropost_id"]];
         [microPost setSourceText: [feed_dictionary objectForKey:@"source_text"]];
         [microPost setTitle: [feed_dictionary objectForKey:@"title"]];
         

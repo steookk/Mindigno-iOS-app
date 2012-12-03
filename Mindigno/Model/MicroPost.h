@@ -10,6 +10,8 @@
 
 @interface MicroPost : NSObject {
 
+    NSString *micropostID;
+    
     NSString *title;
     NSString *description;
     
@@ -21,6 +23,8 @@
 
     NSMutableArray *comments;
 }
+
+@property (nonatomic, copy) NSString *micropostID;
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;
