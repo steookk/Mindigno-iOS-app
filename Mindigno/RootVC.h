@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScrollButtonBar.h"
 
 @interface RootVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
     NSArray *arrayMicroPost;
     
     IBOutlet UITableView *tableViewMicroPost;
+    
+    //
+    IBOutlet UIView *contentViewScrollBar;
+    ScrollButtonBar *scrollBar;
 }
 
 @end

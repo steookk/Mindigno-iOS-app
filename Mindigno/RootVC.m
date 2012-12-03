@@ -23,62 +23,11 @@
     if (self) {
         
         JParserUserAndMicroPost *jsonParser = [[JParserUserAndMicroPost alloc] init];
-        //TODO: Non serve l'url per ora.
         [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
         
         arrayMicroPost = [jsonParser microPosts];
-        
-        //
-        
-        /*
-        MicroPost *micropost = [[MicroPost alloc] init];
-        [micropost setTitle:@"Title"];
-        [micropost setDescription:@"Description"];
-        [micropost setCreatedAtText:@"Created 3 hours ago"];
-        [micropost setIndignatiText:@"3 indignati found"];
-        [micropost setSourceText:@"from corriere"];
-        [micropost setIsLink:YES];
-        
-        MicroPost *micropost2 = [[MicroPost alloc] init];
-        [micropost2 setTitle:@"Title 2 "];
-        [micropost2 setDescription:@"Description 2"];
-        [micropost2 setCreatedAtText:@"Created 3 hours ago 2"];
-        [micropost2 setIndignatiText:@"3 indignati found 2"];
-        [micropost2 setSourceText:@"from corriere 2"];
-        [micropost2 setIsLink:YES];
-        
-        MicroPost *micropost3 = [[MicroPost alloc] init];
-        [micropost3 setTitle:@"Title 3"];
-        [micropost3 setDescription:@"Description 3"];
-        [micropost3 setCreatedAtText:@"Created 3 hours ago 3"];
-        [micropost3 setIndignatiText:@"3 indignati found 3"];
-        [micropost3 setSourceText:@"from corriere 3"];
-        [micropost3 setIsLink:YES];
-        
-        MicroPost *micropost4 = [[MicroPost alloc] init];
-        [micropost4 setTitle:@"Title 4"];
-        [micropost4 setDescription:@"Description 4"];
-        [micropost4 setCreatedAtText:@"Created 3 hours ago 4"];
-        [micropost4 setIndignatiText:@"3 indignati found 4"];
-        [micropost4 setSourceText:@"from corriere 4"];
-        [micropost4 setIsLink:YES];
-        
-        MicroPost *micropost5 = [[MicroPost alloc] init];
-        [micropost5 setTitle:@"Title 5"];
-        [micropost5 setDescription:@"Description 5"];
-        [micropost5 setCreatedAtText:@"Created 3 hours ago 5"];
-        [micropost5 setIndignatiText:@"3 indignati found 5"];
-        [micropost5 setSourceText:@"from corriere 5"];
-        [micropost5 setIsLink:YES];
-        
-        [arrayMicroPost addObject: micropost];
-        [arrayMicroPost addObject: micropost2];
-        [arrayMicroPost addObject: micropost3];
-        [arrayMicroPost addObject: micropost4];
-        [arrayMicroPost addObject: micropost5];
-        */
-        
     }
+    
     return self;
 }
 
@@ -89,13 +38,10 @@
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
     
+    ///
     
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    //[tableViewMicroPost reloadData];
+    scrollBar = [[ScrollButtonBar alloc] initWithFrame:contentViewScrollBar.frame buttonTitles:[NSArray arrayWithObjects:@"Button_11111111", @"Button_222", @"Button_3", @"Button_444444444", @"Button_555", @"Button_6", nil]];
+    [[self view] addSubview: scrollBar];
 }
 
 ///Start UITableViewDataSource

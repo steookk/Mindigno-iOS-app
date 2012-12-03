@@ -39,6 +39,7 @@
 		D97E8AF81667A6970032C773 /* MicroPostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AF61667A6970032C773 /* MicroPostTests.m */; };
 		D97E8B011667CD340032C773 /* JParserUserAndMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JParserUserAndMicroPost.m */; };
 		D97E8B021667CD340032C773 /* JParserUserAndMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JParserUserAndMicroPost.m */; };
+		D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B177FD166D182D001F57AF /* ScrollButtonBar.m */; };
 		D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F4EB261668F4860027D0B9 /* Kenny.png */; };
 		D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,8 @@
 		D97E8AFF1667CD340032C773 /* JParserUserAndMicroPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JParserUserAndMicroPost.h; path = Model/JParserUserAndMicroPost.h; sourceTree = "<group>"; };
 		D97E8B001667CD340032C773 /* JParserUserAndMicroPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JParserUserAndMicroPost.m; path = Model/JParserUserAndMicroPost.m; sourceTree = "<group>"; };
 		D9B177FB166D11BA001F57AF /* JsonKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonKeys.h; sourceTree = "<group>"; };
+		D9B177FC166D182D001F57AF /* ScrollButtonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollButtonBar.h; sourceTree = "<group>"; };
+		D9B177FD166D182D001F57AF /* ScrollButtonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollButtonBar.m; sourceTree = "<group>"; };
 		D9F4EB261668F4860027D0B9 /* Kenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kenny.png; sourceTree = "<group>"; };
 		D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostDetailVC.h; sourceTree = "<group>"; };
 		D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostDetailVC.m; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 		D97E8AF91667A6C30032C773 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9B177FC166D182D001F57AF /* ScrollButtonBar.h */,
+				D9B177FD166D182D001F57AF /* ScrollButtonBar.m */,
 				D909B49816662A2F00D66AD3 /* MainStoryboard.storyboard */,
 			);
 			name = View;
@@ -404,6 +409,7 @@
 				D97E8AEF1667A11A0032C773 /* MicroPost.m in Sources */,
 				D97E8B011667CD340032C773 /* JParserUserAndMicroPost.m in Sources */,
 				D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */,
+				D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
