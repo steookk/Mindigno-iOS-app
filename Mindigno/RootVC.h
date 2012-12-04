@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullRefreshTableView.h"
 #import "ScrollButtonBar.h"
 
-@interface RootVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface RootVC : UIViewController <UITableViewDataSource, PullRefreshTableViewDelegate,  ScrollButtonBarDataSource, ScrollButtonBarDelegate> {
     
     NSArray *arrayMicroPost;
-    
-    IBOutlet UITableView *tableViewMicroPost;
+    IBOutlet PullRefreshTableView *tableViewMicroPost;
     
     //
-    IBOutlet UIView *contentViewScrollBar;
-    ScrollButtonBar *scrollBar;
+    NSArray *arrayButtonTitle;
+    IBOutlet ScrollButtonBar *scrollButtonBar;
 }
 
 @end

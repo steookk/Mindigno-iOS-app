@@ -26,6 +26,8 @@
         [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
         
         arrayMicroPost = [jsonParser microPosts];
+        
+        arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", @"Politica", @"Sport", nil];
     }
     
     return self;
@@ -38,11 +40,41 @@
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
     
-    ///
-    
-    scrollBar = [[ScrollButtonBar alloc] initWithFrame:contentViewScrollBar.frame buttonTitles:[NSArray arrayWithObjects:@"Button_11111111", @"Button_222", @"Button_3", @"Button_444444444", @"Button_555", @"Button_6", nil]];
-    [[self view] addSubview: scrollBar];
+    [scrollButtonBar setDataSourceBar:self];
+    [scrollButtonBar setDelegateBar:self];
 }
+
+//Start ScrollButtonBarDataSource
+- (NSInteger) numberOfButtonsInScrollButtonBar:(ScrollButtonBar*)scrollButtonBar {
+    return [arrayButtonTitle count];
+}
+
+- (void) setButtonProperties:(UIButton*)button withIndex:(NSInteger)index {
+
+    NSString *title = [arrayButtonTitle objectAtIndex:index];
+    [button setTitle:title forState:UIControlStateNormal];
+    [[button titleLabel] setFont: [UIFont fontWithName:@"Arial" size:14]];
+}
+
+- (NSString*) backgroundImageOfSelectedButton {
+    
+    return @"barra-gialla.png";
+}
+//Stop ScrollButtonBarDataSource
+
+//Start ScrollButtonBarDelegate
+- (void) buttonClicked:(UIButton*)button withIndex:(NSInteger)index {
+    
+    NSLog(@"Button clicked with title: %@", [[button titleLabel] text]);
+    NSLog(@"Button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
+    
+    if (index != 1) {
+        [tableViewMicroPost setEnableRefresh:NO];
+    } else {
+        [tableViewMicroPost setEnableRefresh:YES];
+    }
+}
+//Stop ScrollButtonBarDelegate
 
 ///Start UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -114,5 +146,13 @@
     MicroPostDetailVC *microPostDetailVC = (MicroPostDetailVC*)[segue destinationViewController];
     [microPostDetailVC setCurrentMicropost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
 }
+
+//Start
+- (void) tableViewHasRefreshed:(UITableView*)tableView {
+    
+    NSLog(@"Refreshed table -> button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
+}
+//Stop
+
 
 @end

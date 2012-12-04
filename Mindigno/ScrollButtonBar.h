@@ -8,11 +8,43 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScrollButtonBar : UIScrollView {
+@class ScrollButtonBar;
+@protocol ScrollButtonBarDataSource <NSObject>
 
-    NSMutableArray *buttonsTitle;
-}
+@required
+- (NSInteger) numberOfButtonsInScrollButtonBar:(ScrollButtonBar*)scrollButtonBar;
+- (void) setButtonProperties:(UIButton*)button withIndex:(NSInteger)index;
 
-- (id) initWithFrame:(CGRect)frame buttonTitles:(NSArray *)_buttonsTitle;
+@optional
+- (BOOL)respondsToSelector:(SEL)aSelector;
+- (NSString*) backgroundImageOfSelectedButton;
 
 @end
+
+//
+
+@protocol ScrollButtonBarDelegate <NSObject>
+
+@optional
+- (BOOL)respondsToSelector:(SEL)aSelector;
+- (void) buttonClicked:(UIButton*)button withIndex:(NSInteger)index;
+
+@end
+
+///
+
+@interface ScrollButtonBar : UIScrollView {
+
+    id <ScrollButtonBarDataSource> __weak dataSourceBar;
+    id <ScrollButtonBarDelegate> __weak delegateBar;
+    
+    UIButton *currentSelectedButton;
+}
+
+@property (nonatomic, weak) id <ScrollButtonBarDataSource> dataSourceBar;
+@property (nonatomic, weak) id <ScrollButtonBarDelegate> delegateBar;
+
+- (int) indexOfCurrentSelectedButton;
+
+@end
+

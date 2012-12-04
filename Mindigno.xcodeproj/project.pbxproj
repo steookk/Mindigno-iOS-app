@@ -40,6 +40,17 @@
 		D97E8B011667CD340032C773 /* JParserUserAndMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JParserUserAndMicroPost.m */; };
 		D97E8B021667CD340032C773 /* JParserUserAndMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JParserUserAndMicroPost.m */; };
 		D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B177FD166D182D001F57AF /* ScrollButtonBar.m */; };
+		D9BD96C9166E1322000AD010 /* barra-gialla.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96C8166E1322000AD010 /* barra-gialla.png */; };
+		D9BD96D6166E3B29000AD010 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9BD96D5166E3B29000AD010 /* QuartzCore.framework */; };
+		D9BD96D9166E3B48000AD010 /* PullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BD96D8166E3B48000AD010 /* PullRefreshTableView.m */; };
+		D9BD96E9166E3F7B000AD010 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E1166E3F7B000AD010 /* grayArrow.png */; };
+		D9BD96EA166E3F7B000AD010 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E2166E3F7B000AD010 /* grayArrow@2x.png */; };
+		D9BD96EB166E3F7B000AD010 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E3166E3F7B000AD010 /* blackArrow.png */; };
+		D9BD96EC166E3F7B000AD010 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E4166E3F7B000AD010 /* blackArrow@2x.png */; };
+		D9BD96ED166E3F7B000AD010 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E5166E3F7B000AD010 /* blueArrow.png */; };
+		D9BD96EE166E3F7B000AD010 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E6166E3F7B000AD010 /* blueArrow@2x.png */; };
+		D9BD96EF166E3F7B000AD010 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E7166E3F7B000AD010 /* whiteArrow.png */; };
+		D9BD96F0166E3F7B000AD010 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E8166E3F7B000AD010 /* whiteArrow@2x.png */; };
 		D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F4EB261668F4860027D0B9 /* Kenny.png */; };
 		D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */; };
 /* End PBXBuildFile section */
@@ -97,6 +108,18 @@
 		D9B177FB166D11BA001F57AF /* JsonKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonKeys.h; sourceTree = "<group>"; };
 		D9B177FC166D182D001F57AF /* ScrollButtonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollButtonBar.h; sourceTree = "<group>"; };
 		D9B177FD166D182D001F57AF /* ScrollButtonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollButtonBar.m; sourceTree = "<group>"; };
+		D9BD96C8166E1322000AD010 /* barra-gialla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barra-gialla.png"; sourceTree = "<group>"; };
+		D9BD96D5166E3B29000AD010 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9BD96D7166E3B48000AD010 /* PullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableView.h; sourceTree = "<group>"; };
+		D9BD96D8166E3B48000AD010 /* PullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableView.m; sourceTree = "<group>"; };
+		D9BD96E1166E3F7B000AD010 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		D9BD96E2166E3F7B000AD010 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		D9BD96E3166E3F7B000AD010 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		D9BD96E4166E3F7B000AD010 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		D9BD96E5166E3F7B000AD010 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		D9BD96E6166E3F7B000AD010 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		D9BD96E7166E3F7B000AD010 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		D9BD96E8166E3F7B000AD010 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		D9F4EB261668F4860027D0B9 /* Kenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kenny.png; sourceTree = "<group>"; };
 		D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostDetailVC.h; sourceTree = "<group>"; };
 		D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostDetailVC.m; sourceTree = "<group>"; };
@@ -107,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9BD96D6166E3B29000AD010 /* QuartzCore.framework in Frameworks */,
 				D909B48116662A2F00D66AD3 /* UIKit.framework in Frameworks */,
 				D909B48316662A2F00D66AD3 /* Foundation.framework in Frameworks */,
 				D909B48516662A2F00D66AD3 /* CoreGraphics.framework in Frameworks */,
@@ -143,6 +167,7 @@
 		D9008E9D1669267E00AC90B1 /* box */ = {
 			isa = PBXGroup;
 			children = (
+				D9BD96C8166E1322000AD010 /* barra-gialla.png */,
 				D9008E9B1669266900AC90B1 /* box-ombrato.jpg */,
 			);
 			name = box;
@@ -174,6 +199,7 @@
 				D909B48216662A2F00D66AD3 /* Foundation.framework */,
 				D909B48416662A2F00D66AD3 /* CoreGraphics.framework */,
 				D909B4A416662A2F00D66AD3 /* SenTestingKit.framework */,
+				D9BD96D5166E3B29000AD010 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -248,6 +274,8 @@
 			children = (
 				D9B177FC166D182D001F57AF /* ScrollButtonBar.h */,
 				D9B177FD166D182D001F57AF /* ScrollButtonBar.m */,
+				D9BD96D7166E3B48000AD010 /* PullRefreshTableView.h */,
+				D9BD96D8166E3B48000AD010 /* PullRefreshTableView.m */,
 				D909B49816662A2F00D66AD3 /* MainStoryboard.storyboard */,
 			);
 			name = View;
@@ -272,9 +300,25 @@
 			name = Constant;
 			sourceTree = "<group>";
 		};
+		D9BD96DC166E3F60000AD010 /* Arrow */ = {
+			isa = PBXGroup;
+			children = (
+				D9BD96E1166E3F7B000AD010 /* grayArrow.png */,
+				D9BD96E2166E3F7B000AD010 /* grayArrow@2x.png */,
+				D9BD96E3166E3F7B000AD010 /* blackArrow.png */,
+				D9BD96E4166E3F7B000AD010 /* blackArrow@2x.png */,
+				D9BD96E5166E3F7B000AD010 /* blueArrow.png */,
+				D9BD96E6166E3F7B000AD010 /* blueArrow@2x.png */,
+				D9BD96E7166E3F7B000AD010 /* whiteArrow.png */,
+				D9BD96E8166E3F7B000AD010 /* whiteArrow@2x.png */,
+			);
+			name = Arrow;
+			sourceTree = "<group>";
+		};
 		D9F4EB291668FA250027D0B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D9BD96DC166E3F60000AD010 /* Arrow */,
 				D9008E9D1669267E00AC90B1 /* box */,
 				D9008E8C16691F8D00AC90B1 /* navbar */,
 				D9F4EB261668F4860027D0B9 /* Kenny.png */,
@@ -368,6 +412,15 @@
 				D9008E9A16691F9D00AC90B1 /* ico-search.png in Resources */,
 				D9008E9C1669266900AC90B1 /* box-ombrato.jpg in Resources */,
 				D9008E9F1669295B00AC90B1 /* Icon.png in Resources */,
+				D9BD96C9166E1322000AD010 /* barra-gialla.png in Resources */,
+				D9BD96E9166E3F7B000AD010 /* grayArrow.png in Resources */,
+				D9BD96EA166E3F7B000AD010 /* grayArrow@2x.png in Resources */,
+				D9BD96EB166E3F7B000AD010 /* blackArrow.png in Resources */,
+				D9BD96EC166E3F7B000AD010 /* blackArrow@2x.png in Resources */,
+				D9BD96ED166E3F7B000AD010 /* blueArrow.png in Resources */,
+				D9BD96EE166E3F7B000AD010 /* blueArrow@2x.png in Resources */,
+				D9BD96EF166E3F7B000AD010 /* whiteArrow.png in Resources */,
+				D9BD96F0166E3F7B000AD010 /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +463,7 @@
 				D97E8B011667CD340032C773 /* JParserUserAndMicroPost.m in Sources */,
 				D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */,
 				D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */,
+				D9BD96D9166E3B48000AD010 /* PullRefreshTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
