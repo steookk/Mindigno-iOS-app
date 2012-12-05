@@ -69,9 +69,9 @@
         
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
-        if ([dataSourceBar respondsToSelector:@selector(backgroundImageOfSelectedButton)]) {
+        if ([dataSourceBar respondsToSelector:@selector(backgroundImageUrlOfSelectedButton)]) {
             
-            NSString *urlImage = [dataSourceBar backgroundImageOfSelectedButton];
+            NSString *urlImage = [dataSourceBar backgroundImageUrlOfSelectedButton];
             UIImage *backgroundImage = [UIImage imageNamed:urlImage];
             [button setBackgroundImage:backgroundImage forState:UIControlStateSelected];
         }
@@ -88,6 +88,7 @@
         if (i==0) {
             currentSelectedButton = button;
             [currentSelectedButton setSelected:YES];
+            [currentSelectedButton setUserInteractionEnabled:NO];
         }
         
         pointerToDraw += (stringSize.width + buttonMargin) + buttonSpace;
@@ -105,8 +106,10 @@
     UIButton *button = (UIButton*)sender;
     
     [currentSelectedButton setSelected:NO];
+    [currentSelectedButton setUserInteractionEnabled:YES];
     currentSelectedButton = button;
     [currentSelectedButton setSelected:YES];
+    [currentSelectedButton setUserInteractionEnabled:NO];
     
     if ([delegateBar respondsToSelector:@selector(buttonClicked:withIndex:)]) {
         [delegateBar buttonClicked:button withIndex:[button tag]];

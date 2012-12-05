@@ -37,12 +37,35 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
+    [mainButtonBar setDelegate:self];
+    
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
     
     [scrollButtonBar setDataSourceBar:self];
     [scrollButtonBar setDelegateBar:self];
 }
+
+//Start MainButtonBarDelegate
+- (void) clickedButtonHome {
+    NSLog(@"clickedButtonHome");
+}
+
+- (void) clickedButtonProfile {
+    NSLog(@"clickedButtonProfile");
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    [self presentModalViewController:vc animated:YES];
+
+}
+
+- (void) clickedButtonSearch {
+    NSLog(@"clickedButtonSearch");
+}
+
+//Stop MainButtonBarDelegate
 
 //Start ScrollButtonBarDataSource
 - (NSInteger) numberOfButtonsInScrollButtonBar:(ScrollButtonBar*)scrollButtonBar {
@@ -56,7 +79,7 @@
     [[button titleLabel] setFont: [UIFont fontWithName:@"Arial" size:14]];
 }
 
-- (NSString*) backgroundImageOfSelectedButton {
+- (NSString*) backgroundImageUrlOfSelectedButton {
     
     return @"barra-gialla.png";
 }

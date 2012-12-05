@@ -17,7 +17,7 @@
 
 @optional
 - (BOOL)respondsToSelector:(SEL)aSelector;
-- (NSString*) backgroundImageOfSelectedButton;
+- (NSString*) backgroundImageUrlOfSelectedButton;
 
 @end
 
