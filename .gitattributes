@@ -1,0 +1,2 @@
+# Xcode
+*.pbxproj -crlf -diff -merge
