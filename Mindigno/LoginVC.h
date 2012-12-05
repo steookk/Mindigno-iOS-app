@@ -12,7 +12,6 @@
  
     IBOutlet UITextField *textFieldUsername;
     IBOutlet UITextField *textFieldPassword;
-    
 }
 
 @end
