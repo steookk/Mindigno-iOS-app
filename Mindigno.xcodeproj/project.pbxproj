@@ -47,7 +47,7 @@
 		D97E8B021667CD340032C773 /* JParserUserAndMicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JParserUserAndMicroPost.m */; };
 		D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B177FD166D182D001F57AF /* ScrollButtonBar.m */; };
 		D9BD96D6166E3B29000AD010 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9BD96D5166E3B29000AD010 /* QuartzCore.framework */; };
-		D9BD96D9166E3B48000AD010 /* PullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BD96D8166E3B48000AD010 /* PullRefreshTableView.m */; };
+		D9BD96D9166E3B48000AD010 /* PullRefreshLazyLoadTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BD96D8166E3B48000AD010 /* PullRefreshLazyLoadTableView.m */; };
 		D9BD96E9166E3F7B000AD010 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E1166E3F7B000AD010 /* grayArrow.png */; };
 		D9BD96EA166E3F7B000AD010 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E2166E3F7B000AD010 /* grayArrow@2x.png */; };
 		D9BD96EB166E3F7B000AD010 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9BD96E3166E3F7B000AD010 /* blackArrow.png */; };
@@ -126,8 +126,8 @@
 		D9B177FC166D182D001F57AF /* ScrollButtonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollButtonBar.h; sourceTree = "<group>"; };
 		D9B177FD166D182D001F57AF /* ScrollButtonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollButtonBar.m; sourceTree = "<group>"; };
 		D9BD96D5166E3B29000AD010 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D9BD96D7166E3B48000AD010 /* PullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableView.h; sourceTree = "<group>"; };
-		D9BD96D8166E3B48000AD010 /* PullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableView.m; sourceTree = "<group>"; };
+		D9BD96D7166E3B48000AD010 /* PullRefreshLazyLoadTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshLazyLoadTableView.h; sourceTree = "<group>"; };
+		D9BD96D8166E3B48000AD010 /* PullRefreshLazyLoadTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshLazyLoadTableView.m; sourceTree = "<group>"; };
 		D9BD96E1166E3F7B000AD010 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
 		D9BD96E2166E3F7B000AD010 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		D9BD96E3166E3F7B000AD010 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
@@ -328,8 +328,8 @@
 				D9BD96F4166E6487000AD010 /* MainButtonBar.m */,
 				D9B177FC166D182D001F57AF /* ScrollButtonBar.h */,
 				D9B177FD166D182D001F57AF /* ScrollButtonBar.m */,
-				D9BD96D7166E3B48000AD010 /* PullRefreshTableView.h */,
-				D9BD96D8166E3B48000AD010 /* PullRefreshTableView.m */,
+				D9BD96D7166E3B48000AD010 /* PullRefreshLazyLoadTableView.h */,
+				D9BD96D8166E3B48000AD010 /* PullRefreshLazyLoadTableView.m */,
 				D94262AE166F5FC30085D7CB /* MainStoryboard.storyboard */,
 				D9426296166F4CE50085D7CB /* LoginStoryboard.storyboard */,
 			);
@@ -521,7 +521,7 @@
 				D97E8B011667CD340032C773 /* JParserUserAndMicroPost.m in Sources */,
 				D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */,
 				D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */,
-				D9BD96D9166E3B48000AD010 /* PullRefreshTableView.m in Sources */,
+				D9BD96D9166E3B48000AD010 /* PullRefreshLazyLoadTableView.m in Sources */,
 				D9BD96F5166E6487000AD010 /* MainButtonBar.m in Sources */,
 				D942629F166F56BF0085D7CB /* SignupVC.m in Sources */,
 				D94262A2166F56FB0085D7CB /* LoginSignupVC.m in Sources */,

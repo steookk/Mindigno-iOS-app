@@ -2,4 +2,32 @@
 <Bucket
    type = "1"
    version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mindigno/PullRefreshTableView.m"
+         timestampString = "376501223.241162"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "320"
+         endingLineNumber = "320"
+         landmarkName = "-scrollViewDidEndDecelerating:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mindigno/PullRefreshTableView.m"
+         timestampString = "376501089.475196"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "231"
+         endingLineNumber = "231"
+         landmarkName = "-scrollViewDidEndDragging:willDecelerate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+   </FileBreakpoints>
 </Bucket>

@@ -9,7 +9,6 @@
 #import "RootVC.h"
 #import "MicroPost.h"
 #import "MicroPostDetailVC.h"
-#import "JParserUserAndMicroPost.h"
 
 @interface RootVC ()
 
@@ -22,12 +21,14 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         
-        JParserUserAndMicroPost *jsonParser = [[JParserUserAndMicroPost alloc] init];
+        arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", @"Politica", @"Sport", nil];
+        
+        //
+        
+        jsonParser = [[JParserUserAndMicroPost alloc] init];
         [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
         
-        arrayMicroPost = [jsonParser microPosts];
-        
-        arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", @"Politica", @"Sport", nil];
+        arrayMicroPost = [NSMutableArray arrayWithArray:[jsonParser microPosts]];
     }
     
     return self;
@@ -92,9 +93,11 @@
     NSLog(@"Button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
     
     if (index != 1) {
-        [tableViewMicroPost setEnableRefresh:NO];
+        [tableViewMicroPost setEnabledRefresh:NO];
+        [tableViewMicroPost setEnabledLazyLoad:NO];
     } else {
-        [tableViewMicroPost setEnableRefresh:YES];
+        [tableViewMicroPost setEnabledRefresh:YES];
+        [tableViewMicroPost setEnabledLazyLoad:YES];
     }
 }
 //Stop ScrollButtonBarDelegate
@@ -170,12 +173,18 @@
     [microPostDetailVC setCurrentMicropost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
 }
 
-//Start
+//Start PullRefreshTableViewDelegate
 - (void) tableViewHasRefreshed:(UITableView*)tableView {
     
     NSLog(@"Refreshed table -> button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
 }
-//Stop
+
+- (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
+
+    sleep(1);
+    [arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
+}
+//Stop PullRefreshTableViewDelegate
 
 
 @end

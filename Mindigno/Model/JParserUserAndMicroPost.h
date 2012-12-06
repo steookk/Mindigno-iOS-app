@@ -10,7 +10,7 @@
 #import "User.h"
 #import "MicroPost.h"
 
-#define URL_JSON_MICROPOST_TEST @"http://staging.mindigno.com"
+#define URL_JSON_MICROPOST_TEST @"http://192.168.2.90:3000"
 
 @interface JParserUserAndMicroPost : NSObject {
 

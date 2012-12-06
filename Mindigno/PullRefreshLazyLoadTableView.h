@@ -29,43 +29,80 @@
 
 #import <UIKit/UIKit.h>
 
+///
+
+@interface FooterView : UIView {
+    
+    UIImageView *imageViewBackground;
+    
+    UILabel *labelLoading;
+    UIActivityIndicatorView *indicatorViewLoading;
+    
+    NSString *textLoad;
+    NSString *textLoading;
+}
+
+- (void) startLoadingAnimation;
+- (void) stopLoadingAnimation;
+
+@end
+
+///
+
+@interface RefreshHeaderView : UIView {
+    
+    UILabel *refreshLabel;
+    UIImageView *refreshArrow;
+    UIActivityIndicatorView *refreshSpinner;
+    
+    NSString *textPull;
+    NSString *textRelease;
+    NSString *textLoading;
+}
+
+@property (nonatomic, readonly) UILabel *refreshLabel;
+@property (nonatomic, readonly) UIImageView *refreshArrow;
+@property (nonatomic, readonly) UIActivityIndicatorView *refreshSpinner;
+
+@property (nonatomic, readonly) NSString *textPull;
+@property (nonatomic, readonly) NSString *textRelease;
+@property (nonatomic, readonly) NSString *textLoading;
+
+@end
+
+///
+
 @protocol PullRefreshTableViewDelegate <UITableViewDelegate>
 
 @optional
 - (BOOL)respondsToSelector:(SEL)aSelector;
 - (void) tableViewHasRefreshed:(UITableView*)tableView;
+- (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView;
 
 @end
 
-@interface PullRefreshTableView : UITableView <UITableViewDelegate> {
+@interface PullRefreshLazyLoadTableView : UITableView <UITableViewDelegate> {
     
     id <PullRefreshTableViewDelegate> __weak delegate;
     
-    UIView *refreshHeaderView;
+    //
+
+    BOOL enabledRefresh; //Option
     
-    UILabel *refreshLabel;
-    UIImageView *refreshArrow;
-    UIActivityIndicatorView *refreshSpinner;
     BOOL isDragging;
     BOOL isLoading;
-    NSString *textPull;
-    NSString *textRelease;
-    NSString *textLoading;
+    RefreshHeaderView *refreshHeaderView;
+
+    //
+
+    BOOL enabledLazyLoad; //Option
     
-    BOOL enableRefresh;
+    FooterView *footerViewLoading;
 }
 
 @property (nonatomic, weak) id <PullRefreshTableViewDelegate> delegate;
-@property (nonatomic) BOOL enableRefresh;
 
-/*
-@property (nonatomic, retain) UIView *refreshHeaderView;
-@property (nonatomic, retain) UILabel *refreshLabel;
-@property (nonatomic, retain) UIImageView *refreshArrow;
-@property (nonatomic, retain) UIActivityIndicatorView *refreshSpinner;
-@property (nonatomic, copy) NSString *textPull;
-@property (nonatomic, copy) NSString *textRelease;
-@property (nonatomic, copy) NSString *textLoading;
- */
+@property (nonatomic) BOOL enabledRefresh;
+@property (nonatomic) BOOL enabledLazyLoad;
 
 @end
