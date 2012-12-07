@@ -19,4 +19,6 @@
 + (void) setButtonRoundAndTrasparent:(UIButton*)button;
 + (void) setTextFieldRoundAndTrasparent:(UITextField*)textField;
 
++ (NSString*) getRandomImgUrl;
+
 @end

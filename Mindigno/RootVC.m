@@ -9,6 +9,7 @@
 #import "RootVC.h"
 #import "MicroPost.h"
 #import "MicroPostDetailVC.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface RootVC ()
 
@@ -28,7 +29,8 @@
         jsonParser = [[JParserUserAndMicroPost alloc] init];
         [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
         
-        arrayMicroPost = [NSMutableArray arrayWithArray:[jsonParser microPosts]];
+        arrayMicroPost = [NSMutableArray array];
+        [arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
     }
     
     return self;
@@ -127,11 +129,11 @@
     
     UIImageView *imageViewAvatar = (UIImageView*)[cell viewWithTag:1];
     
-    //NSURL *url = [NSURL URLWithString: @"http://thumbs.dreamstime.com/thumblarge_516/1277756333MAkH05.jpg"];
-    //NSData *imageData = [NSData dataWithContentsOfURL:url];
-    //UIImage *imageAvatar = [UIImage imageWithData: imageData];
-    UIImage *imageAvatar = [UIImage imageNamed:@"Kenny"];
-    [imageViewAvatar setImage:imageAvatar];
+    //UIImage *imageAvatar = [UIImage imageNamed:@"Kenny"];
+    //[imageViewAvatar setImage:imageAvatar];
+    
+    [imageViewAvatar setImageWithURL:[NSURL URLWithString:[currentMicroPost imageUrl]]
+                   placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     UILabel *labelTitle = (UILabel*)[cell viewWithTag:2];
     [labelTitle setText: [currentMicroPost title]];
@@ -177,12 +179,22 @@
 - (void) tableViewHasRefreshed:(UITableView*)tableView {
     
     NSLog(@"Refreshed table -> button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
+    
 }
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
 
     sleep(1);
+    
+    [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
     [arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
+    
+    /*
+    int _3days = 60*60*24*3;
+    [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge: _3days];
+    //[[[SDWebImageManager sharedManager] imageCache] clearMemory];
+    [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
+     */
 }
 //Stop PullRefreshTableViewDelegate
 

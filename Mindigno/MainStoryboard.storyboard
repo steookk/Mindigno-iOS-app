@@ -294,15 +294,15 @@
                 <relationship kind="outlet" name="textViewDescription" candidateClass="UITextView"/>
             </relationships>
         </class>
-        <class className="PullRefreshTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PullRefreshTableView.h"/>
+        <class className="PullRefreshLazyLoadTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PullRefreshLazyLoadTableView.h"/>
         </class>
         <class className="RootVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootVC.h"/>
             <relationships>
                 <relationship kind="outlet" name="mainButtonBar" candidateClass="MainButtonBar"/>
                 <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
-                <relationship kind="outlet" name="tableViewMicroPost" candidateClass="PullRefreshTableView"/>
+                <relationship kind="outlet" name="tableViewMicroPost" candidateClass="PullRefreshLazyLoadTableView"/>
             </relationships>
         </class>
         <class className="ScrollButtonBar" superclassName="UIScrollView">

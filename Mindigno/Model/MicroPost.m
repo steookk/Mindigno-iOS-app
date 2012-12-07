@@ -7,10 +7,11 @@
 //
 
 #import "MicroPost.h"
+#import "RoundUtils.h"
 
 @implementation MicroPost
 
-@synthesize micropostID, title, description, createdAtText, indignatiText, sourceText, isLink;
+@synthesize micropostID, title, description, imageUrl, createdAtText, indignatiText, sourceText, isLink;
 
 - (id) init {
     self = [super init];
@@ -20,6 +21,9 @@
         isLink = NO;
         
         comments = [NSMutableArray array];
+        
+        //For test: Get random image url
+        imageUrl = [RoundUtils getRandomImgUrl];
     }
     
     return self;

@@ -38,6 +38,10 @@
 		D94262C2166F85F00085D7CB /* RoundUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D94262C1166F85EF0085D7CB /* RoundUtils.m */; };
 		D94262D4166F979B0085D7CB /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = D94262D3166F979B0085D7CB /* path.png */; };
 		D94262D6166FA5160085D7CB /* facebook-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D94262D5166FA5160085D7CB /* facebook-button.jpg */; };
+		D96A563B1671F61C00765CF6 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96A563A1671F61C00765CF6 /* SDWebImage.framework */; };
+		D96A563F1671F97700765CF6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D96A563D1671F97700765CF6 /* placeholder.png */; };
+		D96A56401671F97700765CF6 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D96A563E1671F97700765CF6 /* placeholder@2x.png */; };
+		D96A56421671FA7E00765CF6 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96A56411671FA7E00765CF6 /* ImageIO.framework */; };
 		D97E8AEB1667A0FF0032C773 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEA1667A0FF0032C773 /* User.m */; };
 		D97E8AEC1667A0FF0032C773 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEA1667A0FF0032C773 /* User.m */; };
 		D97E8AEF1667A11A0032C773 /* MicroPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8AEE1667A11A0032C773 /* MicroPost.m */; };
@@ -114,6 +118,10 @@
 		D94262C1166F85EF0085D7CB /* RoundUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundUtils.m; sourceTree = "<group>"; };
 		D94262D3166F979B0085D7CB /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 		D94262D5166FA5160085D7CB /* facebook-button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "facebook-button.jpg"; sourceTree = "<group>"; };
+		D96A563A1671F61C00765CF6 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		D96A563D1671F97700765CF6 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		D96A563E1671F97700765CF6 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		D96A56411671FA7E00765CF6 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D97E8AE91667A0FF0032C773 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
 		D97E8AEA1667A0FF0032C773 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		D97E8AED1667A11A0032C773 /* MicroPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MicroPost.h; path = Model/MicroPost.h; sourceTree = "<group>"; };
@@ -149,10 +157,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96A56421671FA7E00765CF6 /* ImageIO.framework in Frameworks */,
 				D9BD96D6166E3B29000AD010 /* QuartzCore.framework in Frameworks */,
 				D909B48116662A2F00D66AD3 /* UIKit.framework in Frameworks */,
 				D909B48316662A2F00D66AD3 /* Foundation.framework in Frameworks */,
 				D909B48516662A2F00D66AD3 /* CoreGraphics.framework in Frameworks */,
+				D96A563B1671F61C00765CF6 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +224,8 @@
 		D909B47F16662A2F00D66AD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D96A563A1671F61C00765CF6 /* SDWebImage.framework */,
+				D96A56411671FA7E00765CF6 /* ImageIO.framework */,
 				D909B48016662A2F00D66AD3 /* UIKit.framework */,
 				D909B48216662A2F00D66AD3 /* Foundation.framework */,
 				D909B48416662A2F00D66AD3 /* CoreGraphics.framework */,
@@ -371,6 +383,8 @@
 		D9F4EB291668FA250027D0B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D96A563D1671F97700765CF6 /* placeholder.png */,
+				D96A563E1671F97700765CF6 /* placeholder@2x.png */,
 				D94262D3166F979B0085D7CB /* path.png */,
 				D94262D5166FA5160085D7CB /* facebook-button.jpg */,
 				D9BD96DC166E3F60000AD010 /* Arrow */,
@@ -480,6 +494,8 @@
 				D94262B3166F5FDF0085D7CB /* InfoPlist.strings in Resources */,
 				D94262D4166F979B0085D7CB /* path.png in Resources */,
 				D94262D6166FA5160085D7CB /* facebook-button.jpg in Resources */,
+				D96A563F1671F97700765CF6 /* placeholder.png in Resources */,
+				D96A56401671F97700765CF6 /* placeholder@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,10 +633,15 @@
 		D909B4B616662A2F00D66AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mindigno/Mindigno-Prefix.pch";
 				INFOPLIST_FILE = "Mindigno/Mindigno-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -629,10 +650,15 @@
 		D909B4B716662A2F00D66AD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mindigno/Mindigno-Prefix.pch";
 				INFOPLIST_FILE = "Mindigno/Mindigno-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

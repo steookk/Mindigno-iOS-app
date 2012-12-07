@@ -15,6 +15,8 @@
     NSString *title;
     NSString *description;
     
+    NSString *imageUrl;
+    
     NSString *createdAtText;
     NSString *indignatiText;
     NSString *sourceText;
@@ -28,6 +30,8 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;
+
+@property (nonatomic, copy) NSString *imageUrl;
 
 @property (nonatomic, copy) NSString *createdAtText;
 @property (nonatomic, copy) NSString *indignatiText;
