@@ -11,33 +11,66 @@
 @interface MicroPost : NSObject {
 
     NSString *micropostID;
+    NSString *micropostUrl;
     
     NSString *title;
     NSString *description;
     
-    NSString *imageUrl;
-    
-    NSString *createdAtText;
-    NSString *indignatiText;
-    NSString *sourceText;
-    
+    ///
     BOOL isLink;
+    
+    //isLink = TRUE {
+    NSString *imageUrl;
+    NSString *sourceText;
+    NSString *link;
+    //}
+    
+    //isLink = FALSE {
+    BOOL isUserCreator;
 
-    NSMutableArray *comments;
+    //isUserCreator = TRUE {
+    NSString *preposition;
+    NSString *userID;
+    //}
+
+    //isUserCreator = FALSE {
+    NSString *defaultText;
+    //}
+    //}
+    ///
+
+    NSString *createdAtText;
+    
+    NSString *indignatiText;
+    NSMutableArray *followingIndignati;
+    
+    NSString *defaultCommentsText;
+    NSMutableArray *defaultComments;
 }
 
 @property (nonatomic, copy) NSString *micropostID;
+@property (nonatomic, copy) NSString *micropostUrl;
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;
 
+@property (nonatomic) BOOL isLink;
 @property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) NSString *sourceText;
+@property (nonatomic, copy) NSString *link;
+
+@property (nonatomic) BOOL isUserCreator;
+@property (nonatomic, copy) NSString *preposition;
+@property (nonatomic, retain) NSString *userID;
+@property (nonatomic, copy) NSString *defaultText;
 
 @property (nonatomic, copy) NSString *createdAtText;
-@property (nonatomic, copy) NSString *indignatiText;
-@property (nonatomic, copy) NSString *sourceText;
 
-@property (nonatomic) BOOL isLink;
+@property (nonatomic, copy) NSString *indignatiText;
+@property (nonatomic, copy) NSString *defaultCommentsText;
+
+
+- (id)initWithJsonRoot:(NSDictionary*)root_microPost;
 
 - (NSArray*) getAllComments;
 - (void) addComment:(NSString *)comment;

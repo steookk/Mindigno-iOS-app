@@ -9,7 +9,7 @@
 #import "RootVC.h"
 #import "MicroPost.h"
 #import "MicroPostDetailVC.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 @interface RootVC ()
 
@@ -128,12 +128,9 @@
     ///
     
     UIImageView *imageViewAvatar = (UIImageView*)[cell viewWithTag:1];
-    
-    //UIImage *imageAvatar = [UIImage imageNamed:@"Kenny"];
-    //[imageViewAvatar setImage:imageAvatar];
-    
-    [imageViewAvatar setImageWithURL:[NSURL URLWithString:[currentMicroPost imageUrl]]
-                   placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    //Default setting
+    UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
+    [imageViewAvatar setImage: placeHolder];
     
     UILabel *labelTitle = (UILabel*)[cell viewWithTag:2];
     [labelTitle setText: [currentMicroPost title]];
@@ -141,38 +138,90 @@
     UILabel *labelDescription = (UILabel*)[cell viewWithTag:3];
     [labelDescription setText: [currentMicroPost description]];
     
-    UILabel *labelIndignatiText = (UILabel*)[cell viewWithTag:4];
-    [labelIndignatiText setText: [currentMicroPost indignatiText]];
+    UILabel *labelSourceText = (UILabel*)[cell viewWithTag:4];
     
-    UILabel *labelCreatedAtText = (UILabel*)[cell viewWithTag:9];
+    if ([currentMicroPost isLink]) {
+        
+        NSString *imgUrl = [currentMicroPost imageUrl];
+        if (imgUrl != nil) {
+            [imageViewAvatar setImageWithURL:[NSURL URLWithString: imgUrl] placeholderImage:placeHolder];
+        }
+        
+        [labelSourceText setText: [currentMicroPost sourceText]];
+    
+    } else {
+        
+        if ([currentMicroPost isUserCreator]) {
+            //TODO: recuperare autore e prendere il nome
+            NSString *prepositionAuthor = [NSString stringWithFormat:@"%@ %@", [currentMicroPost preposition], @"Autore ancora da inserire"];
+            [labelSourceText setText: prepositionAuthor];
+            
+        } else {
+            [labelSourceText setText: [currentMicroPost defaultText]];
+        }
+    }
+    
+    UILabel *labelCreatedAtText = (UILabel*)[cell viewWithTag:5];
     [labelCreatedAtText setText: [currentMicroPost createdAtText]];
     
-    UIButton *buttonFacebook = (UIButton*)[cell viewWithTag:5];
+    UIButton *buttonIndignati = (UIButton*)[cell viewWithTag:6];
     
-    UIButton *buttonTwitter = (UIButton*)[cell viewWithTag:6];
+    UIButton *buttonComments = (UIButton*)[cell viewWithTag:7];
     
-    UIButton *buttonMindigno = (UIButton*)[cell viewWithTag:7];
+    UIButton *buttonShare = (UIButton*)[cell viewWithTag:8];
+    [buttonShare addTarget:self action:@selector(buttonShareClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *buttonCommenta = (UIButton*)[cell viewWithTag:8];
+    UIButton *buttonMindigno = (UIButton*)[cell viewWithTag:9];
 
     return cell;
 }
 ///Stop UITableViewDataSource
 
+- (void) buttonShareClicked:(id)sender {
+
+    NSString *textToShare = @"I just shared this from my App";
+    UIImage *imageToShare = [UIImage imageNamed:@"Default.png"];
+    NSURL *urlToShare = [NSURL URLWithString:@"http://www.bronron.com"];
+    
+    NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities: nil];
+    
+    //This is an array of excluded activities to appear on the UIActivityViewController
+    activityVC.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
+    
+    [self presentModalViewController:activityVC animated:YES];
+}
+
 ///Start UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NSLog(@"didSelectRowAtIndexPath clicked row number: %d", indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath clicked row number: %d", indexPath.row);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 ///Stop UITableViewDelegate
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    NSIndexPath* currentIndexPath = [tableViewMicroPost indexPathForSelectedRow];
-    NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
     
-    MicroPostDetailVC *microPostDetailVC = (MicroPostDetailVC*)[segue destinationViewController];
-    [microPostDetailVC setCurrentMicropost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
+    if ([[segue identifier] isEqualToString:@"homeToMicropostDetail"]) {
+        
+        NSIndexPath* currentIndexPath = [tableViewMicroPost indexPathForSelectedRow];
+        NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
+        
+        MicroPostDetailVC *microPostDetailVC = (MicroPostDetailVC*)[segue destinationViewController];
+        [microPostDetailVC setCurrentMicropost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
+        
+    } else if ([[segue identifier] isEqualToString:@"homeToIndignati"]) {
+        
+        NSLog(@"homeToIndignati");
+    
+    } else if ([[segue identifier] isEqualToString:@"homeToComments"]) {
+        
+        NSLog(@"homeToComments");
+        
+    }
 }
 
 //Start PullRefreshTableViewDelegate

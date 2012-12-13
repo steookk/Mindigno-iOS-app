@@ -11,18 +11,16 @@
 @interface User : NSObject {
 
     NSString *userID;
+    NSString *userUrl;
     NSString *name;
-    //NSString *password;
-    
     NSString *urlAvatar;
-    
-    //NSString *numberOfFollowing;
-    //NSString *numberOfFollower;
 }
 
 @property (nonatomic, copy) NSString *userID;
+@property (nonatomic, copy) NSString *userUrl;
 @property (nonatomic, copy) NSString *name;
-
 @property (nonatomic, copy) NSString *urlAvatar;
+
+- (id)initWithJsonRoot:(NSDictionary*)root_user;
 
 @end

@@ -166,6 +166,27 @@
     <resources>
         <image name="facebook-button.jpg" width="450" height="169"/>
     </resources>
+    <classes>
+        <class className="LoginSignupVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginSignupVC.h"/>
+            <relationships>
+                <relationship kind="action" name="exitFromModalView:"/>
+                <relationship kind="outlet" name="buttonLogin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSignup" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewBackground" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LoginVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textFieldPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SignupVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupVC.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

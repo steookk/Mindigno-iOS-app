@@ -8,6 +8,7 @@
 
 #import "JParserUserAndMicroPost.h"
 #import "JsonKeys.h"
+#import "Mindigno.h"
 
 @interface JParserUserAndMicroPost ()
 
@@ -28,7 +29,6 @@
 
 - (void) startDownloadAndParsingJsonAtUrl:(NSString *)urlString {
     
-    user = [[User alloc] init];
     [microPosts removeAllObjects];
     
     //
@@ -50,26 +50,18 @@
     
     NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-    NSDictionary *user_dictionary = [root_dictionary objectForKey: USER_KEY];
+    //It must be done before of all
+    NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
+    [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
     
-    [user setUserID: [user_dictionary objectForKey: USER_ID_KEY]];
-    [user setName: [user_dictionary objectForKey: USER_NAME_KEY]];
-    [user setUrlAvatar: [user_dictionary objectForKey: USER_URL_AVATAR_KEY]];
+    NSString *current_user_id = [root_dictionary objectForKey: CURRENT_USER_KEY];
+    user = [[Mindigno sharedMindigno] userWithId: current_user_id];
     
     NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
     
     for (NSDictionary *feed_dictionary in feeds_array) {
         
-        MicroPost *microPost = [[MicroPost alloc] init];
-        
-        [microPost setCreatedAtText: [feed_dictionary objectForKey: MICROPOST_CREATED_AT_TEXT_KEY]];
-        [microPost addComments: [feed_dictionary objectForKey: MICROPOST_COMMENTS_KEY]];
-        //TODO: [microPost setDescription: [feed_dictionary objectForKey: MICROPOST_DESCRIPTION_KEY]];
-        [microPost setIndignatiText: [feed_dictionary objectForKey: MICROPOST_INDIGNATI_TEXT_KEY]];
-        [microPost setIsLink: [[feed_dictionary objectForKey: MICROPOST_IS_LINK_KEY] boolValue]];
-        [microPost setMicropostID: [feed_dictionary objectForKey: MICROPOST_ID_KEY]];
-        [microPost setSourceText: [feed_dictionary objectForKey: MICROPOST_SOURCE_TEXT_KEY]];
-        [microPost setTitle: [feed_dictionary objectForKey: MICROPOST_TITLE]];
+        MicroPost *microPost = [[MicroPost alloc] initWithJsonRoot: feed_dictionary];
         
         //Add to list
         [microPosts addObject:microPost];
