@@ -6,30 +6,25 @@
 //  Copyright (c) 2012 Enrico. All rights reserved.
 //
 
-#import "JParserUserAndMicroPost.h"
+#import "JSONParserMainData.h"
 #import "JsonKeys.h"
 #import "Mindigno.h"
 
-@interface JParserUserAndMicroPost ()
+@interface JSONParserMainData ()
 
 @end
 
-@implementation JParserUserAndMicroPost
-
-@synthesize user, microPosts;
+@implementation JSONParserMainData
 
 - (id)init {
     self = [super init];
     if (self) {
-        microPosts = [NSMutableArray array];
+        
     }
-    
     return self;
 }
 
 - (void) startDownloadAndParsingJsonAtUrl:(NSString *)urlString {
-    
-    [microPosts removeAllObjects];
     
     //
     
@@ -50,22 +45,18 @@
     
     NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
+    //
+    
     //It must be done before of all
     NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
     [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
     
     NSString *current_user_id = [root_dictionary objectForKey: CURRENT_USER_KEY];
-    user = [[Mindigno sharedMindigno] userWithId: current_user_id];
+    User *current_user = [[Mindigno sharedMindigno] userWithId: current_user_id];
+    [[Mindigno sharedMindigno] setCurrentUser: current_user];
     
     NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
-    
-    for (NSDictionary *feed_dictionary in feeds_array) {
-        
-        MicroPost *microPost = [[MicroPost alloc] initWithJsonRoot: feed_dictionary];
-        
-        //Add to list
-        [microPosts addObject:microPost];
-    }
+    [[Mindigno sharedMindigno] addMicroPostsFromJsonRoot: feeds_array];
 }
 
 @end

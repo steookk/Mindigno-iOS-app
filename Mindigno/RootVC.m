@@ -10,6 +10,11 @@
 #import "MicroPost.h"
 #import "MicroPostDetailVC.h"
 #import "UIImageView+WebCache.h"
+#import "Mindigno.h"
+#import "Utils.h"
+#import "IndignatiVC.h"
+
+#define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
 @interface RootVC ()
 
@@ -26,11 +31,8 @@
         
         //
         
-        jsonParser = [[JParserUserAndMicroPost alloc] init];
-        [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
-        
-        arrayMicroPost = [NSMutableArray array];
-        [arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
+        NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
+        arrayMicroPost = [NSMutableArray arrayWithArray: microPosts];
     }
     
     return self;
@@ -60,14 +62,13 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
     UIViewController *vc = [storyboard instantiateInitialViewController];
     
-    [self presentModalViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:nil];
 
 }
 
 - (void) clickedButtonSearch {
     NSLog(@"clickedButtonSearch");
 }
-
 //Stop MainButtonBarDelegate
 
 //Start ScrollButtonBarDataSource
@@ -127,10 +128,9 @@
     
     ///
     
-    UIImageView *imageViewAvatar = (UIImageView*)[cell viewWithTag:1];
+    UIImageView *imageViewThumb = (UIImageView*)[cell viewWithTag:1];
     //Default setting
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
-    [imageViewAvatar setImage: placeHolder];
     
     UILabel *labelTitle = (UILabel*)[cell viewWithTag:2];
     [labelTitle setText: [currentMicroPost title]];
@@ -139,22 +139,35 @@
     [labelDescription setText: [currentMicroPost description]];
     
     UILabel *labelSourceText = (UILabel*)[cell viewWithTag:4];
+    [labelSourceText setHidden: NO];
+    
+    UIView *contentViewCreator = (UIView*)[cell viewWithTag:10];
+    [contentViewCreator setHidden: YES];
+    
+    NSString *imgUrl = [currentMicroPost imageUrl];
+    if (imgUrl != nil) {
+        [imageViewThumb setImageWithURL:[NSURL URLWithString: imgUrl] placeholderImage:placeHolder];
+    }
     
     if ([currentMicroPost isLink]) {
-        
-        NSString *imgUrl = [currentMicroPost imageUrl];
-        if (imgUrl != nil) {
-            [imageViewAvatar setImageWithURL:[NSURL URLWithString: imgUrl] placeholderImage:placeHolder];
-        }
-        
         [labelSourceText setText: [currentMicroPost sourceText]];
     
     } else {
         
         if ([currentMicroPost isUserCreator]) {
-            //TODO: recuperare autore e prendere il nome
-            NSString *prepositionAuthor = [NSString stringWithFormat:@"%@ %@", [currentMicroPost preposition], @"Autore ancora da inserire"];
-            [labelSourceText setText: prepositionAuthor];
+            
+            [labelSourceText setHidden: YES];
+            [contentViewCreator setHidden: NO];
+            
+            UILabel *labelPreposition = (UILabel*)[cell viewWithTag:11];
+            UIImageView *imageViewAvatar = (UIImageView*)[cell viewWithTag:12];
+            UILabel *labelUsername = (UILabel*)[cell viewWithTag:13];
+            
+            User *user = [currentMicroPost userCreator];
+            
+            [labelPreposition setText:[currentMicroPost preposition]];
+            [imageViewAvatar setImageWithURL:[NSURL URLWithString: [user avatarUrl]] placeholderImage:placeHolder];
+            [labelUsername setText:[user name]];
             
         } else {
             [labelSourceText setText: [currentMicroPost defaultText]];
@@ -165,13 +178,31 @@
     [labelCreatedAtText setText: [currentMicroPost createdAtText]];
     
     UIButton *buttonIndignati = (UIButton*)[cell viewWithTag:6];
+    [buttonIndignati setTitle:[currentMicroPost numberOfIndignati] forState:UIControlStateNormal];
     
     UIButton *buttonComments = (UIButton*)[cell viewWithTag:7];
+    [buttonComments setTitle:[currentMicroPost numberOfComments] forState:UIControlStateNormal];
     
     UIButton *buttonShare = (UIButton*)[cell viewWithTag:8];
     [buttonShare addTarget:self action:@selector(buttonShareClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonMindigno = (UIButton*)[cell viewWithTag:9];
+    
+    if ([currentMicroPost isVignetta]) {
+        
+        NSString *vignettaUrl = [[currentMicroPost vignetta] vignettaUrl];
+        
+        float x = 15;
+        float screenWidth = [[UIScreen mainScreen] bounds].size.width;
+        
+        imageViewVignetta = [[UIImageView alloc] initWithFrame:CGRectMake(x, CELL_ROW_HEIGHT_DEFAULT, (screenWidth-(x*2)), CELL_ROW_HEIGHT_DEFAULT-x)];
+        [imageViewVignetta setContentMode:UIViewContentModeScaleAspectFit];
+        [imageViewVignetta setBackgroundColor: [UIColor clearColor]];
+        
+        [imageViewVignetta setImageWithURL:[NSURL URLWithString:vignettaUrl] placeholderImage:placeHolder];
+        
+       [cell addSubview:imageViewVignetta];
+    }
 
     return cell;
 }
@@ -190,10 +221,23 @@
     //This is an array of excluded activities to appear on the UIActivityViewController
     activityVC.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
     
-    [self presentModalViewController:activityVC animated:YES];
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 ///Start UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    double defaultHeight = CELL_ROW_HEIGHT_DEFAULT;
+    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex:indexPath.row];
+    
+    if ([currentMicroPost isVignetta]) {
+        return defaultHeight*2;
+        
+    } else {
+        return defaultHeight;
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     //NSLog(@"didSelectRowAtIndexPath clicked row number: %d", indexPath.row);
@@ -211,16 +255,23 @@
         NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
         
         MicroPostDetailVC *microPostDetailVC = (MicroPostDetailVC*)[segue destinationViewController];
-        [microPostDetailVC setCurrentMicropost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
+        [microPostDetailVC setCurrentMicroPost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
         
     } else if ([[segue identifier] isEqualToString:@"homeToIndignati"]) {
         
+        //The indexPath must be taken from button and not from the tableView
+        NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
         NSLog(@"homeToIndignati");
+        
+        NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
+        
+        IndignatiVC *indignatiVC = (IndignatiVC*)[segue destinationViewController];
+        //TODO: modificare
+        [indignatiVC setCurrentMicroPost: [arrayMicroPost objectAtIndex: currentIndexPath.row]];
     
     } else if ([[segue identifier] isEqualToString:@"homeToComments"]) {
         
         NSLog(@"homeToComments");
-        
     }
 }
 
@@ -235,8 +286,8 @@
 
     sleep(1);
     
-    [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
-    [arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
+    //[jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
+    //[arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
     
     /*
     int _3days = 60*60*24*3;

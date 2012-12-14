@@ -11,12 +11,18 @@
 
 @interface Mindigno : NSObject {
 
+    User *currentUser;
+    NSMutableArray *microPosts;
     NSMutableDictionary *idToUser_dictionary;
 }
 
+@property (nonatomic, retain) User *currentUser;
 @property (nonatomic, readonly) NSMutableDictionary *idToUser_dictionary;
 
 + (id)sharedMindigno;
+
+- (void) addMicroPostsFromJsonRoot:(NSArray*)microposts;
+- (NSArray *) microPosts;
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;

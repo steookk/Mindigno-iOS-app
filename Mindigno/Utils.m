@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Enrico. All rights reserved.
 //
 
-#import "RoundUtils.h"
+#import "Utils.h"
 
 //NB: import <QuartzCore/QuartzCore.h>
 
-@implementation RoundUtils
+@implementation Utils
 
 static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWidth, float ovalHeight) {
     
@@ -99,6 +99,20 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 }
 
 //
+
++ (float) calculateRatioWithBound:(CGSize) imgBound imageSize:(CGSize) imgSize {
+	
+	float rappW = imgBound.width / (imgSize.width);
+	float rappH = imgBound.height / (imgSize.height);
+	
+	float min;
+	if (rappH < rappW)
+		min = rappH;
+	else
+		min = rappW;
+	
+	return min;
+}
 
 + (NSString*) getRandomImgUrl {
 

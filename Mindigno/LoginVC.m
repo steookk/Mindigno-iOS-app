@@ -7,7 +7,7 @@
 //
 
 #import "LoginVC.h"
-#import "RoundUtils.h"
+#import "Utils.h"
 
 @interface LoginVC ()
 
@@ -21,8 +21,8 @@
     [textFieldUsername setDelegate:self];
     [textFieldPassword setDelegate:self];
     
-    [RoundUtils setTextFieldRoundAndTrasparent:textFieldUsername];
-    [RoundUtils setTextFieldRoundAndTrasparent:textFieldPassword];
+    [Utils setTextFieldRoundAndTrasparent:textFieldUsername];
+    [Utils setTextFieldRoundAndTrasparent:textFieldPassword];
 
 }
 

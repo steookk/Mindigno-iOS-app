@@ -10,19 +10,19 @@
 #import "MainButtonBar.h"
 #import "PullRefreshLazyLoadTableView.h"
 #import "ScrollButtonBar.h"
-#import "JParserUserAndMicroPost.h"
 
 @interface RootVC : UIViewController <MainButtonBarDelegate, UITableViewDataSource, PullRefreshTableViewDelegate, ScrollButtonBarDataSource, ScrollButtonBarDelegate> {
     
     IBOutlet MainButtonBar *mainButtonBar;
     
-    JParserUserAndMicroPost *jsonParser;
     NSMutableArray *arrayMicroPost;
     IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
     
     //
     NSArray *arrayButtonTitle;
     IBOutlet ScrollButtonBar *scrollButtonBar;
+    
+    UIImageView *imageViewVignetta;
 }
 
 @end

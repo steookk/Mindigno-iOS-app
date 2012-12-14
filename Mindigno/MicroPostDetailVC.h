@@ -11,18 +11,26 @@
 
 @interface MicroPostDetailVC : UIViewController {
 
-    MicroPost __weak *currentMicropost;
+    MicroPost __weak *currentMicroPost;
     
     //
     
-    IBOutlet UIImageView *imageViewAvatar;
+    IBOutlet UIImageView *imageViewThumb;
     IBOutlet UILabel *labelTitle;
     IBOutlet UITextView *textViewDescription;
-    IBOutlet UILabel *labelIndignatiText;
+    
+    IBOutlet UILabel *labelSourceText;
+    IBOutlet UIView *contentViewCreator;
+    
+    IBOutlet UIButton *buttonIndignatiText;
+    IBOutlet UILabel *labelDefaultCommentText;
+    
+    IBOutlet UIButton *buttonGoToSource;
 }
 
-@property(nonatomic, weak) MicroPost *currentMicropost;
+@property(nonatomic, weak) MicroPost *currentMicroPost;
 
+- (IBAction)goToSource:(id)sender;
 - (IBAction)goBack:(id)sender;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MicroPost.h"
-#import "RoundUtils.h"
+#import "Utils.h"
 #import "JsonKeys.h"
 #import "Comment.h"
 #import "Mindigno.h"
@@ -20,7 +20,7 @@
 
 @implementation MicroPost
 
-@synthesize micropostID, micropostUrl, title, description, isLink, imageUrl, sourceText, link, isUserCreator, preposition, userID, defaultText, createdAtText, indignatiText, defaultCommentsText;
+@synthesize micropostID, micropostUrl, title, description, isLink, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments;
 
 - (id) init {
     self = [super init];
@@ -43,7 +43,7 @@
         [self setMicropostUrl: [root_microPost objectForKey: MICROPOST_PATH_KEY]];
         
         [self setTitle: [root_microPost objectForKey: MICROPOST_TITLE]];
-        //[self setDescription: [root_microPost objectForKey: MICROPOST_DESCRIPTION_KEY]];
+        [self setDescription: [root_microPost objectForKey: MICROPOST_DESCRIPTION_KEY]];
         
         [self setIsLink: [[root_microPost objectForKey: MICROPOST_IS_LINK_KEY] boolValue]];
         
@@ -56,7 +56,10 @@
         
         [self setIsUserCreator: [[root_microPost objectForKey: MICROPOST_IS_USER_CREATOR_KEY] boolValue]];
         [self setPreposition: [root_microPost objectForKey: MICROPOST_PREPOSITION_KEY]];
-        [self setUserID: [root_microPost objectForKey: MICROPOST_USER_ID_KEY]];
+        
+        NSString *userID = [root_microPost objectForKey: MICROPOST_USER_ID_KEY];
+        [self setUserCreator: [[Mindigno sharedMindigno] userWithId: userID]];
+        
         [self setDefaultText: [root_microPost objectForKey: MICROPOST_DEFAULT_TEXT_KEY]];
         
         [self setCreatedAtText: [root_microPost objectForKey: MICROPOST_CREATED_AT_TEXT_KEY]];
@@ -83,6 +86,17 @@
             [defaultComments addObject:comment];
         }
         
+        [self setIsVignetta: [[root_microPost objectForKey:MICROPOST_IS_VIGNETTA_KEY] boolValue]];
+        
+        if (isVignetta) {
+            NSDictionary *vignetta_dictionary = [root_microPost objectForKey: VIGNETTA_KEY];
+            vignetta = [[Vignetta alloc] initWithJsonRoot: vignetta_dictionary];
+        } else {
+            vignetta = nil;
+        }
+        
+        [self setNumberOfIndignati: [[root_microPost objectForKey:MICROPOST_NUMBER_INDIGNATI_KEY] stringValue]];
+        [self setNumberOfComments: [[root_microPost objectForKey:MICROPOST_NUMBER_COMMENTS_KEY] stringValue]];
     }
     
     return self;
@@ -94,6 +108,7 @@
 
 ///
 
+/*
 - (NSArray*) getAllComments {
     return defaultComments;
 }
@@ -117,5 +132,6 @@
 - (NSString*) getCommentAtIndex:(int)index {
     return [defaultComments objectAtIndex:index];
 }
+ */
 
 @end

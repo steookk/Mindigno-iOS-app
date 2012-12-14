@@ -13,13 +13,13 @@
     NSString *userID;
     NSString *userUrl;
     NSString *name;
-    NSString *urlAvatar;
+    NSString *avatarUrl;
 }
 
 @property (nonatomic, copy) NSString *userID;
 @property (nonatomic, copy) NSString *userUrl;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *urlAvatar;
+@property (nonatomic, copy) NSString *avatarUrl;
 
 - (id)initWithJsonRoot:(NSDictionary*)root_user;
 

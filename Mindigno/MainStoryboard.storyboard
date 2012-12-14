@@ -8,6 +8,7 @@
         <scene sceneID="0Ew-i7-5Gh">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="XhF-v6-11g" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ghz-RU-OcO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,7 +25,7 @@
             <objects>
                 <viewController id="kss-jZ-2LO" customClass="IndignatiVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pPf-6x-uIU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="zCq-wz-IcU">
@@ -72,7 +73,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="CiR-f0-Uld">
-                                <rect key="frame" x="0.0" y="40" width="320" height="508"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="420"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -83,11 +84,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Kenny.png" id="ANd-wz-fE5">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="Kenny.png" id="ANd-wz-fE5">
                                                     <rect key="frame" x="2" y="2" width="55" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="kennymuse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nx2-cf-o5F">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="kennymuse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nx2-cf-o5F">
                                                     <rect key="frame" x="65" y="15" width="250" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
@@ -104,6 +105,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="PNr-By-Vsv"/>
+                    <connections>
+                        <outlet property="tableViewIndignati" destination="CiR-f0-Uld" id="y2H-m0-cFH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDD-Hy-L2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +118,7 @@
             <objects>
                 <viewController id="4ox-pt-5xE" customClass="RootVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nx9-34-b9k">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="bpW-ra-ajh" customClass="MainButtonBar">
@@ -133,7 +137,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="nBA-bK-ZjG" customClass="PullRefreshLazyLoadTableView">
-                                <rect key="frame" x="0.0" y="85" width="320" height="463"/>
+                                <rect key="frame" x="0.0" y="85" width="320" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -146,24 +150,24 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-ombrato.jpg" id="YNt-O3-lVZ">
                                                     <rect key="frame" x="0.0" y="20" width="320" height="180"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" id="gzO-rn-v4A">
                                                     <rect key="frame" x="8" y="26" width="55" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo padd" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n77-33-f8A">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n77-33-f8A">
                                                     <rect key="frame" x="71" y="26" width="238" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="leI-bS-rrU">
-                                                    <rect key="frame" x="5" y="164" width="45" height="28"/>
+                                                <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="leI-bS-rrU">
+                                                    <rect key="frame" x="5" y="165" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" title="4 :-)" backgroundImage="box-ombrato.jpg">
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                    <state key="normal" title="4" backgroundImage="indignati.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -174,11 +178,11 @@
                                                         <segue destination="kss-jZ-2LO" kind="push" identifier="homeToIndignati" id="cv8-Sq-muq"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pR5-We-4c7">
-                                                    <rect key="frame" x="58" y="164" width="45" height="28"/>
+                                                <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pR5-We-4c7">
+                                                    <rect key="frame" x="58" y="165" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" title="10 &lt;()" backgroundImage="box-ombrato.jpg">
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                    <state key="normal" title="10" backgroundImage="comment.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -189,8 +193,20 @@
                                                         <segue destination="KaB-pX-ShW" kind="push" identifier="homeToComments" id="TUN-6S-skc"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p3w-pt-pI2">
+                                                    <rect key="frame" x="171" y="165" width="45" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                    <state key="normal" image="share.png" backgroundImage="box-ombrato.jpg">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UKE-iC-dCq">
-                                                    <rect key="frame" x="224" y="164" width="85" height="28"/>
+                                                    <rect key="frame" x="224" y="165" width="85" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <state key="normal" title="Mindigno!" backgroundImage="box-ombrato.jpg">
@@ -201,33 +217,53 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p3w-pt-pI2">
-                                                    <rect key="frame" x="171" y="164" width="45" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" title="-->" backgroundImage="box-ombrato.jpg">
-                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZT7-Bl-h1f">
-                                                    <rect key="frame" x="9" y="97" width="290" height="36"/>
+                                                    <rect key="frame" x="9" y="95" width="290" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione </string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="da Corriere.it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P8W-R6-def">
-                                                    <rect key="frame" x="9" y="135" width="300" height="13"/>
+                                                <view contentMode="scaleToFill" id="MDA-aA-b9X">
+                                                    <rect key="frame" x="9" y="134" width="300" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
-                                                    <color key="textColor" red="0.50123565051020402" green="0.50123565051020402" blue="0.50123565051020402" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="da Corriere.it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P8W-R6-def">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                            <color key="textColor" red="0.50123565051020402" green="0.50123565051020402" blue="0.50123565051020402" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <view tag="10" contentMode="scaleToFill" id="bYn-B7-w40">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" text="di:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qcz-NT-h1k">
+                                                                    <rect key="frame" x="1" y="0.0" width="22" height="27"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                                    <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleAspectFit" image="Kenny.png" id="fWv-l9-Hku">
+                                                                    <rect key="frame" x="25" y="0.0" width="27" height="27"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" text="Stefano Uliari" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wHl-JG-X2Q">
+                                                                    <rect key="frame" x="56" y="0.0" width="243" height="27"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                                    <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" text="3 ore fa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wOd-5v-BYb">
                                                     <rect key="frame" x="9" y="0.0" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,7 +299,7 @@
             <objects>
                 <viewController id="KaB-pX-ShW" customClass="CommentsDettailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zas-8c-VuJ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="pUX-dm-F2l">
@@ -309,7 +345,7 @@
             <objects>
                 <viewController id="VJ9-9d-hSE" customClass="ProfileVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyh-Na-7bT">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="6Ua-Je-F9J">
@@ -355,7 +391,7 @@
             <objects>
                 <viewController id="jEg-ka-xob" customClass="MicroPostDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UvM-4S-VSZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="5mA-lh-QGv">
@@ -387,7 +423,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" id="un7-y2-oRg">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="Kenny.png" id="un7-y2-oRg">
                                 <rect key="frame" x="9" y="48" width="55" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -399,28 +435,119 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="da Corriere.it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wAl-EV-oDJ">
-                                <rect key="frame" x="13" y="507" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="DL0-E9-SSw">
-                                <rect key="frame" x="8" y="121" width="305" height="371"/>
+                                <rect key="frame" x="8" y="121" width="305" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione </string>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" id="5hP-MV-Xmp">
+                                <rect key="frame" x="9" y="215" width="220" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="da Corriere.it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13z-3Y-goW">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                        <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <view tag="10" contentMode="scaleToFill" id="31E-oM-B2o">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" text="di:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ARS-mX-gRo">
+                                                <rect key="frame" x="1" y="0.0" width="22" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleAspectFit" image="Kenny.png" id="wrR-FL-MRn">
+                                                <rect key="frame" x="25" y="0.0" width="27" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" text="Stefano Uliari" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aOv-5c-pBW">
+                                                <rect key="frame" x="56" y="0.0" width="190" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="yhg-4o-Tco">
+                                <rect key="frame" x="20" y="250" width="280" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50729432397959184" green="0.50729432397959184" blue="0.50729432397959184" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="gdX-n2-Oef">
+                                <rect key="frame" x="20" y="297" width="280" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50729432399999996" green="0.50729432399999996" blue="0.50729432399999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="indignati.png" id="2gX-9q-eye">
+                                <rect key="frame" x="273" y="260" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hanno commentato solo un paio di persone per bene" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Bg-mo-cXo">
+                                <rect key="frame" x="20" y="306" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                <color key="textColor" red="0.50123565049999996" green="0.50123565049999996" blue="0.50123565049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="comment.png" id="RJN-oM-Vco">
+                                <rect key="frame" x="273" y="307" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pSZ-2G-Ltb">
+                                <rect key="frame" x="233" y="219" width="76" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="11"/>
+                                <state key="normal" title="Vai alla pagina">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.65567203443877553" green="0.65567203443877553" blue="0.65567203443877553" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToSource:" destination="jEg-ka-xob" eventType="touchUpInside" id="n23-XW-gmT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fId-8U-znj">
+                                <rect key="frame" x="20" y="259" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                <state key="normal" title="2 indignati fra cui Enrico De Michele e Stefano Uliari">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.49505468906813094" green="0.52156865600000002" blue="0.47482473788481455" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.48960234622026344" green="0.51582429846938771" blue="0.4695951999756392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oam-1X-hgd"/>
                     <connections>
-                        <outlet property="imageViewAvatar" destination="un7-y2-oRg" id="lrX-rv-UAX"/>
-                        <outlet property="labelIndignatiText" destination="wAl-EV-oDJ" id="1nm-qA-ikE"/>
+                        <outlet property="buttonGoToSource" destination="pSZ-2G-Ltb" id="mXF-i4-xT0"/>
+                        <outlet property="buttonIndignatiText" destination="fId-8U-znj" id="TzG-0P-iwo"/>
+                        <outlet property="contentViewCreator" destination="31E-oM-B2o" id="mwS-zc-WrR"/>
+                        <outlet property="imageViewThumb" destination="un7-y2-oRg" id="9bG-3M-YhQ"/>
+                        <outlet property="labelDefaultCommentText" destination="4Bg-mo-cXo" id="4cl-VE-v5S"/>
+                        <outlet property="labelSourceText" destination="13z-3Y-goW" id="sfB-KX-awW"/>
                         <outlet property="labelTitle" destination="SOA-5I-6eB" id="8pe-4K-Ykx"/>
                         <outlet property="textViewDescription" destination="DL0-E9-SSw" id="9cw-2s-5N8"/>
                     </connections>
@@ -433,6 +560,9 @@
     <resources>
         <image name="Kenny.png" width="303" height="350"/>
         <image name="box-ombrato.jpg" width="273" height="308"/>
+        <image name="comment.png" width="64" height="64"/>
+        <image name="indignati.png" width="128" height="128"/>
+        <image name="share.png" width="16" height="16"/>
     </resources>
     <classes>
         <class className="CommentsDettailVC" superclassName="UIViewController">
@@ -445,6 +575,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IndignatiVC.h"/>
             <relationships>
                 <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="tableViewIndignati" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="MainButtonBar" superclassName="UIView">
@@ -454,8 +585,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MicroPostDetailVC.h"/>
             <relationships>
                 <relationship kind="action" name="goBack:"/>
-                <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelIndignatiText" candidateClass="UILabel"/>
+                <relationship kind="action" name="goToSource:"/>
+                <relationship kind="outlet" name="buttonGoToSource" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonIndignatiText" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentViewCreator" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageViewThumb" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelDefaultCommentText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSourceText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textViewDescription" candidateClass="UITextView"/>
             </relationships>

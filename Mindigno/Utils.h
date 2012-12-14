@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RoundUtils : NSObject {
+@interface Utils : NSObject {
 
 }
 
@@ -19,6 +19,8 @@
 + (void) setButtonRoundAndTrasparent:(UIButton*)button;
 + (void) setTextFieldRoundAndTrasparent:(UITextField*)textField;
 
++ (float) calculateRatioWithBound:(CGSize) imgBound imageSize:(CGSize) imgSize;
 + (NSString*) getRandomImgUrl;
+
 
 @end

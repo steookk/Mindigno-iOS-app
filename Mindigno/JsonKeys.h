@@ -49,11 +49,24 @@
 #define MICROPOST_COMMENTS_TEXT_KEY @"default_comments_text"
 #define MICROPOST_COMMENTS_KEY @"default_comments"
 
+#define MICROPOST_IS_VIGNETTA_KEY @"isvignetta"
+
+#define MICROPOST_NUMBER_INDIGNATI_KEY @"num_indignati"
+#define MICROPOST_NUMBER_COMMENTS_KEY @"num_comments"
+
 ///
 
 #define COMMENT_ID_KEY @"id"
 #define COMMENT_CONTENT_KEY @"content"
 #define COMMENT_USER_ID_KEY @"user_id"
+
+///
+
+#define VIGNETTA_KEY @"vignetta"
+
+#define VIGNETTA_PATH_KEY @"vignetta_path"
+#define VIGNETTA_AUTHOR_NAME_KEY @"author_name"
+#define VIGNETTA_AUTHOR_LINK_KEY @"author_link"
 
 ///
 

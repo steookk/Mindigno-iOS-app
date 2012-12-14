@@ -12,14 +12,9 @@
 
 #define URL_JSON_MICROPOST_TEST @"http://192.168.2.90:3000"
 
-@interface JParserUserAndMicroPost : NSObject {
+@interface JSONParserMainData : NSObject {
 
-    User *user;
-    NSMutableArray *microPosts;
 }
-
-@property (nonatomic, readonly) User *user;
-@property (nonatomic, readonly) NSArray *microPosts;
 
 - (void) startDownloadAndParsingJsonAtUrl:(NSString *)urlString;
 

@@ -11,7 +11,7 @@
 
 @implementation User
 
-@synthesize userID, userUrl, name, urlAvatar;
+@synthesize userID, userUrl, name, avatarUrl;
 
 - (id)initWithJsonRoot:(NSDictionary*)root_user {
 
@@ -21,7 +21,7 @@
         [self setUserID: [root_user objectForKey: USER_ID_KEY]];
         [self setUserUrl: [root_user objectForKey: USER_PATH_KEY]];
         [self setName: [root_user objectForKey: USER_NAME_KEY]];
-        [self setUrlAvatar: [root_user objectForKey: USER_URL_AVATAR_KEY]];
+        [self setAvatarUrl: [root_user objectForKey: USER_URL_AVATAR_KEY]];
         
     }
     return self;

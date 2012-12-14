@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MicroPost.h"
 
-@interface IndignatiVC : UIViewController {
+@interface IndignatiVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
 
+    NSMutableArray *arrayOfArray_indignati;
+    
+    MicroPost __weak *currentMicroPost;
+    
+    IBOutlet UITableView *tableViewIndignati;
 }
+
+@property(nonatomic, weak) MicroPost *currentMicroPost;
 
 - (IBAction)goBack:(id)sender;
 

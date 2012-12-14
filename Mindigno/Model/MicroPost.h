@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
+#import "Vignetta.h"
 
 @interface MicroPost : NSObject {
 
@@ -30,7 +32,7 @@
 
     //isUserCreator = TRUE {
     NSString *preposition;
-    NSString *userID;
+    User *userCreator;
     //}
 
     //isUserCreator = FALSE {
@@ -46,6 +48,12 @@
     
     NSString *defaultCommentsText;
     NSMutableArray *defaultComments;
+    
+    BOOL isVignetta;
+    Vignetta *vignetta;
+    
+    NSString *numberOfIndignati;
+    NSString *numberOfComments;
 }
 
 @property (nonatomic, copy) NSString *micropostID;
@@ -61,7 +69,7 @@
 
 @property (nonatomic) BOOL isUserCreator;
 @property (nonatomic, copy) NSString *preposition;
-@property (nonatomic, retain) NSString *userID;
+@property (nonatomic, retain) User *userCreator;
 @property (nonatomic, copy) NSString *defaultText;
 
 @property (nonatomic, copy) NSString *createdAtText;
@@ -69,14 +77,24 @@
 @property (nonatomic, copy) NSString *indignatiText;
 @property (nonatomic, copy) NSString *defaultCommentsText;
 
+@property (nonatomic, readonly) NSArray *followingIndignati;
+@property (nonatomic, readonly) NSArray *defaultComments;
+
+@property (nonatomic) BOOL isVignetta;
+@property (nonatomic, retain) Vignetta *vignetta;
+
+@property (nonatomic, copy) NSString *numberOfIndignati;
+@property (nonatomic, copy) NSString *numberOfComments;
 
 - (id)initWithJsonRoot:(NSDictionary*)root_microPost;
 
+/*
 - (NSArray*) getAllComments;
 - (void) addComment:(NSString *)comment;
 - (void) addComments:(NSArray *)comments;
 - (void) removeAllComments;
 - (int) getNumberOfComments;
 - (NSString*) getCommentAtIndex:(int)index;
+ */
 
 @end

@@ -18,7 +18,7 @@
     
     [user setUserID:@"1234"];
     [user setName:@"Enrico"];
-    [user setUrlAvatar:@"fileAvatar.png"];
+    [user setAvatarUrl:@"fileAvatar.png"];
 }
 
 - (void)tearDown {
@@ -35,7 +35,7 @@
     
     STAssertEqualObjects([user userID], @"1234", @"Error: get userID");
     STAssertEqualObjects([user name], @"Enrico", @"Error: get name");
-    STAssertEqualObjects([user urlAvatar], @"fileAvatar.png", @"Error: get urlAvatar");
+    STAssertEqualObjects([user avatarUrl], @"fileAvatar.png", @"Error: get urlAvatar");
 }
 
 @end
