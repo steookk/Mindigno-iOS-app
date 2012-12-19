@@ -8,29 +8,38 @@
 
 #import <UIKit/UIKit.h>
 #import "MicroPost.h"
+#import "EditorVC.h"
 
-@interface MicroPostDetailVC : UIViewController {
+@interface MicroPostDetailVC : UIViewController <UITableViewDataSource, UITableViewDelegate, EditorVCDelegate> {
 
     MicroPost __weak *currentMicroPost;
     
     //
     
+    IBOutlet UIView *contentView;
+    IBOutlet UIView *contentViewHeader;
+    IBOutlet UIView *contentViewDescription;
+    IBOutlet UIView *contentViewBody;
+    
     IBOutlet UIImageView *imageViewThumb;
     IBOutlet UILabel *labelTitle;
-    IBOutlet UITextView *textViewDescription;
+    IBOutlet UILabel *labelDescription;
     
     IBOutlet UILabel *labelSourceText;
     IBOutlet UIView *contentViewCreator;
     
-    IBOutlet UIButton *buttonIndignatiText;
-    IBOutlet UILabel *labelDefaultCommentText;
-    
     IBOutlet UIButton *buttonGoToSource;
+    IBOutlet UIButton *buttonIndignatiText;
+    IBOutlet UIButton *buttonDefaultCommentText;
+    
+    NSMutableArray *arrayComments;
+    IBOutlet UITableView *tableViewComments;
 }
 
 @property(nonatomic, weak) MicroPost *currentMicroPost;
 
 - (IBAction)goToSource:(id)sender;
+- (IBAction)share:(id)sender;
 - (IBAction)goBack:(id)sender;
 
 @end

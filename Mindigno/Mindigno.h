@@ -14,10 +14,13 @@
     User *currentUser;
     NSMutableArray *microPosts;
     NSMutableDictionary *idToUser_dictionary;
+    
+    NSString *baseURL;
 }
 
 @property (nonatomic, retain) User *currentUser;
 @property (nonatomic, readonly) NSMutableDictionary *idToUser_dictionary;
+@property (nonatomic, copy) NSString *baseURL;
 
 + (id)sharedMindigno;
 
@@ -26,5 +29,9 @@
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
+
+- (void) shareInfo:(UIViewController*)controller;
+
+- (NSString*) getStringUrlFromStringPath:(NSString*)path;
 
 @end

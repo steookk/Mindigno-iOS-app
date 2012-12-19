@@ -11,7 +11,7 @@
 
 @implementation Mindigno
 
-@synthesize currentUser, idToUser_dictionary;
+@synthesize currentUser, idToUser_dictionary, baseURL;
 
 + (id)sharedMindigno {
     static Mindigno *sharedMindigno = nil;
@@ -72,10 +72,29 @@
 }
 
 - (User*) userWithId:(NSString*)userId {
-
     User *retUser = [idToUser_dictionary objectForKey: userId];
     
     return retUser;
+}
+
+- (void) shareInfo:(UIViewController*)controller {
+    
+    NSString *textToShare = @"I just shared this from my App";
+    UIImage *imageToShare = [UIImage imageNamed:@"Default.png"];
+    NSURL *urlToShare = [NSURL URLWithString:@"http://www.bronron.com"];
+    
+    NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities: nil];
+    
+    //This is an array of excluded activities to appear on the UIActivityViewController
+    activityVC.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
+    
+    [controller presentViewController:activityVC animated:YES completion:nil];
+}
+
+- (NSString*) getStringUrlFromStringPath:(NSString*)path {
+    return [baseURL stringByAppendingPathExtension:path];
 }
 
 @end

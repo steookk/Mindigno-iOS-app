@@ -16,6 +16,7 @@
 
 }
 
-- (void) startDownloadAndParsingJsonAtUrl:(NSString *)urlString;
+//Return TRUE if it worked out (there is connection).
+- (BOOL) startDownloadAndParsingJsonAtUrl:(NSString *)urlString;
 
 @end

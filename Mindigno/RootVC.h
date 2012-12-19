@@ -21,8 +21,6 @@
     //
     NSArray *arrayButtonTitle;
     IBOutlet ScrollButtonBar *scrollButtonBar;
-    
-    UIImageView *imageViewVignetta;
 }
 
 @end

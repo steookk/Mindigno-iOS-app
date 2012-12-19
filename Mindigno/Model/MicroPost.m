@@ -20,7 +20,7 @@
 
 @implementation MicroPost
 
-@synthesize micropostID, micropostUrl, title, description, isLink, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments;
+@synthesize micropostID, micropostUrl, title, description, isLink, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments, indignatiUrl, commentsTabs_buttons, commentsTabs_urls;
 
 - (id) init {
     self = [super init];
@@ -40,19 +40,20 @@
         
         [self setMicropostID: [root_microPost objectForKey: MICROPOST_ID_KEY]];
         
-        [self setMicropostUrl: [root_microPost objectForKey: MICROPOST_PATH_KEY]];
+        NSString *completeMicropostUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_microPost objectForKey: MICROPOST_PATH_KEY]];
+        [self setMicropostUrl: completeMicropostUrl];
         
         [self setTitle: [root_microPost objectForKey: MICROPOST_TITLE]];
         [self setDescription: [root_microPost objectForKey: MICROPOST_DESCRIPTION_KEY]];
         
         [self setIsLink: [[root_microPost objectForKey: MICROPOST_IS_LINK_KEY] boolValue]];
         
-        NSString *imgUrl = [root_microPost objectForKey: MICROPOST_IMAGE_PATH_KEY];
+        NSString *imgUrl = [root_microPost objectForKey: MICROPOST_IMAGE_URL_KEY];
         if ([imgUrl isKindOfClass:[NSNull class]]) imgUrl = nil;
         [self setImageUrl: imgUrl];
         
         [self setSourceText: [root_microPost objectForKey: MICROPOST_SOURCE_TEXT_KEY]];
-        [self setLink: [root_microPost objectForKey: MICROPOST_LINK_PATH_KEY]];
+        [self setLink: [root_microPost objectForKey: MICROPOST_LINK_URL_KEY]];
         
         [self setIsUserCreator: [[root_microPost objectForKey: MICROPOST_IS_USER_CREATOR_KEY] boolValue]];
         [self setPreposition: [root_microPost objectForKey: MICROPOST_PREPOSITION_KEY]];
@@ -97,6 +98,31 @@
         
         [self setNumberOfIndignati: [[root_microPost objectForKey:MICROPOST_NUMBER_INDIGNATI_KEY] stringValue]];
         [self setNumberOfComments: [[root_microPost objectForKey:MICROPOST_NUMBER_COMMENTS_KEY] stringValue]];
+        
+        NSString *completeIndignatiUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_microPost objectForKey: MICROPOST_INDIGNATI_PATH_KEY]];
+        [self setIndignatiUrl: completeIndignatiUrl];
+        
+        NSString *commentsTabsString = [root_microPost objectForKey: MICROPOST_COMMENTS_TABS_KEY];
+        // (titleButton, url_path)+
+        NSArray *components = [commentsTabsString componentsSeparatedByString:@","];
+        
+        int numberOfValues = [components count] / 2;
+        commentsTabs_buttons = [NSMutableArray arrayWithCapacity: numberOfValues];
+        commentsTabs_urls = [NSMutableArray arrayWithCapacity: numberOfValues];
+        
+        for (int i=0; i<[components count]; i++) {
+            
+            //Se è il componente pari dell'array
+            if (i%2==0) {
+                NSString *titleButton = [components objectAtIndex:i];
+                [commentsTabs_buttons addObject: titleButton];
+                
+            } else {
+                NSString *url_path = [components objectAtIndex:i];
+                NSString *completeUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: url_path];
+                [commentsTabs_urls addObject: completeUrl];
+            }
+        }
     }
     
     return self;

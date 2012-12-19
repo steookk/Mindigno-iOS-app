@@ -54,6 +54,15 @@
     
     NSString *numberOfIndignati;
     NSString *numberOfComments;
+    
+    NSString *indignatiUrl;
+    
+    ///
+    // titleButton
+    NSMutableArray *commentsTabs_buttons;
+    // url
+    NSMutableArray *commentsTabs_urls;
+    ///
 }
 
 @property (nonatomic, copy) NSString *micropostID;
@@ -85,6 +94,10 @@
 
 @property (nonatomic, copy) NSString *numberOfIndignati;
 @property (nonatomic, copy) NSString *numberOfComments;
+
+@property (nonatomic, copy) NSString *indignatiUrl;
+@property (nonatomic, readonly) NSArray *commentsTabs_buttons;
+@property (nonatomic, readonly) NSArray *commentsTabs_urls;
 
 - (id)initWithJsonRoot:(NSDictionary*)root_microPost;
 

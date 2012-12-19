@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "JsonKeys.h"
+#import "Mindigno.h"
 
 @implementation User
 
@@ -19,9 +20,11 @@
     if (self) {
         
         [self setUserID: [root_user objectForKey: USER_ID_KEY]];
-        [self setUserUrl: [root_user objectForKey: USER_PATH_KEY]];
+        
+        NSString *completeUserUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_user objectForKey: USER_PATH_KEY]];
+        [self setUserUrl: completeUserUrl];
         [self setName: [root_user objectForKey: USER_NAME_KEY]];
-        [self setAvatarUrl: [root_user objectForKey: USER_URL_AVATAR_KEY]];
+        [self setAvatarUrl: [root_user objectForKey: USER_AVATAR_URL_KEY]];
         
     }
     return self;

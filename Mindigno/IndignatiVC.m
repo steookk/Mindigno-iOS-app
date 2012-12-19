@@ -8,6 +8,7 @@
 
 #import "IndignatiVC.h"
 #import "UIImageView+WebCache.h"
+#import "ProfileVC.h"
 
 @interface IndignatiVC ()
 
@@ -37,10 +38,6 @@
     [arrayOfArray_indignati addObject: [currentMicroPost followingIndignati]];
     
     [tableViewIndignati reloadData];
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 }
 
 ///Start UITableViewDataSource
@@ -92,6 +89,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 ///Stop UITableViewDelegate
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"indignatiToProfile"]) {
+        
+        NSIndexPath* currentIndexPath = [tableViewIndignati indexPathForSelectedRow];
+        NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
+        
+        ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
+        User *currentUser = [[arrayOfArray_indignati objectAtIndex:currentIndexPath.section] objectAtIndex:currentIndexPath.row];
+        [profileVC setCurrentUser:currentUser];
+    }
+}
 
 - (IBAction)goBack:(id)sender {
     

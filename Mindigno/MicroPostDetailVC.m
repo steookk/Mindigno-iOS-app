@@ -8,6 +8,11 @@
 
 #import "MicroPostDetailVC.h"
 #import "UIImageView+WebCache.h"
+#import "IndignatiVC.h"
+#import "EditorVC.h"
+#import "CommentsVC.h"
+#import "Mindigno.h"
+#import "Comment.h"
 
 @interface MicroPostDetailVC ()
 
@@ -21,20 +26,57 @@
     
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    arrayComments = [NSMutableArray arrayWithArray:[currentMicroPost defaultComments]];
+    
+    [tableViewComments setDataSource:self];
+    [tableViewComments setDelegate:self];
+    
+    [tableViewComments reloadData];
+    
+    //
     
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
     [imageViewThumb setImageWithURL: [NSURL URLWithString:[currentMicroPost imageUrl]] placeholderImage:placeHolder];
     
     [labelTitle setText:[currentMicroPost title]];
-    [textViewDescription setText:[currentMicroPost description]];
+    
+    ///Settings of heights of header of tableView
+    
+    NSString *description = [currentMicroPost description];
+    double textHeight = [description sizeWithFont:labelTitle.font constrainedToSize:CGSizeMake(310, 500) lineBreakMode:labelTitle.lineBreakMode].height;
+    
+    [labelDescription setText: description];
+    double labelDescriptionHeight = 20.0;
+    CGRect descriptionRect = [contentViewDescription frame];
+    CGRect newDescriptionRect = CGRectMake(descriptionRect.origin.x, descriptionRect.origin.y, descriptionRect.size.width, descriptionRect.size.height-labelDescriptionHeight+textHeight);
+    [contentViewDescription setFrame:newDescriptionRect];
+    
+    CGRect bodyRect = [contentViewBody frame];
+    double yBody = newDescriptionRect.origin.y + newDescriptionRect.size.height;
+    CGRect newBodyRect = CGRectMake(bodyRect.origin.x, yBody, bodyRect.size.width, bodyRect.size.height);
+    [contentViewBody setFrame:newBodyRect];
+    
+    double contentHeigth = contentViewHeader.frame.size.height + contentViewDescription.frame.size.height + contentViewBody.frame.size.height;
+    CGRect newContentRect = CGRectMake(0, 0, contentView.frame.size.width, contentHeigth);
+    [contentView setFrame:newContentRect];
+    
+    [tableViewComments setTableHeaderView:contentView];
+    
+    UIColor *clearColor = [UIColor clearColor];
+    
+    [contentView setBackgroundColor: clearColor];
+    [contentViewHeader setBackgroundColor: clearColor];
+    [contentViewDescription setBackgroundColor: clearColor];
+    [contentViewBody setBackgroundColor: clearColor];
+    
+    ///
     
     [labelSourceText setHidden: NO];
     [contentViewCreator setHidden: YES];
@@ -70,14 +112,128 @@
     [[buttonIndignatiText titleLabel] setNumberOfLines:2];
     [[buttonIndignatiText titleLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     [[buttonIndignatiText titleLabel] setTextAlignment:NSTextAlignmentLeft];
-    //[[buttonIndignatiText titleLabel] setText: [currentMicroPost indignatiText]];
     [buttonIndignatiText setTitle:[currentMicroPost indignatiText] forState:UIControlStateNormal];
     
-    [labelDefaultCommentText setText:[currentMicroPost defaultCommentsText]];
+    [[buttonDefaultCommentText titleLabel] setNumberOfLines:2];
+    [[buttonDefaultCommentText titleLabel] setLineBreakMode:NSLineBreakByWordWrapping];
+    [[buttonDefaultCommentText titleLabel] setTextAlignment:NSTextAlignmentLeft];
+    [buttonDefaultCommentText setTitle:[currentMicroPost defaultCommentsText] forState:UIControlStateNormal];
+    
+    if ([arrayComments count] == 0) {
+        [buttonDefaultCommentText setUserInteractionEnabled:NO];
+    }
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"micropostDetailToIndignati"]) {
+        
+        IndignatiVC *indignatiVC = (IndignatiVC*)[segue destinationViewController];
+        [indignatiVC setCurrentMicroPost: currentMicroPost];
+    
+    } else if ([[segue identifier] isEqualToString:@"micropostDetailToEditor"]) {
+        
+        EditorVC *editorVC = (EditorVC*)[segue destinationViewController];
+        [editorVC setDelegate: self];
+    
+    } else if ([[segue identifier] isEqualToString:@"micropostDetailToComments"]) {
+    
+        CommentsVC *commentsDettailVC = (CommentsVC*)[segue destinationViewController];
+        
+        [commentsDettailVC setCurrentMicroPost: currentMicroPost];
+        
+        NSIndexPath* currentIndexPath = [tableViewComments indexPathForSelectedRow];
+        [commentsDettailVC setIndexRowToSelect: currentIndexPath];
+    }
+}
+
+//start EditorVCDelegate
+- (void) textEditor:(EditorVC*)editorVC hasDoneWithText:(NSString*)text {
+    
+    NSLog(@"%@", text);
+    [editorVC setDelegate: nil];
+}
+//stop EditorVCDelegate
+
+///Start UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return [arrayComments count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return (int)[arrayComments count];
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Row_Comment";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+	}
+    
+    Comment *comment = [arrayComments objectAtIndex: indexPath.row];
+    User *user = [comment userCreator];
+    ///
+    
+    UIImageView *imageViewUserAvatar = (UIImageView*)[cell viewWithTag:1];
+    UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
+    [imageViewUserAvatar setImageWithURL:[NSURL URLWithString:[user avatarUrl]] placeholderImage:placeHolder];
+    
+    UILabel *labelUserName = (UILabel*)[cell viewWithTag:2];
+    [labelUserName setText: [user name]];
+    
+    UILabel *labelComment = (UILabel*)[cell viewWithTag:3];
+    //[labelComment setAutoresizingMask: UIViewAutoresizingFlexibleHeight];
+    //[labelComment setNumberOfLines:0];
+    [labelComment setText: [comment content]];
+    //[labelComment sizeToFit];
+    
+    //[cell setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+    //[cell sizeToFit];
+    
+    return cell;
+}
+///Stop UITableViewDataSource
+
+///Start UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Comment *comment = [arrayComments objectAtIndex: indexPath.row];
+    NSString *textComment = [comment content];
+    
+    double textHeight = [textComment sizeWithFont:[UIFont fontWithName:@"Arial" size:13] constrainedToSize:CGSizeMake(310, 500) lineBreakMode:NSLineBreakByTruncatingTail].height;
+    
+    double cellHeight = 62.0;
+    double labelHeight = 20.0;
+    
+    double defaultHeight = (cellHeight-labelHeight)+textHeight;
+    
+    return defaultHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"didSelectRowAtIndexPath clicked section: %d, row: %d", indexPath.section, indexPath.row);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+///Stop UITableViewDelegate
 
 - (IBAction)goToSource:(id)sender {
      [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [currentMicroPost link]]];
+}
+
+- (IBAction)share:(id)sender {
+    [[Mindigno sharedMindigno] shareInfo: self];
 }
 
 - (IBAction)goBack:(id)sender {

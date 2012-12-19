@@ -7,12 +7,15 @@
 //
 
 #import "ProfileVC.h"
+#import "UIImageView+WebCache.h"
 
 @interface ProfileVC ()
 
 @end
 
 @implementation ProfileVC
+
+@synthesize currentUser;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -25,7 +28,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    [labelName setText: [currentUser name]];
+    
+    UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
+    [imageViewAvatar setImageWithURL:[NSURL URLWithString:[currentUser avatarUrl]] placeholderImage:placeHolder];
 }
 
 - (IBAction)goBack:(id)sender {

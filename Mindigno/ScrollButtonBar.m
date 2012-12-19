@@ -55,6 +55,9 @@
     
     int i;
     int pointerToDraw = buttonSpace;
+    
+    NSMutableArray *viewsToInsert = [NSMutableArray arrayWithCapacity: numberOfButton];
+    
     for (i=0; i<numberOfButton; i++) {
 
         CGRect rectButton = CGRectZero;
@@ -93,10 +96,37 @@
         
         pointerToDraw += (stringSize.width + buttonMargin) + buttonSpace;
         
-        [self addSubview:button];
+        [viewsToInsert addObject: button];
+        //[self addSubview:button];
     }
     
     [self setContentSize:CGSizeMake(pointerToDraw, heightButton)];
+    
+    //Se entra nello schermo disponibile allora viene centrato il tutto, altrimenti si ha la barra scrollabile
+    if (pointerToDraw <= 320) {
+        
+        CGRect rectScrollButtonBar = [self frame];
+        CGRect contentCenteredRect = CGRectMake((320.0-pointerToDraw)/2.0, 0, pointerToDraw, rectScrollButtonBar.size.height);
+        
+        NSString *test = [[@"ciao/pluto/" stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"/pippo"];
+        NSLog(@"NOTE: %@", test);
+        
+        UIView *contentCenteredView = [[UIView alloc] initWithFrame: contentCenteredRect];
+        [contentCenteredView setBackgroundColor:[UIColor clearColor]];
+        
+        for (UIView *button in viewsToInsert) {
+            [contentCenteredView addSubview:button];
+        }
+        
+        [self addSubview: contentCenteredView];
+    
+    } else {
+     
+        for (UIView *button in viewsToInsert) {
+            [self addSubview:button];
+        }
+    }
+    
     [self setShowsHorizontalScrollIndicator:NO];
     [self setShowsVerticalScrollIndicator:NO];
 }

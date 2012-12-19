@@ -24,7 +24,8 @@
     return self;
 }
 
-- (void) startDownloadAndParsingJsonAtUrl:(NSString *)urlString {
+//Return TRUE if it worked out (there is connection).
+- (BOOL) startDownloadAndParsingJsonAtUrl:(NSString *)urlString {
     
     //
     
@@ -43,20 +44,33 @@
     //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     //NSLog(@"%@", textJson);
     
-    NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    if (data != nil) {
+        
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        //
+        
+        //It must be done before of all
+        [[Mindigno sharedMindigno] setBaseURL: [root_dictionary objectForKey: BASE_URL_KEY]];
+        
+        NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
+        [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
+        //
+        
+        NSString *current_user_id = [root_dictionary objectForKey: CURRENT_USER_KEY];
+        User *current_user = [[Mindigno sharedMindigno] userWithId: current_user_id];
+        [[Mindigno sharedMindigno] setCurrentUser: current_user];
+        
+        NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
+        [[Mindigno sharedMindigno] addMicroPostsFromJsonRoot: feeds_array];
+        
+        return YES;
     
-    //
-    
-    //It must be done before of all
-    NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
-    [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
-    
-    NSString *current_user_id = [root_dictionary objectForKey: CURRENT_USER_KEY];
-    User *current_user = [[Mindigno sharedMindigno] userWithId: current_user_id];
-    [[Mindigno sharedMindigno] setCurrentUser: current_user];
-    
-    NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
-    [[Mindigno sharedMindigno] addMicroPostsFromJsonRoot: feeds_array];
+    } else {
+        NSLog(@"No connection: data is nil");
+        
+        return NO;
+    }
 }
 
 @end

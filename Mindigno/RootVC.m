@@ -13,6 +13,7 @@
 #import "Mindigno.h"
 #import "Utils.h"
 #import "IndignatiVC.h"
+#import "CommentsVC.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
@@ -116,15 +117,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Row_MicroPost";
+    static NSString *CellIdentifierDefault = @"Row_MicroPost";
+    static NSString *CellIdentifierVignetta = @"Row_MicroPost_Vignetta";
+    
+    NSString *CellIdentifier = CellIdentifierDefault;
+    
+    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex:indexPath.row];
+    
+    if ([currentMicroPost isVignetta]) {
+        CellIdentifier = CellIdentifierVignetta;
+    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
-    
-    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex:indexPath.row];
     
     ///
     
@@ -189,19 +197,10 @@
     UIButton *buttonMindigno = (UIButton*)[cell viewWithTag:9];
     
     if ([currentMicroPost isVignetta]) {
+        UIImageView *imageViewVignetta = (UIImageView*)[cell viewWithTag:15];
         
         NSString *vignettaUrl = [[currentMicroPost vignetta] vignettaUrl];
-        
-        float x = 15;
-        float screenWidth = [[UIScreen mainScreen] bounds].size.width;
-        
-        imageViewVignetta = [[UIImageView alloc] initWithFrame:CGRectMake(x, CELL_ROW_HEIGHT_DEFAULT, (screenWidth-(x*2)), CELL_ROW_HEIGHT_DEFAULT-x)];
-        [imageViewVignetta setContentMode:UIViewContentModeScaleAspectFit];
-        [imageViewVignetta setBackgroundColor: [UIColor clearColor]];
-        
         [imageViewVignetta setImageWithURL:[NSURL URLWithString:vignettaUrl] placeholderImage:placeHolder];
-        
-       [cell addSubview:imageViewVignetta];
     }
 
     return cell;
@@ -210,18 +209,7 @@
 
 - (void) buttonShareClicked:(id)sender {
 
-    NSString *textToShare = @"I just shared this from my App";
-    UIImage *imageToShare = [UIImage imageNamed:@"Default.png"];
-    NSURL *urlToShare = [NSURL URLWithString:@"http://www.bronron.com"];
-    
-    NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
-    
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities: nil];
-    
-    //This is an array of excluded activities to appear on the UIActivityViewController
-    activityVC.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
-    
-    [self presentViewController:activityVC animated:YES completion:nil];
+    [[Mindigno sharedMindigno] shareInfo: self];
 }
 
 ///Start UITableViewDelegate
@@ -266,12 +254,21 @@
         NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
         
         IndignatiVC *indignatiVC = (IndignatiVC*)[segue destinationViewController];
-        //TODO: modificare
         [indignatiVC setCurrentMicroPost: [arrayMicroPost objectAtIndex: currentIndexPath.row]];
     
     } else if ([[segue identifier] isEqualToString:@"homeToComments"]) {
         
         NSLog(@"homeToComments");
+        
+        //The indexPath must be taken from button and not from the tableView
+        NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        
+        NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
+        
+        CommentsVC *commentsDettailVC = (CommentsVC*)[segue destinationViewController];
+        
+        MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+        [commentsDettailVC setCurrentMicroPost: currentMicroPost];
     }
 }
 

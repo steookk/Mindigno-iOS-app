@@ -32,7 +32,7 @@
 		D92EC66A1679F6A700124E5C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92EC6691679F6A700124E5C /* Social.framework */; };
 		D92EC66E167A09EE00124E5C /* IndignatiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC66D167A09EE00124E5C /* IndignatiVC.m */; };
 		D92EC671167A0A0700124E5C /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC670167A0A0700124E5C /* ProfileVC.m */; };
-		D92EC674167A0A2100124E5C /* CommentsDettailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC673167A0A2100124E5C /* CommentsDettailVC.m */; };
+		D92EC674167A0A2100124E5C /* CommentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC673167A0A2100124E5C /* CommentsVC.m */; };
 		D92EC68D167A2E4D00124E5C /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC679167A2E4D00124E5C /* MKAnnotationView+WebCache.m */; };
 		D92EC68E167A2E4D00124E5C /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC67B167A2E4D00124E5C /* SDImageCache.m */; };
 		D92EC68F167A2E4D00124E5C /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC67D167A2E4D00124E5C /* SDWebImageCompat.m */; };
@@ -67,6 +67,9 @@
 		D97E8B011667CD340032C773 /* JSONParserMainData.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JSONParserMainData.m */; };
 		D97E8B021667CD340032C773 /* JSONParserMainData.m in Sources */ = {isa = PBXBuildFile; fileRef = D97E8B001667CD340032C773 /* JSONParserMainData.m */; };
 		D99774C0167642690036672F /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99774BF167642690036672F /* DDMenuController.m */; };
+		D99C6467167F8FD6003DA08D /* write_comment.png in Resources */ = {isa = PBXBuildFile; fileRef = D99C6466167F8FD6003DA08D /* write_comment.png */; };
+		D99C646B167F9125003DA08D /* CommentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D99C646A167F9125003DA08D /* CommentDetailVC.m */; };
+		D99C646C167F9125003DA08D /* CommentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D99C646A167F9125003DA08D /* CommentDetailVC.m */; };
 		D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B177FD166D182D001F57AF /* ScrollButtonBar.m */; };
 		D9BD96D6166E3B29000AD010 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9BD96D5166E3B29000AD010 /* QuartzCore.framework */; };
 		D9BD96D9166E3B48000AD010 /* PullRefreshLazyLoadTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BD96D8166E3B48000AD010 /* PullRefreshLazyLoadTableView.m */; };
@@ -87,6 +90,8 @@
 		D9C762F1167B8887007F87D5 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = D9C762F0167B8887007F87D5 /* share.png */; };
 		D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F4EB261668F4860027D0B9 /* Kenny.png */; };
 		D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */; };
+		D9F9D49716806E000052F464 /* EditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D49616806E000052F464 /* EditorVC.m */; };
+		D9F9D49816806E000052F464 /* EditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D49616806E000052F464 /* EditorVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,8 +138,8 @@
 		D92EC66D167A09EE00124E5C /* IndignatiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndignatiVC.m; sourceTree = "<group>"; };
 		D92EC66F167A0A0700124E5C /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		D92EC670167A0A0700124E5C /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
-		D92EC672167A0A2100124E5C /* CommentsDettailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsDettailVC.h; sourceTree = "<group>"; };
-		D92EC673167A0A2100124E5C /* CommentsDettailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsDettailVC.m; sourceTree = "<group>"; };
+		D92EC672167A0A2100124E5C /* CommentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsVC.h; sourceTree = "<group>"; };
+		D92EC673167A0A2100124E5C /* CommentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsVC.m; sourceTree = "<group>"; };
 		D92EC678167A2E4D00124E5C /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		D92EC679167A2E4D00124E5C /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		D92EC67A167A2E4D00124E5C /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -187,6 +192,9 @@
 		D97E8B001667CD340032C773 /* JSONParserMainData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONParserMainData.m; path = Model/JSONParserMainData.m; sourceTree = "<group>"; };
 		D99774BE167642690036672F /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
 		D99774BF167642690036672F /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
+		D99C6466167F8FD6003DA08D /* write_comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write_comment.png; sourceTree = "<group>"; };
+		D99C6469167F9125003DA08D /* CommentDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentDetailVC.h; sourceTree = "<group>"; };
+		D99C646A167F9125003DA08D /* CommentDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDetailVC.m; sourceTree = "<group>"; };
 		D9B177FB166D11BA001F57AF /* JsonKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonKeys.h; sourceTree = "<group>"; };
 		D9B177FC166D182D001F57AF /* ScrollButtonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollButtonBar.h; sourceTree = "<group>"; };
 		D9B177FD166D182D001F57AF /* ScrollButtonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollButtonBar.m; sourceTree = "<group>"; };
@@ -212,6 +220,8 @@
 		D9F4EB261668F4860027D0B9 /* Kenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kenny.png; sourceTree = "<group>"; };
 		D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostDetailVC.h; sourceTree = "<group>"; };
 		D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostDetailVC.m; sourceTree = "<group>"; };
+		D9F9D49516806E000052F464 /* EditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorVC.h; sourceTree = "<group>"; };
+		D9F9D49616806E000052F464 /* EditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +316,6 @@
 				D92EC6A0167A434E00124E5C /* Singleton */,
 				D9C762E4167B3157007F87D5 /* Parser */,
 				D94262D2166F96E50085D7CB /* Utils */,
-				D9B177F9166D1132001F57AF /* Constant */,
 				D97E8AE71667A0A50032C773 /* Model */,
 				D97E8AFA1667A6DE0032C773 /* Control */,
 				D97E8AF91667A6C30032C773 /* View */,
@@ -404,8 +413,12 @@
 				D92EC66D167A09EE00124E5C /* IndignatiVC.m */,
 				D92EC66F167A0A0700124E5C /* ProfileVC.h */,
 				D92EC670167A0A0700124E5C /* ProfileVC.m */,
-				D92EC672167A0A2100124E5C /* CommentsDettailVC.h */,
-				D92EC673167A0A2100124E5C /* CommentsDettailVC.m */,
+				D92EC672167A0A2100124E5C /* CommentsVC.h */,
+				D92EC673167A0A2100124E5C /* CommentsVC.m */,
+				D99C6469167F9125003DA08D /* CommentDetailVC.h */,
+				D99C646A167F9125003DA08D /* CommentDetailVC.m */,
+				D9F9D49516806E000052F464 /* EditorVC.h */,
+				D9F9D49616806E000052F464 /* EditorVC.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -473,14 +486,6 @@
 			name = Control;
 			sourceTree = "<group>";
 		};
-		D9B177F9166D1132001F57AF /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				D9B177FB166D11BA001F57AF /* JsonKeys.h */,
-			);
-			name = Constant;
-			sourceTree = "<group>";
-		};
 		D9BD96DC166E3F60000AD010 /* Arrow */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +504,7 @@
 		D9C762E4167B3157007F87D5 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				D9B177FB166D11BA001F57AF /* JsonKeys.h */,
 				D97E8AFF1667CD340032C773 /* JSONParserMainData.h */,
 				D97E8B001667CD340032C773 /* JSONParserMainData.m */,
 			);
@@ -508,6 +514,7 @@
 		D9F4EB291668FA250027D0B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D99C6466167F8FD6003DA08D /* write_comment.png */,
 				D9C762EC167B7872007F87D5 /* comment.png */,
 				D9C762ED167B7872007F87D5 /* indignati.png */,
 				D96A563D1671F97700765CF6 /* placeholder.png */,
@@ -626,6 +633,7 @@
 				D9C762EE167B7872007F87D5 /* comment.png in Resources */,
 				D9C762EF167B7872007F87D5 /* indignati.png in Resources */,
 				D9C762F1167B8887007F87D5 /* share.png in Resources */,
+				D99C6467167F8FD6003DA08D /* write_comment.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +684,7 @@
 				D99774C0167642690036672F /* DDMenuController.m in Sources */,
 				D92EC66E167A09EE00124E5C /* IndignatiVC.m in Sources */,
 				D92EC671167A0A0700124E5C /* ProfileVC.m in Sources */,
-				D92EC674167A0A2100124E5C /* CommentsDettailVC.m in Sources */,
+				D92EC674167A0A2100124E5C /* CommentsVC.m in Sources */,
 				D92EC68D167A2E4D00124E5C /* MKAnnotationView+WebCache.m in Sources */,
 				D92EC68E167A2E4D00124E5C /* SDImageCache.m in Sources */,
 				D92EC68F167A2E4D00124E5C /* SDWebImageCompat.m in Sources */,
@@ -690,6 +698,8 @@
 				D92EC69B167A3A7E00124E5C /* Comment.m in Sources */,
 				D92EC69F167A433500124E5C /* Mindigno.m in Sources */,
 				D9C762E7167B463E007F87D5 /* Vignetta.m in Sources */,
+				D99C646B167F9125003DA08D /* CommentDetailVC.m in Sources */,
+				D9F9D49716806E000052F464 /* EditorVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +714,8 @@
 				D97E8B021667CD340032C773 /* JSONParserMainData.m in Sources */,
 				D92EC69C167A3A8C00124E5C /* Comment.m in Sources */,
 				D9C762E8167B463E007F87D5 /* Vignetta.m in Sources */,
+				D99C646C167F9125003DA08D /* CommentDetailVC.m in Sources */,
+				D9F9D49816806E000052F464 /* EditorVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

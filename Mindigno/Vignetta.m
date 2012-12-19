@@ -19,9 +19,9 @@
     
     if (self) {
         
-        [self setVignettaUrl:[root_vignetta objectForKey:VIGNETTA_PATH_KEY]];
+        [self setVignettaUrl:[root_vignetta objectForKey: VIGNETTA_URL_KEY]];
         [self setAuthorName:[root_vignetta objectForKey: VIGNETTA_AUTHOR_NAME_KEY]];
-        [self setAuthorLink:[root_vignetta objectForKey: VIGNETTA_AUTHOR_LINK_KEY]];
+        [self setAuthorLink:[root_vignetta objectForKey: VIGNETTA_AUTHOR_URL_KEY]];
     }
     return self;
 }
