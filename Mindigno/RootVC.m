@@ -15,6 +15,8 @@
 #import "IndignatiVC.h"
 #import "CommentsVC.h"
 
+#import "JSONParserMainData.h"
+
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
 @interface RootVC ()
@@ -64,7 +66,11 @@
     UIViewController *vc = [storyboard instantiateInitialViewController];
     
     [self presentViewController:vc animated:YES completion:nil];
-
+    
+    
+    //TODO: test send http post
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    [jsonParser testHttpPost];
 }
 
 - (void) clickedButtonSearch {

@@ -73,4 +73,47 @@
     }
 }
 
+- (void) testHttpPost {
+
+    NSString *urlString = [[Mindigno sharedMindigno] getStringUrlFromStringPath:@"sessions"];
+    
+    NSString *user = @"andrea@prova.it";
+    NSString *password = @"ciaociao";
+    
+    NSDictionary *payload = [[NSDictionary alloc] initWithObjectsAndKeys:user, @"session[email]", password, @"session[password]", nil];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
+    
+    //For debug
+    //NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    //NSLog(@"XXX: %@", jsonString);
+
+    NSData *postData = jsonData;
+    NSString *postDataLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    [urlRequest setHTTPBody: postData];
+    [urlRequest setValue:postDataLength forHTTPHeaderField:@"Content-Length"];
+    
+    //
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
+
+    if (returnData != nil) {
+        
+        //NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
+        
+        //For debug
+        NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", textJson);
+    }
+}
+
 @end

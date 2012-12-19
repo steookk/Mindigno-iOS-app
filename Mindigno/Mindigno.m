@@ -94,7 +94,7 @@
 }
 
 - (NSString*) getStringUrlFromStringPath:(NSString*)path {
-    return [baseURL stringByAppendingPathExtension:path];
+    return [baseURL stringByAppendingPathComponent:path];
 }
 
 @end

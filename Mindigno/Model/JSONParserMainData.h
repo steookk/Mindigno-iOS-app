@@ -19,4 +19,6 @@
 //Return TRUE if it worked out (there is connection).
 - (BOOL) startDownloadAndParsingJsonAtUrl:(NSString *)urlString;
 
+- (void) testHttpPost;
+
 @end
