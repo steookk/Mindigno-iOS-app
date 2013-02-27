@@ -80,7 +80,8 @@
     NSString *user = @"andrea@prova.it";
     NSString *password = @"ciaociao";
     
-    NSDictionary *payload = [[NSDictionary alloc] initWithObjectsAndKeys:user, @"session[email]", password, @"session[password]", nil];
+    NSDictionary *session = [[NSDictionary alloc] initWithObjectsAndKeys:user, @"email", password, @"password", nil];
+    NSDictionary *payload = [[NSDictionary alloc] initWithObjectsAndKeys:session, @"session", nil];
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
     
