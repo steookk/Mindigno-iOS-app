@@ -14,7 +14,6 @@
 #import "Utils.h"
 #import "IndignatiVC.h"
 #import "CommentsVC.h"
-
 #import "JSONParserMainData.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
@@ -54,6 +53,26 @@
     [scrollButtonBar setDelegateBar:self];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        [buttonLogout setHidden: NO];
+    } else {
+        [buttonLogout setHidden: YES];
+    }
+}
+
+- (IBAction)logout:(id)sender {
+    
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+        [jsonParser startLogout];
+        
+        [buttonLogout setHidden: YES];
+    }
+}
+
 //Start MainButtonBarDelegate
 - (void) clickedButtonHome {
     NSLog(@"clickedButtonHome");
@@ -62,15 +81,20 @@
 - (void) clickedButtonProfile {
     NSLog(@"clickedButtonProfile");
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
-    UIViewController *vc = [storyboard instantiateInitialViewController];
+    //Se l'utente non è loggato
+    if (![[Mindigno sharedMindigno] isLoggedUser]) {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
+        UIViewController *vc = [storyboard instantiateInitialViewController];
+        
+        [self presentViewController:vc animated:YES completion:nil];
     
-    [self presentViewController:vc animated:YES completion:nil];
+    } else {
+        NSLog(@"Utente già loggato");
+    }
     
     
-    //TODO: test send http post
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    [jsonParser testHttpPost];
+    
 }
 
 - (void) clickedButtonSearch {

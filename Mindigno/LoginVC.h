@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface LoginVC : UIViewController <UITextFieldDelegate> {
  
     IBOutlet UITextField *textFieldUsername;
     IBOutlet UITextField *textFieldPassword;
 }
+
+- (IBAction)login:(id)sender;
 
 @end

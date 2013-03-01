@@ -11,8 +11,18 @@
 
 ///
 
+#define API_U @"iosapp"
+#define API_P @"ciaociao"
+
+///
+
 #define BASE_URL_KEY @"base_url"
 #define CURRENT_USER_KEY @"current_user"
+
+///
+
+#define SIGNUP_USER_CREATED @"user_created"
+#define SIGNUP_MESSAGE_KEY @"message"
 
 ///
 

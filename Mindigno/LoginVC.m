@@ -8,6 +8,8 @@
 
 #import "LoginVC.h"
 #import "Utils.h"
+#import "JSONParserMainData.h"
+#import "Mindigno.h"
 
 @interface LoginVC ()
 
@@ -21,9 +23,11 @@
     [textFieldUsername setDelegate:self];
     [textFieldPassword setDelegate:self];
     
-    [Utils setTextFieldRoundAndTrasparent:textFieldUsername];
-    [Utils setTextFieldRoundAndTrasparent:textFieldPassword];
-
+    [textFieldUsername setTextColor: [UIColor whiteColor]];
+    [textFieldPassword setTextColor: [UIColor whiteColor]];
+    
+    [Utils setTextFieldRoundAndTrasparent: textFieldUsername];
+    [Utils setTextFieldRoundAndTrasparent: textFieldPassword];
 }
 
 //Start UITextFieldDelegate
@@ -34,11 +38,30 @@
         return NO;
     
     } else if (textField == textFieldPassword) {
-        [textFieldPassword resignFirstResponder];
+        //[textFieldPassword resignFirstResponder];
     }
     
     return YES;
 }
 //Stop UITextFieldDelegate
+
+- (IBAction)login:(id)sender {
+    
+    NSString *user = [textFieldUsername text];
+    NSString *password = [textFieldPassword text];
+
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    [jsonParser startLoginWithUser:user andPassword:password];
+    
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        //Esce dalla modal view
+        [self dismissViewControllerAnimated:YES completion:nil];
+    
+    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Errore" message:@"Non è stato possibile effettuare il login. Riprova più tardi" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+}
 
 @end

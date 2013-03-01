@@ -21,6 +21,11 @@
     //
     NSArray *arrayButtonTitle;
     IBOutlet ScrollButtonBar *scrollButtonBar;
+    
+    //
+    IBOutlet UIButton *buttonLogout;
 }
+
+- (IBAction)logout:(id)sender;
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XhF-v6-11g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XhF-v6-11g">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -112,6 +112,24 @@
                             <view contentMode="scaleToFill" id="bpW-ra-ajh" customClass="MainButtonBar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tH7-e7-3mX">
+                                        <rect key="frame" x="249" y="5" width="65" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99088081086685542" green="1" blue="0.97700480677136847" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logout:" destination="4ox-pt-5xE" eventType="touchUpInside" id="PPF-Ua-89J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.18039216101169586" green="0.18039216101169586" blue="0.18039216101169586" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="zre-R0-S0B" customClass="ScrollButtonBar">
@@ -414,6 +432,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WGh-aF-Ibs"/>
                     <connections>
+                        <outlet property="buttonLogout" destination="tH7-e7-3mX" id="urz-Au-6IE"/>
                         <outlet property="mainButtonBar" destination="bpW-ra-ajh" id="cK9-dq-T7G"/>
                         <outlet property="scrollButtonBar" destination="zre-R0-S0B" id="IjO-9C-OKe"/>
                         <outlet property="tableViewMicroPost" destination="nBA-bK-ZjG" id="M4w-v7-ScN"/>
@@ -1106,6 +1125,8 @@
         <class className="RootVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootVC.h"/>
             <relationships>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="outlet" name="buttonLogout" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mainButtonBar" candidateClass="MainButtonBar"/>
                 <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
                 <relationship kind="outlet" name="tableViewMicroPost" candidateClass="PullRefreshLazyLoadTableView"/>
@@ -1121,9 +1142,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6Zr-JY-Hl3"/>
+        <segue reference="TUN-6S-skc"/>
+        <segue reference="mxI-77-wMS"/>
         <segue reference="FF5-Ti-4fm"/>
         <segue reference="C3h-oT-Gfq"/>
-        <segue reference="um3-Ob-vQ0"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GTKeyboardHelper/GTKeyboardHelper.h>
 
-@interface SignupVC : UIViewController {
+@interface SignupVC : UIViewController <UITextFieldDelegate> {
 
+    IBOutlet UITextField *textFieldNome;
+    IBOutlet UITextField *textFieldMail;
+    
+    IBOutlet UITextField *textFieldPassword;
+    IBOutlet UITextField *textFieldRetipedPassword;
+    
+    IBOutlet UISwitch *switchAccettaContratto;
+    IBOutlet UIBarButtonItem *buttonBarRegistrati;
 }
+
+- (IBAction)signup:(id)sender;
+- (IBAction)switchContrattoHasChangedValue:(id)sender;
 
 @end

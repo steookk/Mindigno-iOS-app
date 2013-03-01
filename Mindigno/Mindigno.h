@@ -16,9 +16,12 @@
     NSMutableDictionary *idToUser_dictionary;
     
     NSString *baseURL;
+    
+    BOOL isLoggedUser;
 }
 
-@property (nonatomic, retain) User *currentUser;
+@property (nonatomic, readonly) BOOL isLoggedUser;
+@property (nonatomic) User *currentUser;
 @property (nonatomic, readonly) NSMutableDictionary *idToUser_dictionary;
 @property (nonatomic, copy) NSString *baseURL;
 
@@ -33,5 +36,7 @@
 - (void) shareInfo:(UIViewController*)controller;
 
 - (NSString*) getStringUrlFromStringPath:(NSString*)path;
+
+- (BOOL) checkAndUpdateIfUserIsLogged;
 
 @end

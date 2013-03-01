@@ -11,7 +11,7 @@
 
 @implementation Mindigno
 
-@synthesize currentUser, idToUser_dictionary, baseURL;
+@synthesize currentUser, idToUser_dictionary, baseURL, isLoggedUser;
 
 + (id)sharedMindigno {
     static Mindigno *sharedMindigno = nil;
@@ -24,6 +24,24 @@
     return sharedMindigno;
 }
 
+- (BOOL) checkAndUpdateIfUserIsLogged {
+
+    BOOL isLogged = NO;
+    for (NSHTTPCookie *cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]) {
+        
+        if ([[cookie name] isEqualToString: @"remember_token"]) {
+            
+            if (![[cookie value] isEqualToString:@""]) {
+                isLogged = YES;
+            }
+        }
+    }
+    
+    isLoggedUser = isLogged;
+    
+    return isLogged;
+}
+
 - (id) init {
     self = [super init];
     if (self) {
@@ -31,7 +49,11 @@
         currentUser = nil;
         microPosts = [NSMutableArray array];
         idToUser_dictionary = [NSMutableDictionary dictionary];
+        
+        [self checkAndUpdateIfUserIsLogged];
+        //NSLog(@"USER LOGGED: %d", isLoggedUser);
     }
+    
     return self;
 }
 
