@@ -22,6 +22,7 @@
     
     self = [super initWithFrame:frame];
     if (self) {
+        [self setBackgroundColor:[UIColor clearColor]];
     }
     
     return self;
@@ -31,6 +32,7 @@
 
     self = [super initWithCoder:aDecoder];
     if (self) {
+        [self setBackgroundColor:[UIColor clearColor]];
     }
     
     return self;
@@ -62,10 +64,14 @@
 
         CGRect rectButton = CGRectZero;
         UIButton *button = [[UIButton alloc] initWithFrame:rectButton];
+        [button setBackgroundColor: [UIColor clearColor]];
         
         NSString *buttonTitle = [NSString stringWithFormat:@"Button_%d", i];
         [button setTitle:buttonTitle forState:UIControlStateNormal];
+        
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
         
         //Get setting from dataSource
         [dataSourceBar setButtonProperties:button withIndex:i];

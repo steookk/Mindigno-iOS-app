@@ -136,20 +136,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.18039216101169586" green="0.18039216101169586" blue="0.18039216101169586" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scroll-bar.png" id="314-WW-YEo">
+                                <rect key="frame" x="0.0" y="40" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="zre-R0-S0B" customClass="ScrollButtonBar">
                                 <rect key="frame" x="0.0" y="40" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.18039216101169586" green="0.18039216101169586" blue="0.18039216101169586" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="7Jk-u5-oId">
-                                <rect key="frame" x="0.0" y="41" width="320" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="nBA-bK-ZjG" customClass="PullRefreshLazyLoadTableView">
                                 <rect key="frame" x="0.0" y="80" width="320" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Row_MicroPost" rowHeight="200" id="VtU-pl-uHh">
                                         <rect key="frame" x="0.0" y="22" width="320" height="200"/>
@@ -163,7 +162,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" id="gzO-rn-v4A">
-                                                    <rect key="frame" x="8" y="26" width="55" height="65"/>
+                                                    <rect key="frame" x="8" y="29" width="55" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n77-33-f8A">
@@ -174,14 +173,15 @@
                                                     <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="leI-bS-rrU">
-                                                    <rect key="frame" x="5" y="165" width="45" height="28"/>
+                                                    <rect key="frame" x="11" y="164" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                                    <state key="normal" title="4" backgroundImage="indignati.png">
+                                                    <state key="normal" backgroundImage="button-indignati.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="button-indignati_click.png"/>
+                                                    <state key="highlighted" backgroundImage="button-indignati_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -189,14 +189,15 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pR5-We-4c7">
-                                                    <rect key="frame" x="58" y="165" width="45" height="28"/>
+                                                    <rect key="frame" x="64" y="164" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                                    <state key="normal" title="10" backgroundImage="comment.png">
+                                                    <state key="normal" backgroundImage="button-commenti.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="button-commenti_click.png"/>
+                                                    <state key="highlighted" backgroundImage="button-commenti_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -204,31 +205,33 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p3w-pt-pI2">
-                                                    <rect key="frame" x="171" y="165" width="45" height="28"/>
+                                                    <rect key="frame" x="211" y="165" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" image="share.png" backgroundImage="box-ombrato.jpg">
+                                                    <state key="normal" backgroundImage="button-share.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="button-share_click.png"/>
+                                                    <state key="highlighted" backgroundImage="button-share_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UKE-iC-dCq">
-                                                    <rect key="frame" x="224" y="165" width="85" height="28"/>
+                                                    <rect key="frame" x="264" y="165" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" title="Mindigno!" backgroundImage="box-ombrato.jpg">
+                                                    <state key="normal" backgroundImage="button-mindigno.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="buttons-mindigno_click.png"/>
+                                                    <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZT7-Bl-h1f">
-                                                    <rect key="frame" x="9" y="95" width="290" height="30"/>
+                                                    <rect key="frame" x="9" y="96" width="290" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione </string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
@@ -236,12 +239,13 @@
                                                     <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="MDA-aA-b9X">
-                                                    <rect key="frame" x="9" y="134" width="300" height="27"/>
+                                                    <rect key="frame" x="9" y="130" width="300" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="da Corriere.it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P8W-R6-def">
                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="27"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                             <color key="textColor" red="0.50123565051020402" green="0.50123565051020402" blue="0.50123565051020402" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
@@ -269,11 +273,15 @@
                                                                     <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="scaleToFill" image="linea.png" id="v0s-6u-pux">
+                                                    <rect key="frame" x="3" y="160" width="314" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" text="3 ore fa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wOd-5v-BYb">
                                                     <rect key="frame" x="9" y="0.0" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -295,12 +303,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="399"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-ombrato.png" id="JHl-wp-2Y8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-ombrato-large.png" id="JHl-wp-2Y8">
                                                     <rect key="frame" x="0.0" y="20" width="320" height="380"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" id="uj5-YP-rEq">
-                                                    <rect key="frame" x="8" y="26" width="55" height="65"/>
+                                                    <rect key="frame" x="8" y="29" width="55" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w5Z-9y-kgc">
@@ -311,14 +319,15 @@
                                                     <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cxW-0W-V85">
-                                                    <rect key="frame" x="5" y="360" width="45" height="28"/>
+                                                    <rect key="frame" x="11" y="363" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                                    <state key="normal" title="4" backgroundImage="indignati.png">
+                                                    <state key="normal" backgroundImage="button-indignati.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="button-indignati_click.png"/>
+                                                    <state key="highlighted" backgroundImage="button-indignati_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -326,14 +335,15 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xs8-Ay-UFz">
-                                                    <rect key="frame" x="58" y="360" width="45" height="28"/>
+                                                    <rect key="frame" x="64" y="363" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                                    <state key="normal" title="10" backgroundImage="comment.png">
+                                                    <state key="normal" backgroundImage="button-commenti.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="button-commenti_click.png"/>
+                                                    <state key="highlighted" backgroundImage="button-commenti_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -341,26 +351,28 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bkM-ZA-x82">
-                                                    <rect key="frame" x="171" y="360" width="45" height="28"/>
+                                                    <rect key="frame" x="211" y="364" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" image="share.png" backgroundImage="box-ombrato.jpg">
+                                                    <state key="normal" backgroundImage="button-share.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="button-share_click .png"/>
+                                                    <state key="highlighted" backgroundImage="button-share_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h6n-c4-QrE">
-                                                    <rect key="frame" x="224" y="360" width="85" height="28"/>
+                                                    <rect key="frame" x="264" y="364" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                    <state key="normal" title="Mindigno!" backgroundImage="box-ombrato.jpg">
+                                                    <state key="normal" backgroundImage="button-mindigno.png">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted">
+                                                    <state key="selected" backgroundImage="buttons-mindigno_click.png"/>
+                                                    <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -406,11 +418,15 @@
                                                                     <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="scaleToFill" image="linea.png" id="GUm-iZ-sNf">
+                                                    <rect key="frame" x="3" y="359" width="314" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" text="3 ore fa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G9C-d7-htn">
                                                     <rect key="frame" x="9" y="0.0" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1051,15 +1067,109 @@
     </scenes>
     <resources>
         <image name="Kenny.png" width="303" height="350"/>
+        <image name="box-ombrato-large.png" width="320" height="380"/>
         <image name="box-ombrato.jpg" width="16" height="16"/>
-        <image name="box-ombrato.png" width="616" height="212"/>
+        <image name="box-ombrato.png" width="320" height="180"/>
+        <image name="button-commenti.png" width="45" height="28"/>
+        <image name="button-commenti_click.png" width="45" height="28"/>
+        <image name="button-indignati.png" width="45" height="28"/>
+        <image name="button-indignati_click.png" width="45" height="28"/>
+        <image name="button-mindigno.png" width="45" height="28"/>
+        <image name="button-share.png" width="45" height="28"/>
+        <image name="button-share_click .png" width="16" height="16"/>
+        <image name="button-share_click.png" width="45" height="28"/>
+        <image name="buttons-mindigno_click.png" width="45" height="28"/>
         <image name="comment.png" width="64" height="64"/>
         <image name="indignati.png" width="128" height="128"/>
+        <image name="linea.png" width="320" height="1"/>
         <image name="path.png" width="495" height="495"/>
-        <image name="rilegatura.png" width="640" height="91"/>
+        <image name="rilegatura.png" width="320" height="40"/>
+        <image name="scroll-bar.png" width="320" height="40"/>
         <image name="share.png" width="16" height="16"/>
         <image name="write_comment.png" width="128" height="128"/>
     </resources>
+    <classes>
+        <class className="CommentDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentDetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textViewComment" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CommentsVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
+                <relationship kind="outlet" name="tableViewComments" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="EditorVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditorVC.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="textViewContent" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="IndignatiVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IndignatiVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="tableViewIndignati" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MainButtonBar" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainButtonBar.h"/>
+        </class>
+        <class className="MicroPostDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MicroPostDetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="goToSource:"/>
+                <relationship kind="action" name="share:"/>
+                <relationship kind="outlet" name="buttonDefaultCommentText" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonGoToSource" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonIndignatiText" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewBody" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewCreator" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewDescription" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewHeader" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageViewThumb" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSourceText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableViewComments" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ProfileVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PullRefreshLazyLoadTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PullRefreshLazyLoadTableView.h"/>
+        </class>
+        <class className="RootVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootVC.h"/>
+            <relationships>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="outlet" name="buttonLogout" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainButtonBar" candidateClass="MainButtonBar"/>
+                <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
+                <relationship kind="outlet" name="tableViewMicroPost" candidateClass="PullRefreshLazyLoadTableView"/>
+            </relationships>
+        </class>
+        <class className="ScrollButtonBar" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScrollButtonBar.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -1067,8 +1177,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="TUN-6S-skc"/>
-        <segue reference="mxI-77-wMS"/>
         <segue reference="FF5-Ti-4fm"/>
+        <segue reference="mxI-77-wMS"/>
         <segue reference="C3h-oT-Gfq"/>
     </inferredMetricsTieBreakers>
 </document>

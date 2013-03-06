@@ -92,9 +92,6 @@
     } else {
         NSLog(@"Utente già loggato");
     }
-    
-    
-    
 }
 
 - (void) clickedButtonSearch {
