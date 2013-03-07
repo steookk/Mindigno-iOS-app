@@ -30,7 +30,7 @@
 
 @implementation CustomBadge
 
-@synthesize badgeText;
+//@synthesize badgeText;
 @synthesize badgeTextColor;
 @synthesize badgeInsetColor;
 @synthesize badgeFrameColor;
@@ -38,6 +38,7 @@
 @synthesize badgeCornerRoundness;
 @synthesize badgeScaleFactor;
 @synthesize badgeShining;
+@synthesize badgeShadow;
 
 // I recommend to use the allocator customBadgeWithString
 - (id) initWithString:(NSString *)badgeString withScale:(CGFloat)scale withShining:(BOOL)shining
@@ -54,13 +55,14 @@
 		self.badgeCornerRoundness = 0.4;
 		self.badgeScaleFactor = scale;
 		self.badgeShining = shining;
+        self.badgeShadow = YES;
 		[self autoBadgeSizeWithString:badgeString];		
 	}
 	return self;
 }
 
 // I recommend to use the allocator customBadgeWithString
-- (id) initWithString:(NSString *)badgeString withStringColor:(UIColor*)stringColor withInsetColor:(UIColor*)insetColor withBadgeFrame:(BOOL)badgeFrameYesNo withBadgeFrameColor:(UIColor*)frameColor withScale:(CGFloat)scale withShining:(BOOL)shining 
+- (id) initWithString:(NSString *)badgeString withStringColor:(UIColor*)stringColor withInsetColor:(UIColor*)insetColor withBadgeFrame:(BOOL)badgeFrameYesNo withBadgeFrameColor:(UIColor*)frameColor withScale:(CGFloat)scale withShining:(BOOL)shining withShadow:(BOOL)shadow;
 {
 	self = [super initWithFrame:CGRectMake(0, 0, 25, 25)];
 	if(self!=nil) {
@@ -74,6 +76,7 @@
 		self.badgeCornerRoundness = 0.40;	
 		self.badgeScaleFactor = scale;
 		self.badgeShining = shining;
+        self.badgeShadow = shadow;
 		[self autoBadgeSizeWithString:badgeString];
 	}
 	return self;
@@ -111,10 +114,10 @@
 
 
 // Creates a Badge with a given Text, Text Color, Inset Color, Frame (YES/NO) and Frame Color 
-+ (CustomBadge*) customBadgeWithString:(NSString *)badgeString withStringColor:(UIColor*)stringColor withInsetColor:(UIColor*)insetColor withBadgeFrame:(BOOL)badgeFrameYesNo withBadgeFrameColor:(UIColor*)frameColor withScale:(CGFloat)scale withShining:(BOOL)shining
++ (CustomBadge*) customBadgeWithString:(NSString *)badgeString withStringColor:(UIColor*)stringColor withInsetColor:(UIColor*)insetColor withBadgeFrame:(BOOL)badgeFrameYesNo withBadgeFrameColor:(UIColor*)frameColor withScale:(CGFloat)scale withShining:(BOOL)shining withShadow:(BOOL)shadow
 {
 	//return [[[self alloc] initWithString:badgeString withStringColor:stringColor withInsetColor:insetColor withBadgeFrame:badgeFrameYesNo withBadgeFrameColor:frameColor withScale:scale withShining:shining] autorelease];
-    return [[self alloc] initWithString:badgeString withStringColor:stringColor withInsetColor:insetColor withBadgeFrame:badgeFrameYesNo withBadgeFrameColor:frameColor withScale:scale withShining:shining];
+    return [[self alloc] initWithString:badgeString withStringColor:stringColor withInsetColor:insetColor withBadgeFrame:badgeFrameYesNo withBadgeFrameColor:frameColor withScale:scale withShining:shining withShadow: shadow];
 }
 
 
@@ -139,7 +142,11 @@
 	CGContextAddArc(context, maxX-radius, maxY-radius, radius, 0, M_PI/2, 0);
 	CGContextAddArc(context, minX+radius, maxY-radius, radius, M_PI/2, M_PI, 0);
 	CGContextAddArc(context, minX+radius, minY+radius, radius, M_PI, M_PI+M_PI/2, 0);
-	CGContextSetShadowWithColor(context, CGSizeMake(1.0,1.0), 3, [[UIColor blackColor] CGColor]);
+    
+    if (badgeShadow) {
+        CGContextSetShadowWithColor(context, CGSizeMake(1.0,1.0), 3, [[UIColor blackColor] CGColor]);
+    }
+	
     CGContextFillPath(context);
 
 	CGContextRestoreGState(context);
@@ -240,6 +247,16 @@
 		[self.badgeText drawAtPoint:CGPointMake((rect.size.width/2-textSize.width/2), (rect.size.height/2-textSize.height/2)) withFont:textFont];
 	}
 	
+}
+
+- (NSString*)badgeText {
+    return badgeText;
+}
+
+- (void) setBadgeText:(NSString *)_badgeText {
+
+    badgeText = _badgeText;
+    [self setNeedsDisplay];
 }
 
 /*

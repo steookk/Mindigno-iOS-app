@@ -215,20 +215,30 @@
     
     ButtonWithBadge *buttonIndignati = (ButtonWithBadge*)[cell viewWithTag:6];
     
+    //Debug
+    //[buttonIndignati setTitle:[currentMicroPost numberOfIndignati] forState:UIControlStateNormal];
+    //NSLog(@"indignati number: \"%@\"", [currentMicroPost numberOfIndignati]);
+    //
+    
     //Quando non ci sono indignati allora non visualizzo il badge e rendo non cliccabile il pulsante
     BOOL zeroIndignati = [[currentMicroPost numberOfIndignati] intValue] == 0;
+    [buttonIndignati setBadgeString:[currentMicroPost numberOfIndignati]];
     if (zeroIndignati) {
         [buttonIndignati hideBadge: YES];
         [buttonIndignati setUserInteractionEnabled: NO];
         [buttonIndignati setAlpha: 0.4];
     } else {
-        [buttonIndignati setBadgeString:[currentMicroPost numberOfIndignati]];
         [buttonIndignati hideBadge: NO];
         [buttonIndignati setUserInteractionEnabled: YES];
         [buttonIndignati setAlpha: 1.0];
     }
     
     ButtonWithBadge *buttonComments = (ButtonWithBadge*)[cell viewWithTag:7];
+    
+    //Debug
+    //[buttonComments setTitle:[currentMicroPost numberOfComments] forState:UIControlStateNormal];
+    //NSLog(@"commenti number: \"%@\"", [currentMicroPost numberOfComments]);
+    //
     
     //Quando non ci sono commenti allora non visualizzo il badge e rendo non cliccabile il pulsante
     BOOL zeroCommenti = [[currentMicroPost numberOfComments] intValue] == 0;

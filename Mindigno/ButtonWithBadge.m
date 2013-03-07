@@ -15,11 +15,12 @@
     // Create simple Badge
     badge = [CustomBadge customBadgeWithString:@""
                                withStringColor:[UIColor whiteColor]
-                                withInsetColor:[UIColor redColor]
-                                withBadgeFrame:YES
+                                withInsetColor:[UIColor blueColor]
+                                withBadgeFrame:NO
                            withBadgeFrameColor:[UIColor whiteColor]
-                                     withScale:0.75
-                                   withShining:YES];
+                                     withScale:0.65
+                                   withShining:NO
+                                    withShadow:NO];
     
     // Set Position of Badge 1
     [badge setFrame: CGRectMake(self.frame.size.width/1.5-badge.frame.size.width/2, self.frame.size.height*0.0, badge.frame.size.width, badge.frame.size.height)];
