@@ -172,7 +172,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.62472098214285721" green="0.62472098214285721" blue="0.62472098214285721" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="leI-bS-rrU">
+                                                <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="leI-bS-rrU" customClass="ButtonWithBadge">
                                                     <rect key="frame" x="11" y="164" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -188,7 +188,7 @@
                                                         <segue destination="kss-jZ-2LO" kind="push" identifier="homeToIndignati" id="cv8-Sq-muq"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pR5-We-4c7">
+                                                <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pR5-We-4c7" customClass="ButtonWithBadge">
                                                     <rect key="frame" x="64" y="164" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -318,7 +318,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.62472098210000004" green="0.62472098210000004" blue="0.62472098210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cxW-0W-V85">
+                                                <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cxW-0W-V85" customClass="ButtonWithBadge">
                                                     <rect key="frame" x="11" y="363" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -334,7 +334,7 @@
                                                         <segue destination="kss-jZ-2LO" kind="push" identifier="homeToIndignati" id="mxI-77-wMS"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xs8-Ay-UFz">
+                                                <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xs8-Ay-UFz" customClass="ButtonWithBadge">
                                                     <rect key="frame" x="64" y="363" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -1089,6 +1089,9 @@
         <image name="write_comment.png" width="128" height="128"/>
     </resources>
     <classes>
+        <class className="ButtonWithBadge" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ButtonWithBadge.h"/>
+        </class>
         <class className="CommentDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentDetailVC.h"/>
             <relationships>

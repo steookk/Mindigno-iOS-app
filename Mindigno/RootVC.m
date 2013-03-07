@@ -15,6 +15,7 @@
 #import "IndignatiVC.h"
 #import "CommentsVC.h"
 #import "JSONParserMainData.h"
+#import "ButtonWithBadge.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
@@ -212,11 +213,35 @@
     UILabel *labelCreatedAtText = (UILabel*)[cell viewWithTag:5];
     [labelCreatedAtText setText: [currentMicroPost createdAtText]];
     
-    UIButton *buttonIndignati = (UIButton*)[cell viewWithTag:6];
-    [buttonIndignati setTitle:[currentMicroPost numberOfIndignati] forState:UIControlStateNormal];
+    ButtonWithBadge *buttonIndignati = (ButtonWithBadge*)[cell viewWithTag:6];
     
-    UIButton *buttonComments = (UIButton*)[cell viewWithTag:7];
-    [buttonComments setTitle:[currentMicroPost numberOfComments] forState:UIControlStateNormal];
+    //Quando non ci sono indignati allora non visualizzo il badge e rendo non cliccabile il pulsante
+    BOOL zeroIndignati = [[currentMicroPost numberOfIndignati] intValue] == 0;
+    if (zeroIndignati) {
+        [buttonIndignati hideBadge: YES];
+        [buttonIndignati setUserInteractionEnabled: NO];
+        [buttonIndignati setAlpha: 0.4];
+    } else {
+        [buttonIndignati setBadgeString:[currentMicroPost numberOfIndignati]];
+        [buttonIndignati hideBadge: NO];
+        [buttonIndignati setUserInteractionEnabled: YES];
+        [buttonIndignati setAlpha: 1.0];
+    }
+    
+    ButtonWithBadge *buttonComments = (ButtonWithBadge*)[cell viewWithTag:7];
+    
+    //Quando non ci sono commenti allora non visualizzo il badge e rendo non cliccabile il pulsante
+    BOOL zeroCommenti = [[currentMicroPost numberOfComments] intValue] == 0;
+    if (zeroCommenti) {
+        [buttonComments hideBadge: YES];
+        [buttonComments setUserInteractionEnabled: NO];
+        [buttonComments setAlpha: 0.4];
+    } else {
+        [buttonComments setBadgeString:[currentMicroPost numberOfComments]];
+        [buttonComments hideBadge: NO];
+        [buttonComments setUserInteractionEnabled: YES];
+        [buttonComments setAlpha: 1.0];
+    }
     
     UIButton *buttonShare = (UIButton*)[cell viewWithTag:8];
     [buttonShare addTarget:self action:@selector(buttonShareClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -259,7 +284,6 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 ///Stop UITableViewDelegate
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
