@@ -1,2 +1,54 @@
 cookie: remember_token=BAhbB286E0JTT046Ok9iamVjdElkBjoKQGRhdGFbEWlVaWZpAbZpWWlHaQHraU1pAGkHaQBpCGkBrEkiRTA3ZjcyOWQ2MGEyNjJmZjNiY2U1MmJiZjAxOGIzZDQ2ZDQwMTI3MTMyZWFhZjZhZDEyMWZkMzNhZTRkMmY0NzMGOgZFVA%3D%3D--3e08c0aa3385fc1248124acf5e0d08012b4977d2; path=/; expires=Sun, 27-Feb-2033 17:50:07 GMT, _mindigno_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTc5Yzc3N2YxZTQwMWU3MWRhYjExYjg3N2JlZWYwYjc3BjsAVA%3D%3D--19aa95394722a55602d4f7028a747ddd8ca351fe; path=/; HttpOnly
 2013-02-27 18:50:07.215 Mindigno[44983:c07] {"logged":true}
+
+
+{"feed":[
+    {
+    "id":"512c0b5dabe6d000020001a3",
+    "title":"mindigno per come, dopo tutte le vicende e le pessime figure internazionali, B. venga ancora votato. ",
+    "islink":false,
+    "description":"L'utente non ha scritto la descrizione",
+    "micropost_path":"/microposts/512c0b5dabe6d000020001a3",
+    "created_at_text":"Scritto 10 giorni fa",
+    "image_url":"http://staging.mindigno.com/assets/defaults/img_micropost_nolink.png",
+    "iscreator":true,
+    "preposition":"di:",
+    "user_id":"4fe905213ff9800002000001",
+    "indignati_text":"1 indignato",
+    "following_indignati":[],
+    "num_indignati":1,
+    "indignati_path":"/microposts/512c0b5dabe6d000020001a3/indignati",
+    "default_comments_text":"Non ci sono commenti",
+    "default_comments":[],
+    "num_comments":0,
+    "isvignetta":false
+    },
+    
+    {
+    "id":"5128e7d6d84dd500020002b1",
+    "title":"Trecento autisti corrono a fare gli scrutatori  \nA Napoli si fermano bus Anm e corse metro",
+    "islink":true,
+    "description":"L'azienda dei trasporti: tutto legale, non si pu\u00f2 intervenire",
+    "micropost_path":"/microposts/5128e7d6d84dd500020002b1",
+    "created_at_text":"Aggiunto 12 giorni fa",
+    "image_url":"http://images.corrieredelmezzogiorno.corriereobjects.it/libs/css/default_theme/assets/logoxfacebook.jpg",
+    "source_text":"da: Corriere del Mezzogiorno",
+    "link_url":"http://corrieredelmezzogiorno.corriere.it/napoli/notizie/cronaca/2013/22-febbraio-2013/metronapoli-dipendenti-corrono-fare-scrutatori-chiude-linea-6-2114156377262.shtml",
+    "indignati_text":"1 indignato",
+    "following_indignati":[],
+    "num_indignati":1,
+    "indignati_path":"/microposts/5128e7d6d84dd500020002b1/indignati",
+    "default_comments_text":"Sei l'unico ad avere commentato",
+    "default_comments":[
+        {
+        "id":"5128e7e8d84dd500020002b8",
+        "content":"da quarto mondo, neanche terzo ",
+        "user_id":"4fe905213ff9800002000001"
+        }
+        ],
+    "num_comments":1,
+    "comments_tabs": "Tutti, /microposts/5128e7d6d84dd500020002b1/all_comments, Miei, /microposts/5128e7d6d84dd500020002b1/user_comments",
+    "isvignetta":false
+    },
+    
+    {"id":"51274dade6704500020001fc","title":"\u00abSono una donna, non sono una bambola\u00bb  \nMa le donne del manifesto Pdl sono da catalogo","islink":true,"description":"Le immagini delle \u00absostenitrici\u00bb sono acquistabili online e utilizzabili a fini commerciali","micropost_path":"/microposts/51274dade6704500020001fc","created_at_text":"Aggiunto 13 giorni fa","image_url":"http://images.corriereobjects.it/Media/Fissi/Primo_Piano/FOTO1_DES.gif","source_text":"da: Corriere della Sera","link_url":"http://www.corriere.it/cronache/13_febbraio_21/donne_manifesto_pdl_4b51bf38-7c47-11e2-9e78-60bc36ab9097.shtml","indignati_text":"1 indignato","following_indignati":[],"num_indignati":1,"indignati_path":"/microposts/51274dade6704500020001fc/indignati","default_comments_text":"Sei l'unico ad avere commentato","default_comments":[{"id":"51274dc1e670450002000203","content":"figura miserabile. ","user_id":"4fe905213ff9800002000001"}],"num_comments":1,"comments_tabs":"Tutti, /microposts/51274dade6704500020001fc/all_comments, Miei, /microposts/51274dade6704500020001fc/user_comments","isvignetta":false},{"id":"51262c927bbafb000200006b","title":"Il falegname d'oro della Regione Lazio:  \n95 mila euro all'anno di rimborso","islink":true,"description":"Le rivelazioni sulle voci di bilancio del Consiglio regionale del Lazio: posta, cancelleria, mobili da 35 milioni","micropost_path":"/microposts/51262c927bbafb000200006b","created_at_text":"Aggiunto 14 giorni fa","image_url":"http://images.roma.corriereobjects.it/media/foto/2013/02/21/11381173--180x140.jpg","source_text":"da: Corriere della Sera Roma","link_url":"http://roma.corriere.it/roma/notizie/cronaca/13_febbraio_21/lazio-regione-consiglio-regionale-falegname-95mila-euro-anno-rizzo-2114127535359.shtml","indignati_text":"2 indignati","following_indignati":[],"num_indignati":2,"indignati_path":"/microposts/51262c927bbafb000200006b/indignati","default_comments_text":"Non ci sono commenti","default_comments":[],"num_comments":0,"isvignetta":false},{"id":"511a411dba1acf00020000f0","title":"Zingaretti e il Comitato del Pd che lo assunse il giorno prima della candidatura a presidente della Provin...","islink":true,"description":". Guarda adesso il video \"Zingaretti e il Comitato del Pd che lo assunse il giorno prima della candidatura a presidente della Provincia di Roma\" su Corriere TV!","micropost_path":"/microposts/511a411dba1acf00020000f0","created_at_text":"Aggiunto 23 giorni fa","image_url":"http://images2.corriereobjects.it/Media/Foto/reportime/2013/2/11/zingaretti--80x60.jpg","source_text":"da: Corriere TV","link_url":"http://www.corriere.it/inchieste/reportime/societa/zingaretti-comitato-pd-che-assunse-giorno-prima-candidatura-presidente-provincia-roma/3e8115e2-7481-11e2-b945-c75ed2830f7b.shtml","indignati_text":"3 indignati","following_indignati":[],"num_indignati":3,"indignati_path":"/microposts/511a411dba1acf00020000f0/indignati","default_comments_text":"Non ci sono commenti","default_comments":[],"num_comments":0,"isvignetta":false},{"id":"5117e44251b83e00020000a2","title":"\"La Regione sfratta la Casa di Peter Pan l'onlus che assiste i bambini malati di cancro\" - Roma - Repubbli...","islink":true,"description":"La denuncia dell'associazione, che dal Duemila ad oggi ha assistito 600 famiglie di piccoli in cura a Roma: \"L'ente regionale di assistenza all'infanzia ci ha dato dieci giorni per liberare l'edificio. Ma noi non molleremo finch\u00e9 non verranno le ambulanze a prelevare i nostri piccoli ricoverati\" \u00a0","micropost_path":"/microposts/5117e44251b83e00020000a2","created_at_text":"Aggiunto 25 giorni fa","image_url":"http://roma.repubblica.it/images/2013/02/07/195353070-b18e6b09-c58b-43a9-9cbb-fa2218d3163e.jpg","source_text":"da: Roma - La Repubblica","link_url":"http://roma.repubblica.it/cronaca/2013/02/07/news/la_regione_sfratta_la_onlus_peter_pan_l_ente_che_assiste_i_bambini_malati_di_cancro-52164532/","indignati_text":"1 indignato","following_indignati":[],"num_indignati":1,"indignati_path":"/microposts/5117e44251b83e00020000a2/indignati","default_comments_text":"Non ci sono commenti","default_comments":[],"num_comments":0,"isvignetta":false},{"id":"5116a8f2ea1bc800020000aa","title":"Oggi Giornata nazionale per la donazione del farmaco","islink":true,"description":"Oggi ricorre la tredicesima edizione della \"Raccolta nazionale del farmaco\" in cui si potr\u00e0 comprare e donare un farmaco a chi, a causa di uno stato di povert\u00e0, non pu\u00f2 permettersi di acquistare un medicinale.","micropost_path":"/microposts/5116a8f2ea1bc800020000aa","created_at_text":"Aggiunto 26 giorni fa","image_url":"http://urbanpost.it/wp-content/uploads/2013/02/giornata-del-farmaco-150x150.jpg","source_text":"da: urbanpost.it","link_url":"http://urbanpost.it/oggi-giornata-nazionale-per-la-donazione-del-farmaco","indignati_text":"2 indignati","following_indignati":[],"num_indignati":2,"indignati_path":"/microposts/5116a8f2ea1bc800020000aa/indignati","default_comments_text":"Ci sono 3 commenti","default_comments":[{"id":"5116aa4fea1bc800020000ad","content":"Ci invitano a comprare farmaci per donarli in beneficienza, mentre TUTTI I FARMACI CHE SCADONO ENTRO 6 MESI NON POTENDO ESSERE VENDUTI, INVECE DI ESSERE DATI IN BENEFICIENZA, VENGONO BUTTATI, tra l'altro l'eliminazione di qs farmaci prossimi alla scadenza ha un costo elevato anche per gli stessi operatori del settore farmaceutico, in quanto devono seguire le procedure burocratiche speciali. Quindi questa operazione costa sia al consumatore che compra il farmaco per donarlo e sia alla farmaceutica. Se  che se prossimo alla scadenza il farmaco fa fatto distruggere seguendo l'iter specifico per quel tipo di prodotto.  ","user_id":"50b5dd4947dfd000020000bd"},{"id":"5116bfe3ea1bc80002000177","content":"invece di darli in beneficienza li distruggono, pagano il costo della distruzione, che ricade sul prezzo dei farmaci al consumatore!","user_id":"50b5dd4947dfd000020000bd"},{"id":"5117e13351b83e0002000068","content":"questa cosa non la sapevo.. \u00e8 la classica assurdit\u00e0 del sistema come tante se ne vedono nei pi\u00f9 svariati settori.","user_id":"4fe905213ff9800002000001"}],"num_comments":3,"comments_tabs":"Tutti, /microposts/5116a8f2ea1bc800020000aa/all_comments, Miei, /microposts/5116a8f2ea1bc800020000aa/user_comments","isvignetta":false},{"id":"51123bab9a488d0002000096","title":"Donna somala in prigione per aver denunciato il suo stupro","islink":true,"description":"Lei aveva avuto un grande coraggio a raccontare la violenza subita in un campo profughi di Mogadiscio\u00a0al\u00a0giornalista freelance, Abdiaziz Abdnur Ibrahim. \u00a0Un'accusa pesante nei confronti delle forze di sicurezza che, secondo voci insistenti,\u00a0si approfittano delle rifugiate.\u00a0Ma quel momento di verit\u00e0...","micropost_path":"/microposts/51123bab9a488d0002000096","created_at_text":"Aggiunto 29 giorni fa","image_url":"http://static2.blog.corriereobjects.it/lepersoneeladignita/wp-content/blogs.dir/7/files/2013/02/phpPNKHuhPM-512x402.jpg","source_text":"da: lepersoneeladignita.corriere.it","link_url":"http://lepersoneeladignita.corriere.it/2013/02/06/donna-somala-in-prigione-per-aver-denunciato-il-suo-stupro/","indignati_text":"1 indignato","following_indignati":[],"num_indignati":1,"indignati_path":"/microposts/51123bab9a488d0002000096/indignati","default_comments_text":"Non ci sono commenti","default_comments":[],"num_comments":0,"isvignetta":false}],"current_user":"4fe905213ff9800002000001","users":[{"id":"4fe905213ff9800002000001","name":"Stefano Uliari","user_path":"/users/4fe905213ff9800002000001","avatar_url":"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc6/275744_698096449_795356494_q.jpg"},{"id":"50b5dd4947dfd000020000bd","name":"Elisabetta Garazzino","user_path":"/users/50b5dd4947dfd000020000bd","avatar_url":"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc6/187593_1368510833_743388823_q.jpg"}],"base_url":"http://staging.mindigno.com/"}

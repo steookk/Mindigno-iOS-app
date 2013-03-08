@@ -23,7 +23,7 @@
         <!--Login SignupVC-->
         <scene sceneID="oJU-2R-NLm">
             <objects>
-                <viewController id="ciP-J1-GJR" customClass="LoginSignupVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginSignupVC" id="ciP-J1-GJR" customClass="LoginSignupVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDX-N7-A8w">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

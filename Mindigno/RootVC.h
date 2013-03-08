@@ -8,24 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "MainButtonBar.h"
-#import "PullRefreshLazyLoadTableView.h"
-#import "ScrollButtonBar.h"
+#import "HomeVC.h"
+#import "ProfileUserVC.h"
+#import "LoginSignupVC.h"
 
-@interface RootVC : UIViewController <MainButtonBarDelegate, UITableViewDataSource, PullRefreshTableViewDelegate, ScrollButtonBarDataSource, ScrollButtonBarDelegate> {
+@interface RootVC : UIViewController <MainButtonBarDelegate, LoginSignupVCDelegate> {
     
     IBOutlet MainButtonBar *mainButtonBar;
     
-    NSMutableArray *arrayMicroPost;
-    IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
-    
-    //
-    NSArray *arrayButtonTitle;
-    IBOutlet ScrollButtonBar *scrollButtonBar;
-    
-    //
-    IBOutlet UIButton *buttonLogout;
+    IBOutlet UIView *containerViewProfileUser;
+    HomeVC *homeVC;
+    ProfileUserVC *profileUserVC;
 }
 
-- (IBAction)logout:(id)sender;
+
 
 @end

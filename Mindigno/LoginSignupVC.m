@@ -15,6 +15,8 @@
 
 @implementation LoginSignupVC
 
+@synthesize delegate;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -26,6 +28,11 @@
 }
 
 - (IBAction)exitFromModalView:(id)sender {
+    
+    if ([delegate respondsToSelector: @selector(loginSignupDiscarded)]) {
+        [delegate loginSignupDiscarded];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

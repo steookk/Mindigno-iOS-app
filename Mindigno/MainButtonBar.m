@@ -10,6 +10,7 @@
 
 @implementation MainButtonBar
 
+@synthesize buttonHome, buttonProfile, buttonSearch;
 @synthesize delegate;
 
 - (id) initWithFrame:(CGRect)frame {
@@ -113,8 +114,15 @@
         default:
             break;
     }
+}
+
+- (void) selectButton:(UIButton*)button {
     
-    
+    [currentSelectedButton setSelected:NO];
+    [currentSelectedButton setUserInteractionEnabled:YES];
+    currentSelectedButton = button;
+    [currentSelectedButton setSelected:YES];
+    [currentSelectedButton setUserInteractionEnabled:NO];
 }
 
 @end

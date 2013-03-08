@@ -23,6 +23,9 @@
 		D909B4B216662A2F00D66AD3 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D909B4B116662A2F00D66AD3 /* UserTests.m */; };
 		D90F14A816E8A20F00BCEBE8 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14A716E8A20F00BCEBE8 /* CustomBadge.m */; };
 		D90F14AB16E8A2F000BCEBE8 /* ButtonWithBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14AA16E8A2F000BCEBE8 /* ButtonWithBadge.m */; };
+		D90F14AF16E8E66100BCEBE8 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14AE16E8E66100BCEBE8 /* HomeVC.m */; };
+		D90F14B216E8EC3800BCEBE8 /* ProfileUserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B116E8EC3800BCEBE8 /* ProfileUserVC.m */; };
+		D90F14B516E8F69700BCEBE8 /* CustomContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B416E8F69700BCEBE8 /* CustomContainerView.m */; };
 		D92EC66A1679F6A700124E5C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92EC6691679F6A700124E5C /* Social.framework */; };
 		D92EC66E167A09EE00124E5C /* IndignatiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC66D167A09EE00124E5C /* IndignatiVC.m */; };
 		D92EC671167A0A0700124E5C /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EC670167A0A0700124E5C /* ProfileVC.m */; };
@@ -170,6 +173,12 @@
 		D90F14A716E8A20F00BCEBE8 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
 		D90F14A916E8A2F000BCEBE8 /* ButtonWithBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonWithBadge.h; sourceTree = "<group>"; };
 		D90F14AA16E8A2F000BCEBE8 /* ButtonWithBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonWithBadge.m; sourceTree = "<group>"; };
+		D90F14AD16E8E66100BCEBE8 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		D90F14AE16E8E66100BCEBE8 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		D90F14B016E8EC3800BCEBE8 /* ProfileUserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileUserVC.h; sourceTree = "<group>"; };
+		D90F14B116E8EC3800BCEBE8 /* ProfileUserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileUserVC.m; sourceTree = "<group>"; };
+		D90F14B316E8F69700BCEBE8 /* CustomContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomContainerView.h; sourceTree = "<group>"; };
+		D90F14B416E8F69700BCEBE8 /* CustomContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomContainerView.m; sourceTree = "<group>"; };
 		D92EC6691679F6A700124E5C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D92EC66C167A09EE00124E5C /* IndignatiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndignatiVC.h; sourceTree = "<group>"; };
 		D92EC66D167A09EE00124E5C /* IndignatiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndignatiVC.m; sourceTree = "<group>"; };
@@ -454,6 +463,8 @@
 				D90F14A716E8A20F00BCEBE8 /* CustomBadge.m */,
 				D90F14A916E8A2F000BCEBE8 /* ButtonWithBadge.h */,
 				D90F14AA16E8A2F000BCEBE8 /* ButtonWithBadge.m */,
+				D90F14B316E8F69700BCEBE8 /* CustomContainerView.h */,
+				D90F14B416E8F69700BCEBE8 /* CustomContainerView.m */,
 			);
 			name = "Button+badge";
 			sourceTree = "<group>";
@@ -503,6 +514,10 @@
 			children = (
 				D909B49B16662A2F00D66AD3 /* RootVC.h */,
 				D909B49C16662A2F00D66AD3 /* RootVC.m */,
+				D90F14AD16E8E66100BCEBE8 /* HomeVC.h */,
+				D90F14AE16E8E66100BCEBE8 /* HomeVC.m */,
+				D90F14B016E8EC3800BCEBE8 /* ProfileUserVC.h */,
+				D90F14B116E8EC3800BCEBE8 /* ProfileUserVC.m */,
 				D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */,
 				D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */,
 				D92EC66C167A09EE00124E5C /* IndignatiVC.h */,
@@ -970,6 +985,9 @@
 				D94DB87216E0B6A60027538F /* SignupResponse.m in Sources */,
 				D90F14A816E8A20F00BCEBE8 /* CustomBadge.m in Sources */,
 				D90F14AB16E8A2F000BCEBE8 /* ButtonWithBadge.m in Sources */,
+				D90F14AF16E8E66100BCEBE8 /* HomeVC.m in Sources */,
+				D90F14B216E8EC3800BCEBE8 /* ProfileUserVC.m in Sources */,
+				D90F14B516E8F69700BCEBE8 /* CustomContainerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

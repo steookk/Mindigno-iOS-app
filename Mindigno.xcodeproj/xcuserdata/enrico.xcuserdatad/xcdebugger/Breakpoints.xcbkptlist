@@ -46,26 +46,26 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Mindigno/ScrollButtonBar.m"
-         timestampString = "384275752.72776"
+         filePath = "Mindigno/HomeVC.m"
+         timestampString = "384365959.024485"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
-         landmarkName = "-initWithCoder:"
+         startingLineNumber = "222"
+         endingLineNumber = "222"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Mindigno/ScrollButtonBar.m"
-         timestampString = "384275760.856876"
+         filePath = "Mindigno/LoginSignupVC.m"
+         timestampString = "384445239.066794"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
-         landmarkName = "-initWithFrame:"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
+         landmarkName = "-exitFromModalView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

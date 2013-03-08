@@ -30,6 +30,13 @@
     UIButton *currentSelectedButton;
 }
 
+@property (nonatomic, readonly) UIButton *buttonHome;
+@property (nonatomic, readonly) UIButton *buttonProfile;
+@property (nonatomic, readonly) UIButton *buttonSearch;
+
 @property (nonatomic, weak) id <MainButtonBarDelegate> delegate;
+
+//Forza a selezionare un pulsante senza far scattare il target
+- (void) selectButton:(UIButton*)button;
 
 @end
