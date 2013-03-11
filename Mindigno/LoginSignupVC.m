@@ -20,11 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //[[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"rilegatura.png"] forBarMetrics:UIBarMetricsDefault];
+    
     [Utils setButtonRoundAndTrasparent:buttonLogin];
     [Utils setButtonRoundAndTrasparent:buttonSignup];
-
-    UIImage *image = [UIImage imageNamed:@"path"];
-    [imageViewBackground setImage:[Utils makeRoundCornerImage:image withCornerWidth:20 andWithCornerHeight:20]];
 }
 
 - (IBAction)exitFromModalView:(id)sender {

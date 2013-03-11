@@ -51,8 +51,6 @@
 		D94262AF166F5FC30085D7CB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94262AE166F5FC30085D7CB /* MainStoryboard.storyboard */; };
 		D94262B3166F5FDF0085D7CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94262B1166F5FDF0085D7CB /* InfoPlist.strings */; };
 		D94262C2166F85F00085D7CB /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D94262C1166F85EF0085D7CB /* Utils.m */; };
-		D94262D4166F979B0085D7CB /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = D94262D3166F979B0085D7CB /* path.png */; };
-		D94262D6166FA5160085D7CB /* facebook-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D94262D5166FA5160085D7CB /* facebook-button.jpg */; };
 		D94DB86B16DF76EC0027538F /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D94DB86916DF76E30027538F /* NSData+Additions.m */; };
 		D94DB86C16DF76EF0027538F /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D94DB86916DF76E30027538F /* NSData+Additions.m */; };
 		D94DB87216E0B6A60027538F /* SignupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D94DB87116E0B6A50027538F /* SignupResponse.m */; };
@@ -113,7 +111,6 @@
 		D9969E4E16E60108006219DF /* barra-gialla.png in Resources */ = {isa = PBXBuildFile; fileRef = D9969E4D16E60108006219DF /* barra-gialla.png */; };
 		D9969E5016E60223006219DF /* barra-gialla@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9969E4F16E60223006219DF /* barra-gialla@2x.png */; };
 		D99774C0167642690036672F /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99774BF167642690036672F /* DDMenuController.m */; };
-		D99C6467167F8FD6003DA08D /* write_comment.png in Resources */ = {isa = PBXBuildFile; fileRef = D99C6466167F8FD6003DA08D /* write_comment.png */; };
 		D99C646B167F9125003DA08D /* CommentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D99C646A167F9125003DA08D /* CommentDetailVC.m */; };
 		D99C646C167F9125003DA08D /* CommentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D99C646A167F9125003DA08D /* CommentDetailVC.m */; };
 		D9B177FE166D182D001F57AF /* ScrollButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B177FD166D182D001F57AF /* ScrollButtonBar.m */; };
@@ -131,7 +128,6 @@
 		D9C762E7167B463E007F87D5 /* Vignetta.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C762E6167B463E007F87D5 /* Vignetta.m */; };
 		D9C762E8167B463E007F87D5 /* Vignetta.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C762E6167B463E007F87D5 /* Vignetta.m */; };
 		D9C762EE167B7872007F87D5 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = D9C762EC167B7872007F87D5 /* comment.png */; };
-		D9C762EF167B7872007F87D5 /* indignati.png in Resources */ = {isa = PBXBuildFile; fileRef = D9C762ED167B7872007F87D5 /* indignati.png */; };
 		D9C81D6116DE7EF200AB364A /* Bozze in Resources */ = {isa = PBXBuildFile; fileRef = D9C81D6016DE7EF100AB364A /* Bozze */; };
 		D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F4EB261668F4860027D0B9 /* Kenny.png */; };
 		D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */; };
@@ -224,8 +220,6 @@
 		D94262B2166F5FDF0085D7CB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D94262C0166F85EF0085D7CB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D94262C1166F85EF0085D7CB /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		D94262D3166F979B0085D7CB /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
-		D94262D5166FA5160085D7CB /* facebook-button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "facebook-button.jpg"; sourceTree = "<group>"; };
 		D94DB86816DF76E30027538F /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Additions.h"; sourceTree = "<group>"; };
 		D94DB86916DF76E30027538F /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Additions.m"; sourceTree = "<group>"; };
 		D94DB87016E0B6A50027538F /* SignupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupResponse.h; sourceTree = "<group>"; };
@@ -290,7 +284,6 @@
 		D9969E4F16E60223006219DF /* barra-gialla@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barra-gialla@2x.png"; sourceTree = "<group>"; };
 		D99774BE167642690036672F /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
 		D99774BF167642690036672F /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
-		D99C6466167F8FD6003DA08D /* write_comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write_comment.png; sourceTree = "<group>"; };
 		D99C6469167F9125003DA08D /* CommentDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentDetailVC.h; sourceTree = "<group>"; };
 		D99C646A167F9125003DA08D /* CommentDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDetailVC.m; sourceTree = "<group>"; };
 		D9B177FB166D11BA001F57AF /* JsonKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonKeys.h; sourceTree = "<group>"; };
@@ -312,7 +305,6 @@
 		D9C762E5167B463E007F87D5 /* Vignetta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vignetta.h; sourceTree = "<group>"; };
 		D9C762E6167B463E007F87D5 /* Vignetta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vignetta.m; sourceTree = "<group>"; };
 		D9C762EC167B7872007F87D5 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
-		D9C762ED167B7872007F87D5 /* indignati.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indignati.png; sourceTree = "<group>"; };
 		D9C81D6016DE7EF100AB364A /* Bozze */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bozze; sourceTree = "<group>"; };
 		D9F4EB261668F4860027D0B9 /* Kenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kenny.png; sourceTree = "<group>"; };
 		D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostDetailVC.h; sourceTree = "<group>"; };
@@ -768,13 +760,9 @@
 			children = (
 				D9763B2E16EA62E200228209 /* plus.png */,
 				D9763B2F16EA62E300228209 /* gear.png */,
-				D99C6466167F8FD6003DA08D /* write_comment.png */,
 				D9C762EC167B7872007F87D5 /* comment.png */,
-				D9C762ED167B7872007F87D5 /* indignati.png */,
 				D96A563D1671F97700765CF6 /* placeholder.png */,
 				D96A563E1671F97700765CF6 /* placeholder@2x.png */,
-				D94262D3166F979B0085D7CB /* path.png */,
-				D94262D5166FA5160085D7CB /* facebook-button.jpg */,
 				D9BD96DC166E3F60000AD010 /* Arrow */,
 				D95CF13116E74A1B005D5148 /* Indignati Row */,
 				D9008E8C16691F8D00AC90B1 /* navbar */,
@@ -871,13 +859,9 @@
 				D9426297166F4CE50085D7CB /* LoginStoryboard.storyboard in Resources */,
 				D94262AF166F5FC30085D7CB /* MainStoryboard.storyboard in Resources */,
 				D94262B3166F5FDF0085D7CB /* InfoPlist.strings in Resources */,
-				D94262D4166F979B0085D7CB /* path.png in Resources */,
-				D94262D6166FA5160085D7CB /* facebook-button.jpg in Resources */,
 				D96A563F1671F97700765CF6 /* placeholder.png in Resources */,
 				D96A56401671F97700765CF6 /* placeholder@2x.png in Resources */,
 				D9C762EE167B7872007F87D5 /* comment.png in Resources */,
-				D9C762EF167B7872007F87D5 /* indignati.png in Resources */,
-				D99C6467167F8FD6003DA08D /* write_comment.png in Resources */,
 				D9C81D6116DE7EF200AB364A /* Bozze in Resources */,
 				D9969E4E16E60108006219DF /* barra-gialla.png in Resources */,
 				D9969E5016E60223006219DF /* barra-gialla@2x.png in Resources */,

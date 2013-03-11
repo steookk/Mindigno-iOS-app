@@ -8,6 +8,7 @@
         <scene sceneID="HzM-2Z-pOO">
             <objects>
                 <navigationController definesPresentationContext="YES" id="deo-YV-Smb" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="umU-FB-UcW">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.18039216101169586" green="0.18039216101169586" blue="0.18039216101169586" alpha="1" colorSpace="deviceRGB"/>
@@ -25,15 +26,11 @@
             <objects>
                 <viewController storyboardIdentifier="loginSignupVC" id="ciP-J1-GJR" customClass="LoginSignupVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDX-N7-A8w">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="t7l-CH-Bt7">
-                                <rect key="frame" x="30" y="63" width="260" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FSK-2y-GQu">
-                                <rect key="frame" x="74" y="83" width="172" height="103"/>
+                                <rect key="frame" x="74" y="63" width="172" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99194497980506635" green="1" blue="0.9952536926918697" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -49,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kio-8l-ZHb">
-                                <rect key="frame" x="74" y="205" width="172" height="103"/>
+                                <rect key="frame" x="74" y="145" width="172" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -65,7 +62,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="fxq-ak-kLz">
                         <barButtonItem key="leftBarButtonItem" title="Annulla" id="8I8-R5-EdD">
@@ -77,7 +74,6 @@
                     <connections>
                         <outlet property="buttonLogin" destination="FSK-2y-GQu" id="Irq-4e-9ED"/>
                         <outlet property="buttonSignup" destination="Kio-8l-ZHb" id="Cj2-fV-7qB"/>
-                        <outlet property="imageViewBackground" destination="t7l-CH-Bt7" id="yiK-y9-bfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdd-t6-EFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,7 +85,7 @@
             <objects>
                 <viewController id="da7-lB-wlB" customClass="LoginVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HzV-Yk-Rdn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="1jo-t3-QR5">
@@ -115,7 +111,7 @@
                                 <color key="backgroundColor" red="0.18039216101169586" green="0.18039216101169586" blue="0.18039216101169586" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="oT3-IB-eGu">
                         <barButtonItem key="rightBarButtonItem" title="Login" id="uAX-XC-X4k">
@@ -138,7 +134,7 @@
             <objects>
                 <viewController id="8M9-cM-r7y" customClass="SignupVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhZ-3Z-TDE">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jXb-a0-ywT" customClass="GTKeyboardHelper">
@@ -206,7 +202,7 @@
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mxd-pU-ETC">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Registrati" id="sdr-en-pfQ">

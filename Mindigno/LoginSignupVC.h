@@ -23,8 +23,6 @@
     
     IBOutlet UIButton *buttonLogin;
     IBOutlet UIButton *buttonSignup;
-    
-    IBOutlet UIImageView *imageViewBackground;
 }
 
 @property (nonatomic, weak) id <LoginSignupVCDelegate> delegate;

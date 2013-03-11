@@ -21,7 +21,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LtA-cQ-p36">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -92,7 +92,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="apw-6C-9eG">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -224,7 +224,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r3C-ta-vng">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -371,7 +371,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eus-G4-T9B">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -393,10 +393,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o80-na-Zbh">
-                                        <rect key="frame" x="277" y="6" width="36" height="28"/>
+                                        <rect key="frame" x="270" y="6" width="45" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <state key="normal" image="write_comment.png" backgroundImage="box-ombrato.jpg">
+                                        <state key="normal" backgroundImage="comment.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -495,7 +495,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ghv-gf-NUn">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -569,7 +569,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2oo-58-9RU">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -681,7 +681,7 @@
                                         <rect key="frame" x="210" y="7" width="45" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <state key="normal" image="write_comment.png" backgroundImage="box-ombrato.jpg">
+                                        <state key="normal" backgroundImage="comment.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -790,11 +790,11 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.50729432399999996" green="0.50729432399999996" blue="0.50729432399999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="indignati.png" id="2gX-9q-eye">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="button-indignati.png" id="2gX-9q-eye">
                                                     <rect key="frame" x="274" y="51" width="27" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="comment.png" id="RJN-oM-Vco">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="button-commenti.png" id="RJN-oM-Vco">
                                                     <rect key="frame" x="274" y="97" width="27" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -931,7 +931,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EaQ-Of-zbY">
-                                        <rect key="frame" x="5" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Annulla">
@@ -946,7 +946,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WwZ-jQ-clU">
-                                        <rect key="frame" x="241" y="7" width="73" height="27"/>
+                                        <rect key="frame" x="241" y="7" width="73" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="OK">
@@ -1345,7 +1345,6 @@
         <image name="Kenny.png" width="303" height="350"/>
         <image name="barra-gialla.png" width="100" height="40"/>
         <image name="box-ombrato-large.png" width="320" height="380"/>
-        <image name="box-ombrato.jpg" width="16" height="16"/>
         <image name="box-ombrato.png" width="320" height="180"/>
         <image name="button-commenti.png" width="45" height="28"/>
         <image name="button-commenti_click.png" width="45" height="28"/>
@@ -1358,13 +1357,11 @@
         <image name="buttons-mindigno_click.png" width="45" height="28"/>
         <image name="comment.png" width="64" height="64"/>
         <image name="gear.png" width="20" height="20"/>
-        <image name="indignati.png" width="128" height="128"/>
         <image name="linea.png" width="320" height="1"/>
-        <image name="path.png" width="495" height="495"/>
+        <image name="path.png" width="16" height="16"/>
         <image name="plus.png" width="20" height="20"/>
         <image name="rilegatura.png" width="320" height="40"/>
         <image name="scroll-bar.png" width="320" height="40"/>
-        <image name="write_comment.png" width="128" height="128"/>
     </resources>
     <classes>
         <class className="ButtonWithBadge" superclassName="UIButton">
@@ -1486,8 +1483,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Ol4-zK-bby"/>
-        <segue reference="mxI-77-wMS"/>
-        <segue reference="TUN-6S-skc"/>
+        <segue reference="6Zr-JY-Hl3"/>
+        <segue reference="um3-Ob-vQ0"/>
         <segue reference="k3v-Tn-sLm"/>
     </inferredMetricsTieBreakers>
 </document>
