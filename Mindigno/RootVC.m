@@ -9,6 +9,7 @@
 #import "RootVC.h"
 #import "Utils.h"
 #import "Mindigno.h"
+#import "NotificationKeys.h"
 
 @interface RootVC ()
 
@@ -41,7 +42,7 @@
     
     [loginButton addTarget:self action:@selector(loginButtonSelector) forControlEvents:UIControlEventTouchUpInside];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:@"logoutNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:LOGOUT_NOTIFICATION object:nil];
     
     [self setCustomButtonToTheRightOfBar];
 }
@@ -144,7 +145,6 @@
 }
 
 - (void) dealloc {
-    
     [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 

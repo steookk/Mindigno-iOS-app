@@ -176,6 +176,7 @@
 		D90F14B116E8EC3800BCEBE8 /* ProfileUserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileUserVC.m; sourceTree = "<group>"; };
 		D90F14B316E8F69700BCEBE8 /* CustomContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomContainerView.h; sourceTree = "<group>"; };
 		D90F14B416E8F69700BCEBE8 /* CustomContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomContainerView.m; sourceTree = "<group>"; };
+		D921A0DD16EE288F00DD3EEE /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
 		D92EC6691679F6A700124E5C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D92EC66C167A09EE00124E5C /* IndignatiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndignatiVC.h; sourceTree = "<group>"; };
 		D92EC66D167A09EE00124E5C /* IndignatiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndignatiVC.m; sourceTree = "<group>"; };
@@ -497,6 +498,7 @@
 		D92EC6A0167A434E00124E5C /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				D921A0DD16EE288F00DD3EEE /* NotificationKeys.h */,
 				D92EC69D167A433400124E5C /* Mindigno.h */,
 				D92EC69E167A433500124E5C /* Mindigno.m */,
 				D909B48F16662A2F00D66AD3 /* AppDelegate.h */,

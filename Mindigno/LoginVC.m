@@ -10,6 +10,7 @@
 #import "Utils.h"
 #import "JSONParserMainData.h"
 #import "Mindigno.h"
+#import "NotificationKeys.h"
 
 @interface LoginVC ()
 
@@ -56,6 +57,7 @@
     if ([[Mindigno sharedMindigno] isLoggedUser]) {
         //Esce dalla modal view
         [self dismissViewControllerAnimated:YES completion:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];
     
     } else {
         

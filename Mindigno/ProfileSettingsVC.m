@@ -9,6 +9,7 @@
 #import "ProfileSettingsVC.h"
 #import "Mindigno.h"
 #import "JSONParserMainData.h"
+#import "NotificationKeys.h"
 
 @interface ProfileSettingsVC ()
 
@@ -54,7 +55,7 @@
         [buttonLogout setHidden: YES];
         
         [self exitWithAnimation: NO];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotification" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOGOUT_NOTIFICATION object:nil];
     }
 }
 

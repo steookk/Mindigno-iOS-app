@@ -9,6 +9,7 @@
 #import "SignupVC.h"
 #import "Utils.h"
 #import "JSONParserMainData.h"
+#import "NotificationKeys.h"
 
 @interface SignupVC ()
 
@@ -90,6 +91,7 @@
         if ([signupResponse isUserCreated]) {
             //Esco dalla modale
             [self dismissViewControllerAnimated:YES completion:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];
         
         } else {
             

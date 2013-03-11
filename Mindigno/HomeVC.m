@@ -14,6 +14,7 @@
 #import "MicroPostDetailVC.h"
 #import "IndignatiVC.h"
 #import "CommentsVC.h"
+#import "NotificationKeys.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
@@ -24,15 +25,6 @@
 @implementation HomeVC
 
 @synthesize buttonPlus;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
 
@@ -51,11 +43,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:LOGOUT_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginNotification) name:LOGIN_NOTIFICATION object:nil];
+    
     [scrollButtonBar setDataSourceBar:self];
     [scrollButtonBar setDelegateBar:self];
     
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
+}
+
+- (void) handleLogoutNotification {
+    
+    NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
+    [arrayMicroPost setArray: microPosts];
+    
+    [tableViewMicroPost reloadData];
+}
+
+- (void) handleLoginNotification {
+    
+    NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
+    [arrayMicroPost setArray: microPosts];
+    
+    [tableViewMicroPost reloadData];
 }
 
 ///Start UITableViewDataSource
@@ -314,5 +325,8 @@
 }
 //Stop ScrollButtonBarDelegate
 
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
 
 @end
