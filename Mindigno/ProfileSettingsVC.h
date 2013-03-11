@@ -10,8 +10,11 @@
 
 @interface ProfileSettingsVC : UIViewController {
 
+    //
+    IBOutlet UIButton *buttonLogout;
 }
 
+- (IBAction)logout:(id)sender;
 - (IBAction)goBack:(id)sender;
 
 @end

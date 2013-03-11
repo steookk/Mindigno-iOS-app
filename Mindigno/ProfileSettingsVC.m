@@ -7,6 +7,8 @@
 //
 
 #import "ProfileSettingsVC.h"
+#import "Mindigno.h"
+#import "JSONParserMainData.h"
 
 @interface ProfileSettingsVC ()
 
@@ -28,9 +30,36 @@
 	// Do any additional setup after loading the view.
 }
 
-- (IBAction)goBack:(id)sender {
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
     
-    [[self navigationController] popViewControllerAnimated:YES];
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        [buttonLogout setHidden: NO];
+    } else {
+        [buttonLogout setHidden: YES];
+    }
+}
+
+- (void) exitWithAnimation:(BOOL)animation {
+
+    [[self navigationController] popViewControllerAnimated: animation];
+}
+
+- (IBAction)logout:(id)sender {
+    
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+        [jsonParser startLogout];
+        
+        [buttonLogout setHidden: YES];
+        
+        [self exitWithAnimation: NO];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotification" object:nil];
+    }
+}
+
+- (IBAction)goBack:(id)sender {
+    [self exitWithAnimation: YES];
 }
 
 @end

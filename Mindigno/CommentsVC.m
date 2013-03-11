@@ -35,7 +35,6 @@
     arrayButtonTitle = [currentMicroPost commentsTabs_buttons];
     
     //
-    
     [scrollButtonBar setDataSourceBar:self];
     [scrollButtonBar setDelegateBar:self];
 

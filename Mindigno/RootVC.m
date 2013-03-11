@@ -41,6 +41,8 @@
     
     [loginButton addTarget:self action:@selector(loginButtonSelector) forControlEvents:UIControlEventTouchUpInside];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:@"logoutNotification" object:nil];
+    
     [self setCustomButtonToTheRightOfBar];
 }
 
@@ -127,7 +129,6 @@
     
     } else if ([[segue identifier] isEqualToString:@"rootToProfileVC"]) {
         profileUserVC = [segue destinationViewController];
-        [profileUserVC setDelegate: self];
     }
 }
 
@@ -136,12 +137,15 @@
 }
 //Stop MainButtonBarDelegate
 
-//Start ProfileUserVCDelegate
-- (void) clickedButtonLogout {
+- (void) handleLogoutNotification {
     
     //Forzo a cliccare il pulsante home
     [mainButtonBar clickButton: [mainButtonBar buttonHome]];
 }
-//Stop ProfileUserVCDelegate
+
+- (void) dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
 
 @end

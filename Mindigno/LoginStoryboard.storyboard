@@ -229,6 +229,41 @@
             <point key="canvasLocation" x="931" y="423"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="GTKeyboardHelper" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTKeyboardHelper.h"/>
+        </class>
+        <class className="LoginSignupVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginSignupVC.h"/>
+            <relationships>
+                <relationship kind="action" name="exitFromModalView:"/>
+                <relationship kind="outlet" name="buttonLogin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSignup" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewBackground" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LoginVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginVC.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="outlet" name="textFieldPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SignupVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupVC.h"/>
+            <relationships>
+                <relationship kind="action" name="signup:"/>
+                <relationship kind="action" name="switchContrattoHasChangedValue:"/>
+                <relationship kind="outlet" name="buttonBarRegistrati" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="switchAccettaContratto" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="textFieldMail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldNome" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldRetipedPassword" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

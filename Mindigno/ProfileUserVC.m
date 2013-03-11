@@ -8,8 +8,6 @@
 
 #import "ProfileUserVC.h"
 #import "UIImageView+WebCache.h"
-#import "JSONParserMainData.h"
-#import "Mindigno.h"
 
 @interface ProfileUserVC ()
 
@@ -17,7 +15,7 @@
 
 @implementation ProfileUserVC
 
-@synthesize delegate, currentUser, buttonSettings;
+@synthesize currentUser, buttonSettings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -35,30 +33,6 @@
     
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
     [imageViewAvatar setImageWithURL:[NSURL URLWithString:[currentUser avatarUrl]] placeholderImage:placeHolder];
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear: animated];
-    
-    if ([[Mindigno sharedMindigno] isLoggedUser]) {
-        [buttonLogout setHidden: NO];
-    } else {
-        [buttonLogout setHidden: YES];
-    }
-}
-
-- (IBAction)logout:(id)sender {
-    
-    if ([[Mindigno sharedMindigno] isLoggedUser]) {
-        JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-        [jsonParser startLogout];
-        
-        [buttonLogout setHidden: YES];
-        
-        if ([delegate respondsToSelector:@selector(clickedButtonLogout)]) {
-            [delegate clickedButtonLogout];
-        }
-    }
 }
 
 @end

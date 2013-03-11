@@ -76,7 +76,7 @@
     
     //
     
-    CGRect rectContainerButtonVariable = CGRectMake(282, 3, 33, 33);
+    CGRect rectContainerButtonVariable = CGRectMake(282, 7, 33, 33);
     containerCustomVariableButton = [[UIView alloc] initWithFrame: rectContainerButtonVariable];
     [containerCustomVariableButton setBackgroundColor: [UIColor clearColor]];
     
