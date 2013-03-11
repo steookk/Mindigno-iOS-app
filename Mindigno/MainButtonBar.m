@@ -10,13 +10,14 @@
 
 @implementation MainButtonBar
 
-@synthesize buttonHome, buttonProfile, buttonSearch;
+@synthesize buttonHome, buttonProfile, buttonSearch, currentSelectedButton;
 @synthesize delegate;
 
 - (id) initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
     if (self) {
+        [self startInizialization];
     }
     
     return self;
@@ -26,16 +27,10 @@
     
     self = [super initWithCoder:aDecoder];
     if (self) {
+        [self startInizialization];
     }
     
     return self;
-}
-
-- (void) drawRect:(CGRect)rect {
-    
-    [super drawRect:rect];
-    
-    [self startInizialization];
 }
 
 - (void) startInizialization {
@@ -46,7 +41,7 @@
     [buttonHome addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [buttonHome setBackgroundImage:[UIImage imageNamed:@"ico-home.png"] forState:UIControlStateNormal];
     //[buttonHome setBackgroundImage:[UIImage imageNamed:@"ico-home_hover.png"] forState:UIControlStateHighlighted];
-    [buttonHome setBackgroundImage:[UIImage imageNamed:@"ico-home_selezionato.png"] forState:UIControlStateSelected];
+    [buttonHome setBackgroundImage:[UIImage imageNamed:@"ico-home_click.png"] forState:UIControlStateSelected];
     
     CGRect rectButtonProfile = CGRectMake(135, 7, 50, 33);
     buttonProfile = [[UIButton alloc] initWithFrame: rectButtonProfile];
@@ -54,7 +49,7 @@
     [buttonProfile addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [buttonProfile setBackgroundImage:[UIImage imageNamed:@"ico-profilo.png"] forState:UIControlStateNormal];
     //[buttonProfile setBackgroundImage:[UIImage imageNamed:@"ico-profile_hover.png"] forState:UIControlStateHighlighted];
-    [buttonProfile setBackgroundImage:[UIImage imageNamed:@"ico-profilo_selezionato.png"] forState:UIControlStateSelected];
+    [buttonProfile setBackgroundImage:[UIImage imageNamed:@"ico-profilo_click.png"] forState:UIControlStateSelected];
     
     CGRect rectButtonSearch = CGRectMake(193, 7, 50, 33);
     buttonSearch = [[UIButton alloc] initWithFrame: rectButtonSearch];
@@ -62,14 +57,12 @@
     [buttonSearch addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-cerca.png"] forState:UIControlStateNormal];
     //[buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-search_hover.png"] forState:UIControlStateHighlighted];
-    [buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-cerca_selezionato.png"] forState:UIControlStateSelected];
+    [buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-cerca_click.png"] forState:UIControlStateSelected];
     
     [buttonSearch setUserInteractionEnabled:NO];
     [buttonSearch setAlpha:0.25];
     
-    
     //
-    
     
     currentSelectedButton = buttonHome;
     [buttonHome setSelected:YES];
@@ -80,6 +73,16 @@
     [self addSubview:buttonHome];
     [self addSubview:buttonProfile];
     [self addSubview:buttonSearch];
+    
+    //
+    
+    CGRect rectContainerButtonVariable = CGRectMake(282, 3, 33, 33);
+    containerCustomVariableButton = [[UIView alloc] initWithFrame: rectContainerButtonVariable];
+    [containerCustomVariableButton setBackgroundColor: [UIColor clearColor]];
+    
+    [self addSubview: containerCustomVariableButton];
+    
+    customVariableButton = nil;
 }
 
 - (void) buttonClicked:(id)sender {
@@ -123,6 +126,24 @@
     currentSelectedButton = button;
     [currentSelectedButton setSelected:YES];
     [currentSelectedButton setUserInteractionEnabled:NO];
+}
+
+- (void) clickButton:(UIButton *)button {
+    [self buttonClicked: button];
+}
+
+- (void) setCustomVariableButton:(UIButton*)button {
+
+    if (customVariableButton != nil) {
+        [customVariableButton removeFromSuperview];
+    }
+    
+    if (button != nil) {
+        customVariableButton = button;
+        [containerCustomVariableButton addSubview: button];
+    } else {
+        customVariableButton = nil;
+    }
 }
 
 @end

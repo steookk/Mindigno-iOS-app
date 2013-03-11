@@ -28,15 +28,26 @@
     UIButton *buttonSearch;
     
     UIButton *currentSelectedButton;
+    
+    //
+    UIView *containerCustomVariableButton;
+    UIButton __weak *customVariableButton;
 }
 
 @property (nonatomic, readonly) UIButton *buttonHome;
 @property (nonatomic, readonly) UIButton *buttonProfile;
 @property (nonatomic, readonly) UIButton *buttonSearch;
 
+@property (nonatomic, readonly) UIButton *currentSelectedButton;
+
 @property (nonatomic, weak) id <MainButtonBarDelegate> delegate;
 
+//Simula un click forzato con conseguente scattare del target
+- (void) clickButton:(UIButton *)button;
+
 //Forza a selezionare un pulsante senza far scattare il target
-- (void) selectButton:(UIButton*)button;
+- (void) selectButton:(UIButton *)button;
+
+- (void) setCustomVariableButton:(UIButton*)button;
 
 @end

@@ -27,18 +27,63 @@
     return self;
 }
 
+- (void) loginButtonSelector {
+
+    UINavigationController *navController = (UINavigationController *) [self apriModaleLogin];
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
     [mainButtonBar setDelegate:self];
+    
+    [loginButton addTarget:self action:@selector(loginButtonSelector) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self setCustomButtonToTheRightOfBar];
+}
+
+- (void) setCustomButtonToTheRightOfBar {
+
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        
+        if ([mainButtonBar currentSelectedButton] == [mainButtonBar buttonHome]) {
+            [mainButtonBar setCustomVariableButton: [homeVC buttonPlus]];
+            
+        } else if ([mainButtonBar currentSelectedButton] == [mainButtonBar buttonProfile]) {
+            [mainButtonBar setCustomVariableButton: [profileUserVC buttonSettings]];
+        }
+        
+    } else {
+        [mainButtonBar setCustomVariableButton: loginButton];
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    [self setCustomButtonToTheRightOfBar];
 }
 
 //Start MainButtonBarDelegate
 - (void) clickedButtonHome {
     NSLog(@"clickedButtonHome");
     
+    [self setCustomButtonToTheRightOfBar];
+
     [containerViewProfileUser setHidden: YES];
+}
+
+- (UIViewController *) apriModaleLogin {
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
+    
+    UINavigationController *navController = (UINavigationController *)[storyboard instantiateInitialViewController];
+    LoginSignupVC *loginSignupVC = (LoginSignupVC *)[navController topViewController];
+    [loginSignupVC setDelegate: self];
+    
+    return navController;
 }
 
 - (void) clickedButtonProfile {
@@ -47,11 +92,7 @@
     //Se l'utente non è loggato
     if (![[Mindigno sharedMindigno] isLoggedUser]) {
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
-        
-        UINavigationController *navController = (UINavigationController *)[storyboard instantiateInitialViewController];
-        LoginSignupVC *loginSignupVC = (LoginSignupVC *)[navController topViewController];
-        [loginSignupVC setDelegate: self];
+        UINavigationController *navController = (UINavigationController *) [self apriModaleLogin];
         
         [self presentViewController:navController animated:YES completion:^{
             
@@ -67,6 +108,7 @@
         
         //Visualizzo la view
         [containerViewProfileUser setHidden: NO];
+        [self setCustomButtonToTheRightOfBar];
     }
 }
 
@@ -85,6 +127,7 @@
     
     } else if ([[segue identifier] isEqualToString:@"rootToProfileVC"]) {
         profileUserVC = [segue destinationViewController];
+        [profileUserVC setDelegate: self];
     }
 }
 
@@ -92,5 +135,13 @@
     NSLog(@"clickedButtonSearch");
 }
 //Stop MainButtonBarDelegate
+
+//Start ProfileUserVCDelegate
+- (void) clickedButtonLogout {
+    
+    //Forzo a cliccare il pulsante home
+    [mainButtonBar clickButton: [mainButtonBar buttonHome]];
+}
+//Stop ProfileUserVCDelegate
 
 @end

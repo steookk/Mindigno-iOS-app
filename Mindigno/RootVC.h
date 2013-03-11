@@ -12,13 +12,15 @@
 #import "ProfileUserVC.h"
 #import "LoginSignupVC.h"
 
-@interface RootVC : UIViewController <MainButtonBarDelegate, LoginSignupVCDelegate> {
+@interface RootVC : UIViewController <MainButtonBarDelegate, LoginSignupVCDelegate, ProfileUserVCDelegate> {
     
     IBOutlet MainButtonBar *mainButtonBar;
     
     IBOutlet UIView *containerViewProfileUser;
     HomeVC *homeVC;
     ProfileUserVC *profileUserVC;
+    
+    IBOutlet UIButton *loginButton;
 }
 
 

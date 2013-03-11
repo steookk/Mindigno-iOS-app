@@ -17,6 +17,11 @@
     
     NSMutableArray *arrayMicroPost;
     IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
+    
+    //
+    IBOutlet UIButton *buttonPlus;
 }
+
+@property (nonatomic, readonly) UIButton *buttonPlus;
 
 @end

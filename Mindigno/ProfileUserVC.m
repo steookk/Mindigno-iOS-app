@@ -17,7 +17,7 @@
 
 @implementation ProfileUserVC
 
-@synthesize currentUser;
+@synthesize delegate, currentUser, buttonSettings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -54,6 +54,10 @@
         [jsonParser startLogout];
         
         [buttonLogout setHidden: YES];
+        
+        if ([delegate respondsToSelector:@selector(clickedButtonLogout)]) {
+            [delegate clickedButtonLogout];
+        }
     }
 }
 
