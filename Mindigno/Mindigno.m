@@ -91,7 +91,11 @@
             [idToUser_dictionary setObject:user forKey: [user userID]];
         
         } else {
-            [idToUser_dictionary setObject:user forKey: [user userID]];
+            
+            User *existentUser = [idToUser_dictionary objectForKey: [user userID]];
+            [existentUser setInfoWithJsonRoot: user_dictionary];
+            
+            //[idToUser_dictionary setObject:user forKey: [user userID]];
         }
     }
 }

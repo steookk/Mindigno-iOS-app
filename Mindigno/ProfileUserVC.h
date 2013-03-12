@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "PullRefreshLazyLoadTableView.h"
 
-@interface ProfileUserVC : UIViewController {
+@interface ProfileUserVC : UIViewController <UITableViewDataSource, PullRefreshTableViewDelegate> {
     
     User* currentUser;
     
@@ -21,7 +22,7 @@
     IBOutlet UILabel *labelNumberFollowers;
     IBOutlet UILabel *labelNumberFollowing;
     
-    IBOutlet UITableView *tableViewMicroPost;
+    IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
     NSArray *arrayMicroPost;
 
     //

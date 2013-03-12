@@ -15,28 +15,34 @@
 
 @implementation ProfileVC
 
-@synthesize currentUser;
+@synthesize currentUser, arrayMicroPost;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (id)initWithCoder:(NSCoder *)aDecoder {
     
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder: aDecoder];
     if (self) {
-        // Custom initialization
+    
     }
+    
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-    [labelName setText: [currentUser name]];
     
-    UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
-    [imageViewAvatar setImageWithURL:[NSURL URLWithString:[currentUser avatarUrl]] placeholderImage:placeHolder];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"profileToProfileUser"]) {
+        profileUserVC = [segue destinationViewController];
+        
+        [profileUserVC setCurrentUser: currentUser];
+        [profileUserVC setArrayMicroPost: arrayMicroPost];
+    } 
 }
 
 - (IBAction)goBack:(id)sender {
-    
     [[self navigationController] popViewControllerAnimated:YES];
 }
 

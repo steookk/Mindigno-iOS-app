@@ -131,13 +131,13 @@
             [contentViewCreator setHidden: NO];
             
             UILabel *labelPreposition = (UILabel*)[cell viewWithTag:11];
-            UIImageView *imageViewAvatar = (UIImageView*)[cell viewWithTag:12];
+            UIImageView *imageViewAvatarUser = (UIImageView*)[cell viewWithTag:12];
             UILabel *labelUsername = (UILabel*)[cell viewWithTag:13];
             
             User *user = [currentMicroPost userCreator];
             
             [labelPreposition setText:[currentMicroPost preposition]];
-            [imageViewAvatar setImageWithURL:[NSURL URLWithString: [user avatarUrl]] placeholderImage:placeHolder];
+            [imageViewAvatarUser setImageWithURL:[NSURL URLWithString: [user avatarUrl]] placeholderImage:placeHolder];
             [labelUsername setText:[user name]];
             
         } else {

@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "ProfileUserVC.h"
 
 @interface ProfileVC : UIViewController {
 
     User* currentUser;
+    NSArray *arrayMicroPost;
     
-    IBOutlet UILabel *labelName;
-    IBOutlet UIImageView *imageViewAvatar;
+    ProfileUserVC *profileUserVC;
 }
 
-@property (nonatomic, retain) User* currentUser;
+@property (nonatomic) User* currentUser;
+@property (nonatomic) NSArray *arrayMicroPost;
 
 - (IBAction)goBack:(id)sender;
 

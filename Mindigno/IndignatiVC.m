@@ -9,6 +9,9 @@
 #import "IndignatiVC.h"
 #import "UIImageView+WebCache.h"
 #import "ProfileVC.h"
+#import "Mindigno.h"
+
+#define CELL_ROW_HEIGHT_DEFAULT 60.0f
 
 @interface IndignatiVC ()
 
@@ -88,6 +91,12 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    double defaultHeight = CELL_ROW_HEIGHT_DEFAULT;
+    
+    return defaultHeight;
+}
 ///Stop UITableViewDelegate
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -100,6 +109,9 @@
         ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
         User *currentUser = [[arrayOfArray_indignati objectAtIndex:currentIndexPath.section] objectAtIndex:currentIndexPath.row];
         [profileVC setCurrentUser:currentUser];
+        
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: currentUser];
+        [profileVC setArrayMicroPost: micropostOfUser];
     }
 }
 

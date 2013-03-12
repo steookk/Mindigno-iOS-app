@@ -107,9 +107,10 @@
         NSLog(@"Utente già loggato");
         
         //Setting di eventuali valori al profileVC
-        NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: [[Mindigno sharedMindigno] currentUser]];
+        User *currentUser = [[Mindigno sharedMindigno] currentUser];
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: currentUser];
         
-        [profileUserVC setCurrentUser: [[Mindigno sharedMindigno] currentUser]];
+        [profileUserVC setCurrentUser:currentUser];
         [profileUserVC setArrayMicroPost: micropostOfUser];
         [profileUserVC refreshView];
         

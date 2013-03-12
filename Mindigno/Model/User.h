@@ -36,5 +36,6 @@
 //
 
 - (id)initWithJsonRoot:(NSDictionary*)root_user;
+- (void)setInfoWithJsonRoot:(NSDictionary*)root_user;
 
 @end
