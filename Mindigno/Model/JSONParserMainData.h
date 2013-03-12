@@ -20,8 +20,8 @@
 
 }
 
-//Return TRUE if it worked out (there is connection). Not require authentication
-- (BOOL) startDownloadAndParsingJsonAtUrl:(NSString *)urlString;
+- (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString;
+- (NSMutableArray*) startDownloadFeedForUser:(User *)user;
 
 //Controlla e aggiorna lo stato di login dell'utente
 - (void) startLoginWithUser:(NSString*)user andPassword:(NSString*)password;

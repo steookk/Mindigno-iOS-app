@@ -136,26 +136,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="h0n-DH-hQy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Profile user view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5LF-Fz-Obk">
-                                        <rect key="frame" x="20" y="8" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.8244791436263349" green="0.93943319515306123" blue="0.51492722650873812" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="Kenny.png" id="J7m-TO-Wp0">
-                                <rect key="frame" x="10" y="48" width="55" height="65"/>
+                                <rect key="frame" x="9" y="9" width="60" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="7eH-OS-03H">
+                                <rect key="frame" x="83" y="9" width="230" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="chi segui" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0HH-cm-bDR">
+                                        <rect key="frame" x="16" y="27" width="80" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="ti seguono" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BRc-MK-C6U">
+                                        <rect key="frame" x="134" y="27" width="80" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="154" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CLV-gM-XNi">
+                                        <rect key="frame" x="16" y="3" width="80" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="1045" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UTR-rO-Z30">
+                                        <rect key="frame" x="134" y="3" width="80" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="kennymuse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vs7-3F-qE7">
-                                <rect key="frame" x="82" y="48" width="231" height="65"/>
+                                <rect key="frame" x="83" y="64" width="230" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -168,7 +189,11 @@
                     <connections>
                         <outlet property="buttonSettings" destination="awm-W2-bjU" id="WyQ-Nh-OYy"/>
                         <outlet property="imageViewAvatar" destination="J7m-TO-Wp0" id="6tf-f0-DA2"/>
+                        <outlet property="labelFollowersText" destination="BRc-MK-C6U" id="7Ne-cN-q70"/>
+                        <outlet property="labelFollowingText" destination="0HH-cm-bDR" id="BBu-rU-bvP"/>
                         <outlet property="labelName" destination="Vs7-3F-qE7" id="Fp5-HZ-d4b"/>
+                        <outlet property="labelNumberFollowers" destination="UTR-rO-Z30" id="Mry-hh-WYl"/>
+                        <outlet property="labelNumberFollowing" destination="CLV-gM-XNi" id="FJ3-B3-dwS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZd-Tk-a3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -711,7 +736,7 @@
                                                     <rect key="frame" x="10" y="8" width="55" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOA-5I-6eB">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOA-5I-6eB">
                                                     <rect key="frame" x="74" y="8" width="236" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo </string>
@@ -1027,7 +1052,7 @@
                                                     <rect key="frame" x="8" y="29" width="55" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="clip" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="8" id="n77-33-f8A">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n77-33-f8A">
                                                     <rect key="frame" x="71" y="26" width="238" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
@@ -1173,7 +1198,7 @@
                                                     <rect key="frame" x="8" y="29" width="55" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w5Z-9y-kgc">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w5Z-9y-kgc">
                                                     <rect key="frame" x="71" y="26" width="238" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
@@ -1450,7 +1475,12 @@
             <relationships>
                 <relationship kind="outlet" name="buttonSettings" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelFollowersText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelFollowingText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelNumberFollowers" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelNumberFollowing" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableViewMicroPost" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="ProfileVC" superclassName="UIViewController">
@@ -1483,8 +1513,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Ol4-zK-bby"/>
+        <segue reference="C3h-oT-Gfq"/>
         <segue reference="6Zr-JY-Hl3"/>
         <segue reference="um3-Ob-vQ0"/>
-        <segue reference="k3v-Tn-sLm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,12 +15,24 @@
     
     IBOutlet UILabel *labelName;
     IBOutlet UIImageView *imageViewAvatar;
+    
+    IBOutlet UILabel *labelFollowersText;
+    IBOutlet UILabel *labelFollowingText;
+    IBOutlet UILabel *labelNumberFollowers;
+    IBOutlet UILabel *labelNumberFollowing;
+    
+    IBOutlet UITableView *tableViewMicroPost;
+    NSArray *arrayMicroPost;
 
     //
     IBOutlet UIButton *buttonSettings;
 }
 
 @property (nonatomic, retain) User* currentUser;
+@property (nonatomic) NSArray *arrayMicroPost;
+
 @property (nonatomic, readonly) UIButton *buttonSettings;
+
+- (void) refreshView;
 
 @end

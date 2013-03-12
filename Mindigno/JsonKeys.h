@@ -26,12 +26,18 @@
 
 ///
 
+#define USER_KEY @"user"
 #define USERS_KEY @"users"
 
 #define USER_ID_KEY @"id"
 #define USER_PATH_KEY @"user_path"
 #define USER_NAME_KEY @"name"
 #define USER_AVATAR_URL_KEY @"avatar_url"
+
+#define USER_FOLLOWERS_TEXT @"followers_text"
+#define USER_FOLLOWING_TEXT @"following_text"
+#define USER_NUMBER_FOLLOWERS @"num_followers"
+#define USER_NUMBER_FOLLOWING @"num_following"
 
 ///
 

@@ -15,15 +15,21 @@
 
 @implementation ProfileUserVC
 
-@synthesize currentUser, buttonSettings;
+@synthesize currentUser, arrayMicroPost, buttonSettings;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void) refreshView {
 	
     [labelName setText: [currentUser name]];
     
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
     [imageViewAvatar setImageWithURL:[NSURL URLWithString:[currentUser avatarUrl]] placeholderImage:placeHolder];
+    
+    //
+    
+    [labelFollowersText setText: [currentUser followersText]];
+    [labelFollowingText setText: [currentUser followingText]];
+    [labelNumberFollowers setText: [currentUser numberOfFollowers]];
+    [labelNumberFollowing setText: [currentUser numberOfFollowing]];
 }
 
 @end

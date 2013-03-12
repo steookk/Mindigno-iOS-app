@@ -59,26 +59,26 @@
 
 ///
 
-- (void) addMicroPostsFromJsonRoot:(NSArray*)microposts {
-
-    [microPosts removeAllObjects];
-    
-    for (NSDictionary *feed_dictionary in microposts) {
-        
-        MicroPost *microPost = [[MicroPost alloc] initWithJsonRoot: feed_dictionary];
-        
-        //Add to list
-        [microPosts addObject:microPost];
-    }
-}
-
 - (NSArray *) microPosts {
 
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl: URL_JSON_MICROPOST_TEST];
     
-    [jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
+    [microPosts removeAllObjects];
+    [microPosts setArray: microposts_to_return];
     
     return microPosts;
+}
+
+- (NSArray *) microPostsOfUser:(User*)user {
+    
+    //NSString *urlForRequest = [user userUrl];
+    //NSLog(@"urlForRequest user: %@", urlForRequest);
+    
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedForUser: user];
+    
+    return microposts_to_return;
 }
 
 - (void) addUsersFromJsonRoot:(NSArray*)users {
@@ -88,6 +88,9 @@
         User *user = [[User alloc] initWithJsonRoot:user_dictionary];
         
         if ([idToUser_dictionary objectForKey: [user userID]] == nil) {
+            [idToUser_dictionary setObject:user forKey: [user userID]];
+        
+        } else {
             [idToUser_dictionary setObject:user forKey: [user userID]];
         }
     }

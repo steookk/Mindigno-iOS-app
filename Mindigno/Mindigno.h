@@ -27,8 +27,8 @@
 
 + (id)sharedMindigno;
 
-- (void) addMicroPostsFromJsonRoot:(NSArray*)microposts;
 - (NSArray *) microPosts;
+- (NSArray *) microPostsOfUser:(User*)user;
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
