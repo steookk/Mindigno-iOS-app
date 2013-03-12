@@ -43,6 +43,7 @@
     [loginButton addTarget:self action:@selector(loginButtonSelector) forControlEvents:UIControlEventTouchUpInside];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:LOGOUT_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginNotification) name:LOGIN_NOTIFICATION object:nil];
     
     [self setCustomButtonToTheRightOfBar];
 }
@@ -89,6 +90,17 @@
     return navController;
 }
 
+- (void) caricaInformazioniProfilo {
+
+    //Setting di eventuali valori al profileVC
+    User *currentUser = [[Mindigno sharedMindigno] currentUser];
+    NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: currentUser];
+    
+    [profileUserVC setCurrentUser:currentUser];
+    [profileUserVC setArrayMicroPost: micropostOfUser];
+    [profileUserVC refreshView];
+}
+
 - (void) clickedButtonProfile {
     NSLog(@"clickedButtonProfile");
     
@@ -106,13 +118,7 @@
     } else {
         NSLog(@"Utente già loggato");
         
-        //Setting di eventuali valori al profileVC
-        User *currentUser = [[Mindigno sharedMindigno] currentUser];
-        NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: currentUser];
-        
-        [profileUserVC setCurrentUser:currentUser];
-        [profileUserVC setArrayMicroPost: micropostOfUser];
-        [profileUserVC refreshView];
+        [self caricaInformazioniProfilo];
         
         //Visualizzo la view
         [containerViewProfileUser setHidden: NO];
@@ -147,6 +153,11 @@
     
     //Forzo a cliccare il pulsante home
     [mainButtonBar clickButton: [mainButtonBar buttonHome]];
+}
+
+- (void) handleLoginNotification {
+    
+    [self caricaInformazioniProfilo];
 }
 
 - (void) dealloc {
