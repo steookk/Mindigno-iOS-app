@@ -114,9 +114,6 @@
         CGRect rectScrollButtonBar = [self frame];
         CGRect contentCenteredRect = CGRectMake((320.0-pointerToDraw)/2.0, 0, pointerToDraw, rectScrollButtonBar.size.height);
         
-        NSString *test = [[@"ciao/pluto/" stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"/pippo"];
-        NSLog(@"NOTE: %@", test);
-        
         UIView *contentCenteredView = [[UIView alloc] initWithFrame: contentCenteredRect];
         [contentCenteredView setBackgroundColor:[UIColor clearColor]];
         

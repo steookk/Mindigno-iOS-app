@@ -20,8 +20,7 @@
 
 }
 
-- (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString;
-- (NSMutableArray*) startDownloadFeedForUser:(User *)user;
+- (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString thereIsUserField:(BOOL)yesOrNot;
 
 //Controlla e aggiorna lo stato di login dell'utente
 - (void) startLoginWithUser:(NSString*)user andPassword:(NSString*)password;

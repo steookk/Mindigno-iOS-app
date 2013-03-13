@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mindigno/Model/JSONParserMainData.m"
-         timestampString = "384874192.887209"
+         timestampString = "384885931.378101"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "470"
-         endingLineNumber = "470"
+         startingLineNumber = "414"
+         endingLineNumber = "414"
          landmarkName = "-rimuoviIndignazioneSulMicroPostConID:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,12 +99,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mindigno/Model/JSONParserMainData.m"
-         timestampString = "384868974.707931"
+         timestampString = "384885931.378101"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "291"
-         endingLineNumber = "291"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
          landmarkName = "-startLogout"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mindigno/Model/JSONParserMainData.m"
+         timestampString = "384885650.08742"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "-startDownloadFeedAtUrl:thereIsUserField:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

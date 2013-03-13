@@ -23,14 +23,14 @@
     IBOutlet UILabel *labelNumberFollowing;
     
     IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
-    NSArray *arrayMicroPost;
+    NSArray __weak *arrayMicroPost;
 
     //
     IBOutlet UIButton *buttonSettings;
 }
 
 @property (nonatomic, retain) User* currentUser;
-@property (nonatomic) NSArray *arrayMicroPost;
+@property (nonatomic, weak) NSArray *arrayMicroPost;
 
 @property (nonatomic, readonly) UIButton *buttonSettings;
 

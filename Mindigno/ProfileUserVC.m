@@ -296,8 +296,14 @@
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
     
-    //[[Mindigno sharedMindigno] moreOldMicroPosts];
-    //[tableViewMicroPost reloadData]
+    //Ritorna nil se non ci sono più vecchi micropost
+    NSArray *microposts = [[Mindigno sharedMindigno] moreOldMicroPostsOfUser: [[Mindigno sharedMindigno] currentUser]];
+    
+    if (microposts == nil) {
+        [tableViewMicroPost setEnabledLazyLoad:NO];
+    }
+    
+    [tableViewMicroPost reloadData];
 }
 //Stop PullRefreshTableViewDelegate
 

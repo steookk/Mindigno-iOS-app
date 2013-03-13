@@ -13,6 +13,7 @@
 
     User *currentUser;
     NSMutableArray *microPosts;
+    NSMutableArray *microPostsUser;
     NSMutableDictionary *idToUser_dictionary;
     
     NSString *baseURL;
@@ -32,8 +33,11 @@
 //Per recuperare altri 8 micropost (home)
 - (NSArray *) moreOldMicroPosts;
 
-
+//Per recuperare i micropost di un user
 - (NSArray *) microPostsOfUser:(User*)user;
+//Per recuperare altri 8 micropost dell'user
+- (NSArray *) moreOldMicroPostsOfUser:(User*)user;
+
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;

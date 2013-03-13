@@ -25,7 +25,7 @@
     return self;
 }
 
-- (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString {
+- (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString thereIsUserField:(BOOL)yesOrNot {
     
     NSURL *url = [NSURL URLWithString: urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
@@ -45,9 +45,11 @@
     [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
     
     //
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
     
-    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
-
+    //NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    //int statusCode = [httpResponse statusCode];
     //
     
     //For debug
@@ -56,74 +58,10 @@
     
     NSMutableArray *microPosts = nil;
     
-    if (data != nil) {
-        
-        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        
-        //
-        
-        //It must be done before of all
-        [[Mindigno sharedMindigno] setBaseURL: [root_dictionary objectForKey: BASE_URL_KEY]];
-        
-        NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
-        [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
-        //
-        
-        NSString *current_user_id = [root_dictionary objectForKey: CURRENT_USER_KEY];
-        User *current_user = [[Mindigno sharedMindigno] userWithId: current_user_id];
-        [[Mindigno sharedMindigno] setCurrentUser: current_user];
-        
-        //
-        NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
-        microPosts = [NSMutableArray array];
-        
-        for (NSDictionary *feed_dictionary in feeds_array) {
-            
-            MicroPost *microPost = [[MicroPost alloc] initWithJsonRoot: feed_dictionary];
-            
-            //Add to list
-            [microPosts addObject:microPost];
-        }
-    
-    } else {
-        NSLog(@"No connection: data is nil");
-    }
-    
-    return microPosts;
-}
-
-- (NSMutableArray*) startDownloadFeedForUser:(User *)user {
-    
-    NSURL *url = [NSURL URLWithString: [user userUrl]];
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
-    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
-    
-    //Necessary for request to server
-    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    //
-    
-    ////http basic authentication
-    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
-    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
-    //NSLog(@"'%@'", authValue);
-    
-    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
-    
-    //
-    
-    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
-    
-    //
-    
-    //For debug
-    //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"%@", textJson);
-    
-    NSMutableArray *microPosts = nil;
-    
-    if (data != nil) {
+    //NSLog(@"data length: %d\n", [data length]);
+    //Non 0 perchè comunque ritorna uno spazio bianco
+    BOOL dataIsEmpty = ([data length] <= 1);
+    if (data != nil && !dataIsEmpty) {
         
         NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
@@ -134,8 +72,11 @@
         
         NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
         NSMutableArray *arrayUsersAndUser = [NSMutableArray arrayWithArray: users_array];
-        //Sarebbe l'utente per la quale si è fatta richiesta
-        [arrayUsersAndUser addObject: [root_dictionary objectForKey: USER_KEY]];
+        
+        if (yesOrNot) {
+            //Sarebbe l'utente per la quale si è fatta richiesta
+            [arrayUsersAndUser addObject: [root_dictionary objectForKey: USER_KEY]];
+        }
         
         [[Mindigno sharedMindigno] addUsersFromJsonRoot: arrayUsersAndUser];
         
@@ -154,6 +95,9 @@
             //Add to list
             [microPosts addObject:microPost];
         }
+        
+    } else if (dataIsEmpty) {
+        //Caso in cui comunque la risposta viene data correttamente dal server, ma il server non ritorna niente
         
     } else {
         NSLog(@"No connection: data is nil");
