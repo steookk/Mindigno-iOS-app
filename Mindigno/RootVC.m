@@ -30,7 +30,7 @@
 
 - (void) loginButtonSelector {
 
-    UINavigationController *navController = (UINavigationController *) [self apriModaleLogin];
+    UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
     [self presentViewController:navController animated:YES completion:nil];
 }
 
@@ -79,17 +79,6 @@
     [containerViewProfileUser setHidden: YES];
 }
 
-- (UIViewController *) apriModaleLogin {
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
-    
-    UINavigationController *navController = (UINavigationController *)[storyboard instantiateInitialViewController];
-    LoginSignupVC *loginSignupVC = (LoginSignupVC *)[navController topViewController];
-    [loginSignupVC setDelegate: self];
-    
-    return navController;
-}
-
 - (void) caricaInformazioniProfilo {
 
     //Setting di eventuali valori al profileVC
@@ -107,7 +96,7 @@
     //Se l'utente non è loggato
     if (![[Mindigno sharedMindigno] isLoggedUser]) {
         
-        UINavigationController *navController = (UINavigationController *) [self apriModaleLogin];
+        UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
         
         [self presentViewController:navController animated:YES completion:^{
             

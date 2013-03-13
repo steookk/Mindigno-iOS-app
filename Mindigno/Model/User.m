@@ -25,10 +25,10 @@
     [self setAvatarUrl: [root_user objectForKey: USER_AVATAR_URL_KEY]];
     
     //
-    [self setFollowersText: [root_user objectForKey: USER_FOLLOWERS_TEXT]];
-    [self setFollowingText: [root_user objectForKey: USER_FOLLOWING_TEXT]];
-    [self setNumberOfFollowers: [[root_user objectForKey: USER_NUMBER_FOLLOWERS] stringValue]];
-    [self setNumberOfFollowing: [[root_user objectForKey: USER_NUMBER_FOLLOWING] stringValue]];
+    [self setFollowersText: [root_user objectForKey: USER_FOLLOWERS_TEXT_KEY]];
+    [self setFollowingText: [root_user objectForKey: USER_FOLLOWING_TEXT_KEY]];
+    [self setNumberOfFollowers: [[root_user objectForKey: USER_NUMBER_FOLLOWERS_KEY] stringValue]];
+    [self setNumberOfFollowing: [[root_user objectForKey: USER_NUMBER_FOLLOWING_KEY] stringValue]];
 }
 
 - (id)initWithJsonRoot:(NSDictionary*)root_user {

@@ -15,6 +15,7 @@
 #import "IndignatiVC.h"
 #import "CommentsVC.h"
 #import "NotificationKeys.h"
+#import "JSONParserMainData.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
@@ -31,7 +32,7 @@
     self = [super initWithCoder: aDecoder];
     if (self) {
         
-        arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", @"Politica", @"Sport", nil];
+        arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", nil];
         
         NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
         arrayMicroPost = [NSMutableArray arrayWithArray: microPosts];
@@ -51,6 +52,9 @@
     
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
+    
+    [tableViewMicroPost setEnabledRefresh:NO];
+    [tableViewMicroPost setEnabledLazyLoad:YES];
 }
 
 - (void) handleLogoutNotification {
@@ -192,6 +196,8 @@
     [buttonShare addTarget:self action:@selector(buttonShareClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonMindigno = (UIButton*)[cell viewWithTag:9];
+    [buttonMindigno addTarget:self action:@selector(buttonMindignoClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonMindigno setSelected: [currentMicroPost isIndignato]];
     
     if ([currentMicroPost isVignetta]) {
         UIImageView *imageViewVignetta = (UIImageView*)[cell viewWithTag:15];
@@ -206,7 +212,46 @@
 
 - (void) buttonShareClicked:(id)sender {
     
-    [[Mindigno sharedMindigno] shareInfo: self];
+    //The indexPath must be taken from button and not from the tableView
+    NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+    
+    NSString *textToShare = [NSString stringWithFormat:@"%@ #mindigno", [currentMicroPost title]];
+    [[Mindigno sharedMindigno] shareInfoOnViewController:self withText:textToShare imageName:nil url:[currentMicroPost micropostUrl]];
+}
+
+- (void) buttonMindignoClicked:(id)sender {
+    //NSLog(@"buttonMindignoClicked");
+    
+    if (![[Mindigno sharedMindigno] isLoggedUser]) {
+        UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+        [self presentViewController:navController animated:YES completion:nil];
+    
+    } else {
+    
+        //The indexPath must be taken from button and not from the tableView
+        NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+        
+        UIButton *buttonMindigno = (UIButton*)sender;
+        
+        JSONParserMainData* jsonParser = [[JSONParserMainData alloc] init];
+        
+        BOOL isIndignato = [buttonMindigno isSelected];
+        if (!isIndignato) {
+            [jsonParser indignatiSulMicroPostConID: [currentMicroPost micropostID]];
+            [currentMicroPost addOneToNumberIndignati];
+            
+        } else {
+            [jsonParser rimuoviIndignazioneSulMicroPostConID: [currentMicroPost micropostID]];
+            [currentMicroPost removeOneToNumberIndignati];
+        }
+        
+        [currentMicroPost setIsIndignato: !isIndignato];
+        
+        //[buttonMindigno setSelected: !isIndignato];
+        [tableViewMicroPost reloadData];
+    }
 }
 
 ///Start UITableViewDelegate
@@ -245,7 +290,7 @@
         
         //The indexPath must be taken from button and not from the tableView
         NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
-        NSLog(@"homeToIndignati");
+        //NSLog(@"homeToIndignati");
         
         NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
         
@@ -254,7 +299,7 @@
         
     } else if ([[segue identifier] isEqualToString:@"homeToComments"]) {
         
-        NSLog(@"homeToComments");
+        //NSLog(@"homeToComments");
         
         //The indexPath must be taken from button and not from the tableView
         NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
@@ -277,17 +322,6 @@
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
     
-    sleep(1);
-    
-    //[jsonParser startDownloadAndParsingJsonAtUrl: URL_JSON_MICROPOST_TEST];
-    //[arrayMicroPost addObjectsFromArray: [jsonParser microPosts]];
-    
-    /*
-     int _3days = 60*60*24*3;
-     [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge: _3days];
-     //[[[SDWebImageManager sharedManager] imageCache] clearMemory];
-     [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
-     */
 }
 //Stop PullRefreshTableViewDelegate
 

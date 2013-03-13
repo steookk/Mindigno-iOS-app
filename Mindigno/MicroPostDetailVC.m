@@ -233,7 +233,7 @@
 }
 
 - (IBAction)share:(id)sender {
-    [[Mindigno sharedMindigno] shareInfo: self];
+    [[Mindigno sharedMindigno] shareInfoOnViewController: self];
 }
 
 - (IBAction)goBack:(id)sender {

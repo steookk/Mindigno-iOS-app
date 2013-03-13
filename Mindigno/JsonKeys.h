@@ -21,7 +21,7 @@
 
 ///
 
-#define SIGNUP_USER_CREATED @"user_created"
+#define SIGNUP_USER_CREATED_KEY @"user_created"
 #define SIGNUP_MESSAGE_KEY @"message"
 
 ///
@@ -34,10 +34,10 @@
 #define USER_NAME_KEY @"name"
 #define USER_AVATAR_URL_KEY @"avatar_url"
 
-#define USER_FOLLOWERS_TEXT @"followers_text"
-#define USER_FOLLOWING_TEXT @"following_text"
-#define USER_NUMBER_FOLLOWERS @"num_followers"
-#define USER_NUMBER_FOLLOWING @"num_following"
+#define USER_FOLLOWERS_TEXT_KEY @"followers_text"
+#define USER_FOLLOWING_TEXT_KEY @"following_text"
+#define USER_NUMBER_FOLLOWERS_KEY @"num_followers"
+#define USER_NUMBER_FOLLOWING_KEY @"num_following"
 
 ///
 
@@ -46,15 +46,17 @@
 #define MICROPOST_ID_KEY @"id"
 #define MICROPOST_PATH_KEY @"micropost_path"
 
-#define MICROPOST_TITLE @"title"
+#define MICROPOST_TITLE_KEY @"title"
 #define MICROPOST_DESCRIPTION_KEY @"description"
+
+#define MICROPOST_IS_INDIGNATO_KEY @"current_user_isindignato"
 
 #define MICROPOST_IS_LINK_KEY @"islink"
 #define MICROPOST_IMAGE_URL_KEY @"image_url"
 #define MICROPOST_SOURCE_TEXT_KEY @"source_text"
 #define MICROPOST_LINK_URL_KEY @"link_url"
 
-#define MICROPOST_IS_USER_CREATOR_KEY @"iscreator"
+#define MICROPOST_IS_USER_CREATOR_KEY @"creator_is_indignato"
 #define MICROPOST_PREPOSITION_KEY @"preposition"
 #define MICROPOST_USER_ID_KEY @"user_id"
 

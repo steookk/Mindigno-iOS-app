@@ -1,6 +1,19 @@
+
+Link alle api --> https://github.com/steookk/Mindigno/wiki/API
+
+////
+
+con questa chiamata puoi caricare elementi più vecchi dal feed del profilo
+GET /users/:id/profile_feed?from=8
+
+from=8 significa il micropost dal quale vuoi iniziare a prendere, cioè se tu hai 8 micropost nell'iphone, cioè dal 0 al 7, sarà from=8, la volta dopo sarà 16 e così via
+
+///
+
 cookie: remember_token=BAhbB286E0JTT046Ok9iamVjdElkBjoKQGRhdGFbEWlVaWZpAbZpWWlHaQHraU1pAGkHaQBpCGkBrEkiRTA3ZjcyOWQ2MGEyNjJmZjNiY2U1MmJiZjAxOGIzZDQ2ZDQwMTI3MTMyZWFhZjZhZDEyMWZkMzNhZTRkMmY0NzMGOgZFVA%3D%3D--3e08c0aa3385fc1248124acf5e0d08012b4977d2; path=/; expires=Sun, 27-Feb-2033 17:50:07 GMT, _mindigno_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTc5Yzc3N2YxZTQwMWU3MWRhYjExYjg3N2JlZWYwYjc3BjsAVA%3D%3D--19aa95394722a55602d4f7028a747ddd8ca351fe; path=/; HttpOnly
 2013-02-27 18:50:07.215 Mindigno[44983:c07] {"logged":true}
 
+///
 
 {
 
@@ -109,7 +122,7 @@ cookie: remember_token=BAhbB286E0JTT046Ok9iamVjdElkBjoKQGRhdGFbEWlVaWZpAbZpWWlHa
 "base_url":"http://staging.mindigno.com/"
 }
 
-
+///
 
 /* Informazione ritornata dalla chiamata sulle info dell'utente http://127.0.0.1:3000/users/5061b65442eb4800020003ac, dove 5061b65442eb4800020003ac è l'userID. Questa è l'unica informazione diversa rispetto a quella per recuperare i micropost, cioè le info sopra questo commento, e cioè:
 

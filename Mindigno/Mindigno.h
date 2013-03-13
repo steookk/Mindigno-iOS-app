@@ -27,16 +27,24 @@
 
 + (id)sharedMindigno;
 
+//Per recuperare i micropost (home)
 - (NSArray *) microPosts;
+//Per recuperare altri 8 micropost (home)
+- (NSArray *) moreOldMicroPosts;
+
+
 - (NSArray *) microPostsOfUser:(User*)user;
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
 
-- (void) shareInfo:(UIViewController*)controller;
+- (void) shareInfoOnViewController:(UIViewController*)controller;
+- (void) shareInfoOnViewController:(UIViewController*)controller withText:(NSString*)text imageName:(NSString*)image url:(NSString*)url;
 
 - (NSString*) getStringUrlFromStringPath:(NSString*)path;
 
 - (BOOL) checkAndUpdateIfUserIsLogged;
+
+- (UIViewController *) apriModaleLogin;
 
 @end

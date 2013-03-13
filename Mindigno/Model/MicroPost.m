@@ -20,7 +20,7 @@
 
 @implementation MicroPost
 
-@synthesize micropostID, micropostUrl, title, description, isLink, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments, indignatiUrl, commentsTabs_buttons, commentsTabs_urls;
+@synthesize micropostID, micropostUrl, title, description, isLink, isIndignato, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments, indignatiUrl, commentsTabs_buttons, commentsTabs_urls;
 
 - (id) init {
     self = [super init];
@@ -43,9 +43,10 @@
         NSString *completeMicropostUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_microPost objectForKey: MICROPOST_PATH_KEY]];
         [self setMicropostUrl: completeMicropostUrl];
         
-        [self setTitle: [root_microPost objectForKey: MICROPOST_TITLE]];
+        [self setTitle: [root_microPost objectForKey: MICROPOST_TITLE_KEY]];
         [self setDescription: [root_microPost objectForKey: MICROPOST_DESCRIPTION_KEY]];
         
+        [self setIsIndignato: [[root_microPost objectForKey: MICROPOST_IS_INDIGNATO_KEY] boolValue]];
         [self setIsLink: [[root_microPost objectForKey: MICROPOST_IS_LINK_KEY] boolValue]];
         
         NSString *imgUrl = [root_microPost objectForKey: MICROPOST_IMAGE_URL_KEY];
@@ -128,36 +129,26 @@
     return self;
 }
 
-- (void) setup {
+- (NSString *) addOneToNumberIndignati {
+
+    int currentNumberOfIndignati = [[self numberOfIndignati] intValue];
+    currentNumberOfIndignati++;
     
+    NSString *newNumberOfIndignati = [NSString stringWithFormat:@"%d", currentNumberOfIndignati];
+    [self setNumberOfIndignati: newNumberOfIndignati];
+    
+    return numberOfIndignati;
 }
 
-///
+- (NSString*)removeOneToNumberIndignati {
 
-/*
-- (NSArray*) getAllComments {
-    return defaultComments;
+    int currentNumberOfIndignati = [[self numberOfIndignati] intValue];
+    currentNumberOfIndignati--;
+    
+    NSString *newNumberOfIndignati = [NSString stringWithFormat:@"%d", currentNumberOfIndignati];
+    [self setNumberOfIndignati: newNumberOfIndignati];
+    
+    return numberOfIndignati;
 }
-
-- (void) addComment:(NSString *)comment {
-    [defaultComments addObject:comment];
-}
-
-- (void) addComments:(NSArray *)_comments {
-    [defaultComments addObjectsFromArray:_comments];
-}
-
-- (void) removeAllComments {
-    [defaultComments removeAllObjects];
-}
-
-- (int) getNumberOfComments {
-    return (int)[defaultComments count];
-}
-
-- (NSString*) getCommentAtIndex:(int)index {
-    return [defaultComments objectAtIndex:index];
-}
- */
 
 @end

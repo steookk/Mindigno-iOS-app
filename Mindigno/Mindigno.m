@@ -8,6 +8,7 @@
 
 #import "Mindigno.h"
 #import "JSONParserMainData.h"
+#import "LoginSignupVC.h"
 
 @implementation Mindigno
 
@@ -61,11 +62,25 @@
 
 - (NSArray *) microPosts {
 
+    NSString *url = URL_JSON_MICROPOST_TEST;
+    
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl: URL_JSON_MICROPOST_TEST];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl: url];
     
     [microPosts removeAllObjects];
     [microPosts setArray: microposts_to_return];
+    
+    return microPosts;
+}
+
+- (NSArray *) moreOldMicroPosts {
+
+    NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/%@/profile_feed?from=%d", [[self currentUser] userID], [microPosts count]]];
+    
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl: url];
+    
+    [microPosts addObjectsFromArray: microposts_to_return];
     
     return microPosts;
 }
@@ -79,6 +94,10 @@
     NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedForUser: user];
     
     return microposts_to_return;
+}
+
+- (NSArray *) moreOldMicroPostsOfUser:(User*)user {
+
 }
 
 - (void) addUsersFromJsonRoot:(NSArray*)users {
@@ -106,11 +125,22 @@
     return retUser;
 }
 
-- (void) shareInfo:(UIViewController*)controller {
+- (void) shareInfoOnViewController:(UIViewController*)controller {
     
-    NSString *textToShare = @"I just shared this from my App";
-    UIImage *imageToShare = [UIImage imageNamed:@"Default.png"];
-    NSURL *urlToShare = [NSURL URLWithString:@"http://www.bronron.com"];
+    [self shareInfoOnViewController:controller withText:@"I just shared this from my App" imageName:@"Icon.png" url:@"http://www.bronron.com"];
+}
+
+- (void) shareInfoOnViewController:(UIViewController*)controller withText:(NSString*)text imageName:(NSString*)image url:(NSString*)url {
+
+    NSString *textToShare = text;
+    UIImage *imageToShare;
+    if (image != nil) {
+        imageToShare = [UIImage imageNamed: image];
+    } else {
+        imageToShare = [UIImage imageNamed: @"Icon.png"];
+    }
+    
+    NSURL *urlToShare = [NSURL URLWithString: url];
     
     NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
     
@@ -124,6 +154,17 @@
 
 - (NSString*) getStringUrlFromStringPath:(NSString*)path {
     return [baseURL stringByAppendingPathComponent:path];
+}
+
+- (UIViewController *) apriModaleLogin {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
+    
+    UINavigationController *navController = (UINavigationController *)[storyboard instantiateInitialViewController];
+    LoginSignupVC *loginSignupVC = (LoginSignupVC *)[navController topViewController];
+    [loginSignupVC setDelegate: self];
+    
+    return navController;
 }
 
 @end

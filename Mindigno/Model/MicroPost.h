@@ -27,6 +27,9 @@
     NSString *link;
     //}
     
+    //Se l'utente è indignato sul micropost. Se siamo sulla home, e quindi non è loggato nessun utente, di default è false
+    BOOL isIndignato;
+    
     //isLink = FALSE {
     BOOL isUserCreator;
 
@@ -72,6 +75,7 @@
 @property (nonatomic, copy) NSString *description;
 
 @property (nonatomic) BOOL isLink;
+@property (nonatomic) BOOL isIndignato;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *sourceText;
 @property (nonatomic, copy) NSString *link;
@@ -101,13 +105,7 @@
 
 - (id)initWithJsonRoot:(NSDictionary*)root_microPost;
 
-/*
-- (NSArray*) getAllComments;
-- (void) addComment:(NSString *)comment;
-- (void) addComments:(NSArray *)comments;
-- (void) removeAllComments;
-- (int) getNumberOfComments;
-- (NSString*) getCommentAtIndex:(int)index;
- */
+- (NSString *) addOneToNumberIndignati;
+- (NSString *) removeOneToNumberIndignati;
 
 @end

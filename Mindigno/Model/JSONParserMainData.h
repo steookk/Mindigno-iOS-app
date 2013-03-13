@@ -30,4 +30,7 @@
 //Ritorna SignupResponse con le rispettive proprietà
 - (SignupResponse*) startSignupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
 
+- (void) indignatiSulMicroPostConID:(NSString*)micropostID;
+- (void) rimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
+
 @end

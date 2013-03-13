@@ -27,7 +27,7 @@
 
 - (void) setValuesWithJsonRoot:(NSDictionary*)root_signupResponse {
     
-    [self setIsUserCreated: [[root_signupResponse objectForKey: SIGNUP_USER_CREATED] boolValue]];
+    [self setIsUserCreated: [[root_signupResponse objectForKey: SIGNUP_USER_CREATED_KEY] boolValue]];
     //[self setMessageError: [root_signupResponse objectForKey: SIGNUP_MESSAGE_KEY]];
 }
 
