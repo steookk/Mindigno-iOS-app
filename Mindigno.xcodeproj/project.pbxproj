@@ -56,6 +56,7 @@
 		D94DB87216E0B6A60027538F /* SignupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D94DB87116E0B6A50027538F /* SignupResponse.m */; };
 		D94DB87316E0B6A60027538F /* SignupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D94DB87116E0B6A50027538F /* SignupResponse.m */; };
 		D94DB87516E0C0610027538F /* GTKeyboardHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94DB87416E0C0610027538F /* GTKeyboardHelper.framework */; };
+		D953686916F22EFD00799CC2 /* buttons-mindigno_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D953686816F22EFD00799CC2 /* buttons-mindigno_selected.png */; };
 		D95CF12316E73E76005D5148 /* box-ombrato.png in Resources */ = {isa = PBXBuildFile; fileRef = D95CF12116E73E76005D5148 /* box-ombrato.png */; };
 		D95CF12416E73E76005D5148 /* box-ombrato@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D95CF12216E73E76005D5148 /* box-ombrato@2x.png */; };
 		D95CF12F16E7461C005D5148 /* box-ombrato-large.png in Resources */ = {isa = PBXBuildFile; fileRef = D95CF12D16E7461C005D5148 /* box-ombrato-large.png */; };
@@ -226,6 +227,7 @@
 		D94DB87016E0B6A50027538F /* SignupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupResponse.h; sourceTree = "<group>"; };
 		D94DB87116E0B6A50027538F /* SignupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupResponse.m; sourceTree = "<group>"; };
 		D94DB87416E0C0610027538F /* GTKeyboardHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTKeyboardHelper.framework; path = Mindigno/GTKeyboardHelper.framework; sourceTree = "<group>"; };
+		D953686816F22EFD00799CC2 /* buttons-mindigno_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttons-mindigno_selected.png"; sourceTree = "<group>"; };
 		D95CF12116E73E76005D5148 /* box-ombrato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box-ombrato.png"; sourceTree = "<group>"; };
 		D95CF12216E73E76005D5148 /* box-ombrato@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box-ombrato@2x.png"; sourceTree = "<group>"; };
 		D95CF12D16E7461C005D5148 /* box-ombrato-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box-ombrato-large.png"; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 				D95CF13616E74DC6005D5148 /* button-mindigno@2x.png */,
 				D95CF15716E79C4E005D5148 /* buttons-mindigno_click.png */,
 				D95CF15816E79C4E005D5148 /* buttons-mindigno_click@2x.png */,
+				D953686816F22EFD00799CC2 /* buttons-mindigno_selected.png */,
 			);
 			name = mindigno;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				D9763B2716EA593400228209 /* button-commenti@2x.png in Resources */,
 				D9763B3016EA62E300228209 /* plus.png in Resources */,
 				D9763B3116EA62E300228209 /* gear.png in Resources */,
+				D953686916F22EFD00799CC2 /* buttons-mindigno_selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
