@@ -13,7 +13,7 @@
 @implementation Mindigno
 
 @synthesize currentUser, idToUser_dictionary, baseURL, isLoggedUser;
-@synthesize microPosts, microPostsUser;
+@synthesize microPosts, microPostsOfFollowing, microPostsUser;
 
 + (id)sharedMindigno {
     static Mindigno *sharedMindigno = nil;
@@ -50,6 +50,7 @@
         
         currentUser = nil;
         microPosts = [NSMutableArray array];
+        microPostsOfFollowing = [NSMutableArray array];
         microPostsUser = [NSMutableArray array];
         idToUser_dictionary = [NSMutableDictionary dictionary];
         
@@ -79,6 +80,7 @@
 - (NSArray *) downloadMoreOldMicroPosts {
 
     NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/home_hot_feed?from=%d", [microPosts count]]];
+    NSLog(@"downloadMoreOldMicroPosts url: %@", url);
     
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
     NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
@@ -89,6 +91,40 @@
     
     return microposts_to_return;
 }
+
+//
+
+- (NSArray *) downloadMicroPostsOfFollowing {
+    
+    NSString *url = [[currentUser userUrl] stringByAppendingPathComponent:@"home_following_feed"];
+    NSLog(@"downloadMicroPostsOfFollowing url: %@", url);
+    
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    
+    [microPostsOfFollowing removeAllObjects];
+    [microPostsOfFollowing setArray: microposts_to_return];
+    
+    return microPostsOfFollowing;
+}
+
+
+- (NSArray *) downloadMoreOldMicroPostsOfFollowing {
+
+    NSString *url = [[currentUser userUrl] stringByAppendingPathComponent: [NSString stringWithFormat:@"home_following_feed?from=%d", [microPostsOfFollowing count]]];
+    NSLog(@"downloadMoreOldMicroPostsOfFollowing url: %@", url);
+    
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    
+    if (microposts_to_return != nil) {
+        [microPostsOfFollowing addObjectsFromArray: microposts_to_return];
+    }
+    
+    return microposts_to_return;
+}
+
+//
 
 - (NSArray *) downloadMicroPostsOfUser:(User*)user {
     
@@ -118,6 +154,8 @@
     
     return microposts_to_return;
 }
+
+///
 
 - (void) addUsersFromJsonRoot:(NSArray*)users {
     

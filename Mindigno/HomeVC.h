@@ -16,7 +16,9 @@
     IBOutlet ScrollButtonBar *scrollButtonBar;
     
     IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
+    NSArray *currentArrayMicroPost;
     NSArray *arrayMicroPost;
+    NSArray *arrayMicroPostOfFollowing;
     
     //
     IBOutlet UIButton *buttonPlus;

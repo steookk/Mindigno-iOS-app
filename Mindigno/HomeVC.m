@@ -35,6 +35,7 @@
         arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", nil];
         
         arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
+        currentArrayMicroPost = arrayMicroPost;
     }
     
     return self;
@@ -73,7 +74,7 @@
 ///Start UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return (int)[arrayMicroPost count];
+    return (int)[currentArrayMicroPost count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -86,7 +87,7 @@
     
     NSString *CellIdentifier = CellIdentifierDefault;
     
-    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex:indexPath.row];
+    MicroPost *currentMicroPost = [currentArrayMicroPost objectAtIndex:indexPath.row];
     
     if ([currentMicroPost isVignetta]) {
         CellIdentifier = CellIdentifierVignetta;
@@ -211,7 +212,7 @@
     
     //The indexPath must be taken from button and not from the tableView
     NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
-    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+    MicroPost *currentMicroPost = [currentArrayMicroPost objectAtIndex: currentIndexPath.row];
     
     NSString *textToShare = [NSString stringWithFormat:@"%@ #mindigno", [currentMicroPost title]];
     [[Mindigno sharedMindigno] shareInfoOnViewController:self withText:textToShare imageName:nil url:[currentMicroPost micropostUrl]];
@@ -228,7 +229,7 @@
     
         //The indexPath must be taken from button and not from the tableView
         NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
-        MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+        MicroPost *currentMicroPost = [currentArrayMicroPost objectAtIndex: currentIndexPath.row];
         
         UIButton *buttonMindigno = (UIButton*)sender;
         
@@ -255,7 +256,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     double defaultHeight = CELL_ROW_HEIGHT_DEFAULT;
-    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex:indexPath.row];
+    MicroPost *currentMicroPost = [currentArrayMicroPost objectAtIndex:indexPath.row];
     
     if ([currentMicroPost isVignetta]) {
         return defaultHeight*2;
@@ -281,7 +282,7 @@
         NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
         
         MicroPostDetailVC *microPostDetailVC = (MicroPostDetailVC*)[segue destinationViewController];
-        [microPostDetailVC setCurrentMicroPost: [arrayMicroPost objectAtIndex:currentIndexPath.row]];
+        [microPostDetailVC setCurrentMicroPost: [currentArrayMicroPost objectAtIndex:currentIndexPath.row]];
         
     } else if ([[segue identifier] isEqualToString:@"homeToIndignati"]) {
         
@@ -292,7 +293,7 @@
         NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
         
         IndignatiVC *indignatiVC = (IndignatiVC*)[segue destinationViewController];
-        [indignatiVC setCurrentMicroPost: [arrayMicroPost objectAtIndex: currentIndexPath.row]];
+        [indignatiVC setCurrentMicroPost: [currentArrayMicroPost objectAtIndex: currentIndexPath.row]];
         
     } else if ([[segue identifier] isEqualToString:@"homeToComments"]) {
         
@@ -305,7 +306,7 @@
         
         CommentsVC *commentsDettailVC = (CommentsVC*)[segue destinationViewController];
         
-        MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+        MicroPost *currentMicroPost = [currentArrayMicroPost objectAtIndex: currentIndexPath.row];
         [commentsDettailVC setCurrentMicroPost: currentMicroPost];
     }
 }
@@ -316,23 +317,48 @@
     
     if (indexButton == 0) {
         //Tutte le indignazioni
-        arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
         
+        arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
         [tableViewMicroPost setEnabledLazyLoad:YES];
         [tableViewMicroPost reloadData];
     
     } else if (indexButton == 1) {
         //Solo chi seguo
+        
+        //Se l'utente non è loggato
+        if (![[Mindigno sharedMindigno] isLoggedUser]) {
+            UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+            [self presentViewController:navController animated:YES completion:nil];
+
+        } else {
+            arrayMicroPostOfFollowing = [[Mindigno sharedMindigno] downloadMicroPostsOfFollowing];
+            [tableViewMicroPost setEnabledLazyLoad:YES];
+            [tableViewMicroPost reloadData];
+        }
     }
 }
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
     
-    //Ritorna nil se non ci sono più vecchi micropost
-    NSArray *microposts = [[Mindigno sharedMindigno] downloadMoreOldMicroPosts];
+    int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
-    if (microposts == nil) {
-        [tableViewMicroPost setEnabledLazyLoad:NO];
+    if (indexButton == 0) {
+        
+        //Ritorna nil se non ci sono più vecchi micropost
+        NSArray *microposts = [[Mindigno sharedMindigno] downloadMoreOldMicroPosts];
+        
+        if (microposts == nil) {
+            [tableViewMicroPost setEnabledLazyLoad:NO];
+        }
+    
+    } else if (indexButton == 1) {
+    
+        //Ritorna nil se non ci sono più vecchi micropost
+        NSArray *micropostsFollowing = [[Mindigno sharedMindigno] downloadMoreOldMicroPostsOfFollowing];
+        
+        if (micropostsFollowing == nil) {
+            [tableViewMicroPost setEnabledLazyLoad:NO];
+        }
     }
     
     [tableViewMicroPost reloadData];
@@ -361,15 +387,35 @@
 - (void) buttonClicked:(UIButton*)button withIndex:(NSInteger)index {
     
     NSLog(@"Button clicked with title: %@", [[button titleLabel] text]);
-    NSLog(@"Button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
+    //NSLog(@"Button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
     
-    if (index != 1) {
-        //[tableViewMicroPost setEnabledRefresh:NO];
-        //[tableViewMicroPost setEnabledLazyLoad:NO];
-    } else {
-        //[tableViewMicroPost setEnabledRefresh:YES];
-        //[tableViewMicroPost setEnabledLazyLoad:YES];
+    if (index == 0) {
+        //Tutte le indignazioni
+        currentArrayMicroPost = arrayMicroPost;
+        
+    } else if (index == 1) {
+        //Solo chi seguo
+        
+        //Se l'utente non è loggato
+        if (![[Mindigno sharedMindigno] isLoggedUser]) {
+            UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+            [self presentViewController:navController animated:YES completion:nil];
+            
+        } else {
+            
+            arrayMicroPostOfFollowing = [[Mindigno sharedMindigno] microPostsOfFollowing];
+            
+            if ([arrayMicroPostOfFollowing count] == 0) {
+                arrayMicroPostOfFollowing = [[Mindigno sharedMindigno] downloadMicroPostsOfFollowing];
+            }
+            
+            currentArrayMicroPost = arrayMicroPostOfFollowing;
+            
+            [tableViewMicroPost setEnabledLazyLoad:YES];
+        }
     }
+    
+    [tableViewMicroPost reloadData];
 }
 //Stop ScrollButtonBarDelegate
 

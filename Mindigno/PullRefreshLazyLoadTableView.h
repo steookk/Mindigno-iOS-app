@@ -90,7 +90,9 @@
     BOOL enabledRefresh; //Option
     
     BOOL isDragging;
-    BOOL isLoading;
+    BOOL isLoadingRefresh;
+    
+    BOOL isLoadingLazyLoad;
     RefreshHeaderView *refreshHeaderView;
 
     //

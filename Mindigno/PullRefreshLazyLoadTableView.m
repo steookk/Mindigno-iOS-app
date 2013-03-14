@@ -178,6 +178,8 @@
     
     footerViewLoading = [[FooterView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
     
+    isLoadingLazyLoad = NO;
+    
     [self setEnabledRefresh:NO];
     [self setEnabledLazyLoad:NO];
 }
@@ -194,7 +196,7 @@
     [refreshHeaderView setHidden: !enabledRefresh];
     
     if (enabledRefresh) {
-        if (isLoading) return;
+        if (isLoadingRefresh) return;
         isDragging = YES;
     }
 }
@@ -203,7 +205,7 @@
     
     if (enabledRefresh) {
         
-        if (isLoading) {
+        if (isLoadingRefresh) {
             // Update the content inset, good for section headers
             if (scrollView.contentOffset.y > 0)
                 self.contentInset = UIEdgeInsetsZero;
@@ -230,7 +232,7 @@
     
     if (enabledRefresh) {
             
-        if (isLoading) return;
+        if (isLoadingRefresh) return;
         isDragging = NO;
         if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT) {
             // Released above the header
@@ -240,7 +242,7 @@
 }
 
 - (void)startLoading {
-    isLoading = YES;
+    isLoadingRefresh = YES;
     
     // Show the header
     [UIView animateWithDuration:0.3 animations:^{
@@ -255,7 +257,7 @@
 }
 
 - (void)stopLoading {
-    isLoading = NO;
+    isLoadingRefresh = NO;
     
     // Hide the header
     [UIView animateWithDuration:0.3 animations:^{
@@ -301,7 +303,7 @@
 - (void) finishToLoadNewData:(UITableView*)tableView {
 
     [footerViewLoading stopLoadingAnimation];
-    isLoading = NO;
+    isLoadingLazyLoad = NO;
 }
 
 - (void) startToLoadNewDataInBackground:(UITableView*)tableView {
@@ -320,9 +322,9 @@
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         float actualScrolling = scrollView.contentSize.height;
         
-        if (!isLoading && endScrolling >= actualScrolling) {
+        if (!isLoadingLazyLoad && endScrolling >= actualScrolling) {
             
-            isLoading = YES;
+            isLoadingLazyLoad = YES;
             
             [footerViewLoading startLoadingAnimation];
             [self performSelectorInBackground:@selector(startToLoadNewDataInBackground:) withObject:self];
