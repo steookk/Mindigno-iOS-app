@@ -19,6 +19,9 @@
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
+#define BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX 0
+#define BUTTON_SOLO_CHI_SEGUO_INDEX 1
+
 @interface HomeVC ()
 
 @end
@@ -303,14 +306,14 @@
 - (void) tableViewHasRefreshed:(UITableView*)tableView {
     int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
-    if (indexButton == 0) {
+    if (indexButton == BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX) {
         //Tutte le indignazioni
         
         arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
         [tableViewMicroPost setEnabledLazyLoad:YES];
         [tableViewMicroPost reloadData];
     
-    } else if (indexButton == 1) {
+    } else if (indexButton == BUTTON_SOLO_CHI_SEGUO_INDEX) {
         //Solo chi seguo
         
         //Se l'utente non è loggato
@@ -330,7 +333,7 @@
     
     int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
-    if (indexButton == 0) {
+    if (indexButton == BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX) {
         
         //Ritorna nil se non ci sono più vecchi micropost
         NSArray *microposts = [[Mindigno sharedMindigno] downloadMoreOldMicroPosts];
@@ -339,7 +342,7 @@
             [tableViewMicroPost setEnabledLazyLoad:NO];
         }
     
-    } else if (indexButton == 1) {
+    } else if (indexButton == BUTTON_SOLO_CHI_SEGUO_INDEX) {
     
         //Ritorna nil se non ci sono più vecchi micropost
         NSArray *micropostsFollowing = [[Mindigno sharedMindigno] downloadMoreOldMicroPostsOfFollowing];
@@ -377,11 +380,11 @@
     NSLog(@"Button clicked with title: %@", [[button titleLabel] text]);
     //NSLog(@"Button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
     
-    if (index == 0) {
+    if (index == BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX) {
         //Tutte le indignazioni
         currentArrayMicroPost = arrayMicroPost;
         
-    } else if (index == 1) {
+    } else if (index == BUTTON_SOLO_CHI_SEGUO_INDEX) {
         //Solo chi seguo
         
         //Se l'utente non è loggato
@@ -411,14 +414,14 @@
     int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
     //Se quando faccio logout mi trovavo in Solo chi seguo, devo spostare il pulsante su Tutte le indignazioni
-    if (indexButton == 0) {
+    if (indexButton == BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX) {
         //Tutte le indignazioni
         arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
         [tableViewMicroPost reloadData];
         
-    } else if (indexButton == 1) {
+    } else if (indexButton == BUTTON_SOLO_CHI_SEGUO_INDEX) {
         //Solo chi seguo
-        [scrollButtonBar selectButtonWithIndex: 0];
+        [scrollButtonBar selectButtonWithIndex: BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX];
     }
     
 }
@@ -431,7 +434,7 @@
 }
 
 - (void) handleLoginSignupDiscarded {
-    [scrollButtonBar selectButtonWithIndex: 0];
+    [scrollButtonBar selectButtonWithIndex: BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX];
 }
 
 - (void) dealloc {
