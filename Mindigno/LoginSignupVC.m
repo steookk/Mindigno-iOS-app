@@ -8,14 +8,13 @@
 
 #import "LoginSignupVC.h"
 #import "Utils.h"
+#import "NotificationKeys.h"
 
 @interface LoginSignupVC ()
 
 @end
 
 @implementation LoginSignupVC
-
-@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,9 +27,7 @@
 
 - (IBAction)exitFromModalView:(id)sender {
     
-    if ([delegate respondsToSelector: @selector(loginSignupDiscarded)]) {
-        [delegate loginSignupDiscarded];
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:DISCARD_LOGIN_SIGNUP_NOTIFICATION object:nil];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

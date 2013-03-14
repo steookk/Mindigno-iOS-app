@@ -303,8 +303,6 @@
     
     if (microposts == nil) {
         [tableViewMicroPost setEnabledLazyLoad:NO];
-    } else {
-        //[self setArrayMicroPost: [[Mindigno sharedMindigno] microPostsUser]];
     }
     
     [tableViewMicroPost reloadData];

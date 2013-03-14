@@ -64,7 +64,8 @@
 
 - (NSArray *) downloadMicroPosts {
 
-    NSString *url = URL_JSON_MICROPOST_TEST;
+    NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: @"users/home_hot_feed"];
+    NSLog(@"downloadMicroPosts url: %@", url);
     
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
     NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
@@ -77,24 +78,22 @@
 
 - (NSArray *) downloadMoreOldMicroPosts {
 
-    /*
-    NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/%@/profile_feed?from=%d", [[self currentUser] userID], [microPosts count]]];
+    NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/home_hot_feed?from=%d", [microPosts count]]];
     
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl: url];
+    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
     
-    [microPosts addObjectsFromArray: microposts_to_return];
+    if (microposts_to_return != nil) {
+        [microPosts addObjectsFromArray: microposts_to_return];
+    }
     
-    return microPosts;
-     */
-    
-    return nil;
+    return microposts_to_return;
 }
 
 - (NSArray *) downloadMicroPostsOfUser:(User*)user {
     
     NSString *url = [user userUrl];
-    //NSLog(@"urlForRequest user: %@", url);
+    NSLog(@"downloadMicroPostsOfUser url: %@", url);
     
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
     NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:YES];
@@ -108,7 +107,7 @@
 - (NSArray *) downloadMoreOldMicroPostsOfUser:(User*)user {
 
     NSString *url = [[user userUrl] stringByAppendingPathComponent: [NSString stringWithFormat:@"profile_feed?from=%d", [microPostsUser count]]];
-    //NSLog(@"moreOldMicroPostsOfUser url: %@", url);
+    NSLog(@"downloadMoreOldMicroPostsOfUser url: %@", url);
     
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
     NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
@@ -181,8 +180,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
     
     UINavigationController *navController = (UINavigationController *)[storyboard instantiateInitialViewController];
-    LoginSignupVC *loginSignupVC = (LoginSignupVC *)[navController topViewController];
-    [loginSignupVC setDelegate: self];
+    //LoginSignupVC *loginSignupVC = (LoginSignupVC *)[navController topViewController];
     
     return navController;
 }

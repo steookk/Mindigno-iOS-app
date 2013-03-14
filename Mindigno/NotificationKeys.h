@@ -12,4 +12,6 @@
 #define LOGOUT_NOTIFICATION @"logoutNotification"
 #define LOGIN_NOTIFICATION @"loginNotification"
 
+#define DISCARD_LOGIN_SIGNUP_NOTIFICATION @"discardLoginSignupNotification"
+
 #endif

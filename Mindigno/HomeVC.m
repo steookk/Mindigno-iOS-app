@@ -34,8 +34,7 @@
         
         arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", nil];
         
-        NSArray *microPosts = [[Mindigno sharedMindigno] downloadMicroPosts];
-        arrayMicroPost = [NSMutableArray arrayWithArray: microPosts];
+        arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
     }
     
     return self;
@@ -59,16 +58,14 @@
 
 - (void) handleLogoutNotification {
     
-    NSArray *microPosts = [[Mindigno sharedMindigno] downloadMicroPosts];
-    [arrayMicroPost setArray: microPosts];
+    arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
     
     [tableViewMicroPost reloadData];
 }
 
 - (void) handleLoginNotification {
     
-    NSArray *microPosts = [[Mindigno sharedMindigno] downloadMicroPosts];
-    [arrayMicroPost setArray: microPosts];
+    arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
     
     [tableViewMicroPost reloadData];
 }
@@ -315,18 +312,30 @@
 
 //Start PullRefreshTableViewDelegate
 - (void) tableViewHasRefreshed:(UITableView*)tableView {
+    int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
-    NSLog(@"Refreshed table -> button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
+    if (indexButton == 0) {
+        //Tutte le indignazioni
+        arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
+        
+        [tableViewMicroPost setEnabledLazyLoad:YES];
+        [tableViewMicroPost reloadData];
     
-    NSArray *arrayMicropostsRefreshed = [[Mindigno sharedMindigno] downloadMicroPosts];
-    [arrayMicroPost setArray: arrayMicropostsRefreshed];
-    
-    //[tableViewMicroPost setEnabledLazyLoad:YES];
-    [tableViewMicroPost reloadData];
+    } else if (indexButton == 1) {
+        //Solo chi seguo
+    }
 }
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
     
+    //Ritorna nil se non ci sono più vecchi micropost
+    NSArray *microposts = [[Mindigno sharedMindigno] downloadMoreOldMicroPosts];
+    
+    if (microposts == nil) {
+        [tableViewMicroPost setEnabledLazyLoad:NO];
+    }
+    
+    [tableViewMicroPost reloadData];
 }
 //Stop PullRefreshTableViewDelegate
 

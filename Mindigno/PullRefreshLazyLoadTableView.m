@@ -301,7 +301,7 @@
 - (void) finishToLoadNewData:(UITableView*)tableView {
 
     [footerViewLoading stopLoadingAnimation];
-    [tableView reloadData];
+    isLoading = NO;
 }
 
 - (void) startToLoadNewDataInBackground:(UITableView*)tableView {
@@ -320,7 +320,9 @@
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         float actualScrolling = scrollView.contentSize.height;
         
-        if (endScrolling >= actualScrolling) {
+        if (!isLoading && endScrolling >= actualScrolling) {
+            
+            isLoading = YES;
             
             [footerViewLoading startLoadingAnimation];
             [self performSelectorInBackground:@selector(startToLoadNewDataInBackground:) withObject:self];

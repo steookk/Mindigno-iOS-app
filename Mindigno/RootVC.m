@@ -44,6 +44,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:LOGOUT_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginNotification) name:LOGIN_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSignupDiscarded) name:DISCARD_LOGIN_SIGNUP_NOTIFICATION object:nil];
     
     [self setCustomButtonToTheRightOfBar];
 }

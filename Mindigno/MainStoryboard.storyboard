@@ -402,7 +402,7 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" backgroundImage="button-share_click .png"/>
+                                                    <state key="selected" backgroundImage="button-share_click.png"/>
                                                     <state key="highlighted" backgroundImage="button-share_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1247,7 +1247,7 @@
             <objects>
                 <viewController id="77B-Um-azv" customClass="EditorVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzQ-So-f5O">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ZUi-FM-zvZ">
@@ -1292,7 +1292,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iJa-n2-BEE">
-                                <rect key="frame" x="0.0" y="40" width="320" height="205"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="225"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1548,7 +1548,7 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" backgroundImage="button-share_click .png"/>
+                                                    <state key="selected" backgroundImage="button-share_click.png"/>
                                                     <state key="highlighted" backgroundImage="button-share_click.png">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1680,7 +1680,6 @@
         <image name="button-indignati_click.png" width="45" height="28"/>
         <image name="button-mindigno.png" width="45" height="28"/>
         <image name="button-share.png" width="45" height="28"/>
-        <image name="button-share_click .png" width="16" height="16"/>
         <image name="button-share_click.png" width="45" height="28"/>
         <image name="buttons-mindigno_click.png" width="45" height="28"/>
         <image name="comment.png" width="64" height="64"/>
@@ -1813,10 +1812,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jxh-Lb-BDe"/>
+        <segue reference="mxI-77-wMS"/>
+        <segue reference="Ol4-zK-bby"/>
+        <segue reference="TUN-6S-skc"/>
         <segue reference="wte-45-OdG"/>
-        <segue reference="b4O-TQ-VDa"/>
-        <segue reference="rZZ-R9-62i"/>
         <segue reference="k3v-Tn-sLm"/>
     </inferredMetricsTieBreakers>
 </document>

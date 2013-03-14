@@ -9,23 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Utils.h"
 
-@protocol LoginSignupVCDelegate
-
-@optional
-- (void) loginSignupDiscarded;
-- (BOOL)respondsToSelector:(SEL)aSelector;
-
-@end
-
 @interface LoginSignupVC : UIViewController {
-
-    id <LoginSignupVCDelegate> __weak delegate;
     
     IBOutlet UIButton *buttonLogin;
     IBOutlet UIButton *buttonSignup;
 }
-
-@property (nonatomic, weak) id <LoginSignupVCDelegate> delegate;
 
 - (IBAction)exitFromModalView:(id)sender;
 

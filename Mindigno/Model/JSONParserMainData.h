@@ -11,8 +11,8 @@
 #import "MicroPost.h"
 #import "SignupResponse.h"
 
-#define URL_JSON_MICROPOST_TEST @"http://staging.mindigno.com"
-//#define URL_JSON_MICROPOST_TEST @"http://151.42.153.108"
+//#define URL_JSON_MICROPOST_TEST @"http://staging.mindigno.com"
+#define URL_JSON_MICROPOST_TEST @"http://151.42.129.145"
 
 #define USER_NAME_TEST @"andrea@prova.it"
 #define USER_PASSWORD_TEST @"ciaociao"
