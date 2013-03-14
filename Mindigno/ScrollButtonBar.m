@@ -17,12 +17,19 @@
 @implementation ScrollButtonBar
 
 @synthesize dataSourceBar, delegateBar;
+@synthesize currentSelectedButton;
+
+- (void) commonInit {
+
+    arrayOfButtons = [NSMutableArray array];
+    [self setBackgroundColor:[UIColor clearColor]];
+}
 
 - (id) initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self commonInit];
     }
     
     return self;
@@ -32,18 +39,18 @@
 
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self commonInit];
     }
     
     return self;
 }
 
+/*
 - (void) drawRect:(CGRect)rect {
-
     [super drawRect:rect];
-    
-    [self startInizialization];
+    //[self startInizialization];
 }
+ */
 
 - (void) startInizialization {
     
@@ -58,7 +65,7 @@
     int i;
     int pointerToDraw = buttonSpace;
     
-    NSMutableArray *viewsToInsert = [NSMutableArray arrayWithCapacity: numberOfButton];
+    NSMutableArray *viewsToInsert = arrayOfButtons;
     
     for (i=0; i<numberOfButton; i++) {
 
@@ -147,6 +154,22 @@
     if ([delegateBar respondsToSelector:@selector(buttonClicked:withIndex:)]) {
         [delegateBar buttonClicked:button withIndex:[button tag]];
     }
+}
+
+- (void) clickButtonWithIndex:(int)index_button {
+
+    [self buttonClicked: [arrayOfButtons objectAtIndex: index_button]];
+}
+
+- (void) selectButtonWithIndex:(int)index_button {
+
+    UIButton *button = (UIButton*)[arrayOfButtons objectAtIndex: index_button];
+    
+    [currentSelectedButton setSelected:NO];
+    [currentSelectedButton setUserInteractionEnabled:YES];
+    currentSelectedButton = button;
+    [currentSelectedButton setSelected:YES];
+    [currentSelectedButton setUserInteractionEnabled:NO];
 }
 
 - (int) indexOfCurrentSelectedButton {

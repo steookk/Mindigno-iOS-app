@@ -46,29 +46,17 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogoutNotification) name:LOGOUT_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginNotification) name:LOGIN_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginSignupDiscarded) name:DISCARD_LOGIN_SIGNUP_NOTIFICATION object:nil];
     
     [scrollButtonBar setDataSourceBar:self];
     [scrollButtonBar setDelegateBar:self];
+    [scrollButtonBar startInizialization];
     
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
     
     [tableViewMicroPost setEnabledRefresh: YES];
     [tableViewMicroPost setEnabledLazyLoad: YES];
-}
-
-- (void) handleLogoutNotification {
-    
-    arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
-    
-    [tableViewMicroPost reloadData];
-}
-
-- (void) handleLoginNotification {
-    
-    arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
-    
-    [tableViewMicroPost reloadData];
 }
 
 ///Start UITableViewDataSource
@@ -418,6 +406,33 @@
     [tableViewMicroPost reloadData];
 }
 //Stop ScrollButtonBarDelegate
+
+- (void) handleLogoutNotification {
+    int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
+    
+    //Se quando faccio logout mi trovavo in Solo chi seguo, devo spostare il pulsante su Tutte le indignazioni
+    if (indexButton == 0) {
+        //Tutte le indignazioni
+        arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
+        [tableViewMicroPost reloadData];
+        
+    } else if (indexButton == 1) {
+        //Solo chi seguo
+        [scrollButtonBar selectButtonWithIndex: 0];
+    }
+    
+}
+
+- (void) handleLoginNotification {
+    int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
+    
+    //Se quando faccio login il pulsante è su Solo chi seguo, devo fare la giusta chiamata
+    [self buttonClicked: [scrollButtonBar currentSelectedButton] withIndex:indexButton];
+}
+
+- (void) handleLoginSignupDiscarded {
+    [scrollButtonBar selectButtonWithIndex: 0];
+}
 
 - (void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver: self];

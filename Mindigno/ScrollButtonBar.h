@@ -38,13 +38,23 @@
     id <ScrollButtonBarDataSource> __weak dataSourceBar;
     id <ScrollButtonBarDelegate> __weak delegateBar;
     
+    NSMutableArray *arrayOfButtons;
     UIButton *currentSelectedButton;
 }
+
+@property (nonatomic, readonly) UIButton *currentSelectedButton;
 
 @property (nonatomic, weak) id <ScrollButtonBarDataSource> dataSourceBar;
 @property (nonatomic, weak) id <ScrollButtonBarDelegate> delegateBar;
 
+- (void) startInizialization;
+
 - (int) indexOfCurrentSelectedButton;
+
+//Simula un click forzato con conseguente scattare del target
+- (void) clickButtonWithIndex:(int)index_button;
+//Forza a selezionare un pulsante senza far scattare il target
+- (void) selectButtonWithIndex:(int)index_button;
 
 @end
 

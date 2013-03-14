@@ -44,7 +44,6 @@
 
 //Simula un click forzato con conseguente scattare del target
 - (void) clickButton:(UIButton *)button;
-
 //Forza a selezionare un pulsante senza far scattare il target
 - (void) selectButton:(UIButton *)button;
 
