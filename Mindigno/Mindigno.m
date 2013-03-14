@@ -13,6 +13,7 @@
 @implementation Mindigno
 
 @synthesize currentUser, idToUser_dictionary, baseURL, isLoggedUser;
+@synthesize microPosts, microPostsUser;
 
 + (id)sharedMindigno {
     static Mindigno *sharedMindigno = nil;
@@ -61,7 +62,7 @@
 
 ///
 
-- (NSArray *) microPosts {
+- (NSArray *) downloadMicroPosts {
 
     NSString *url = URL_JSON_MICROPOST_TEST;
     
@@ -74,7 +75,7 @@
     return microPosts;
 }
 
-- (NSArray *) moreOldMicroPosts {
+- (NSArray *) downloadMoreOldMicroPosts {
 
     /*
     NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/%@/profile_feed?from=%d", [[self currentUser] userID], [microPosts count]]];
@@ -90,7 +91,7 @@
     return nil;
 }
 
-- (NSArray *) microPostsOfUser:(User*)user {
+- (NSArray *) downloadMicroPostsOfUser:(User*)user {
     
     NSString *url = [user userUrl];
     //NSLog(@"urlForRequest user: %@", url);
@@ -104,7 +105,7 @@
     return microPostsUser;
 }
 
-- (NSArray *) moreOldMicroPostsOfUser:(User*)user {
+- (NSArray *) downloadMoreOldMicroPostsOfUser:(User*)user {
 
     NSString *url = [[user userUrl] stringByAppendingPathComponent: [NSString stringWithFormat:@"profile_feed?from=%d", [microPostsUser count]]];
     //NSLog(@"moreOldMicroPostsOfUser url: %@", url);
@@ -112,7 +113,9 @@
     JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
     NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
     
-    [microPostsUser addObjectsFromArray: microposts_to_return];
+    if (microposts_to_return != nil) {
+        [microPostsUser addObjectsFromArray: microposts_to_return];
+    }
     
     return microposts_to_return;
 }

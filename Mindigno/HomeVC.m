@@ -34,7 +34,7 @@
         
         arrayButtonTitle = [NSArray arrayWithObjects:@"Tutte le indignazioni", @"Solo chi seguo", nil];
         
-        NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
+        NSArray *microPosts = [[Mindigno sharedMindigno] downloadMicroPosts];
         arrayMicroPost = [NSMutableArray arrayWithArray: microPosts];
     }
     
@@ -53,13 +53,13 @@
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
     
-    [tableViewMicroPost setEnabledRefresh:NO];
-    [tableViewMicroPost setEnabledLazyLoad:YES];
+    [tableViewMicroPost setEnabledRefresh: YES];
+    [tableViewMicroPost setEnabledLazyLoad: YES];
 }
 
 - (void) handleLogoutNotification {
     
-    NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
+    NSArray *microPosts = [[Mindigno sharedMindigno] downloadMicroPosts];
     [arrayMicroPost setArray: microPosts];
     
     [tableViewMicroPost reloadData];
@@ -67,7 +67,7 @@
 
 - (void) handleLoginNotification {
     
-    NSArray *microPosts = [[Mindigno sharedMindigno] microPosts];
+    NSArray *microPosts = [[Mindigno sharedMindigno] downloadMicroPosts];
     [arrayMicroPost setArray: microPosts];
     
     [tableViewMicroPost reloadData];
@@ -318,6 +318,11 @@
     
     NSLog(@"Refreshed table -> button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
     
+    NSArray *arrayMicropostsRefreshed = [[Mindigno sharedMindigno] downloadMicroPosts];
+    [arrayMicroPost setArray: arrayMicropostsRefreshed];
+    
+    //[tableViewMicroPost setEnabledLazyLoad:YES];
+    [tableViewMicroPost reloadData];
 }
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {

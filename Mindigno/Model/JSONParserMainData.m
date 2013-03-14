@@ -96,8 +96,8 @@
             [microPosts addObject:microPost];
         }
         
-    } else if (dataIsEmpty) {
-        //Caso in cui comunque la risposta viene data correttamente dal server, ma il server non ritorna niente
+    } else if (data != nil && dataIsEmpty) {
+        NSLog(@"dataIsEmpty");
         
     } else {
         NSLog(@"No connection: data is nil");

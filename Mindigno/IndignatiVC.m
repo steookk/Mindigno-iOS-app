@@ -110,7 +110,7 @@
         User *currentUser = [[arrayOfArray_indignati objectAtIndex:currentIndexPath.section] objectAtIndex:currentIndexPath.row];
         [profileVC setCurrentUser:currentUser];
         
-        NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: currentUser];
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
         [profileVC setArrayMicroPost: micropostOfUser];
     }
 }

@@ -83,10 +83,15 @@
 
     //Setting di eventuali valori al profileVC
     User *currentUser = [[Mindigno sharedMindigno] currentUser];
-    NSArray *micropostOfUser = [[Mindigno sharedMindigno] microPostsOfUser: currentUser];
+    
+    NSArray *micropostsOfUser = [[Mindigno sharedMindigno] microPostsUser];
+    
+    if ([micropostsOfUser count] == 0) {
+        micropostsOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
+    }
     
     [profileUserVC setCurrentUser:currentUser];
-    [profileUserVC setArrayMicroPost: micropostOfUser];
+    [profileUserVC setArrayMicroPost: micropostsOfUser];
     [profileUserVC refreshView];
 }
 

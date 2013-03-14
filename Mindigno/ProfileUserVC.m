@@ -49,8 +49,8 @@
     [tableViewMicroPost setDataSource:self];
     [tableViewMicroPost setDelegate:self];
     
-    [tableViewMicroPost setEnabledRefresh:NO];
-    [tableViewMicroPost setEnabledLazyLoad:YES];
+    [tableViewMicroPost setEnabledRefresh: YES];
+    [tableViewMicroPost setEnabledLazyLoad: YES];
     
     [self refreshView];
 }
@@ -290,17 +290,21 @@
 //Start PullRefreshTableViewDelegate
 - (void) tableViewHasRefreshed:(UITableView*)tableView {
     
-    //NSLog(@"Refreshed table -> button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
+    [self setArrayMicroPost: [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser]];
     
+    //[tableViewMicroPost setEnabledLazyLoad:YES];
+    [tableViewMicroPost reloadData];
 }
 
 - (void) loadNewDataInBackgroundForTableView:(UITableView*)tableView {
     
     //Ritorna nil se non ci sono più vecchi micropost
-    NSArray *microposts = [[Mindigno sharedMindigno] moreOldMicroPostsOfUser: [[Mindigno sharedMindigno] currentUser]];
+    NSArray *microposts = [[Mindigno sharedMindigno] downloadMoreOldMicroPostsOfUser: currentUser];
     
     if (microposts == nil) {
         [tableViewMicroPost setEnabledLazyLoad:NO];
+    } else {
+        //[self setArrayMicroPost: [[Mindigno sharedMindigno] microPostsUser]];
     }
     
     [tableViewMicroPost reloadData];

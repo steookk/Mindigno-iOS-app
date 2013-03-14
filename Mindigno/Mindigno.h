@@ -23,20 +23,24 @@
 
 @property (nonatomic, readonly) BOOL isLoggedUser;
 @property (nonatomic) User *currentUser;
+
+@property (nonatomic, readonly) NSArray *microPosts;
+@property (nonatomic, readonly) NSArray *microPostsUser;
+
 @property (nonatomic, readonly) NSMutableDictionary *idToUser_dictionary;
 @property (nonatomic, copy) NSString *baseURL;
 
 + (id)sharedMindigno;
 
 //Per recuperare i micropost (home)
-- (NSArray *) microPosts;
+- (NSArray *) downloadMicroPosts;
 //Per recuperare altri 8 micropost (home)
-- (NSArray *) moreOldMicroPosts;
+- (NSArray *) downloadMoreOldMicroPosts;
 
 //Per recuperare i micropost di un user
-- (NSArray *) microPostsOfUser:(User*)user;
+- (NSArray *) downloadMicroPostsOfUser:(User*)user;
 //Per recuperare altri 8 micropost dell'user
-- (NSArray *) moreOldMicroPostsOfUser:(User*)user;
+- (NSArray *) downloadMoreOldMicroPostsOfUser:(User*)user;
 
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
