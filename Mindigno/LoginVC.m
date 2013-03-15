@@ -8,7 +8,6 @@
 
 #import "LoginVC.h"
 #import "Utils.h"
-#import "JSONParserMainData.h"
 #import "Mindigno.h"
 #import "NotificationKeys.h"
 
@@ -51,10 +50,9 @@
     NSString *user = [textFieldUsername text];
     NSString *password = [textFieldPassword text];
 
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    [jsonParser startLoginWithUser:user andPassword:password];
+    BOOL loginOK = [[Mindigno sharedMindigno] loginWithUser:user andPassword:password];
     
-    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+    if (loginOK && [[Mindigno sharedMindigno] isLoggedUser]) {
         //Esce dalla modal view
         [self dismissViewControllerAnimated:YES completion:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];

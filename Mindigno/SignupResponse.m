@@ -11,36 +11,18 @@
 
 @implementation SignupResponse
 
-@synthesize isUserCreated, messageError;
+@synthesize isUserCreatedAndLogged, messageError;
 
 - (id)init {
     
     self = [super init];
     if (self) {
         
-        [self setIsUserCreated: NO];
+        [self setIsUserCreatedAndLogged: NO];
         [self setMessageError: @"Non è stato possibile effettuare la registrazione. Riprova più tardi"];
     }
     
     return self;
 }
-
-- (void) setValuesWithJsonRoot:(NSDictionary*)root_signupResponse {
-    
-    [self setIsUserCreated: [[root_signupResponse objectForKey: SIGNUP_USER_CREATED_KEY] boolValue]];
-    //[self setMessageError: [root_signupResponse objectForKey: SIGNUP_MESSAGE_KEY]];
-}
-
-- (id)initWithJsonRoot:(NSDictionary*)root_signupResponse {
-    
-    self = [super init];
-    if (self) {
-        [self setValuesWithJsonRoot: root_signupResponse];
-    }
-    
-    return self;
-}
-
-
 
 @end

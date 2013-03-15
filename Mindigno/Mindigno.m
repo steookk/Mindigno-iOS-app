@@ -7,7 +7,6 @@
 //
 
 #import "Mindigno.h"
-#import "JSONParserMainData.h"
 #import "LoginSignupVC.h"
 
 @implementation Mindigno
@@ -59,6 +58,37 @@
     }
     
     return self;
+}
+
+///
+
+- (BOOL) loginWithUser:(NSString*)user andPassword:(NSString*)password {
+
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    BOOL loginOK = [jsonParser startLoginWithUser:user andPassword:password];
+    
+    return loginOK;
+}
+
+- (SignupResponse*) signupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation {
+
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    SignupResponse *response = [jsonParser startSignupWithName:name mail:mail password:password passwordConfirmation:passwordConfirmation];
+
+    return response;
+}
+
+- (BOOL) logout {
+
+    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+    BOOL logoutOK = [jsonParser startLogout];
+    
+    if (logoutOK) {
+        [microPostsUser removeAllObjects];
+        [microPostsOfFollowing removeAllObjects];
+    }
+    
+    return logoutOK;
 }
 
 ///
@@ -165,13 +195,6 @@
         
         if ([idToUser_dictionary objectForKey: [user userID]] == nil) {
             [idToUser_dictionary setObject:user forKey: [user userID]];
-        
-        } else {
-            
-            User *existentUser = [idToUser_dictionary objectForKey: [user userID]];
-            [existentUser setInfoWithJsonRoot: user_dictionary];
-            
-            //[idToUser_dictionary setObject:user forKey: [user userID]];
         }
     }
 }

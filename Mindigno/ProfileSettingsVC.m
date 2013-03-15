@@ -49,13 +49,20 @@
 - (IBAction)logout:(id)sender {
     
     if ([[Mindigno sharedMindigno] isLoggedUser]) {
-        JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-        [jsonParser startLogout];
         
-        [buttonLogout setHidden: YES];
+        BOOL logoutOK = [[Mindigno sharedMindigno] logout];
         
-        [self exitWithAnimation: NO];
-        [[NSNotificationCenter defaultCenter] postNotificationName:LOGOUT_NOTIFICATION object:nil];
+        if (logoutOK) {
+            [buttonLogout setHidden: YES];
+            
+            [self exitWithAnimation: NO];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LOGOUT_NOTIFICATION object:nil];
+        
+        } else {
+        
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Errore" message:@"Non è stato possibile effettuare il logout. Riprova più tardi" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
     }
 }
 

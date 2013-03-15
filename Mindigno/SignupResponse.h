@@ -10,16 +10,11 @@
 
 @interface SignupResponse : NSObject {
 
-    BOOL isUserCreated;
+    BOOL isUserCreatedAndLogged;
     NSString* messageError;
 }
 
-@property (nonatomic) BOOL isUserCreated;
+@property (nonatomic) BOOL isUserCreatedAndLogged;
 @property (nonatomic, copy) NSString* messageError;
-
-- (id)init;
-- (id)initWithJsonRoot:(NSDictionary*)root_signupResponse;
-
-- (void) setValuesWithJsonRoot:(NSDictionary*)root_signupResponse;
 
 @end

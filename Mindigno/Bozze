@@ -150,3 +150,43 @@ cookie: remember_token=BAhbB286E0JTT046Ok9iamVjdElkBjoKQGRhdGFbEWlVaWZpAbZpWWlHa
     "num_following": 1,
     "user_path": "/users/5061b65442eb4800020003ac"
 },
+
+
+///
+
+Quando il loging è va a buon fine viene ritornato questo:
+
+{
+    "user": {
+        "id": "4fe905213ff9800002000001",
+        "name": "Stefano Uliari",
+        "user_path": "/users/4fe905213ff9800002000001",
+        "avatar_url": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc6/275744_698096449_795356494_q.jpg"
+    }
+}
+
+quando non va a buon fine, questo :
+
+{
+    "user": null
+}
+
+//
+
+Quando il signup va a buon fine significa che l'utente non solo è registrato ma è anche loggato. Se va a buon fine quindi viene ritornato:
+
+{
+    "user": {
+        ...
+    },
+    "message": "la password è troppo corta ecc"
+}
+
+se va male invece:
+
+{
+    "user": null,
+    "message": "la password è troppo corta ecc"
+}
+
+il messaggio è univoco e creato dal server per qualsiasi problema.

@@ -21,7 +21,6 @@
 
 ///
 
-#define SIGNUP_USER_CREATED_KEY @"user_created"
 #define SIGNUP_MESSAGE_KEY @"message"
 
 ///

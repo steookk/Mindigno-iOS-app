@@ -54,7 +54,7 @@
     
     //For debug
     //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"%@", textJson);
+    //NSLog(@"%@\n\n", textJson);
     
     NSMutableArray *microPosts = nil;
     
@@ -71,18 +71,18 @@
         [[Mindigno sharedMindigno] setBaseURL: [root_dictionary objectForKey: BASE_URL_KEY]];
         
         NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
-        NSMutableArray *arrayUsersAndUser = [NSMutableArray arrayWithArray: users_array];
-        
-        if (yesOrNot) {
-            //Sarebbe l'utente per la quale si è fatta richiesta
-            [arrayUsersAndUser addObject: [root_dictionary objectForKey: USER_KEY]];
-        }
-        
-        [[Mindigno sharedMindigno] addUsersFromJsonRoot: arrayUsersAndUser];
+        [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
         
         NSString *current_user_id = [root_dictionary objectForKey: CURRENT_USER_KEY];
-        User *current_user = [[Mindigno sharedMindigno] userWithId: current_user_id];
-        [[Mindigno sharedMindigno] setCurrentUser: current_user];
+        User *user = [[Mindigno sharedMindigno] userWithId: current_user_id];
+        [[Mindigno sharedMindigno] setCurrentUser: user];
+        
+        if (yesOrNot) {
+            if (user != nil) {
+                NSDictionary *dict_user = [root_dictionary objectForKey: USER_KEY];
+                [user addMoreUserInfoWithJsonRoot: dict_user];
+            }
+        }
         
         //
         NSArray *feeds_array = [root_dictionary objectForKey: MICROPOSTS_KEY];
@@ -108,7 +108,7 @@
 
 ///
 
-- (void) startLoginWithUser:(NSString*)user andPassword:(NSString*)password {
+- (BOOL) startLoginWithUser:(NSString*)user andPassword:(NSString*)password {
 
     NSString *urlString = [[Mindigno sharedMindigno] getStringUrlFromStringPath:@"sessions"];
     
@@ -191,24 +191,41 @@
     [[Mindigno sharedMindigno] checkAndUpdateIfUserIsLogged];
     
     ///
+    
+    //For debug
+    //NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@", textJson);
 
-    /*
-     //Non utile perchè non parsiamo il json per sapere se l'utente è loggato ma ciò viene fatto in base alla presenza del cookie (con stringa != vuota) remember_token
+    BOOL returnValue = NO;
+    
+    //Non utile perchè non parsiamo il json per sapere se l'utente è loggato ma ciò viene fatto in base alla presenza del cookie (con stringa != vuota) remember_token
     if (returnData != nil) {
         
-        //NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
+
+        //
         
-        //For debug
-        NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", textJson);
+        NSDictionary *dict_user = [root_dictionary objectForKey: USER_KEY];
+        
+        if (dict_user != nil) {
+            User *user = [[User alloc] initWithJsonRoot: dict_user];
+            
+            //Setto l'utente corrente
+            [[Mindigno sharedMindigno] setCurrentUser: user];
+            //Aggiungo l'utente nel dizionario
+            [[[Mindigno sharedMindigno] idToUser_dictionary] setObject:user forKey:[user userID]];
+            
+            returnValue = YES;
+        }
     
     } else {
         NSLog(@"returnData is nil");
     }
-     */
+    
+    return returnValue;
 }
 
-- (void) startLogout {
+- (BOOL) startLogout {
     
     NSString *urlString = [[Mindigno sharedMindigno] getStringUrlFromStringPath:@"signout"];
     
@@ -235,25 +252,21 @@
     //
     
     NSURLResponse *response;
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    //Non ritorna nessun dato
+    [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int statusCode = [httpResponse statusCode];
     
     //Controlla e aggiorna lo stato di login dell'utente
     [[Mindigno sharedMindigno] checkAndUpdateIfUserIsLogged];
     
-    /*
-     //Non utile perchè non parsiamo il json per sapere se l'utente è loggato ma ciò viene fatto in base alla presenza del cookie (con stringa != vuota) remember_token
-     if (returnData != nil) {
-     
-         //NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
-         
-         //For debug
-         NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-         NSLog(@"%@", textJson);
-     
-     } else {
-         NSLog(@"returnData is nil");
-     }
-     */
+    if (statusCode == 200) {
+        return YES;
+    
+    } else {
+        return NO;
+    }
 }
 
 - (SignupResponse*) startSignupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation {
@@ -300,20 +313,32 @@
     
     ///
     
+    //For debug
+    NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@\n\n", textJson);
+    
      //Non utile perchè non parsiamo il json per sapere se l'utente è loggato ma ciò viene fatto in base alla presenza del cookie (con stringa != vuota) remember_token
     SignupResponse *signupResponse = [[SignupResponse alloc] init];
      if (returnData != nil) {
-     
-         //For debug
-         NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-         NSLog(@"%@", textJson);
-         
-         ///
-         
          NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
-         [signupResponse setValuesWithJsonRoot:root_dictionary];
          
-         NSLog(@"isUserCreated: %d, message: %@", [signupResponse isUserCreated], [signupResponse messageError]);
+         //
+         NSDictionary *dict_user = [root_dictionary objectForKey: USER_KEY];
+         
+         if (dict_user != nil) {
+             User *user = [[User alloc] initWithJsonRoot: dict_user];
+             
+             //Setto l'utente corrente
+             [[Mindigno sharedMindigno] setCurrentUser: user];
+             //Aggiungo l'utente nel dizionario
+             [[[Mindigno sharedMindigno] idToUser_dictionary] setObject:user forKey:[user userID]];
+             
+             [signupResponse setIsUserCreatedAndLogged: YES];
+         
+         } else {
+             [signupResponse setIsUserCreatedAndLogged: NO];
+             [signupResponse setMessageError: [root_dictionary objectForKey: SIGNUP_MESSAGE_KEY]];
+         }
      
      } else {
          NSLog(@"returnData is nil");
@@ -334,7 +359,7 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
     
     //For debug
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    //NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     //NSLog(@"%@", jsonString);
     
     NSData *postData = jsonData;

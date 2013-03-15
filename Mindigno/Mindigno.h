@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "JSONParserMainData.h"
 
 @interface Mindigno : NSObject {
 
@@ -48,6 +49,10 @@
 - (NSArray *) downloadMicroPostsOfUser:(User*)user;
 //Per recuperare altri 8 micropost dell'user
 - (NSArray *) downloadMoreOldMicroPostsOfUser:(User*)user;
+
+- (BOOL) loginWithUser:(NSString*)user andPassword:(NSString*)password;
+- (SignupResponse*) signupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
+- (BOOL) logout;
 
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;

@@ -15,14 +15,7 @@
 @synthesize userID, userUrl, name, avatarUrl;
 @synthesize followersText, followingText, numberOfFollowers, numberOfFollowing;
 
-- (void) setInfoWithJsonRoot:(NSDictionary*)root_user {
-    
-    [self setUserID: [root_user objectForKey: USER_ID_KEY]];
-    
-    NSString *completeUserUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_user objectForKey: USER_PATH_KEY]];
-    [self setUserUrl: completeUserUrl];
-    [self setName: [root_user objectForKey: USER_NAME_KEY]];
-    [self setAvatarUrl: [root_user objectForKey: USER_AVATAR_URL_KEY]];
+- (void) addMoreUserInfoWithJsonRoot:(NSDictionary*)root_user {
     
     //
     [self setFollowersText: [root_user objectForKey: USER_FOLLOWERS_TEXT_KEY]];
@@ -35,7 +28,16 @@
 
     self = [super init];
     if (self) {
-        [self setInfoWithJsonRoot: root_user];
+        
+        [self setUserID: [root_user objectForKey: USER_ID_KEY]];
+        
+        NSString *completeUserUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_user objectForKey: USER_PATH_KEY]];
+        [self setUserUrl: completeUserUrl];
+        [self setName: [root_user objectForKey: USER_NAME_KEY]];
+        [self setAvatarUrl: [root_user objectForKey: USER_AVATAR_URL_KEY]];
+    
+        //
+        [self addMoreUserInfoWithJsonRoot: root_user];
     }
     
     return self;

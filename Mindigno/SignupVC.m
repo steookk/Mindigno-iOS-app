@@ -8,7 +8,7 @@
 
 #import "SignupVC.h"
 #import "Utils.h"
-#import "JSONParserMainData.h"
+#import "Mindigno.h"
 #import "NotificationKeys.h"
 
 @interface SignupVC ()
@@ -69,26 +69,12 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione" message:@"Compilare tutti i campi" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     
-    }
-    /*
-     
-     //Non ha senso farlo? Perchè lo fa il server
-    else if (![[textFieldPassword text] isEqualToString:[textFieldRetipedPassword text]]) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione" message:@"Le password non corrispondono" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-    
-    }
-     */
-    
-    else {
+    } else {
         //Tutto ok, procedere con la richiesta di registrazione
         
-        JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
+        SignupResponse *signupResponse = [[Mindigno sharedMindigno] signupWithName:[textFieldNome text] mail:[textFieldMail text] password:[textFieldPassword text] passwordConfirmation: [textFieldRetipedPassword text]];
         
-        SignupResponse *signupResponse = [jsonParser startSignupWithName:[textFieldNome text] mail:[textFieldMail text] password:[textFieldPassword text] passwordConfirmation: [textFieldRetipedPassword text]];
-        
-        if ([signupResponse isUserCreated]) {
+        if ([signupResponse isUserCreatedAndLogged]) {
             //Esco dalla modale
             [self dismissViewControllerAnimated:YES completion:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];

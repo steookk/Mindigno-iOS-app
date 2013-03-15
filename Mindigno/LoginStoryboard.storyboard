@@ -145,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="10" width="320" height="383"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enrico test" placeholder="nome" minimumFontSize="17" clearButtonMode="whileEditing" id="mU4-9h-8Wi">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enrico" placeholder="nome" minimumFontSize="17" clearButtonMode="whileEditing" id="mU4-9h-8Wi">
                                                 <rect key="frame" x="20" y="11" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,21 +153,21 @@
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1@gmail.com" placeholder="mail" minimumFontSize="17" clearButtonMode="whileEditing" id="ezx-7j-8Vq">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico@gmail.com" placeholder="mail" minimumFontSize="17" clearButtonMode="whileEditing" id="ezx-7j-8Vq">
                                                 <rect key="frame" x="20" y="51" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="aaa" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" id="E9Q-cx-kam">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" id="E9Q-cx-kam">
                                                 <rect key="frame" x="20" y="94" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="aaa" placeholder="conferma password" minimumFontSize="17" clearButtonMode="whileEditing" id="AgH-pd-8sB">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" placeholder="conferma password" minimumFontSize="17" clearButtonMode="whileEditing" id="AgH-pd-8sB">
                                                 <rect key="frame" x="20" y="132" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,7 +235,6 @@
                 <relationship kind="action" name="exitFromModalView:"/>
                 <relationship kind="outlet" name="buttonLogin" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonSignup" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageViewBackground" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="LoginVC" superclassName="UIViewController">
