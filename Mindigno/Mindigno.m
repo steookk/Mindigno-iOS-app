@@ -12,7 +12,7 @@
 @implementation Mindigno
 
 @synthesize currentUser, idToUser_dictionary, baseURL, isLoggedUser;
-@synthesize microPosts, microPostsOfFollowing, microPostsUser;
+@synthesize microPostsOfHome, microPostsOfFollowing;
 
 + (id)sharedMindigno {
     static Mindigno *sharedMindigno = nil;
@@ -48,9 +48,9 @@
     if (self) {
         
         currentUser = nil;
-        microPosts = [NSMutableArray array];
+        microPostsOfHome = [NSMutableArray array];
         microPostsOfFollowing = [NSMutableArray array];
-        microPostsUser = [NSMutableArray array];
+        
         idToUser_dictionary = [NSMutableDictionary dictionary];
         
         [self checkAndUpdateIfUserIsLogged];
@@ -64,31 +64,44 @@
 
 - (BOOL) loginWithUser:(NSString*)user andPassword:(NSString*)password {
 
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    BOOL loginOK = [jsonParser startLoginWithUser:user andPassword:password];
+    BOOL loginOK = [JSONParserMainData startLoginWithUser:user andPassword:password];
     
     return loginOK;
 }
 
 - (SignupResponse*) signupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation {
 
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    SignupResponse *response = [jsonParser startSignupWithName:name mail:mail password:password passwordConfirmation:passwordConfirmation];
+    SignupResponse *response = [JSONParserMainData startSignupWithName:name mail:mail password:password passwordConfirmation:passwordConfirmation];
 
     return response;
 }
 
 - (BOOL) logout {
 
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    BOOL logoutOK = [jsonParser startLogout];
+    BOOL logoutOK = [JSONParserMainData startLogout];
     
     if (logoutOK) {
-        [microPostsUser removeAllObjects];
+        [currentUser removeAllMicroposts];
         [microPostsOfFollowing removeAllObjects];
     }
     
     return logoutOK;
+}
+
+///
+
+- (BOOL) indignatiSulMicroPostConID:(NSString*)micropostID {
+    
+    BOOL indignatoOK = [JSONParserMainData startIndignatiSulMicroPostConID: micropostID];
+    
+    return indignatoOK;
+}
+
+- (BOOL) rimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID {
+
+    BOOL rimuoviIndignatoOK = [JSONParserMainData startRimuoviIndignazioneSulMicroPostConID: micropostID];
+    
+    return rimuoviIndignatoOK;
 }
 
 ///
@@ -98,25 +111,23 @@
     NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: @"users/home_hot_feed"];
     NSLog(@"downloadMicroPosts url: %@", url);
     
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    NSMutableArray *microposts_to_return = [JSONParserMainData startDownloadFeedAtUrl:url thereIsUserField:NO];
     
-    [microPosts removeAllObjects];
-    [microPosts setArray: microposts_to_return];
+    [microPostsOfHome removeAllObjects];
+    [microPostsOfHome setArray: microposts_to_return];
     
-    return microPosts;
+    return microPostsOfHome;
 }
 
 - (NSArray *) downloadMoreOldMicroPosts {
 
-    NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/home_hot_feed?from=%d", [microPosts count]]];
+    NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: [NSString stringWithFormat:@"users/home_hot_feed?from=%d", [microPostsOfHome count]]];
     NSLog(@"downloadMoreOldMicroPosts url: %@", url);
     
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    NSMutableArray *microposts_to_return = [JSONParserMainData startDownloadFeedAtUrl:url thereIsUserField:NO];
     
     if (microposts_to_return != nil) {
-        [microPosts addObjectsFromArray: microposts_to_return];
+        [microPostsOfHome addObjectsFromArray: microposts_to_return];
     }
     
     return microposts_to_return;
@@ -129,8 +140,7 @@
     NSString *url = [[currentUser userUrl] stringByAppendingPathComponent:@"home_following_feed"];
     NSLog(@"downloadMicroPostsOfFollowing url: %@", url);
     
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    NSMutableArray *microposts_to_return = [JSONParserMainData startDownloadFeedAtUrl:url thereIsUserField:NO];
     
     [microPostsOfFollowing removeAllObjects];
     [microPostsOfFollowing setArray: microposts_to_return];
@@ -144,8 +154,7 @@
     NSString *url = [[currentUser userUrl] stringByAppendingPathComponent: [NSString stringWithFormat:@"home_following_feed?from=%d", [microPostsOfFollowing count]]];
     NSLog(@"downloadMoreOldMicroPostsOfFollowing url: %@", url);
     
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    NSMutableArray *microposts_to_return = [JSONParserMainData startDownloadFeedAtUrl:url thereIsUserField:NO];
     
     if (microposts_to_return != nil) {
         [microPostsOfFollowing addObjectsFromArray: microposts_to_return];
@@ -161,28 +170,31 @@
     NSString *url = [user userUrl];
     NSLog(@"downloadMicroPostsOfUser url: %@", url);
     
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:YES];
+    NSMutableArray *microposts_to_return = [JSONParserMainData startDownloadFeedAtUrl:url thereIsUserField:YES];
+    [user setMicroposts:microposts_to_return];
     
-    [microPostsUser removeAllObjects];
-    [microPostsUser setArray: microposts_to_return];
-    
-    return microPostsUser;
+    return [user microposts];
 }
 
 - (NSArray *) downloadMoreOldMicroPostsOfUser:(User*)user {
 
-    NSString *url = [[user userUrl] stringByAppendingPathComponent: [NSString stringWithFormat:@"profile_feed?from=%d", [microPostsUser count]]];
+    NSString *url = [[user userUrl] stringByAppendingPathComponent: [NSString stringWithFormat:@"profile_feed?from=%d", [[user microposts] count]]];
     NSLog(@"downloadMoreOldMicroPostsOfUser url: %@", url);
     
-    JSONParserMainData *jsonParser = [[JSONParserMainData alloc] init];
-    NSMutableArray *microposts_to_return = [jsonParser startDownloadFeedAtUrl:url thereIsUserField:NO];
+    NSMutableArray *microposts_to_return = [JSONParserMainData startDownloadFeedAtUrl:url thereIsUserField:NO];
     
     if (microposts_to_return != nil) {
-        [microPostsUser addObjectsFromArray: microposts_to_return];
+        [user addMicroposts: microposts_to_return];
     }
     
     return microposts_to_return;
+}
+
+///
+
+- (void) downloadAllIndignatiForMicropost:(MicroPost*)micropost {
+
+    [JSONParserMainData startDownloadAllIndignatiForMicropost: micropost];
 }
 
 ///

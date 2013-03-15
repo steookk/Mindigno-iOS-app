@@ -66,6 +66,9 @@
     // url
     NSMutableArray *commentsTabs_urls;
     ///
+    
+    //Array che conterrà gli tutti gli indignati. Sarà pieno solo se sarà fatta una richiesta.
+    NSMutableArray *allIndignati;
 }
 
 @property (nonatomic, copy) NSString *micropostID;
@@ -103,9 +106,13 @@
 @property (nonatomic, readonly) NSArray *commentsTabs_buttons;
 @property (nonatomic, readonly) NSArray *commentsTabs_urls;
 
+@property (nonatomic, readonly) NSArray *allIndignati;
+
 - (id)initWithJsonRoot:(NSDictionary*)root_microPost;
 
 - (NSString *) addOneToNumberIndignati;
 - (NSString *) removeOneToNumberIndignati;
+
+- (void) addAllIndignati:(NSArray*)users;
 
 @end

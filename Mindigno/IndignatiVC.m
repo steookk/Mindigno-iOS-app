@@ -26,7 +26,7 @@
     self = [super initWithCoder: aDecoder];
     if (self) {
         
-        arrayOfArray_indignati = [NSMutableArray array];
+        titleToIndignati = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -38,7 +38,10 @@
     [tableViewIndignati setDelegate:self];
     
     NSLog(@"numero indignati: %d", [[currentMicroPost followingIndignati] count]);
-    [arrayOfArray_indignati addObject: [currentMicroPost followingIndignati]];
+    [titleToIndignati setObject:[currentMicroPost followingIndignati] forKey:@"Chi segui"];
+    
+    [[Mindigno sharedMindigno] downloadAllIndignatiForMicropost: currentMicroPost];
+    [titleToIndignati setObject: [currentMicroPost allIndignati] forKey: @"Tutti"];
     
     [tableViewIndignati reloadData];
 }
@@ -46,12 +49,19 @@
 ///Start UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return [arrayOfArray_indignati count];
+    return [[titleToIndignati allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return (int)[[arrayOfArray_indignati objectAtIndex:section] count];
+    NSString *key = [[titleToIndignati allKeys] objectAtIndex: section];
+    return [[titleToIndignati objectForKey:key] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+
+    NSString *key = [[titleToIndignati allKeys] objectAtIndex: section];
+    return key;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -67,7 +77,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
     
-    User *userFollowing = [[arrayOfArray_indignati objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    NSString *key = [[titleToIndignati allKeys] objectAtIndex: indexPath.section];
+    NSArray *arrayUsers = [titleToIndignati objectForKey: key];
+    
+    User *userFollowing = [arrayUsers objectAtIndex:indexPath.row];
     
     ///
     
@@ -107,7 +120,11 @@
         NSLog(@"prepareForSegue clicked row number: %d", currentIndexPath.row);
         
         ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
-        User *currentUser = [[arrayOfArray_indignati objectAtIndex:currentIndexPath.section] objectAtIndex:currentIndexPath.row];
+        
+        NSString *key = [[titleToIndignati allKeys] objectAtIndex: currentIndexPath.section];
+        NSArray *arrayUsers = [titleToIndignati objectForKey: key];
+        
+        User *currentUser = [arrayUsers objectAtIndex:currentIndexPath.row];
         [profileVC setCurrentUser:currentUser];
         
         NSArray *micropostOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];

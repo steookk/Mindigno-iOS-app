@@ -29,6 +29,9 @@
     self = [super init];
     if (self) {
         
+        microposts = [NSMutableArray array];
+        
+        //
         [self setUserID: [root_user objectForKey: USER_ID_KEY]];
         
         NSString *completeUserUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: [root_user objectForKey: USER_PATH_KEY]];
@@ -41,6 +44,28 @@
     }
     
     return self;
+}
+
+//
+
+- (NSArray*) microposts {
+
+    return microposts;
+}
+
+- (void) setMicroposts:(NSArray*)new_microposts {
+
+    [microposts removeAllObjects];
+    [microposts setArray: new_microposts];
+}
+
+- (void) addMicroposts:(NSArray*)new_microposts {
+    
+    [microposts addObjectsFromArray: new_microposts];
+}
+
+- (void) removeAllMicroposts {
+    [microposts removeAllObjects];
 }
 
 @end

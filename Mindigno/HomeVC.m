@@ -15,7 +15,6 @@
 #import "IndignatiVC.h"
 #import "CommentsVC.h"
 #import "NotificationKeys.h"
-#import "JSONParserMainData.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
@@ -224,21 +223,24 @@
         
         UIButton *buttonMindigno = (UIButton*)sender;
         
-        JSONParserMainData* jsonParser = [[JSONParserMainData alloc] init];
-        
         BOOL isIndignato = [buttonMindigno isSelected];
         if (!isIndignato) {
-            [jsonParser indignatiSulMicroPostConID: [currentMicroPost micropostID]];
-            [currentMicroPost addOneToNumberIndignati];
+            BOOL ok = [[Mindigno sharedMindigno] indignatiSulMicroPostConID: [currentMicroPost micropostID]];
+            
+            if (ok) {
+                [currentMicroPost addOneToNumberIndignati];
+                [currentMicroPost setIsIndignato: !isIndignato];
+            }
             
         } else {
-            [jsonParser rimuoviIndignazioneSulMicroPostConID: [currentMicroPost micropostID]];
-            [currentMicroPost removeOneToNumberIndignati];
+            BOOL ok = [[Mindigno sharedMindigno] rimuoviIndignazioneSulMicroPostConID: [currentMicroPost micropostID]];
+            
+            if (ok) {
+                [currentMicroPost removeOneToNumberIndignati];
+                [currentMicroPost setIsIndignato: !isIndignato];
+            }
         }
         
-        [currentMicroPost setIsIndignato: !isIndignato];
-        
-        //[buttonMindigno setSelected: !isIndignato];
         [tableViewMicroPost reloadData];
     }
 }

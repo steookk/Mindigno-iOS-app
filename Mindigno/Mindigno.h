@@ -13,9 +13,10 @@
 @interface Mindigno : NSObject {
 
     User *currentUser;
-    NSMutableArray *microPosts;
+    
+    NSMutableArray *microPostsOfHome;
     NSMutableArray *microPostsOfFollowing;
-    NSMutableArray *microPostsUser;
+    
     NSMutableDictionary *idToUser_dictionary;
     
     NSString *baseURL;
@@ -26,9 +27,8 @@
 @property (nonatomic, readonly) BOOL isLoggedUser;
 @property (nonatomic) User *currentUser;
 
-@property (nonatomic, readonly) NSArray *microPosts;
+@property (nonatomic, readonly) NSArray *microPostsOfHome;
 @property (nonatomic, readonly) NSArray *microPostsOfFollowing;
-@property (nonatomic, readonly) NSArray *microPostsUser;
 
 @property (nonatomic, readonly) NSMutableDictionary *idToUser_dictionary;
 @property (nonatomic, copy) NSString *baseURL;
@@ -50,10 +50,14 @@
 //Per recuperare altri 8 micropost dell'user
 - (NSArray *) downloadMoreOldMicroPostsOfUser:(User*)user;
 
+- (void) downloadAllIndignatiForMicropost:(MicroPost*)micropost;
+
 - (BOOL) loginWithUser:(NSString*)user andPassword:(NSString*)password;
 - (SignupResponse*) signupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
 - (BOOL) logout;
 
+- (BOOL) indignatiSulMicroPostConID:(NSString*)micropostID;
+- (BOOL) rimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
 
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;

@@ -21,6 +21,8 @@
     NSString *numberOfFollowers;
     NSString *numberOfFollowing;
     //
+    
+    NSMutableArray *microposts;
 }
 
 @property (nonatomic, copy) NSString *userID;
@@ -37,5 +39,13 @@
 
 - (id)initWithJsonRoot:(NSDictionary*)root_user;
 - (void)addMoreUserInfoWithJsonRoot:(NSDictionary*)root_user;
+
+- (NSArray*) microposts;
+//Cancella tutti quelli precedenti e imposta i nuovi.
+- (void) setMicroposts:(NSArray*)new_microposts;
+//Aggiunge i nuovi ai vecchi
+- (void) addMicroposts:(NSArray*)new_microposts;
+
+- (void) removeAllMicroposts;
 
 @end

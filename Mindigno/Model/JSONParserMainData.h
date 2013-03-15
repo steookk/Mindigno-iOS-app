@@ -17,21 +17,21 @@
 #define USER_NAME_TEST @"andrea@prova.it"
 #define USER_PASSWORD_TEST @"ciaociao"
 
-@interface JSONParserMainData : NSObject {
+@interface JSONParserMainData : NSObject
 
-}
-
-- (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString thereIsUserField:(BOOL)yesOrNot;
++ (NSMutableArray*) startDownloadFeedAtUrl:(NSString *)urlString thereIsUserField:(BOOL)yesOrNot;
 
 //Effettua il login e ritorna SI o NO in base al fatto se è effettivamente loggato o no.
-- (BOOL) startLoginWithUser:(NSString*)user andPassword:(NSString*)password;
++ (BOOL) startLoginWithUser:(NSString*)user andPassword:(NSString*)password;
 //Effettua il logout e ritorna SI se è andato a buon fine. NO altrimenti.
-- (BOOL) startLogout;
++ (BOOL) startLogout;
 
 //Ritorna SignupResponse con le rispettive proprietà
-- (SignupResponse*) startSignupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
++ (SignupResponse*) startSignupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
 
-- (void) indignatiSulMicroPostConID:(NSString*)micropostID;
-- (void) rimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
++ (BOOL) startIndignatiSulMicroPostConID:(NSString*)micropostID;
++ (BOOL) startRimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
+
++ (void) startDownloadAllIndignatiForMicropost:(MicroPost*)micropost;
 
 @end

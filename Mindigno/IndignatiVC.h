@@ -11,7 +11,7 @@
 
 @interface IndignatiVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
 
-    NSMutableArray *arrayOfArray_indignati;
+    NSMutableDictionary *titleToIndignati;
     
     MicroPost __weak *currentMicroPost;
     

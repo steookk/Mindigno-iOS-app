@@ -205,30 +205,38 @@
 - (void) buttonMindignoClicked:(id)sender {
     //NSLog(@"buttonMindignoClicked");
     
-    //NB: Qui non c'è bisogno di fare il controllo se l'utente è loggato perchè siamo in profilo e quindi necessariamente deve esserlo.
-    
-    //The indexPath must be taken from button and not from the tableView
-    NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
-    MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
-    
-    UIButton *buttonMindigno = (UIButton*)sender;
-    
-    JSONParserMainData* jsonParser = [[JSONParserMainData alloc] init];
-    
-    BOOL isIndignato = [buttonMindigno isSelected];
-    if (!isIndignato) {
-        [jsonParser indignatiSulMicroPostConID: [currentMicroPost micropostID]];
-        [currentMicroPost addOneToNumberIndignati];
+    if (![[Mindigno sharedMindigno] isLoggedUser]) {
+        UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+        [self presentViewController:navController animated:YES completion:nil];
         
     } else {
-        [jsonParser rimuoviIndignazioneSulMicroPostConID: [currentMicroPost micropostID]];
-        [currentMicroPost removeOneToNumberIndignati];
+        
+        //The indexPath must be taken from button and not from the tableView
+        NSIndexPath *currentIndexPath = [tableViewMicroPost indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
+        
+        UIButton *buttonMindigno = (UIButton*)sender;
+        
+        BOOL isIndignato = [buttonMindigno isSelected];
+        if (!isIndignato) {
+            BOOL ok = [[Mindigno sharedMindigno] indignatiSulMicroPostConID: [currentMicroPost micropostID]];
+            
+            if (ok) {
+                [currentMicroPost addOneToNumberIndignati];
+                [currentMicroPost setIsIndignato: !isIndignato];
+            }
+            
+        } else {
+            BOOL ok = [[Mindigno sharedMindigno] rimuoviIndignazioneSulMicroPostConID: [currentMicroPost micropostID]];
+            
+            if (ok) {
+                [currentMicroPost removeOneToNumberIndignati];
+                [currentMicroPost setIsIndignato: !isIndignato];
+            }
+        }
+        
+        [tableViewMicroPost reloadData];
     }
-    
-    [currentMicroPost setIsIndignato: !isIndignato];
-    
-    //[buttonMindigno setSelected: !isIndignato];
-    [tableViewMicroPost reloadData];
 }
 
 ///Start UITableViewDelegate

@@ -14,20 +14,19 @@
 
 @interface MicroPost ()
 
-- (void) setup;
-
 @end
 
 @implementation MicroPost
 
 @synthesize micropostID, micropostUrl, title, description, isLink, isIndignato, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments, indignatiUrl, commentsTabs_buttons, commentsTabs_urls;
+@synthesize allIndignati;
 
 - (id) init {
+    
     self = [super init];
     if (self) {
-        [self setup];
+        
     }
-    
     return self;
 }
 
@@ -36,7 +35,9 @@
     self = [super init];
     if (self) {
         
-        //[self setup];
+        allIndignati = [NSMutableArray array];
+        
+        ///
         
         [self setMicropostID: [root_microPost objectForKey: MICROPOST_ID_KEY]];
         
@@ -149,6 +150,16 @@
     [self setNumberOfIndignati: newNumberOfIndignati];
     
     return numberOfIndignati;
+}
+
+- (void) addAllIndignati:(NSArray*)users {
+
+    [allIndignati removeAllObjects];
+    
+    for (NSDictionary *user_dictionary in users) {
+        User *user = [[Mindigno sharedMindigno] userWithId: [user_dictionary objectForKey: USER_ID_KEY]];
+        [allIndignati addObject:user];
+    }
 }
 
 @end
