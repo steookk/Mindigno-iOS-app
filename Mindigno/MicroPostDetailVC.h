@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MicroPost.h"
-#import "EditorVC.h"
+#import "CommentEditorVC.h"
 
 @interface MicroPostDetailVC : UIViewController <UITableViewDataSource, UITableViewDelegate, EditorVCDelegate> {
 

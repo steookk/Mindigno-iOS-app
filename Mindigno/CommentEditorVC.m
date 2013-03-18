@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 Enrico. All rights reserved.
 //
 
-#import "EditorVC.h"
+#import "CommentEditorVC.h"
 
-@interface EditorVC ()
+@interface CommentEditorVC ()
  
 -(void)exit;
 
 @end
 
-@implementation EditorVC
+@implementation CommentEditorVC
 
 @synthesize delegate;
 

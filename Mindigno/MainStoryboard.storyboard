@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XhF-v6-11g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XhF-v6-11g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -32,7 +32,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="goBack:" destination="kss-jZ-2LO" eventType="touchUpInside" id="REf-PI-5vP"/>
                                             <action selector="goBack:" destination="qyN-YD-bx5" eventType="touchUpInside" id="m5X-RY-nve"/>
                                         </connections>
                                     </button>
@@ -103,8 +102,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="goBack:" destination="qyN-YD-bx5" eventType="touchUpInside" id="9PI-Ef-Qnp"/>
-                                            <action selector="goBack:" destination="kss-jZ-2LO" eventType="touchUpInside" id="f4b-3X-Y0I"/>
                                             <action selector="goBack:" destination="biN-hs-CgC" eventType="touchUpInside" id="gGh-bv-fU9"/>
                                         </connections>
                                     </button>
@@ -115,14 +112,69 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oD4-ac-pyf">
+                                        <rect key="frame" x="242" y="7" width="73" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Fatto">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="done:" destination="biN-hs-CgC" eventType="touchUpInside" id="Maq-gH-dks"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="PFv-tU-Xqt" customClass="GTKeyboardHelper">
+                                <rect key="frame" x="0.0" y="40" width="320" height="420"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Scrivi il titolo della tua indignazione" id="E6W-Vv-unb">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.98299654223013688" green="1" blue="0.49104858767643567" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Descrivi più dettagliatamente la tua indignazione" id="cfk-sp-MgE">
+                                        <rect key="frame" x="0.0" y="107" width="320" height="184"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.742072994366756" blue="0.24531123836971269" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="60/109" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="One-fN-LxR">
+                                        <rect key="frame" x="235" y="81" width="80" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="40/500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aCq-IW-fsN">
+                                        <rect key="frame" x="235" y="296" width="80" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="GI3-j0-o8h"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="labelCounterCharDescrizione" destination="aCq-IW-fsN" id="F1I-nW-2em"/>
+                        <outlet property="labelCounterCharTitolo" destination="One-fN-LxR" id="ZMX-l4-r8A"/>
+                        <outlet property="textViewDescrizione" destination="cfk-sp-MgE" id="ujn-1t-mI1"/>
+                        <outlet property="textViewTitolo" destination="E6W-Vv-unb" id="w0u-IH-3aW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO1-4P-Mvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -921,7 +973,7 @@
             <objects>
                 <viewController id="VJ9-9d-hSE" customClass="ProfileVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyh-Na-7bT">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="6Ua-Je-F9J">
@@ -971,7 +1023,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <containerView contentMode="scaleToFill" id="hzX-Ns-p0N">
-                                <rect key="frame" x="0.0" y="40" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -988,7 +1040,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhH-QC-phY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041" y="-218"/>
+            <point key="canvasLocation" x="2087" y="-218"/>
         </scene>
         <!--Micro Post DetailVC-->
         <scene sceneID="C57-Mn-Ld8">
@@ -1287,12 +1339,12 @@
             </objects>
             <point key="canvasLocation" x="1301" y="467"/>
         </scene>
-        <!--EditorVC-->
+        <!--Comment EditorVC-->
         <scene sceneID="4lr-l4-kxK">
             <objects>
-                <viewController id="77B-Um-azv" customClass="EditorVC" sceneMemberID="viewController">
+                <viewController id="77B-Um-azv" customClass="CommentEditorVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzQ-So-f5O">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ZUi-FM-zvZ">
@@ -1337,7 +1389,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iJa-n2-BEE">
-                                <rect key="frame" x="0.0" y="40" width="320" height="205"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="225"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1718,7 +1770,7 @@
             <objects>
                 <viewController id="dZQ-27-8F0" customClass="FollowingFollowerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WbY-It-3EX">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="MXK-mI-l0E">
@@ -1755,7 +1807,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="wuf-AR-r1O">
-                                <rect key="frame" x="0.0" y="40" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.88235294119999996" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1849,20 +1901,20 @@
                 <relationship kind="outlet" name="textViewComment" candidateClass="UITextView"/>
             </relationships>
         </class>
+        <class className="CommentEditorVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentEditorVC.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="textViewContent" candidateClass="UITextView"/>
+            </relationships>
+        </class>
         <class className="CommentsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsVC.h"/>
             <relationships>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
                 <relationship kind="outlet" name="tableViewComments" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="EditorVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditorVC.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="goBack:"/>
-                <relationship kind="outlet" name="textViewContent" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="FollowingFollowerVC" superclassName="UIViewController">
@@ -1872,6 +1924,9 @@
                 <relationship kind="outlet" name="labelHeader" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableViewFollowingOrFollower" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="GTKeyboardHelper" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTKeyboardHelper.h"/>
         </class>
         <class className="HomeVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeVC.h"/>
@@ -1915,7 +1970,12 @@
         <class className="MicroPostEditorVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MicroPostEditorVC.h"/>
             <relationships>
+                <relationship kind="action" name="done:"/>
                 <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="labelCounterCharDescrizione" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelCounterCharTitolo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textViewDescrizione" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="textViewTitolo" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="ProfileSettingsVC" superclassName="UIViewController">
@@ -1967,12 +2027,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="wte-45-OdG"/>
         <segue reference="oVm-Gc-3kw"/>
         <segue reference="5uA-uT-gTn"/>
-        <segue reference="wte-45-OdG"/>
-        <segue reference="jxh-Lb-BDe"/>
-        <segue reference="b4O-TQ-VDa"/>
-        <segue reference="rZZ-R9-62i"/>
+        <segue reference="mxI-77-wMS"/>
+        <segue reference="Ol4-zK-bby"/>
+        <segue reference="TUN-6S-skc"/>
         <segue reference="k3v-Tn-sLm"/>
     </inferredMetricsTieBreakers>
 </document>

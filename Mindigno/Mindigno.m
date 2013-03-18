@@ -142,6 +142,11 @@
     return returnUsersArray;
 }
 
+- (MicroPost*) createNewMicropostWithTitle:(NSString*)title andDescription:(NSString*)description {
+
+    return [JSONParserMainData startCreateNewMicropostWithTitle: title andDescription: description];
+}
+
 ///
 
 - (NSArray *) downloadMicroPosts {

@@ -9,7 +9,7 @@
 #import "MicroPostDetailVC.h"
 #import "UIImageView+WebCache.h"
 #import "IndignatiVC.h"
-#import "EditorVC.h"
+#import "CommentEditorVC.h"
 #import "CommentsVC.h"
 #import "Mindigno.h"
 #import "Comment.h"
@@ -133,7 +133,7 @@
     
     } else if ([[segue identifier] isEqualToString:@"micropostDetailToEditor"]) {
         
-        EditorVC *editorVC = (EditorVC*)[segue destinationViewController];
+        CommentEditorVC *editorVC = (CommentEditorVC*)[segue destinationViewController];
         [editorVC setDelegate: self];
     
     } else if ([[segue identifier] isEqualToString:@"micropostDetailToComments"]) {
@@ -148,7 +148,7 @@
 }
 
 //start EditorVCDelegate
-- (void) textEditor:(EditorVC*)editorVC hasDoneWithText:(NSString*)text {
+- (void) textEditor:(CommentEditorVC*)editorVC hasDoneWithText:(NSString*)text {
     
     NSLog(@"%@", text);
     [editorVC setDelegate: nil];

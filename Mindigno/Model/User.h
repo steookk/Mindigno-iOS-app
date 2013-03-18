@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class MicroPost;
+
 @interface User : NSObject {
 
     NSString *userID;
@@ -49,6 +51,9 @@
 - (void) setMicroposts:(NSArray*)new_microposts;
 //Aggiunge i nuovi ai vecchi
 - (void) addMicroposts:(NSArray*)new_microposts;
+
+//Aggiunge un micropost ai vecchi;
+- (void) addMicropost:(MicroPost*)new_micropost;
 
 - (void) removeAllMicroposts;
 

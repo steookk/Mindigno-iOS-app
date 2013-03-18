@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EditorVC.h"
+#import "CommentEditorVC.h"
 #import "ScrollButtonBar.h"
 #import "MicroPost.h"
 

@@ -66,6 +66,11 @@
     [microposts addObjectsFromArray: new_microposts];
 }
 
+- (void) addMicropost:(MicroPost*)new_micropost {
+    
+    [microposts addObject: new_micropost];
+}
+
 - (void) removeAllMicroposts {
     [microposts removeAllObjects];
 }

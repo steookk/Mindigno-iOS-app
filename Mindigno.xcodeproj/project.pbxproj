@@ -133,8 +133,8 @@
 		D9C81D6116DE7EF200AB364A /* Bozze in Resources */ = {isa = PBXBuildFile; fileRef = D9C81D6016DE7EF100AB364A /* Bozze */; };
 		D9F4EB271668F4860027D0B9 /* Kenny.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F4EB261668F4860027D0B9 /* Kenny.png */; };
 		D9F4EB2C1668FB830027D0B9 /* MicroPostDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */; };
-		D9F9D49716806E000052F464 /* EditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D49616806E000052F464 /* EditorVC.m */; };
-		D9F9D49816806E000052F464 /* EditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D49616806E000052F464 /* EditorVC.m */; };
+		D9F9D49716806E000052F464 /* CommentEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D49616806E000052F464 /* CommentEditorVC.m */; };
+		D9F9D49816806E000052F464 /* CommentEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D49616806E000052F464 /* CommentEditorVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -315,8 +315,8 @@
 		D9F4EB261668F4860027D0B9 /* Kenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kenny.png; sourceTree = "<group>"; };
 		D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroPostDetailVC.h; sourceTree = "<group>"; };
 		D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroPostDetailVC.m; sourceTree = "<group>"; };
-		D9F9D49516806E000052F464 /* EditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorVC.h; sourceTree = "<group>"; };
-		D9F9D49616806E000052F464 /* EditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorVC.m; sourceTree = "<group>"; };
+		D9F9D49516806E000052F464 /* CommentEditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentEditorVC.h; sourceTree = "<group>"; };
+		D9F9D49616806E000052F464 /* CommentEditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentEditorVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,8 +524,6 @@
 				D9763B2916EA621300228209 /* ProfileSettingsVC.m */,
 				D970C40516F74CEC0039FCD1 /* FollowingFollowerVC.h */,
 				D970C40616F74CEC0039FCD1 /* FollowingFollowerVC.m */,
-				D9763B2B16EA625100228209 /* MicroPostEditorVC.h */,
-				D9763B2C16EA625100228209 /* MicroPostEditorVC.m */,
 				D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */,
 				D9F4EB2B1668FB830027D0B9 /* MicroPostDetailVC.m */,
 				D92EC66C167A09EE00124E5C /* IndignatiVC.h */,
@@ -536,8 +534,10 @@
 				D92EC673167A0A2100124E5C /* CommentsVC.m */,
 				D99C6469167F9125003DA08D /* CommentDetailVC.h */,
 				D99C646A167F9125003DA08D /* CommentDetailVC.m */,
-				D9F9D49516806E000052F464 /* EditorVC.h */,
-				D9F9D49616806E000052F464 /* EditorVC.m */,
+				D9763B2B16EA625100228209 /* MicroPostEditorVC.h */,
+				D9763B2C16EA625100228209 /* MicroPostEditorVC.m */,
+				D9F9D49516806E000052F464 /* CommentEditorVC.h */,
+				D9F9D49616806E000052F464 /* CommentEditorVC.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -981,7 +981,7 @@
 				D92EC69F167A433500124E5C /* Mindigno.m in Sources */,
 				D9C762E7167B463E007F87D5 /* Vignetta.m in Sources */,
 				D99C646B167F9125003DA08D /* CommentDetailVC.m in Sources */,
-				D9F9D49716806E000052F464 /* EditorVC.m in Sources */,
+				D9F9D49716806E000052F464 /* CommentEditorVC.m in Sources */,
 				D94DB86B16DF76EC0027538F /* NSData+Additions.m in Sources */,
 				D94DB87216E0B6A60027538F /* SignupResponse.m in Sources */,
 				D90F14A816E8A20F00BCEBE8 /* CustomBadge.m in Sources */,
@@ -1007,7 +1007,7 @@
 				D92EC69C167A3A8C00124E5C /* Comment.m in Sources */,
 				D9C762E8167B463E007F87D5 /* Vignetta.m in Sources */,
 				D99C646C167F9125003DA08D /* CommentDetailVC.m in Sources */,
-				D9F9D49816806E000052F464 /* EditorVC.m in Sources */,
+				D9F9D49816806E000052F464 /* CommentEditorVC.m in Sources */,
 				D94DB86C16DF76EF0027538F /* NSData+Additions.m in Sources */,
 				D94DB87316E0B6A60027538F /* SignupResponse.m in Sources */,
 			);

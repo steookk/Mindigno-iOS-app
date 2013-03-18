@@ -60,7 +60,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mindigno/RootVC.m"
-         timestampString = "385059823.485573"
+         timestampString = "385324441.882157"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "126"
@@ -124,13 +124,26 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Mindigno/Model/JSONParserMainData.m"
-         timestampString = "385058395.039528"
+         filePath = "Mindigno/RootVC.m"
+         timestampString = "385324506.48751"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
-         landmarkName = "+startDownloadFeedAtUrl:thereIsUserField:"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
+         landmarkName = "-caricaInformazioniProfilo"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mindigno/MicroPostEditorVC.m"
+         timestampString = "385324762.07007"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "-done:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

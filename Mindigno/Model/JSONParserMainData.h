@@ -39,4 +39,6 @@
 
 + (NSArray*) startDownloadUsersWithUrl:(NSString*)urlString;
 
++ (MicroPost*) startCreateNewMicropostWithTitle:(NSString*)title andDescription:(NSString*)description;
+
 @end

@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-@class EditorVC;
+@class CommentEditorVC;
 
 @protocol EditorVCDelegate <UITableViewDelegate>
 
 @optional
 - (BOOL)respondsToSelector:(SEL)aSelector;
-- (void) textEditor:(EditorVC*)editorVC hasDoneWithText:(NSString*)text;
+- (void) textEditor:(CommentEditorVC*)editorVC hasDoneWithText:(NSString*)text;
 
 @end
 
-@interface EditorVC : UIViewController <UITextViewDelegate> {
+@interface CommentEditorVC : UIViewController <UITextViewDelegate> {
 
     id <EditorVCDelegate> __weak delegate;
     

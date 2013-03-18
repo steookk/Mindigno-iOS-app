@@ -168,14 +168,14 @@
     
     } else if ([[segue identifier] isEqualToString:@"commentsToEditor"]) {
         
-        EditorVC *editorVC = (EditorVC*)[segue destinationViewController];
+        CommentEditorVC *editorVC = (CommentEditorVC*)[segue destinationViewController];
         [editorVC setDelegate: self];
     }
 
 }
 
 //start EditorVCDelegate
-- (void) textEditor:(EditorVC*)editorVC hasDoneWithText:(NSString*)text {
+- (void) textEditor:(CommentEditorVC*)editorVC hasDoneWithText:(NSString*)text {
     
     NSLog(@"%@", text);
     [editorVC setDelegate: nil];
