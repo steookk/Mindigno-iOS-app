@@ -17,8 +17,8 @@
     IBOutlet UILabel *labelName;
     IBOutlet UIImageView *imageViewAvatar;
     
-    IBOutlet UILabel *labelFollowersText;
-    IBOutlet UILabel *labelFollowingText;
+    IBOutlet UIButton *buttonFollowersText;
+    IBOutlet UIButton *buttonFollowingText;
     IBOutlet UILabel *labelNumberFollowers;
     IBOutlet UILabel *labelNumberFollowing;
     

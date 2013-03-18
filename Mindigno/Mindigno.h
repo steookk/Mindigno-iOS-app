@@ -62,6 +62,9 @@
 - (BOOL) followUserWithID:(NSString*)userID;
 - (BOOL) removeFollowedUserWithID:(NSString*)userID;
 
+- (NSArray*) downloadFollowingUsers;
+- (NSArray*) downloadFollowersUsers;
+
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
 

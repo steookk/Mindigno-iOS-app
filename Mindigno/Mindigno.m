@@ -122,6 +122,28 @@
 
 ///
 
+- (NSArray*) downloadFollowingUsers {
+
+    NSString *urlString = [[currentUser userUrl] stringByAppendingPathComponent:@"following"];
+    NSLog(@"startDownloadFollowingUsers url: %@", urlString);
+    
+    NSArray *returnUsersArray = [JSONParserMainData startDownloadUsersWithUrl: urlString];
+    
+    return returnUsersArray;
+}
+
+- (NSArray*) downloadFollowersUsers {
+
+    NSString *urlString = [[currentUser userUrl] stringByAppendingPathComponent:@"followers"];
+    NSLog(@"startDownloadFollowerUsers url: %@", urlString);
+    
+    NSArray *returnUsersArray = [JSONParserMainData startDownloadUsersWithUrl: urlString];
+    
+    return returnUsersArray;
+}
+
+///
+
 - (NSArray *) downloadMicroPosts {
 
     NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: @"users/home_hot_feed"];

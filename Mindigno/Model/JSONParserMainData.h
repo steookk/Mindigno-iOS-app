@@ -37,4 +37,6 @@
 + (BOOL) startFollowUserWithID:(NSString*)userID;
 + (BOOL) startRemoveFollowedUserWithID:(NSString*)userID;
 
++ (NSArray*) startDownloadUsersWithUrl:(NSString*)urlString;
+
 @end

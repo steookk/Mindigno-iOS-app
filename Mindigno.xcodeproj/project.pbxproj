@@ -78,6 +78,7 @@
 		D96A563F1671F97700765CF6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D96A563D1671F97700765CF6 /* placeholder.png */; };
 		D96A56401671F97700765CF6 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D96A563E1671F97700765CF6 /* placeholder@2x.png */; };
 		D96A56421671FA7E00765CF6 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96A56411671FA7E00765CF6 /* ImageIO.framework */; };
+		D970C40716F74CED0039FCD1 /* FollowingFollowerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D970C40616F74CEC0039FCD1 /* FollowingFollowerVC.m */; };
 		D9763ACC16EA460200228209 /* ico-cerca_click.png in Resources */ = {isa = PBXBuildFile; fileRef = D9763AC016EA460200228209 /* ico-cerca_click.png */; };
 		D9763ACD16EA460200228209 /* ico-cerca.png in Resources */ = {isa = PBXBuildFile; fileRef = D9763AC116EA460200228209 /* ico-cerca.png */; };
 		D9763ACE16EA460200228209 /* ico-cerca@2x_click.png in Resources */ = {isa = PBXBuildFile; fileRef = D9763AC216EA460200228209 /* ico-cerca@2x_click.png */; };
@@ -249,6 +250,8 @@
 		D96A563D1671F97700765CF6 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		D96A563E1671F97700765CF6 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		D96A56411671FA7E00765CF6 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D970C40516F74CEC0039FCD1 /* FollowingFollowerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingFollowerVC.h; sourceTree = "<group>"; };
+		D970C40616F74CEC0039FCD1 /* FollowingFollowerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingFollowerVC.m; sourceTree = "<group>"; };
 		D9763AC016EA460200228209 /* ico-cerca_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-cerca_click.png"; sourceTree = "<group>"; };
 		D9763AC116EA460200228209 /* ico-cerca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-cerca.png"; sourceTree = "<group>"; };
 		D9763AC216EA460200228209 /* ico-cerca@2x_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-cerca@2x_click.png"; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 				D90F14B116E8EC3800BCEBE8 /* ProfileUserVC.m */,
 				D9763B2816EA621300228209 /* ProfileSettingsVC.h */,
 				D9763B2916EA621300228209 /* ProfileSettingsVC.m */,
+				D970C40516F74CEC0039FCD1 /* FollowingFollowerVC.h */,
+				D970C40616F74CEC0039FCD1 /* FollowingFollowerVC.m */,
 				D9763B2B16EA625100228209 /* MicroPostEditorVC.h */,
 				D9763B2C16EA625100228209 /* MicroPostEditorVC.m */,
 				D9F4EB2A1668FB830027D0B9 /* MicroPostDetailVC.h */,
@@ -986,6 +991,7 @@
 				D90F14B516E8F69700BCEBE8 /* CustomContainerView.m in Sources */,
 				D9763B2A16EA621300228209 /* ProfileSettingsVC.m in Sources */,
 				D9763B2D16EA625100228209 /* MicroPostEditorVC.m in Sources */,
+				D970C40716F74CED0039FCD1 /* FollowingFollowerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

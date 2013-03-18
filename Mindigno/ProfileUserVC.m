@@ -15,6 +15,7 @@
 #import "CommentsVC.h"
 #import "MicroPostDetailVC.h"
 #import "JSONParserMainData.h"
+#import "FollowingFollowerVC.h"
 
 #define CELL_ROW_HEIGHT_DEFAULT 200.0f
 
@@ -46,8 +47,18 @@
     
     //
     
-    [labelFollowersText setText: [currentUser followersText]];
-    [labelFollowingText setText: [currentUser followingText]];
+    [buttonFollowersText setTitle:[currentUser followersText] forState:UIControlStateNormal];
+    [buttonFollowingText setTitle:[currentUser followingText] forState:UIControlStateNormal];
+    
+    BOOL isCurrentUser = (currentUser == [[Mindigno sharedMindigno] currentUser]);
+    [buttonFollowersText setEnabled: isCurrentUser];
+    [buttonFollowingText setEnabled: isCurrentUser];
+    
+    if (isCurrentUser) {
+        [buttonFollowersText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [buttonFollowingText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    }
+    
     [labelNumberFollowers setText: [currentUser numberOfFollowers]];
     [labelNumberFollowing setText: [currentUser numberOfFollowing]];
     
@@ -333,6 +344,16 @@
         
         MicroPost *currentMicroPost = [arrayMicroPost objectAtIndex: currentIndexPath.row];
         [commentsDettailVC setCurrentMicroPost: currentMicroPost];
+    
+    } else if ([[segue identifier] isEqualToString:@"profileUserToFollowing"]) {
+        
+        FollowingFollowerVC *followingFollowerVC = (FollowingFollowerVC*)[segue destinationViewController];
+        [followingFollowerVC setIsFollowing: YES];
+    
+    } else if ([[segue identifier] isEqualToString:@"profileUserToFollower"]) {
+    
+        FollowingFollowerVC *followingFollowerVC = (FollowingFollowerVC*)[segue destinationViewController];
+        [followingFollowerVC setIsFollowing: NO];
     }
 }
 

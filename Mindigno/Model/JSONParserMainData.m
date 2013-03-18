@@ -602,4 +602,63 @@
     }
 }
 
+///
+
++ (NSArray*) startDownloadUsersWithUrl:(NSString*)urlString {
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    //Necessary for request to server
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    //
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"'%@'", authValue);
+    
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    //
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    //NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    //int statusCode = [httpResponse statusCode];
+    //
+    
+    //For debug
+    NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@\n\n", textJson);
+    
+    NSMutableArray* arrayUsers = [NSMutableArray array];
+    
+    BOOL dataIsEmpty = ([data length] <= 1);
+    if (data != nil && !dataIsEmpty) {
+        
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        //
+        NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
+        [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
+        
+        for (NSDictionary *user_dictionary in users_array) {
+            User *user = [[Mindigno sharedMindigno] userWithId: [user_dictionary objectForKey: USER_ID_KEY]];
+            [arrayUsers addObject: user];
+        }
+        
+    } else if (data != nil && dataIsEmpty) {
+        NSLog(@"dataIsEmpty");
+        
+    } else {
+        NSLog(@"No connection: data is nil");
+    }
+    
+    return arrayUsers;
+}
+
 @end
