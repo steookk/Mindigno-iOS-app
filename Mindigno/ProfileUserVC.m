@@ -51,16 +51,26 @@
     [buttonFollowingText setTitle:[currentUser followingText] forState:UIControlStateNormal];
     
     BOOL isCurrentUser = (currentUser == [[Mindigno sharedMindigno] currentUser]);
-    [buttonFollowersText setEnabled: isCurrentUser];
-    [buttonFollowingText setEnabled: isCurrentUser];
     
-    if (isCurrentUser) {
+    NSString *numberOfFollowers = [currentUser numberOfFollowers];
+    NSString *numberOfFollowing = [currentUser numberOfFollowing];
+    
+    if (isCurrentUser && [numberOfFollowers intValue]>0) {
         [buttonFollowersText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [buttonFollowingText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [buttonFollowersText setEnabled: YES];
+    } else {
+        [buttonFollowersText setEnabled: NO];
     }
     
-    [labelNumberFollowers setText: [currentUser numberOfFollowers]];
-    [labelNumberFollowing setText: [currentUser numberOfFollowing]];
+    if (isCurrentUser && [numberOfFollowing intValue]>0) {
+        [buttonFollowingText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [buttonFollowingText setEnabled: YES];
+    } else {
+        [buttonFollowingText setEnabled: NO];
+    }
+    
+    [labelNumberFollowers setText: numberOfFollowers];
+    [labelNumberFollowing setText: numberOfFollowing];
     
     [tableViewMicroPost reloadData];
 }
