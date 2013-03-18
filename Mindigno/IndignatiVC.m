@@ -48,6 +48,12 @@
     [tableViewIndignati reloadData];
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    
+    [tableViewIndignati reloadData];
+}
+
 ///Start UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -97,6 +103,12 @@
     [buttonSegue setSelected: [user isFollowedFromLoggedUser]];
     [buttonSegue addTarget:self action:@selector(buttonSegueClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    if (user == [[Mindigno sharedMindigno] currentUser]) {
+        [buttonSegue setHidden: YES];
+    } else {
+        [buttonSegue setHidden: NO];
+    }
+        
     return cell;
 }
 ///Stop UITableViewDataSource

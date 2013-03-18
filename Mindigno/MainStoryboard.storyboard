@@ -180,12 +180,25 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="kennymuse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vs7-3F-qE7">
-                                        <rect key="frame" x="84" y="62" width="230" height="20"/>
+                                        <rect key="frame" x="84" y="62" width="160" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cgj-c0-sgk">
+                                        <rect key="frame" x="269" y="58" width="45" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <state key="normal" backgroundImage="button-mindigno.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="buttons-mindigno_selected.png"/>
+                                        <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -496,6 +509,7 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="buttonSegue" destination="cgj-c0-sgk" id="xtX-Am-geY"/>
                         <outlet property="buttonSettings" destination="awm-W2-bjU" id="WyQ-Nh-OYy"/>
                         <outlet property="imageViewAvatar" destination="J7m-TO-Wp0" id="6tf-f0-DA2"/>
                         <outlet property="labelFollowersText" destination="BRc-MK-C6U" id="7Ne-cN-q70"/>
@@ -1260,7 +1274,7 @@
             <objects>
                 <viewController id="77B-Um-azv" customClass="EditorVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzQ-So-f5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ZUi-FM-zvZ">
@@ -1305,7 +1319,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iJa-n2-BEE">
-                                <rect key="frame" x="0.0" y="40" width="320" height="225"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="205"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1789,6 +1803,7 @@
         <class className="ProfileUserVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileUserVC.h"/>
             <relationships>
+                <relationship kind="outlet" name="buttonSegue" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonSettings" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="labelFollowersText" candidateClass="UILabel"/>
@@ -1826,10 +1841,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TUN-6S-skc"/>
-        <segue reference="mxI-77-wMS"/>
-        <segue reference="Ol4-zK-bby"/>
-        <segue reference="k3v-Tn-sLm"/>
+        <segue reference="b4O-TQ-VDa"/>
         <segue reference="wte-45-OdG"/>
+        <segue reference="rZZ-R9-62i"/>
+        <segue reference="jxh-Lb-BDe"/>
+        <segue reference="k3v-Tn-sLm"/>
     </inferredMetricsTieBreakers>
 </document>

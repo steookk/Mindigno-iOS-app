@@ -27,6 +27,17 @@
 @synthesize currentUser, arrayMicroPost, buttonSettings;
 
 - (void) refreshView {
+    
+    if (currentUser == [[Mindigno sharedMindigno] currentUser]) {
+        [buttonSegue setHidden: YES];
+    } else {
+        [buttonSegue setHidden: NO];
+    }
+    
+    [buttonSegue setSelected: [currentUser isFollowedFromLoggedUser]];
+    [buttonSegue addTarget:self action:@selector(buttonSegueClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //
 	
     [labelName setText: [currentUser name]];
     
@@ -53,6 +64,36 @@
     [tableViewMicroPost setEnabledLazyLoad: YES];
     
     [self refreshView];
+}
+
+- (void) buttonSegueClicked:(id)sender {
+    //NSLog(@"buttonSegueClicked");
+    
+    if (![[Mindigno sharedMindigno] isLoggedUser]) {
+        UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+        [self presentViewController:navController animated:YES completion:nil];
+        
+    } else {
+        
+        BOOL isSeguito = [buttonSegue isSelected];
+        if (!isSeguito) {
+            BOOL ok = [[Mindigno sharedMindigno] followUserWithID: [currentUser userID]];
+            
+            if (ok) {
+                [currentUser setIsFollowedFromLoggedUser: !isSeguito];
+                [buttonSegue setSelected: YES];
+            }
+            
+        } else {
+            BOOL ok = [[Mindigno sharedMindigno] removeFollowedUserWithID: [currentUser userID]];
+            
+            if (ok) {
+                [currentUser setIsFollowedFromLoggedUser: !isSeguito];
+                [buttonSegue setSelected: NO];
+            }
+        }
+        
+    }
 }
 
 ///Start UITableViewDataSource
