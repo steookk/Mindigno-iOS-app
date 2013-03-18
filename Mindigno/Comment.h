@@ -19,7 +19,7 @@
 
 @property (nonatomic, copy) NSString *commentID;
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic, copy) User *userCreator;
+@property (nonatomic) User *userCreator;
 
 - (id)initWithJsonRoot:(NSDictionary*)root_comment;
 

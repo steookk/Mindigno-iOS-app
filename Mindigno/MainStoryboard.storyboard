@@ -599,13 +599,26 @@
                                                     <rect key="frame" x="4" y="4" width="52" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="kennymuse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nx2-cf-o5F">
-                                                    <rect key="frame" x="65" y="15" width="245" height="30"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="kennymuse kennymuse kennymuse " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nx2-cf-o5F">
+                                                    <rect key="frame" x="65" y="4" width="198" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RGJ-Ay-gpp">
+                                                    <rect key="frame" x="270" y="16" width="45" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                    <state key="normal" backgroundImage="button-mindigno.png">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" backgroundImage="buttons-mindigno_selected.png"/>
+                                                    <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1247,7 +1260,7 @@
             <objects>
                 <viewController id="77B-Um-azv" customClass="EditorVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzQ-So-f5O">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ZUi-FM-zvZ">
@@ -1292,7 +1305,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iJa-n2-BEE">
-                                <rect key="frame" x="0.0" y="40" width="320" height="205"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="225"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1813,10 +1826,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jxh-Lb-BDe"/>
-        <segue reference="wte-45-OdG"/>
-        <segue reference="b4O-TQ-VDa"/>
-        <segue reference="rZZ-R9-62i"/>
+        <segue reference="TUN-6S-skc"/>
+        <segue reference="mxI-77-wMS"/>
+        <segue reference="Ol4-zK-bby"/>
         <segue reference="k3v-Tn-sLm"/>
+        <segue reference="wte-45-OdG"/>
     </inferredMetricsTieBreakers>
 </document>

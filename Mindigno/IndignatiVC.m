@@ -37,8 +37,10 @@
     [tableViewIndignati setDataSource:self];
     [tableViewIndignati setDelegate:self];
     
-    NSLog(@"numero indignati: %d", [[currentMicroPost followingIndignati] count]);
-    [titleToIndignati setObject:[currentMicroPost followingIndignati] forKey:@"Chi segui"];
+    int numberOfFollowingIndignati = [[currentMicroPost followingIndignati] count];
+    if (numberOfFollowingIndignati > 0) {
+        [titleToIndignati setObject:[currentMicroPost followingIndignati] forKey:@"Chi segui"];
+    }
     
     [[Mindigno sharedMindigno] downloadAllIndignatiForMicropost: currentMicroPost];
     [titleToIndignati setObject: [currentMicroPost allIndignati] forKey: @"Tutti"];
@@ -79,23 +81,62 @@
     
     NSString *key = [[titleToIndignati allKeys] objectAtIndex: indexPath.section];
     NSArray *arrayUsers = [titleToIndignati objectForKey: key];
-    
-    User *userFollowing = [arrayUsers objectAtIndex:indexPath.row];
+    User *user = [arrayUsers objectAtIndex:indexPath.row];
     
     ///
     
     UIImageView *imageViewThumb = (UIImageView*)[cell viewWithTag:1];
     //Default setting
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
-    [imageViewThumb setImageWithURL:[NSURL URLWithString:[userFollowing avatarUrl]] placeholderImage:placeHolder];
+    [imageViewThumb setImageWithURL:[NSURL URLWithString:[user avatarUrl]] placeholderImage:placeHolder];
     
     UILabel *labelName = (UILabel*)[cell viewWithTag:2];
-    [labelName setText: [userFollowing name]];
+    [labelName setText: [user name]];
+    
+    UIButton *buttonSegue = (UIButton*)[cell viewWithTag: 3];
+    [buttonSegue setSelected: [user isFollowedFromLoggedUser]];
+    [buttonSegue addTarget:self action:@selector(buttonSegueClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 ///Stop UITableViewDataSource
 
+- (void) buttonSegueClicked:(id)sender {
+    //NSLog(@"buttonSegueClicked");
+    
+    if (![[Mindigno sharedMindigno] isLoggedUser]) {
+        UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+        [self presentViewController:navController animated:YES completion:nil];
+        
+    } else {
+        
+        //The indexPath must be taken from button and not from the tableView
+        NSIndexPath *currentIndexPath = [tableViewIndignati indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        NSString *key = [[titleToIndignati allKeys] objectAtIndex: currentIndexPath.section];
+        NSArray *arrayUsers = [titleToIndignati objectForKey: key];
+        User *currentUser = [arrayUsers objectAtIndex:currentIndexPath.row];
+        
+        UIButton *buttonSegue = (UIButton*)sender;
+        
+        BOOL isSeguito = [buttonSegue isSelected];
+        if (!isSeguito) {
+            BOOL ok = [[Mindigno sharedMindigno] followUserWithID: [currentUser userID]];
+            
+            if (ok) {
+                [currentUser setIsFollowedFromLoggedUser: !isSeguito];
+            }
+            
+        } else {
+            BOOL ok = [[Mindigno sharedMindigno] removeFollowedUserWithID: [currentUser userID]];
+            
+            if (ok) {
+                [currentUser setIsFollowedFromLoggedUser: !isSeguito];
+            }
+        }
+        
+        [tableViewIndignati reloadData];
+    }
+}
 
 ///Start UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -38,6 +38,8 @@
 #define USER_NUMBER_FOLLOWERS_KEY @"num_followers"
 #define USER_NUMBER_FOLLOWING_KEY @"num_following"
 
+#define USER_IS_FOLLOWED_FROM_LOGGED_USER @"followed"
+
 ///
 
 #define MICROPOSTS_KEY @"feed"

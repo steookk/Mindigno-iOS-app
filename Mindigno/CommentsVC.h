@@ -15,7 +15,7 @@
 
     MicroPost __weak *currentMicroPost;
     
-    NSMutableArray *arrayComments;
+    NSArray *arrayComments;
     IBOutlet UITableView *tableViewComments;
     
     //

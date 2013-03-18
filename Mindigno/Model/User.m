@@ -12,7 +12,7 @@
 
 @implementation User
 
-@synthesize userID, userUrl, name, avatarUrl;
+@synthesize userID, userUrl, name, avatarUrl, isFollowedFromLoggedUser;
 @synthesize followersText, followingText, numberOfFollowers, numberOfFollowing;
 
 - (void) addMoreUserInfoWithJsonRoot:(NSDictionary*)root_user {
@@ -38,6 +38,8 @@
         [self setUserUrl: completeUserUrl];
         [self setName: [root_user objectForKey: USER_NAME_KEY]];
         [self setAvatarUrl: [root_user objectForKey: USER_AVATAR_URL_KEY]];
+        
+        [self setIsFollowedFromLoggedUser: [[root_user objectForKey: USER_IS_FOLLOWED_FROM_LOGGED_USER] boolValue]];
     
         //
         [self addMoreUserInfoWithJsonRoot: root_user];

@@ -106,6 +106,22 @@
 
 ///
 
+- (BOOL) followUserWithID:(NSString*)userID {
+
+    BOOL followedOK = [JSONParserMainData startFollowUserWithID: userID];
+    
+    return followedOK;
+}
+
+- (BOOL) removeFollowedUserWithID:(NSString*)userID {
+
+    BOOL rimuoviFollowedUserOK = [JSONParserMainData startRemoveFollowedUserWithID: userID];
+    
+    return rimuoviFollowedUserOK;
+}
+
+///
+
 - (NSArray *) downloadMicroPosts {
 
     NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: @"users/home_hot_feed"];

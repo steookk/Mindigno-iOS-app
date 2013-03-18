@@ -15,6 +15,8 @@
     NSString *name;
     NSString *avatarUrl;
     
+    BOOL isFollowedFromLoggedUser;
+    
     //Solo nell'utente per cui si fa richiesta
     NSString *followersText;
     NSString *followingText;
@@ -29,6 +31,8 @@
 @property (nonatomic, copy) NSString *userUrl;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *avatarUrl;
+
+@property (nonatomic) BOOL isFollowedFromLoggedUser;
 
 //
 @property (nonatomic, copy) NSString *followersText;

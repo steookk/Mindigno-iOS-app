@@ -31,13 +31,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    arrayComments = [NSMutableArray arrayWithArray: [currentMicroPost defaultComments]];
+    arrayComments = [currentMicroPost defaultComments];
+    //NSLog(@"number of comments: %d", [arrayComments count]);
+    
     arrayButtonTitle = [currentMicroPost commentsTabs_buttons];
+    //NSLog(@"number of arrayButtonTitle: %d", [arrayButtonTitle count]);
     
     //
     [scrollButtonBar setDataSourceBar:self];
     [scrollButtonBar setDelegateBar:self];
-
+    [scrollButtonBar startInizialization];
     //
     
     [tableViewComments setDataSource:self];
@@ -87,14 +90,9 @@
 
 
 ///Start UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return [arrayComments count];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return (int)[arrayComments count];
+    return [arrayComments count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -133,7 +131,6 @@
     return cell;
 }
 ///Stop UITableViewDataSource
-
 
 ///Start UITableViewDelegate
 

@@ -59,6 +59,9 @@
 - (BOOL) indignatiSulMicroPostConID:(NSString*)micropostID;
 - (BOOL) rimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
 
+- (BOOL) followUserWithID:(NSString*)userID;
+- (BOOL) removeFollowedUserWithID:(NSString*)userID;
+
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
 

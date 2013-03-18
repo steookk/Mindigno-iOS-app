@@ -504,4 +504,102 @@
     }
 }
 
+///
+
++ (BOOL) startFollowUserWithID:(NSString*)userID {
+    
+    NSString *urlString = [[Mindigno sharedMindigno] getStringUrlFromStringPath:@"relationships"];
+    
+    NSDictionary *micropost = [[NSDictionary alloc] initWithObjectsAndKeys: userID, @"id", nil];
+    NSDictionary *payload = [[NSDictionary alloc] initWithObjectsAndKeys:micropost, @"user", nil];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
+    
+    //For debug
+    //NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@", jsonString);
+    
+    NSData *postData = jsonData;
+    NSString *postDataLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"%@", authValue);
+    
+    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    ////
+    
+    [urlRequest setHTTPBody: postData];
+    [urlRequest setValue:postDataLength forHTTPHeaderField:@"Content-Length"];
+    
+    //
+    
+    NSURLResponse *response;
+    [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int statusCode = [httpResponse statusCode];
+    
+    if (statusCode == 200) {
+        return YES;
+        
+    } else {
+        return NO;
+    }
+}
+
++ (BOOL) startRemoveFollowedUserWithID:(NSString*)userID {
+    
+    NSString *urlString = [[[Mindigno sharedMindigno] getStringUrlFromStringPath:@"relationships"] stringByAppendingPathComponent: userID];
+    //NSLog(@"url rimuovi indignazione: %@", urlString);
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    [urlRequest setHTTPMethod:@"DELETE"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    //[urlRequest setValue:@"delete" forHTTPHeaderField:@"_method"];
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"%@", authValue);
+    
+    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    //
+    
+    NSURLResponse *response;
+    [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int statusCode = [httpResponse statusCode];
+    
+    if (statusCode == 200) {
+        return YES;
+        
+    } else {
+        return NO;
+    }
+}
+
 @end
