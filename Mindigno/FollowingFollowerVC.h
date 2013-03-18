@@ -14,12 +14,15 @@
     IBOutlet UITableView *tableViewFollowingOrFollower;
     NSArray *arrayFollowingOrFollower;
     
+    IBOutlet UILabel *labelHeader;
+    
     User *currentUser;
     
     BOOL isFollowing;
 }
 
 @property (nonatomic) BOOL isFollowing;
+@property (nonatomic) NSString *stringHeader;
 
 - (IBAction)goBack:(id)sender;
 

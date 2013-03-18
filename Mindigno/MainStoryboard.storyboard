@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Profile settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S1w-Tb-0GH">
-                                        <rect key="frame" x="101" y="9" width="199" height="21"/>
+                                        <rect key="frame" x="101" y="10" width="199" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -196,25 +196,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="kennymuse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vs7-3F-qE7">
-                                        <rect key="frame" x="84" y="62" width="160" height="20"/>
+                                        <rect key="frame" x="84" y="62" width="230" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cgj-c0-sgk">
-                                        <rect key="frame" x="269" y="58" width="45" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <state key="normal" backgroundImage="button-mindigno.png">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="buttons-mindigno_selected.png"/>
-                                        <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -527,7 +514,6 @@
                     <connections>
                         <outlet property="buttonFollowersText" destination="Nze-ww-OWW" id="gvG-1s-jRt"/>
                         <outlet property="buttonFollowingText" destination="BZW-CT-zAd" id="Fk9-rP-rak"/>
-                        <outlet property="buttonSegue" destination="cgj-c0-sgk" id="xtX-Am-geY"/>
                         <outlet property="buttonSettings" destination="awm-W2-bjU" id="WyQ-Nh-OYy"/>
                         <outlet property="imageViewAvatar" destination="J7m-TO-Wp0" id="6tf-f0-DA2"/>
                         <outlet property="labelName" destination="Vs7-3F-qE7" id="Fp5-HZ-d4b"/>
@@ -962,12 +948,25 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Profile user" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pzi-pJ-gBj">
-                                        <rect key="frame" x="101" y="8" width="199" height="21"/>
+                                        <rect key="frame" x="101" y="8" width="128" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KFa-Sa-Nea">
+                                        <rect key="frame" x="269" y="7" width="45" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <state key="normal" backgroundImage="button-mindigno.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="buttons-mindigno_selected.png"/>
+                                        <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
@@ -983,6 +982,9 @@
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="vlN-fY-tWU"/>
+                    <connections>
+                        <outlet property="buttonSegue" destination="KFa-Sa-Nea" id="3f2-v5-Sq5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhH-QC-phY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1742,8 +1744,8 @@
                                             <action selector="goBack:" destination="dZQ-27-8F0" eventType="touchUpInside" id="BiD-G5-Gha"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User list" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Du-yq-T9q">
-                                        <rect key="frame" x="101" y="9" width="199" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="chi segui" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Du-yq-T9q">
+                                        <rect key="frame" x="101" y="10" width="199" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1803,6 +1805,7 @@
                     <navigationItem key="navigationItem" id="FjR-qq-BZM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="labelHeader" destination="3Du-yq-T9q" id="dMk-0c-Vdz"/>
                         <outlet property="tableViewFollowingOrFollower" destination="wuf-AR-r1O" id="5r1-l5-WDc"/>
                     </connections>
                 </viewController>
@@ -1866,6 +1869,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FollowingFollowerVC.h"/>
             <relationships>
                 <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="labelHeader" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableViewFollowingOrFollower" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -1927,7 +1931,6 @@
             <relationships>
                 <relationship kind="outlet" name="buttonFollowersText" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonFollowingText" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonSegue" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonSettings" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
@@ -1940,6 +1943,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileVC.h"/>
             <relationships>
                 <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="buttonSegue" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="PullRefreshLazyLoadTableView" superclassName="UITableView">

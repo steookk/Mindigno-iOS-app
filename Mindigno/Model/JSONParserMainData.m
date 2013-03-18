@@ -46,8 +46,8 @@
     //
     
     //For debug
-    //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"%@\n\n", textJson);
+    NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@\n\n", textJson);
     
     NSMutableArray *microPosts = nil;
     
@@ -480,8 +480,8 @@
     //
     
     //For debug
-    //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"%@\n\n", textJson);
+    NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@\n\n", textJson);
     
     //NSLog(@"data length: %d\n", [data length]);
     //Non 0 perchè comunque ritorna uno spazio bianco

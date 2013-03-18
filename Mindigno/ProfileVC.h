@@ -16,6 +16,8 @@
     NSArray *arrayMicroPost;
     
     ProfileUserVC *profileUserVC;
+    
+    IBOutlet UIButton *buttonSegue;
 }
 
 @property (nonatomic) User* currentUser;

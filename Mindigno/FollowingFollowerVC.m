@@ -19,7 +19,7 @@
 
 @implementation FollowingFollowerVC
 
-@synthesize isFollowing;
+@synthesize isFollowing, stringHeader;
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     
@@ -33,13 +33,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [labelHeader setText: stringHeader];
+    
     [tableViewFollowingOrFollower setDataSource:self];
     [tableViewFollowingOrFollower setDelegate:self];
     
     if (isFollowing) {
         arrayFollowingOrFollower = [[Mindigno sharedMindigno] downloadFollowingUsers];
+        [labelHeader setText: [currentUser followingText]];
+        
     } else {
         arrayFollowingOrFollower = [[Mindigno sharedMindigno] downloadFollowersUsers];
+        [labelHeader setText: [currentUser followersText]];
     }
     
     [tableViewFollowingOrFollower reloadData];

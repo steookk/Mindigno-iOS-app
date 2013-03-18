@@ -22,8 +22,6 @@
     IBOutlet UILabel *labelNumberFollowers;
     IBOutlet UILabel *labelNumberFollowing;
     
-    IBOutlet UIButton *buttonSegue;
-    
     IBOutlet PullRefreshLazyLoadTableView *tableViewMicroPost;
     NSArray __weak *arrayMicroPost;
 
