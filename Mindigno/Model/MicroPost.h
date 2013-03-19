@@ -115,4 +115,6 @@
 
 - (void) addAllIndignati:(NSArray*)users;
 
+- (void) addComment:(NSDictionary*)comment_dictionary;
+
 @end

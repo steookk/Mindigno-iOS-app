@@ -87,15 +87,13 @@
         textDescrizione = @"";
     }
     
-    //TODO: richiesta e se ok, esce.
+    //Richiesta e se ok, esce.
     MicroPost *micropostCreated = [[Mindigno sharedMindigno] createNewMicropostWithTitle: textTitolo andDescription:textDescrizione];
     BOOL sendOK = (micropostCreated != nil);
     
     if (sendOK) {
         
         User *currentUser = [[Mindigno sharedMindigno] currentUser];
-        
-        
         [currentUser addMicropost: micropostCreated];
         
         [self dismissViewControllerAnimated:YES completion:nil];

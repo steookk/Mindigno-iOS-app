@@ -33,7 +33,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
 	
-    arrayComments = [NSMutableArray arrayWithArray:[currentMicroPost defaultComments]];
+    arrayComments = [currentMicroPost defaultComments];
     
     [tableViewComments setDataSource:self];
     [tableViewComments setDelegate:self];
@@ -124,6 +124,12 @@
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    [tableViewComments reloadData];
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([[segue identifier] isEqualToString:@"micropostDetailToIndignati"]) {
@@ -134,7 +140,7 @@
     } else if ([[segue identifier] isEqualToString:@"micropostDetailToEditor"]) {
         
         CommentEditorVC *editorVC = (CommentEditorVC*)[segue destinationViewController];
-        [editorVC setDelegate: self];
+        [editorVC setCurrentMicroPost: currentMicroPost];
     
     } else if ([[segue identifier] isEqualToString:@"micropostDetailToComments"]) {
     
@@ -146,14 +152,6 @@
         [commentsDettailVC setIndexRowToSelect: currentIndexPath];
     }
 }
-
-//start EditorVCDelegate
-- (void) textEditor:(CommentEditorVC*)editorVC hasDoneWithText:(NSString*)text {
-    
-    NSLog(@"%@", text);
-    [editorVC setDelegate: nil];
-}
-//stop EditorVCDelegate
 
 ///Start UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -68,6 +68,8 @@
 //Crea il micropost o ritorna nil se l'operazione non va a buon fine.
 - (MicroPost*) createNewMicropostWithTitle:(NSString*)title andDescription:(NSString*)description;
 
+- (BOOL) createNewCommentWithContent:(NSString*)content forMicropost:(MicroPost*)micropost;
+
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
 

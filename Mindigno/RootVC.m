@@ -87,9 +87,9 @@
     
     NSArray *micropostsOfUser = [currentUser microposts];
     
-    if ([micropostsOfUser count] == 0) {
+    //if ([micropostsOfUser count] == 0) {
         micropostsOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
-    }
+    //}
     
     [profileUserVC setCurrentUser:currentUser];
     [profileUserVC setArrayMicroPost: micropostsOfUser];

@@ -147,6 +147,12 @@
     return [JSONParserMainData startCreateNewMicropostWithTitle: title andDescription: description];
 }
 
+
+- (BOOL) createNewCommentWithContent:(NSString*)content forMicropost:(MicroPost*)micropost {
+
+    return [JSONParserMainData startCreateNewCommentWithContent: content forMicropost: micropost];
+}
+
 ///
 
 - (NSArray *) downloadMicroPosts {

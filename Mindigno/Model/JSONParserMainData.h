@@ -41,4 +41,6 @@
 
 + (MicroPost*) startCreateNewMicropostWithTitle:(NSString*)title andDescription:(NSString*)description;
 
++ (BOOL) startCreateNewCommentWithContent:(NSString*)content forMicropost:(MicroPost*)micropost;
+
 @end

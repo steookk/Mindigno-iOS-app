@@ -7,24 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CommentEditorVC;
-
-@protocol EditorVCDelegate <UITableViewDelegate>
-
-@optional
-- (BOOL)respondsToSelector:(SEL)aSelector;
-- (void) textEditor:(CommentEditorVC*)editorVC hasDoneWithText:(NSString*)text;
-
-@end
+#import "MicroPost.h"
 
 @interface CommentEditorVC : UIViewController <UITextViewDelegate> {
 
-    id <EditorVCDelegate> __weak delegate;
+    MicroPost __weak *currentMicroPost;
     
     IBOutlet UITextView *textViewContent;
 }
 
-@property (nonatomic, weak) id <EditorVCDelegate> delegate;
+@property (nonatomic, weak) MicroPost *currentMicroPost;
 
 - (IBAction)done:(id)sender;
 - (IBAction)goBack:(id)sender;

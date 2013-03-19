@@ -11,7 +11,7 @@
 #import "ScrollButtonBar.h"
 #import "MicroPost.h"
 
-@interface CommentsVC : UIViewController <UITableViewDataSource, UITableViewDelegate, EditorVCDelegate, ScrollButtonBarDataSource, ScrollButtonBarDelegate> {
+@interface CommentsVC : UIViewController <UITableViewDataSource, UITableViewDelegate, ScrollButtonBarDataSource, ScrollButtonBarDelegate> {
 
     MicroPost __weak *currentMicroPost;
     

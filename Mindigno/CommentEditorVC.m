@@ -7,6 +7,7 @@
 //
 
 #import "CommentEditorVC.h"
+#import "Mindigno.h"
 
 @interface CommentEditorVC ()
  
@@ -16,7 +17,7 @@
 
 @implementation CommentEditorVC
 
-@synthesize delegate;
+@synthesize currentMicroPost;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
@@ -43,15 +44,30 @@
 
 - (IBAction)done:(id)sender {
 
-    if ([delegate respondsToSelector:@selector(textEditor:hasDoneWithText:)]) {
-        [delegate textEditor:self hasDoneWithText:[textViewContent text]];
+    NSString *textContent = [textViewContent text];
+    
+    if ([textContent isEqualToString:@""]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione!" message:@"Inserisci un commento" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        
+        return;
     }
     
-    [self exit];
+    BOOL sendOK = [[Mindigno sharedMindigno] createNewCommentWithContent:textContent forMicropost: currentMicroPost];
+    
+    if (sendOK) {
+        [self exit];
+        
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione!" message:@"Non è stato possibile inviare il commento. Riprova più tardi" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
 - (IBAction)goBack:(id)sender {
-    NSLog(@"test back");
+    //NSLog(@"test back");
+    
     [self exit];
 }
 

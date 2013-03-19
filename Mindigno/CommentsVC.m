@@ -51,6 +51,12 @@
     [tableViewComments scrollToRowAtIndexPath:indexRowToSelect atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    [tableViewComments reloadData];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 
     [tableViewComments deselectRowAtIndexPath:indexRowToSelect animated:YES];
@@ -169,18 +175,9 @@
     } else if ([[segue identifier] isEqualToString:@"commentsToEditor"]) {
         
         CommentEditorVC *editorVC = (CommentEditorVC*)[segue destinationViewController];
-        [editorVC setDelegate: self];
+        [editorVC setCurrentMicroPost: currentMicroPost];
     }
-
 }
-
-//start EditorVCDelegate
-- (void) textEditor:(CommentEditorVC*)editorVC hasDoneWithText:(NSString*)text {
-    
-    NSLog(@"%@", text);
-    [editorVC setDelegate: nil];
-}
-//stop EditorVCDelegate
 
 - (IBAction)goBack:(id)sender {
     [[self navigationController] popViewControllerAnimated:YES];

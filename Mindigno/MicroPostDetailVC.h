@@ -10,7 +10,7 @@
 #import "MicroPost.h"
 #import "CommentEditorVC.h"
 
-@interface MicroPostDetailVC : UIViewController <UITableViewDataSource, UITableViewDelegate, EditorVCDelegate> {
+@interface MicroPostDetailVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
 
     MicroPost __weak *currentMicroPost;
     
@@ -32,7 +32,7 @@
     IBOutlet UIButton *buttonIndignatiText;
     IBOutlet UIButton *buttonDefaultCommentText;
     
-    NSMutableArray *arrayComments;
+    NSArray *arrayComments;
     IBOutlet UITableView *tableViewComments;
 }
 

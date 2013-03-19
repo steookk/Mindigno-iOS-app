@@ -84,8 +84,8 @@
         
         NSArray *array_comments = [root_microPost objectForKey: MICROPOST_COMMENTS_KEY];
         
-        for (NSDictionary *comments_dictionary in array_comments) {
-            Comment *comment = [[Comment alloc] initWithJsonRoot: comments_dictionary];
+        for (NSDictionary *comment_dictionary in array_comments) {
+            Comment *comment = [[Comment alloc] initWithJsonRoot: comment_dictionary];
             [defaultComments addObject:comment];
         }
         
@@ -160,6 +160,15 @@
         User *user = [[Mindigno sharedMindigno] userWithId: [user_dictionary objectForKey: USER_ID_KEY]];
         [allIndignati addObject:user];
     }
+}
+
+- (void) addComment:(NSDictionary*)comment_dictionary {
+
+    Comment *comment = [[Comment alloc] initWithJsonRoot: comment_dictionary];
+    [defaultComments addObject:comment];
+    
+    int new_numberOfComments = [defaultComments count];
+    [self setNumberOfComments: [NSString stringWithFormat:@"%d", new_numberOfComments]];
 }
 
 @end
