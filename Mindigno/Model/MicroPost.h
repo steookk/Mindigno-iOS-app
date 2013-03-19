@@ -69,9 +69,6 @@
     ///
     // titleButton
     NSMutableArray *commentsTabs_buttons;
-    // url
-    NSMutableArray *commentsTabs_urls;
-    ///
     
     //Array che conterrà gli tutti gli indignati. Sarà pieno solo se sarà fatta una richiesta.
     NSMutableArray *allIndignati;
@@ -101,6 +98,8 @@
 
 @property (nonatomic, readonly) NSArray *followingIndignati;
 @property (nonatomic, readonly) NSArray *defaultComments;
+@property (nonatomic, readonly) NSArray *allComments;
+@property (nonatomic, readonly) NSArray *userCommentsOnMicropost;
 
 @property (nonatomic) BOOL isVignetta;
 @property (nonatomic, retain) Vignetta *vignetta;
@@ -110,7 +109,6 @@
 
 @property (nonatomic, copy) NSString *indignatiUrl;
 @property (nonatomic, readonly) NSArray *commentsTabs_buttons;
-@property (nonatomic, readonly) NSArray *commentsTabs_urls;
 
 @property (nonatomic, readonly) NSArray *allIndignati;
 
@@ -123,5 +121,8 @@
 
 //Aggiunge un commento su tutti gli array (defaultComments, allComments, userCommentsOnMicropost), aggiorna defaultCommentsText e numberOfComments
 - (void) addCommentAndUpdateValues:(NSDictionary*)root_dictionary;
+
+- (void) setAllComments:(NSArray*)comments;
+- (void) setUserCommentsOnMicropst:(NSArray*)comments;
 
 @end

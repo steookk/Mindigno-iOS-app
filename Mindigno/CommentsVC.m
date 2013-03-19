@@ -10,6 +10,10 @@
 #import "Comment.h"
 #import "UIImageView+WebCache.h"
 #import "CommentDetailVC.h"
+#import "Mindigno.h"
+
+#define BUTTON_TUTTI_I_COMMENTI_INDEX 0
+#define BUTTON_MIEI_COMMENTI_INDEX 1
 
 @interface CommentsVC ()
 
@@ -31,9 +35,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    arrayComments = [currentMicroPost defaultComments];
-    //NSLog(@"number of comments: %d", [arrayComments count]);
-    
     arrayButtonTitle = [currentMicroPost commentsTabs_buttons];
     //NSLog(@"number of arrayButtonTitle: %d", [arrayButtonTitle count]);
     
@@ -41,14 +42,20 @@
     [scrollButtonBar setDataSourceBar:self];
     [scrollButtonBar setDelegateBar:self];
     [scrollButtonBar startInizialization];
-    //
     
+    //
     [tableViewComments setDataSource:self];
     [tableViewComments setDelegate:self];
     
+    /*
     [tableViewComments reloadData];
     [tableViewComments selectRowAtIndexPath: indexRowToSelect animated:NO scrollPosition:UITableViewScrollPositionNone];
     [tableViewComments scrollToRowAtIndexPath:indexRowToSelect atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+     */
+    
+    arrayComments = nil;
+    [scrollButtonBar clickButtonWithIndex: BUTTON_TUTTI_I_COMMENTI_INDEX];
+    //NSLog(@"number of comments: %d", [arrayComments count]);
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -86,11 +93,14 @@
     NSLog(@"Button clicked with title: %@", [[button titleLabel] text]);
     NSLog(@"Button selected index: %d", [scrollButtonBar indexOfCurrentSelectedButton]);
     
-    if (index != 1) {
+    if (index == BUTTON_TUTTI_I_COMMENTI_INDEX) {
+        arrayComments = [[Mindigno sharedMindigno] downloadAllCommentsForMicropost: currentMicroPost];
         
-    } else {
-        
+    } else if (index == BUTTON_MIEI_COMMENTI_INDEX) {
+        arrayComments = [[Mindigno sharedMindigno] downloadUserCommentsForMicropost: currentMicroPost];
     }
+    
+    [tableViewComments reloadData];
 }
 //Stop ScrollButtonBarDelegate
 

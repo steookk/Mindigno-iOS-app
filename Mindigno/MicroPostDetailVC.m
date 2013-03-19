@@ -127,7 +127,11 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
     
+    if ([arrayComments count] == 0) {
+        [buttonDefaultCommentText setUserInteractionEnabled:NO];
+    }
     [buttonDefaultCommentText setTitle:[currentMicroPost defaultCommentsText] forState:UIControlStateNormal];
+    
     [tableViewComments reloadData];
 }
 

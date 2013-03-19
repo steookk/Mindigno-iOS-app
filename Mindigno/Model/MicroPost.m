@@ -18,8 +18,8 @@
 
 @implementation MicroPost
 
-@synthesize micropostID, micropostUrl, title, description, isLink, isIndignato, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments, indignatiUrl, commentsTabs_buttons, commentsTabs_urls;
-@synthesize allIndignati;
+@synthesize micropostID, micropostUrl, title, description, isLink, isIndignato, imageUrl, sourceText, link, isUserCreator, preposition, userCreator, defaultText, createdAtText, indignatiText, defaultCommentsText, followingIndignati, defaultComments, isVignetta, vignetta, numberOfIndignati, numberOfComments, indignatiUrl, commentsTabs_buttons;
+@synthesize allComments, userCommentsOnMicropost, allIndignati;
 
 - (id) init {
     
@@ -111,22 +111,12 @@
         // (titleButton, url_path)+
         NSArray *components = [commentsTabsString componentsSeparatedByString:@","];
         
-        int numberOfValues = [components count] / 2;
+        int numberOfValues = [components count];
         commentsTabs_buttons = [NSMutableArray arrayWithCapacity: numberOfValues];
-        commentsTabs_urls = [NSMutableArray arrayWithCapacity: numberOfValues];
         
         for (int i=0; i<[components count]; i++) {
-            
-            //Se è il componente pari dell'array
-            if (i%2==0) {
-                NSString *titleButton = [components objectAtIndex:i];
-                [commentsTabs_buttons addObject: titleButton];
-                
-            } else {
-                NSString *url_path = [components objectAtIndex:i];
-                NSString *completeUrl = [[Mindigno sharedMindigno] getStringUrlFromStringPath: url_path];
-                [commentsTabs_urls addObject: completeUrl];
-            }
+            NSString *titleButton = [components objectAtIndex:i];
+            [commentsTabs_buttons addObject: titleButton];
         }
     }
     
@@ -177,6 +167,26 @@
     
     int new_numberOfComments = [defaultComments count];
     [self setNumberOfComments: [NSString stringWithFormat:@"%d", new_numberOfComments]];
+}
+
+- (void) setAllComments:(NSArray*)comments {
+
+    [allComments removeAllObjects];
+    
+    for (NSDictionary *userDictionary in comments) {
+        Comment *comment = [[Comment alloc] initWithJsonRoot: userDictionary];
+        [allComments addObject: comment];
+    }
+}
+
+- (void) setUserCommentsOnMicropst:(NSArray*)comments {
+
+    [userCommentsOnMicropost removeAllObjects];
+    
+    for (NSDictionary *userDictionary in comments) {
+        Comment *comment = [[Comment alloc] initWithJsonRoot: userDictionary];
+        [userCommentsOnMicropost addObject: comment];
+    }
 }
 
 @end

@@ -153,6 +153,36 @@
     return [JSONParserMainData startCreateNewCommentWithContent: content forMicropost: micropost];
 }
 
+- (NSArray*) downloadAllCommentsForMicropost:(MicroPost*)micropost {
+
+    NSString *urlString = [[micropost micropostUrl] stringByAppendingPathComponent:@"all_comments"];
+    NSLog(@"downloadAllCommentsForMicropost url: %@", urlString);
+    
+    NSArray *arrayOfcommentsDictionary = [JSONParserMainData startDownloadNewCommentsAtUrl: urlString];
+    
+    if (arrayOfcommentsDictionary == nil) {
+        return nil;
+    }
+    
+    [micropost setAllComments: arrayOfcommentsDictionary];
+    return [micropost allComments];
+}
+
+- (NSArray*) downloadUserCommentsForMicropost:(MicroPost*)micropost {
+    
+    NSString *urlString = [[micropost micropostUrl] stringByAppendingPathComponent:@"user_comments"];
+    NSLog(@"downloadUserCommentsForMicropost url: %@", urlString);
+    
+    NSArray *arrayOfcommentsDictionary = [JSONParserMainData startDownloadNewCommentsAtUrl: urlString];
+    
+    if (arrayOfcommentsDictionary == nil) {
+        return nil;
+    }
+    
+    [micropost setUserCommentsOnMicropst: arrayOfcommentsDictionary];
+    return [micropost userCommentsOnMicropost];
+}
+
 ///
 
 - (void) addMicroPostToMicroPostsOfHome:(MicroPost*)micropost {

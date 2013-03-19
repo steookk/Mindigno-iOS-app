@@ -43,4 +43,6 @@
 
 + (BOOL) startCreateNewCommentWithContent:(NSString*)content forMicropost:(MicroPost*)micropost;
 
++ (NSArray*) startDownloadNewCommentsAtUrl:(NSString*)urlString;
+
 @end

@@ -71,6 +71,9 @@
 
 - (BOOL) createNewCommentWithContent:(NSString*)content forMicropost:(MicroPost*)micropost;
 
+- (NSArray*) downloadAllCommentsForMicropost:(MicroPost*)micropost;
+- (NSArray*) downloadUserCommentsForMicropost:(MicroPost*)micropost;
+
 - (void) addUsersFromJsonRoot:(NSArray*)users;
 - (User*) userWithId:(NSString*)userId;
 

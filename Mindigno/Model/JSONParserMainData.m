@@ -195,8 +195,8 @@
     ///
     
     //For debug
-    NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", textJson);
+    //NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@", textJson);
 
     BOOL returnValue = NO;
     
@@ -808,24 +808,23 @@
 }
 
 
-+ (BOOL) startDownloadNewCommentsFromUrl:(NSString*)urlString {
++ (NSArray*) startDownloadNewCommentsAtUrl:(NSString*)urlString  {
     
     NSURL *url = [NSURL URLWithString: urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
     
-    [urlRequest setHTTPMethod:@"POST"];
-    
+    //Necessary for request to server
     [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    //
     
     ////http basic authentication
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
-    //NSLog(@"%@", authValue);
+    //NSLog(@"'%@'", authValue);
     
-    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
     [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
     
     ////
@@ -838,17 +837,18 @@
     //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     //NSLog(@"%@\n\n", textJson);
     
-    //NSLog(@"data length: %d\n", [data length]);
-    //Non 0 perchè comunque ritorna uno spazio bianco
+    NSArray *arrayOfCommentsDictionary = nil;
+    
     BOOL dataIsEmpty = ([data length] <= 1);
     if (data != nil && !dataIsEmpty) {
         
         NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
         //
-        //[micropost addComment: root_dictionary];
+        NSArray *users_array = [root_dictionary objectForKey: USERS_KEY];
+        [[Mindigno sharedMindigno] addUsersFromJsonRoot: users_array];
         
-        return YES;
+        arrayOfCommentsDictionary = [root_dictionary objectForKey: COMMENTS_KEY];
         
     } else if (data != nil && dataIsEmpty) {
         NSLog(@"dataIsEmpty");
@@ -857,7 +857,7 @@
         NSLog(@"No connection: data is nil");
     }
     
-    return NO;
+    return arrayOfCommentsDictionary;
 }
 
 @end
