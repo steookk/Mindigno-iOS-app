@@ -434,13 +434,12 @@
 }
 
 - (void) handleLoginNotification {
-    int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
     //Forzo aggiornamento
-    arrayMicroPostOfFollowing = [[Mindigno sharedMindigno] downloadMicroPostsOfFollowing];
+    arrayMicroPost = [[Mindigno sharedMindigno] downloadMicroPosts];
     
     //Se quando faccio login il pulsante è su Solo chi seguo, devo fare la giusta chiamata
-    [self buttonClicked: [scrollButtonBar currentSelectedButton] withIndex:indexButton];
+    [self buttonClicked: [scrollButtonBar currentSelectedButton] withIndex: BUTTON_TUTTE_LE_INDIGNAZIONI_INDEX];
 }
 
 - (void) handleLoginSignupDiscarded {
