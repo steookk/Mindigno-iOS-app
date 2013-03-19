@@ -163,7 +163,7 @@
     Comment *comment = [arrayComments objectAtIndex: indexPath.row];
     NSString *textComment = [comment content];
     
-    double textHeight = [textComment sizeWithFont:[UIFont fontWithName:@"Arial" size:13] constrainedToSize:CGSizeMake(310, 500) lineBreakMode:NSLineBreakByTruncatingTail].height;
+    double textHeight = [textComment sizeWithFont:[UIFont fontWithName:@"Arial" size:13] constrainedToSize:CGSizeMake(310, 70) lineBreakMode:NSLineBreakByTruncatingTail].height;
     
     double cellHeight = 62.0;
     double labelHeight = 20.0;
