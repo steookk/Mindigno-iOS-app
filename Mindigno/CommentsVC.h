@@ -15,6 +15,8 @@
 
     MicroPost __weak *currentMicroPost;
     
+    IBOutlet UIButton *buttonGoToEditor;
+    
     NSArray *arrayComments;
     IBOutlet UITableView *tableViewComments;
     

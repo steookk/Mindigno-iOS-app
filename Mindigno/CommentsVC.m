@@ -35,6 +35,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([[Mindigno sharedMindigno] isLoggedUser]) {
+        [buttonGoToEditor setUserInteractionEnabled: YES];
+        [buttonGoToEditor setAlpha: 1.0];
+    } else {
+        [buttonGoToEditor setUserInteractionEnabled: NO];
+        [buttonGoToEditor setAlpha: 0.3];
+    }
+    
     arrayButtonTitle = [currentMicroPost commentsTabs_buttons];
     //NSLog(@"number of arrayButtonTitle: %d", [arrayButtonTitle count]);
     
