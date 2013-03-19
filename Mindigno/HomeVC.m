@@ -436,6 +436,9 @@
 - (void) handleLoginNotification {
     int indexButton = [scrollButtonBar indexOfCurrentSelectedButton];
     
+    //Forzo aggiornamento
+    arrayMicroPostOfFollowing = [[Mindigno sharedMindigno] downloadMicroPostsOfFollowing];
+    
     //Se quando faccio login il pulsante è su Solo chi seguo, devo fare la giusta chiamata
     [self buttonClicked: [scrollButtonBar currentSelectedButton] withIndex:indexButton];
 }
