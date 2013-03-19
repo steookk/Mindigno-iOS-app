@@ -35,6 +35,7 @@
 
 + (id)sharedMindigno;
 
+- (void) addMicroPostToMicroPostsOfHome:(MicroPost*)micropost;
 //Per recuperare i micropost (home)
 - (NSArray *) downloadMicroPosts;
 //Per recuperare altri 8 micropost (home)

@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mindigno/RootVC.m"
-         timestampString = "385324441.882157"
+         timestampString = "385388861.851293"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mindigno/RootVC.m"
-         timestampString = "385324506.48751"
+         timestampString = "385388861.851293"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "-caricaInformazioniProfilo"
          landmarkType = "5">
       </FileBreakpoint>

@@ -69,6 +69,8 @@
     [super viewWillAppear: animated];
     
     [self setCustomButtonToTheRightOfBar];
+    
+    [homeVC viewWillAppear: animated];
 }
 
 //Start MainButtonBarDelegate

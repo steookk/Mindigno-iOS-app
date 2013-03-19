@@ -61,6 +61,11 @@
     [tableViewMicroPost setEnabledLazyLoad: YES];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [tableViewMicroPost reloadData];
+}
+
 ///Start UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

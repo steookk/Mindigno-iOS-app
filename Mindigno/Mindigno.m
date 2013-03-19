@@ -155,6 +155,12 @@
 
 ///
 
+- (void) addMicroPostToMicroPostsOfHome:(MicroPost*)micropost {
+
+    //Lo aggiungo in prima posizione
+    [microPostsOfHome insertObject:micropost atIndex:0];
+}
+
 - (NSArray *) downloadMicroPosts {
 
     NSString *url = [URL_JSON_MICROPOST_TEST stringByAppendingPathComponent: @"users/home_hot_feed"];

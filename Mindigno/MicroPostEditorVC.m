@@ -94,6 +94,8 @@
     if (sendOK) {
         
         User *currentUser = [[Mindigno sharedMindigno] currentUser];
+        
+        [[Mindigno sharedMindigno] addMicroPostToMicroPostsOfHome: micropostCreated];
         [currentUser addMicropost: micropostCreated];
         
         [self dismissViewControllerAnimated:YES completion:nil];
