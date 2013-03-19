@@ -793,7 +793,60 @@
         NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
         //
-        [micropost addComment: root_dictionary];
+        [micropost addCommentAndUpdateValues: root_dictionary];
+        
+        return YES;
+        
+    } else if (data != nil && dataIsEmpty) {
+        NSLog(@"dataIsEmpty");
+        
+    } else {
+        NSLog(@"No connection: data is nil");
+    }
+    
+    return NO;
+}
+
+
++ (BOOL) startDownloadNewCommentsFromUrl:(NSString*)urlString {
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"%@", authValue);
+    
+    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    ////
+    
+    //
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    //For debug
+    //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@\n\n", textJson);
+    
+    //NSLog(@"data length: %d\n", [data length]);
+    //Non 0 perchè comunque ritorna uno spazio bianco
+    BOOL dataIsEmpty = ([data length] <= 1);
+    if (data != nil && !dataIsEmpty) {
+        
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        //
+        //[micropost addComment: root_dictionary];
         
         return YES;
         

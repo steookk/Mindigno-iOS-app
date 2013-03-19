@@ -127,6 +127,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
     
+    [buttonDefaultCommentText setTitle:[currentMicroPost defaultCommentsText] forState:UIControlStateNormal];
     [tableViewComments reloadData];
 }
 
@@ -154,11 +155,6 @@
 }
 
 ///Start UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return [arrayComments count];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return (int)[arrayComments count];

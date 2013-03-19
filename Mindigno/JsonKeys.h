@@ -81,6 +81,8 @@
 
 ///
 
+#define COMMENT_KEY @"comment"
+
 #define COMMENT_ID_KEY @"id"
 #define COMMENT_CONTENT_KEY @"content"
 #define COMMENT_USER_ID_KEY @"user_id"

@@ -50,8 +50,14 @@
     NSMutableArray *followingIndignati;
     
     NSString *defaultCommentsText;
-    NSMutableArray *defaultComments;
     
+    NSMutableArray *defaultComments;
+    //Array che conterrà gli tutti i commenti sul micropost. Sarà pieno solo se sarà fatta una richiesta
+    NSMutableArray *allComments;
+    //Array che conterrà gli tutti i commenti (dell'utente loggato) sul micropost. Sarà pieno solo se sarà fatta una richiesta
+    NSMutableArray *userCommentsOnMicropost;
+    
+    //
     BOOL isVignetta;
     Vignetta *vignetta;
     
@@ -115,6 +121,7 @@
 
 - (void) addAllIndignati:(NSArray*)users;
 
-- (void) addComment:(NSDictionary*)comment_dictionary;
+//Aggiunge un commento su tutti gli array (defaultComments, allComments, userCommentsOnMicropost), aggiorna defaultCommentsText e numberOfComments
+- (void) addCommentAndUpdateValues:(NSDictionary*)root_dictionary;
 
 @end

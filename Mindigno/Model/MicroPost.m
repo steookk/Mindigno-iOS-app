@@ -35,6 +35,9 @@
     self = [super init];
     if (self) {
         
+        allComments = [NSMutableArray array];
+        userCommentsOnMicropost = [NSMutableArray array];
+        
         allIndignati = [NSMutableArray array];
         
         ///
@@ -162,10 +165,15 @@
     }
 }
 
-- (void) addComment:(NSDictionary*)comment_dictionary {
+- (void) addCommentAndUpdateValues:(NSDictionary*)root_dictionary {
 
-    Comment *comment = [[Comment alloc] initWithJsonRoot: comment_dictionary];
-    [defaultComments addObject:comment];
+    Comment *comment = [[Comment alloc] initWithJsonRoot: [root_dictionary objectForKey: COMMENT_KEY]];
+    
+    [defaultComments insertObject:comment atIndex:0];
+    [allComments insertObject:comment atIndex:0];
+    [userCommentsOnMicropost insertObject:comment atIndex:0];
+    
+    [self setDefaultCommentsText: [root_dictionary objectForKey: MICROPOST_COMMENTS_TEXT_KEY]];
     
     int new_numberOfComments = [defaultComments count];
     [self setNumberOfComments: [NSString stringWithFormat:@"%d", new_numberOfComments]];
