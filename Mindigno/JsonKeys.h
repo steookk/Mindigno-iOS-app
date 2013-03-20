@@ -21,6 +21,8 @@
 
 ///
 
+#define MINDIGNO_UID @"mindigno_uid"
+
 #define SIGNUP_MESSAGE_KEY @"message"
 
 ///

@@ -57,6 +57,10 @@
 - (SignupResponse*) signupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
 - (BOOL) logout;
 
+- (BOOL) facebookLoginWithAccessToken:(NSString*)accessToken;
+- (SignupResponse*) facebookSignupWithAccessToken:(NSString*)accessToken;
+- (BOOL) checkIfExistInMindignoFacebookUserWithID:(NSString*)userID;
+
 - (BOOL) indignatiSulMicroPostConID:(NSString*)micropostID;
 - (BOOL) rimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
 

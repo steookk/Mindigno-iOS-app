@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Utils.h"
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface LoginSignupVC : UIViewController {
+@interface LoginSignupVC : UIViewController <FBLoginViewDelegate> {
     
     IBOutlet UIButton *buttonLogin;
     IBOutlet UIButton *buttonSignup;
+    
+    IBOutlet FBLoginView *fbLoginView;
 }
 
 - (IBAction)exitFromModalView:(id)sender;

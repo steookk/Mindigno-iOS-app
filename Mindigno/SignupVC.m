@@ -75,9 +75,9 @@
         SignupResponse *signupResponse = [[Mindigno sharedMindigno] signupWithName:[textFieldNome text] mail:[textFieldMail text] password:[textFieldPassword text] passwordConfirmation: [textFieldRetipedPassword text]];
         
         if ([signupResponse isUserCreatedAndLogged]) {
-            //Esco dalla modale
-            [self dismissViewControllerAnimated:YES completion:nil];
+            //Esco dalla modale dopo aver lanciato l'evento
             [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
         
         } else {
             

@@ -29,6 +29,11 @@
 //Ritorna SignupResponse con le rispettive proprietà
 + (SignupResponse*) startSignupWithName:(NSString*)name mail:(NSString*)mail password:(NSString*)password passwordConfirmation:(NSString*)passwordConfirmation;
 
++ (BOOL) startFacebookLoginWithAccessToken:(NSString*)accessToken;
++ (SignupResponse*) startFacebookSignupWithAccessToken:(NSString*)accessToken;
+
++ (BOOL) startCheckIfExistInMindignoFacebookUserWithID:(NSString*)userID;
+
 + (BOOL) startIndignatiSulMicroPostConID:(NSString*)micropostID;
 + (BOOL) startRimuoviIndignazioneSulMicroPostConID:(NSString*)micropostID;
 

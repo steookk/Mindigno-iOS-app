@@ -88,6 +88,24 @@
     return logoutOK;
 }
 
+- (BOOL) facebookLoginWithAccessToken:(NSString*)accessToken {
+
+    BOOL loginOK = [JSONParserMainData startFacebookLoginWithAccessToken: accessToken];
+    return loginOK;
+}
+
+- (SignupResponse*) facebookSignupWithAccessToken:(NSString*)accessToken {
+    
+    SignupResponse *signupResponse = [JSONParserMainData startFacebookSignupWithAccessToken: accessToken];
+    return signupResponse;
+}
+
+- (BOOL) checkIfExistInMindignoFacebookUserWithID:(NSString*)userID {
+
+    BOOL existUser = [JSONParserMainData startCheckIfExistInMindignoFacebookUserWithID: userID];
+    return existUser;
+}
+
 ///
 
 - (BOOL) indignatiSulMicroPostConID:(NSString*)micropostID {

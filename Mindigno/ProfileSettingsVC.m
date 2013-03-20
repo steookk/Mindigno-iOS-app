@@ -10,6 +10,7 @@
 #import "Mindigno.h"
 #import "JSONParserMainData.h"
 #import "NotificationKeys.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface ProfileSettingsVC ()
 
@@ -53,6 +54,9 @@
         BOOL logoutOK = [[Mindigno sharedMindigno] logout];
         
         if (logoutOK) {
+            //Serve per pulire le info di facebook e quindi far apparire loging invece di logout dalla schermata di login. Questo perchè il login/logout da facebook è separato da quello di mindigno
+            [FBSession.activeSession closeAndClearTokenInformation];
+            
             [buttonLogout setHidden: YES];
             
             [self exitWithAnimation: NO];

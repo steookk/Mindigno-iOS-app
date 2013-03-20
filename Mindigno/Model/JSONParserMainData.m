@@ -349,6 +349,232 @@
     return signupResponse;
 }
 
++ (BOOL) startCheckIfExistInMindignoFacebookUserWithID:(NSString*)userID {
+    
+    NSString *urlString = [[[Mindigno sharedMindigno] getStringUrlFromStringPath:@"/users/find?facebook_uid="] stringByAppendingString: userID];
+    NSLog(@"startCheckIfExistInMindignoFacebookUserWithID url: %@", urlString);
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    [urlRequest setHTTPMethod:@"GET"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    //[urlRequest setValue:@"delete" forHTTPHeaderField:@"_method"];
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"%@", authValue);
+    
+    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    //
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    //NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    //int statusCode = [httpResponse statusCode];
+    //
+    
+    //For debug
+    //NSString *textJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@\n\n", textJson);
+    
+    BOOL returnValue = NO;
+    
+    BOOL dataIsEmpty = ([data length] <= 1);
+    if (data != nil && !dataIsEmpty) {
+        
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        //
+        NSString *returnID = [root_dictionary objectForKey: MINDIGNO_UID];
+        
+        if ([returnID intValue] != 0) {
+            returnValue = YES;
+        }
+        
+        
+    } else if (data != nil && dataIsEmpty) {
+        NSLog(@"dataIsEmpty");
+        
+    } else {
+        NSLog(@"No connection: data is nil");
+    }
+    
+    return returnValue;
+}
+
++ (BOOL) startFacebookLoginWithAccessToken:(NSString*)accessToken {
+    
+    NSString *urlString = [[Mindigno sharedMindigno] getStringUrlFromStringPath:@"sessions"];
+    
+    NSDictionary *session = [[NSDictionary alloc] initWithObjectsAndKeys:accessToken, @"access_token", nil];
+    NSDictionary *payload = [[NSDictionary alloc] initWithObjectsAndKeys:session, @"session", nil];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
+    
+    //For debug
+    //NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    //NSLog(@"XXX: %@", jsonString);
+    
+    NSData *postData = jsonData;
+    NSString *postDataLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"%@", authValue);
+    
+    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    ////
+    
+    [urlRequest setHTTPBody: postData];
+    [urlRequest setValue:postDataLength forHTTPHeaderField:@"Content-Length"];
+    
+    //
+    
+    NSURLResponse *response;
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+        
+    //Controlla e aggiorna lo stato di login dell'utente
+    [[Mindigno sharedMindigno] checkAndUpdateIfUserIsLogged];
+    
+    ///
+    
+    //For debug
+    NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", textJson);
+    
+    BOOL returnValue = NO;
+    
+    //Non utile perchè non parsiamo il json per sapere se l'utente è loggato ma ciò viene fatto in base alla presenza del cookie (con stringa != vuota) remember_token
+    if (returnData != nil) {
+        
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
+        
+        //
+        
+        NSDictionary *dict_user = [root_dictionary objectForKey: USER_KEY];
+        
+        if (dict_user != nil) {
+            User *user = [[User alloc] initWithJsonRoot: dict_user];
+            
+            //Setto l'utente corrente
+            [[Mindigno sharedMindigno] setCurrentUser: user];
+            //Aggiungo l'utente nel dizionario
+            [[[Mindigno sharedMindigno] idToUser_dictionary] setObject:user forKey:[user userID]];
+            
+            returnValue = YES;
+        }
+        
+    } else {
+        NSLog(@"returnData is nil");
+    }
+    
+    return returnValue;
+}
+
++ (SignupResponse*) startFacebookSignupWithAccessToken:(NSString*)accessToken {
+    
+    NSString *urlString = [[Mindigno sharedMindigno] getStringUrlFromStringPath:@"users"];
+    
+    NSDictionary *session = [[NSDictionary alloc] initWithObjectsAndKeys: accessToken, @"access_token", [NSNumber numberWithBool:YES], @"contratto_accettato", nil];
+    NSDictionary *payload = [[NSDictionary alloc] initWithObjectsAndKeys:session, @"user", nil];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
+    
+    //For debug
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"XXX: %@", jsonString);
+    
+    NSData *postData = jsonData;
+    NSString *postDataLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    //NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    ////http basic authentication
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", API_U, API_P];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    //NSLog(@"%@", authValue);
+    
+    //[urlRequest setValue:@"Basic realm=\"www.mindigno.com\"" forHTTPHeaderField:@"WWW-Authenticate"];
+    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    ////
+    
+    [urlRequest setHTTPBody: postData];
+    [urlRequest setValue:postDataLength forHTTPHeaderField:@"Content-Length"];
+    
+    //
+    
+    NSURLResponse *response;
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
+    //Controlla e aggiorna lo stato di login dell'utente
+    [[Mindigno sharedMindigno] checkAndUpdateIfUserIsLogged];
+    
+    ///
+    
+    //For debug
+    NSString *textJson = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", textJson);
+    
+    SignupResponse *signupResponse = [[SignupResponse alloc] init];
+    if (returnData != nil) {
+        NSDictionary *root_dictionary = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
+        
+        //
+        NSDictionary *dict_user = [root_dictionary objectForKey: USER_KEY];
+        
+        if (dict_user != nil) {
+            User *user = [[User alloc] initWithJsonRoot: dict_user];
+            
+            //Setto l'utente corrente
+            [[Mindigno sharedMindigno] setCurrentUser: user];
+            //Aggiungo l'utente nel dizionario
+            [[[Mindigno sharedMindigno] idToUser_dictionary] setObject:user forKey:[user userID]];
+            
+            [signupResponse setIsUserCreatedAndLogged: YES];
+            
+        } else {
+            [signupResponse setIsUserCreatedAndLogged: NO];
+            [signupResponse setMessageError: [root_dictionary objectForKey: SIGNUP_MESSAGE_KEY]];
+        }
+        
+    } else {
+        NSLog(@"returnData is nil");
+    }
+    
+    return signupResponse;
+}
+
 ///
 
 + (BOOL) startIndignatiSulMicroPostConID:(NSString*)micropostID {

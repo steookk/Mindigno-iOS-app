@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D9008E9F1669295B00AC90B1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9008E9E1669295B00AC90B1 /* Icon.png */; };
+		D902269016F9F0F500FEB530 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D902268E16F9F0F500FEB530 /* Accounts.framework */; };
+		D902269116F9F0F500FEB530 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D902268F16F9F0F500FEB530 /* AdSupport.framework */; };
+		D902269516F9F16D00FEB530 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D902269416F9F16D00FEB530 /* FacebookSDK.framework */; };
+		D902269716F9F17600FEB530 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D902269616F9F17600FEB530 /* FacebookSDKResources.bundle */; };
 		D909B48116662A2F00D66AD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48016662A2F00D66AD3 /* UIKit.framework */; };
 		D909B48316662A2F00D66AD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48216662A2F00D66AD3 /* Foundation.framework */; };
 		D909B48516662A2F00D66AD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48416662A2F00D66AD3 /* CoreGraphics.framework */; };
@@ -149,6 +153,10 @@
 
 /* Begin PBXFileReference section */
 		D9008E9E1669295B00AC90B1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		D902268E16F9F0F500FEB530 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D902268F16F9F0F500FEB530 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D902269416F9F16D00FEB530 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Mindigno/FacebookSDK.framework; sourceTree = "<group>"; };
+		D902269616F9F17600FEB530 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = Mindigno/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		D909B47C16662A2F00D66AD3 /* Mindigno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindigno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909B48016662A2F00D66AD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D909B48216662A2F00D66AD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -324,14 +332,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92EC698167A2F0E00124E5C /* MapKit.framework in Frameworks */,
+				D902269016F9F0F500FEB530 /* Accounts.framework in Frameworks */,
+				D902269116F9F0F500FEB530 /* AdSupport.framework in Frameworks */,
 				D92EC66A1679F6A700124E5C /* Social.framework in Frameworks */,
+				D92EC698167A2F0E00124E5C /* MapKit.framework in Frameworks */,
 				D96A56421671FA7E00765CF6 /* ImageIO.framework in Frameworks */,
 				D9BD96D6166E3B29000AD010 /* QuartzCore.framework in Frameworks */,
 				D909B48116662A2F00D66AD3 /* UIKit.framework in Frameworks */,
 				D909B48316662A2F00D66AD3 /* Foundation.framework in Frameworks */,
 				D909B48516662A2F00D66AD3 /* CoreGraphics.framework in Frameworks */,
 				D94DB87516E0C0610027538F /* GTKeyboardHelper.framework in Frameworks */,
+				D902269516F9F16D00FEB530 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,10 +405,14 @@
 		D909B47F16662A2F00D66AD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D902269616F9F17600FEB530 /* FacebookSDKResources.bundle */,
+				D902269416F9F16D00FEB530 /* FacebookSDK.framework */,
+				D92EC6691679F6A700124E5C /* Social.framework */,
+				D902268E16F9F0F500FEB530 /* Accounts.framework */,
+				D902268F16F9F0F500FEB530 /* AdSupport.framework */,
 				D94DB87416E0C0610027538F /* GTKeyboardHelper.framework */,
 				D92EC677167A2E4D00124E5C /* SDWebImage */,
 				D92EC697167A2F0E00124E5C /* MapKit.framework */,
-				D92EC6691679F6A700124E5C /* Social.framework */,
 				D96A56411671FA7E00765CF6 /* ImageIO.framework */,
 				D909B48016662A2F00D66AD3 /* UIKit.framework */,
 				D909B48216662A2F00D66AD3 /* Foundation.framework */,
@@ -916,6 +931,7 @@
 				D9763B3016EA62E300228209 /* plus.png in Resources */,
 				D9763B3116EA62E300228209 /* gear.png in Resources */,
 				D953686916F22EFD00799CC2 /* buttons-mindigno_selected.png in Resources */,
+				D902269716F9F17600FEB530 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,12 +1108,16 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Mindigno\"",
+					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mindigno/Mindigno-Prefix.pch";
 				INFOPLIST_FILE = "Mindigno/Mindigno-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1110,12 +1130,16 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Mindigno\"",
+					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mindigno/Mindigno-Prefix.pch";
 				INFOPLIST_FILE = "Mindigno/Mindigno-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -53,9 +53,9 @@
     BOOL loginOK = [[Mindigno sharedMindigno] loginWithUser:user andPassword:password];
     
     if (loginOK && [[Mindigno sharedMindigno] isLoggedUser]) {
-        //Esce dalla modal view
-        [self dismissViewControllerAnimated:YES completion:nil];
+        //Esce dalla modal view dopo aver lanciato l'evento
         [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     
     } else {
         
