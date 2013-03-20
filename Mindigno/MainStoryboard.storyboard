@@ -185,7 +185,7 @@
             <objects>
                 <viewController storyboardIdentifier="profileVC" id="kBA-kd-1r5" customClass="ProfileUserVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kaH-so-R5F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="gFK-VV-jvL">
@@ -615,7 +615,7 @@
             <objects>
                 <viewController id="kss-jZ-2LO" customClass="IndignatiVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pPf-6x-uIU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="zCq-wz-IcU">
@@ -775,7 +775,7 @@
             <objects>
                 <viewController id="KaB-pX-ShW" customClass="CommentsVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zas-8c-VuJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="pUX-dm-F2l">
@@ -900,7 +900,7 @@
             <objects>
                 <viewController id="csM-Sf-dI5" customClass="CommentDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Whf-gD-5c7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="XXX-JG-IIM">
@@ -974,7 +974,7 @@
             <objects>
                 <viewController id="VJ9-9d-hSE" customClass="ProfileVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyh-Na-7bT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="6Ua-Je-F9J">
@@ -1024,7 +1024,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <containerView contentMode="scaleToFill" id="hzX-Ns-p0N">
-                                <rect key="frame" x="0.0" y="40" width="320" height="440"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -1048,7 +1048,7 @@
             <objects>
                 <viewController id="jEg-ka-xob" customClass="MicroPostDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UvM-4S-VSZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="5mA-lh-QGv">
@@ -1060,7 +1060,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bia-Tz-lnZ">
-                                        <rect key="frame" x="5" y="7" width="73" height="28"/>
+                                        <rect key="frame" x="5" y="7" width="75" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Indietro">
@@ -1086,9 +1086,6 @@
                                         <state key="highlighted" backgroundImage="button-share_click.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="share:" destination="jEg-ka-xob" eventType="touchUpInside" id="2BW-b5-Y4q"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VXB-xn-Kpi">
                                         <rect key="frame" x="266" y="7" width="45" height="28"/>
@@ -1098,7 +1095,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="selected" backgroundImage="buttons-mindigno_click.png"/>
+                                        <state key="selected" backgroundImage="buttons-mindigno_selected.png"/>
                                         <state key="highlighted" backgroundImage="buttons-mindigno_click.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1324,6 +1321,8 @@
                         <outlet property="buttonDefaultCommentText" destination="BA9-av-iEg" id="Dat-HL-Tci"/>
                         <outlet property="buttonGoToSource" destination="pSZ-2G-Ltb" id="mXF-i4-xT0"/>
                         <outlet property="buttonIndignatiText" destination="fId-8U-znj" id="TzG-0P-iwo"/>
+                        <outlet property="buttonMindigno" destination="VXB-xn-Kpi" id="kQP-OL-YOk"/>
+                        <outlet property="buttonShare" destination="kHl-rJ-hWG" id="t2I-wF-MP8"/>
                         <outlet property="contentView" destination="4Vy-gI-YwR" id="zgK-gG-cNg"/>
                         <outlet property="contentViewBody" destination="eKa-hb-iuX" id="iAe-FG-DR3"/>
                         <outlet property="contentViewCreator" destination="31E-oM-B2o" id="mwS-zc-WrR"/>
@@ -1345,7 +1344,7 @@
             <objects>
                 <viewController id="77B-Um-azv" customClass="CommentEditorVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzQ-So-f5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ZUi-FM-zvZ">
@@ -1390,7 +1389,7 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iJa-n2-BEE">
-                                <rect key="frame" x="0.0" y="40" width="320" height="225"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="205"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1771,7 +1770,7 @@
             <objects>
                 <viewController id="dZQ-27-8F0" customClass="FollowingFollowerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WbY-It-3EX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="MXK-mI-l0E">
@@ -1953,10 +1952,11 @@
             <relationships>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="action" name="goToSource:"/>
-                <relationship kind="action" name="share:"/>
                 <relationship kind="outlet" name="buttonDefaultCommentText" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonGoToSource" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonIndignatiText" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMindigno" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonShare" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="contentViewBody" candidateClass="UIView"/>
                 <relationship kind="outlet" name="contentViewCreator" candidateClass="UIView"/>
@@ -2029,12 +2029,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="rZZ-R9-62i"/>
         <segue reference="wte-45-OdG"/>
-        <segue reference="oVm-Gc-3kw"/>
+        <segue reference="sXC-JH-7S9"/>
+        <segue reference="b4O-TQ-VDa"/>
         <segue reference="5uA-uT-gTn"/>
-        <segue reference="mxI-77-wMS"/>
-        <segue reference="Ol4-zK-bby"/>
-        <segue reference="TUN-6S-skc"/>
-        <segue reference="k3v-Tn-sLm"/>
+        <segue reference="jxh-Lb-BDe"/>
+        <segue reference="C3h-oT-Gfq"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,6 +32,9 @@
     IBOutlet UIButton *buttonIndignatiText;
     IBOutlet UIButton *buttonDefaultCommentText;
     
+    IBOutlet UIButton *buttonMindigno;
+    IBOutlet UIButton *buttonShare;
+    
     NSArray *arrayComments;
     IBOutlet UITableView *tableViewComments;
 }
@@ -39,7 +42,6 @@
 @property(nonatomic, weak) MicroPost *currentMicroPost;
 
 - (IBAction)goToSource:(id)sender;
-- (IBAction)share:(id)sender;
 - (IBAction)goBack:(id)sender;
 
 @end

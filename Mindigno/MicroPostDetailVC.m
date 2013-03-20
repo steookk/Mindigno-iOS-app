@@ -122,6 +122,48 @@
     if ([arrayComments count] == 0) {
         [buttonDefaultCommentText setUserInteractionEnabled:NO];
     }
+    
+    [buttonShare addTarget:self action:@selector(buttonShareClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [buttonMindigno addTarget:self action:@selector(buttonMindignoClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonMindigno setSelected: [currentMicroPost isIndignato]];
+}
+
+- (void) buttonMindignoClicked:(id)sender {
+    //NSLog(@"buttonMindignoClicked");
+    
+    if (![[Mindigno sharedMindigno] isLoggedUser]) {
+        UINavigationController *navController = (UINavigationController *) [[Mindigno sharedMindigno] apriModaleLogin];
+        [self presentViewController:navController animated:YES completion:nil];
+        
+    } else {
+        
+        BOOL isIndignato = [buttonMindigno isSelected];
+        if (!isIndignato) {
+            BOOL ok = [[Mindigno sharedMindigno] indignatiSulMicroPostConID: [currentMicroPost micropostID]];
+            
+            if (ok) {
+                [currentMicroPost addOneToNumberIndignati];
+                [currentMicroPost setIsIndignato: !isIndignato];
+                [buttonMindigno setSelected: YES];
+            }
+            
+        } else {
+            BOOL ok = [[Mindigno sharedMindigno] rimuoviIndignazioneSulMicroPostConID: [currentMicroPost micropostID]];
+            
+            if (ok) {
+                [currentMicroPost removeOneToNumberIndignati];
+                [currentMicroPost setIsIndignato: !isIndignato];
+                [buttonMindigno setSelected: NO];
+            }
+        }
+    }
+}
+
+- (void) buttonShareClicked:(id)sender {
+    
+    NSString *textToShare = [NSString stringWithFormat:@"%@ #mindigno", [currentMicroPost title]];
+    [[Mindigno sharedMindigno] shareInfoOnViewController:self withText:textToShare imageName:nil url:[currentMicroPost micropostUrl]];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -228,10 +270,6 @@
 
 - (IBAction)goToSource:(id)sender {
      [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [currentMicroPost link]]];
-}
-
-- (IBAction)share:(id)sender {
-    [[Mindigno sharedMindigno] shareInfoOnViewController: self];
 }
 
 - (IBAction)goBack:(id)sender {
