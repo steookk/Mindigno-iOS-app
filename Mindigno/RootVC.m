@@ -71,6 +71,7 @@
     [self setCustomButtonToTheRightOfBar];
     
     [homeVC viewWillAppear: animated];
+    [profileUserVC viewWillAppear: animated];
 }
 
 //Start MainButtonBarDelegate

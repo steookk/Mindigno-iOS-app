@@ -57,4 +57,7 @@
 
 - (void) removeAllMicroposts;
 
+- (NSString *) addOneToNumberOfFollowing;
+- (NSString *) removeOneToNumberOfFollowing;
+
 @end

@@ -75,4 +75,26 @@
     [microposts removeAllObjects];
 }
 
+- (NSString *) addOneToNumberOfFollowing {
+
+    int currentNumberOfFollowing = [[self numberOfFollowing] intValue];
+    currentNumberOfFollowing++;
+    
+    NSString *newNumberOfFollowing = [NSString stringWithFormat:@"%d", currentNumberOfFollowing];
+    [self setNumberOfFollowing: newNumberOfFollowing];
+    
+    return numberOfFollowing;
+}
+
+- (NSString *) removeOneToNumberOfFollowing {
+
+    int currentNumberOfFollowing = [[self numberOfFollowing] intValue];
+    currentNumberOfFollowing--;
+    
+    NSString *newNumberOfFollowing = [NSString stringWithFormat:@"%d", currentNumberOfFollowing];
+    [self setNumberOfFollowing: newNumberOfFollowing];
+    
+    return numberOfFollowing;
+}
+
 @end

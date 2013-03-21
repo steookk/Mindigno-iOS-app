@@ -76,6 +76,11 @@
     [self refreshView];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [self refreshView];
+}
+
 ///Start UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

@@ -144,7 +144,7 @@
             
             if (ok) {
                 [currentMicroPost addOneToNumberIndignati];
-                [currentMicroPost setIsIndignato: !isIndignato];
+                [currentMicroPost setIsIndignato: YES];
                 [buttonMindigno setSelected: YES];
             }
             
@@ -153,7 +153,7 @@
             
             if (ok) {
                 [currentMicroPost removeOneToNumberIndignati];
-                [currentMicroPost setIsIndignato: !isIndignato];
+                [currentMicroPost setIsIndignato: NO];
                 [buttonMindigno setSelected: NO];
             }
         }

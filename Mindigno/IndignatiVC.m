@@ -135,14 +135,16 @@
             BOOL ok = [[Mindigno sharedMindigno] followUserWithID: [currentUser userID]];
             
             if (ok) {
-                [currentUser setIsFollowedFromLoggedUser: !isSeguito];
+                [currentUser setIsFollowedFromLoggedUser: YES];
+                [[[Mindigno sharedMindigno] currentUser] addOneToNumberOfFollowing];
             }
             
         } else {
             BOOL ok = [[Mindigno sharedMindigno] removeFollowedUserWithID: [currentUser userID]];
             
             if (ok) {
-                [currentUser setIsFollowedFromLoggedUser: !isSeguito];
+                [currentUser setIsFollowedFromLoggedUser: NO];
+                [[[Mindigno sharedMindigno] currentUser] removeOneToNumberOfFollowing];
             }
         }
         

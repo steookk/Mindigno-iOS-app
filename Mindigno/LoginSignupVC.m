@@ -63,8 +63,12 @@
     }
     
     if (thereIsError) {
+        
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Attenzione!" message:@"Non è stato possibile effettuare l'operazione. Riprova più tardi." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alertView show];
+        
+        //Necessario altrimenti ogni volta che si entra nella schermata di login tenta di fare in login con facebook
+        [FBSession.activeSession closeAndClearTokenInformation];
     }
 }
 
