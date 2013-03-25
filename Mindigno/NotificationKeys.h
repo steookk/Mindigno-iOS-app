@@ -14,4 +14,6 @@
 
 #define DISCARD_LOGIN_SIGNUP_NOTIFICATION @"discardLoginSignupNotification"
 
+#define COMMENT_SENT @"commentSentNotification"
+
 #endif

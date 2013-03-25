@@ -159,9 +159,17 @@
 
     Comment *comment = [[Comment alloc] initWithJsonRoot: [root_dictionary objectForKey: COMMENT_KEY]];
     
+    /*
+     //Aggiunge in testa
     [defaultComments insertObject:comment atIndex:0];
     [allComments insertObject:comment atIndex:0];
     [userCommentsOnMicropost insertObject:comment atIndex:0];
+     */
+    
+    //Aggiunge in coda
+    [defaultComments addObject: comment];
+    [allComments addObject: comment];
+    [userCommentsOnMicropost addObject: comment];
     
     [self setDefaultCommentsText: [root_dictionary objectForKey: MICROPOST_COMMENTS_TEXT_KEY]];
     

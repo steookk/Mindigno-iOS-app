@@ -76,7 +76,7 @@
     NSString *textDescrizione = [textViewDescrizione text];
     
     if ([textTitolo isEqualToString: @""] || [textTitolo isEqualToString: DEFAULT_TITOLO]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione!" message:DEFAULT_TITOLO delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione!" message:DEFAULT_TITOLO delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         
         return;
@@ -99,6 +99,11 @@
         [currentUser addMicropost: micropostCreated];
         
         [self dismissViewControllerAnimated:YES completion:nil];
+    
+    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione!" message:@"Non è stato possibile effettuare l'operazione richiesta. Riprova più tardi." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
     }
 }
 

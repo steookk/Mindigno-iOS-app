@@ -12,6 +12,7 @@
 #import "CommentDetailVC.h"
 #import "Mindigno.h"
 #import "ProfileVC.h"
+#import "NotificationKeys.h"
 
 #define BUTTON_TUTTI_I_COMMENTI_INDEX 0
 #define BUTTON_MIEI_COMMENTI_INDEX 1
@@ -22,7 +23,8 @@
 
 @implementation CommentsVC
 
-@synthesize currentMicroPost, indexRowToSelect;
+@synthesize currentMicroPost;
+//@synthesize indexRowToSelect;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
@@ -36,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCommentSendNotification) name:COMMENT_SENT object:nil];
+    
     if ([[Mindigno sharedMindigno] isLoggedUser]) {
         [buttonGoToEditor setUserInteractionEnabled: YES];
         [buttonGoToEditor setAlpha: 1.0];
@@ -45,6 +49,10 @@
     }
     
     arrayButtonTitle = [currentMicroPost commentsTabs_buttons];
+    //Per correggere il bug che faceva crashare quando il server non manda sempre la stringa "Tutti"
+    if ([arrayButtonTitle count] == 0) {
+        arrayButtonTitle = @[@"Tutti"];
+    }
     //NSLog(@"number of arrayButtonTitle: %d", [arrayButtonTitle count]);
     
     //
@@ -70,12 +78,11 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
     
-    [tableViewComments reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 
-    [tableViewComments deselectRowAtIndexPath:indexRowToSelect animated:YES];
+    //[tableViewComments deselectRowAtIndexPath:indexRowToSelect animated:YES];
 }
 
 //Start ScrollButtonBarDataSource
@@ -213,6 +220,16 @@
 
 - (IBAction)goBack:(id)sender {
     [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (void) handleCommentSendNotification {
+
+    [tableViewComments reloadData];
+    [tableViewComments scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:([arrayComments count]-1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 
 @end

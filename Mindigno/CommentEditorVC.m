@@ -8,6 +8,7 @@
 
 #import "CommentEditorVC.h"
 #import "Mindigno.h"
+#import "NotificationKeys.h"
 
 @interface CommentEditorVC ()
  
@@ -57,6 +58,7 @@
     BOOL sendOK = [[Mindigno sharedMindigno] createNewCommentWithContent:textContent forMicropost: currentMicroPost];
     
     if (sendOK) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:COMMENT_SENT object:nil];
         [self exit];
         
     } else {

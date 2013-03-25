@@ -14,6 +14,7 @@
 #import "Mindigno.h"
 #import "Comment.h"
 #import "ProfileVC.h"
+#import "NotificationKeys.h"
 
 @interface MicroPostDetailVC ()
 
@@ -33,7 +34,9 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-	
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCommentSendNotification) name:COMMENT_SENT object:nil];
+    
     arrayComments = [currentMicroPost defaultComments];
     
     [tableViewComments setDataSource:self];
@@ -174,8 +177,6 @@
         [buttonDefaultCommentText setUserInteractionEnabled:NO];
     }
     [buttonDefaultCommentText setTitle:[currentMicroPost defaultCommentsText] forState:UIControlStateNormal];
-    
-    [tableViewComments reloadData];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -196,8 +197,9 @@
         
         [commentsDettailVC setCurrentMicroPost: currentMicroPost];
         
-        NSIndexPath* currentIndexPath = [tableViewComments indexPathForSelectedRow];
-        [commentsDettailVC setIndexRowToSelect: currentIndexPath];
+        //Serviva per far selezionare il giusto commento
+        //NSIndexPath* currentIndexPath = [tableViewComments indexPathForSelectedRow];
+        //[commentsDettailVC setIndexRowToSelect: currentIndexPath];
     
     } else if ([[segue identifier] isEqualToString:@"micropostDetailToProfile"]) {
     
@@ -299,6 +301,16 @@
 
 - (IBAction)goBack:(id)sender {
     [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (void) handleCommentSendNotification {
+    
+    [tableViewComments reloadData];
+    [tableViewComments scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:([arrayComments count]-1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 
 @end

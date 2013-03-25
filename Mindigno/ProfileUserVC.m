@@ -36,8 +36,8 @@
     
     //
     
-    [buttonFollowersText setTitle:[currentUser followersText] forState:UIControlStateNormal];
-    [buttonFollowingText setTitle:[currentUser followingText] forState:UIControlStateNormal];
+    [labelFollowersText setText:[currentUser followersText]];
+    [labelFollowingText setText:[currentUser followingText]];
     
     BOOL isCurrentUser = (currentUser == [[Mindigno sharedMindigno] currentUser]);
     
@@ -45,17 +45,17 @@
     NSString *numberOfFollowing = [currentUser numberOfFollowing];
     
     if (isCurrentUser && [numberOfFollowers intValue]>0) {
-        [buttonFollowersText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [buttonFollowersText setEnabled: YES];
+        [labelFollowersText setTextColor:[UIColor blueColor]];
+        [buttonFollowers setEnabled: YES];
     } else {
-        [buttonFollowersText setEnabled: NO];
+        [buttonFollowers setEnabled: NO];
     }
     
     if (isCurrentUser && [numberOfFollowing intValue]>0) {
-        [buttonFollowingText setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [buttonFollowingText setEnabled: YES];
+        [labelFollowingText setTextColor:[UIColor blueColor]];
+        [buttonFollowing setEnabled: YES];
     } else {
-        [buttonFollowingText setEnabled: NO];
+        [buttonFollowing setEnabled: NO];
     }
     
     [labelNumberFollowers setText: numberOfFollowers];

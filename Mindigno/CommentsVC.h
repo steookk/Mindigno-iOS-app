@@ -24,11 +24,11 @@
     NSArray *arrayButtonTitle;
     IBOutlet ScrollButtonBar *scrollButtonBar;
     
-    NSIndexPath *indexRowToSelect;
+    //NSIndexPath *indexRowToSelect;
 }
 
 @property(nonatomic, weak) MicroPost *currentMicroPost;
-@property(nonatomic, retain) NSIndexPath *indexRowToSelect;
+//@property(nonatomic, retain) NSIndexPath *indexRowToSelect;
 
 - (IBAction)goBack:(id)sender;
 

@@ -328,16 +328,20 @@
 - (void) shareInfoOnViewController:(UIViewController*)controller withText:(NSString*)text imageName:(NSString*)image url:(NSString*)url {
 
     NSString *textToShare = text;
+    
+    /*
     UIImage *imageToShare;
     if (image != nil) {
         imageToShare = [UIImage imageNamed: image];
     } else {
         imageToShare = [UIImage imageNamed: @"Icon.png"];
     }
+     */
     
     NSURL *urlToShare = [NSURL URLWithString: url];
     
-    NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
+    //NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
+    NSArray *activityItems = @[textToShare, urlToShare];
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities: nil];
     
