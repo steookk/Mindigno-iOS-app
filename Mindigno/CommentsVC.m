@@ -11,6 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "CommentDetailVC.h"
 #import "Mindigno.h"
+#import "ProfileVC.h"
 
 #define BUTTON_TUTTI_I_COMMENTI_INDEX 0
 #define BUTTON_MIEI_COMMENTI_INDEX 1
@@ -140,8 +141,8 @@
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
     [imageViewUserAvatar setImageWithURL:[NSURL URLWithString:[user avatarUrl]] placeholderImage:placeHolder];
     
-    UILabel *labelUserName = (UILabel*)[cell viewWithTag:2];
-    [labelUserName setText: [user name]];
+    UIButton *buttonUserName = (UIButton*)[cell viewWithTag:2];
+    [buttonUserName setTitle:[user name] forState:UIControlStateNormal];
     
     UILabel *labelComment = (UILabel*)[cell viewWithTag:3];
     //[labelComment setAutoresizingMask: UIViewAutoresizingFlexibleHeight];
@@ -194,6 +195,19 @@
         
         CommentEditorVC *editorVC = (CommentEditorVC*)[segue destinationViewController];
         [editorVC setCurrentMicroPost: currentMicroPost];
+    
+    } else if ([[segue identifier] isEqualToString:@"commentsToProfile"]) {
+        
+        ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
+        
+        NSIndexPath *currentIndexPath = [tableViewComments indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        Comment *currentComment = [arrayComments objectAtIndex: currentIndexPath.row];
+        User *currentUser = [currentComment userCreator];
+        
+        [profileVC setCurrentUser:currentUser];
+        
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
+        [profileVC setArrayMicroPost: micropostOfUser];
     }
 }
 

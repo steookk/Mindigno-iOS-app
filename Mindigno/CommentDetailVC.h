@@ -13,7 +13,7 @@
 
     Comment *currentComment;
     
-    IBOutlet UILabel *labelName;
+    IBOutlet UIButton *buttonName;
     IBOutlet UIImageView *imageViewAvatar;
     
     IBOutlet UITextView *textViewComment;

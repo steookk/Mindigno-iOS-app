@@ -8,6 +8,8 @@
 
 #import "CommentDetailVC.h"
 #import "UIImageView+WebCache.h"
+#import "ProfileVC.h"
+#import "Mindigno.h"
 
 @interface CommentDetailVC ()
 
@@ -31,12 +33,27 @@
     
     User *userCreator = [currentComment userCreator];
     
-    [labelName setText: [userCreator name]];
+    [buttonName setTitle: [userCreator name] forState: UIControlStateNormal];
 
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
     [imageViewAvatar setImageWithURL:[NSURL URLWithString:[userCreator avatarUrl]] placeholderImage:placeHolder];
     
     [textViewComment setText: [currentComment content]];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"commentDetailToProfile"]) {
+        
+        ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
+        
+        User *currentUser = [currentComment userCreator];
+        
+        [profileVC setCurrentUser:currentUser];
+        
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
+        [profileVC setArrayMicroPost: micropostOfUser];
+    }
 }
 
 - (IBAction)goBack:(id)sender {

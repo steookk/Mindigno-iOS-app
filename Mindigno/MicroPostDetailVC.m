@@ -13,6 +13,7 @@
 #import "CommentsVC.h"
 #import "Mindigno.h"
 #import "Comment.h"
+#import "ProfileVC.h"
 
 @interface MicroPostDetailVC ()
 
@@ -96,13 +97,13 @@
             
             UILabel *labelPreposition = (UILabel*)[contentViewCreator viewWithTag:11];
             UIImageView *imageViewAvatar = (UIImageView*)[contentViewCreator viewWithTag:12];
-            UILabel *labelUsername = (UILabel*)[contentViewCreator viewWithTag:13];
+            UIButton *buttonUsername = (UIButton*)[contentViewCreator viewWithTag:13];
             
             User *user = [currentMicroPost userCreator];
             
             [labelPreposition setText:[currentMicroPost preposition]];
             [imageViewAvatar setImageWithURL:[NSURL URLWithString: [user avatarUrl]] placeholderImage:placeHolder];
-            [labelUsername setText:[user name]];
+            [buttonUsername setTitle:[user name] forState:UIControlStateNormal];
             
         } else {
             [labelSourceText setText: [currentMicroPost defaultText]];
@@ -197,6 +198,30 @@
         
         NSIndexPath* currentIndexPath = [tableViewComments indexPathForSelectedRow];
         [commentsDettailVC setIndexRowToSelect: currentIndexPath];
+    
+    } else if ([[segue identifier] isEqualToString:@"micropostDetailToProfile"]) {
+    
+        ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
+        
+        User *currentUser = [currentMicroPost userCreator];
+        
+        [profileVC setCurrentUser:currentUser];
+        
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
+        [profileVC setArrayMicroPost: micropostOfUser];
+    
+    } else if ([[segue identifier] isEqualToString:@"micropostDetailCommentToProfile"]) {
+        
+        ProfileVC *profileVC = (ProfileVC*)[segue destinationViewController];
+        
+        NSIndexPath *currentIndexPath = [tableViewComments indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        Comment *currentComment = [arrayComments objectAtIndex: currentIndexPath.row];
+        User *currentUser = [currentComment userCreator];
+        
+        [profileVC setCurrentUser:currentUser];
+        
+        NSArray *micropostOfUser = [[Mindigno sharedMindigno] downloadMicroPostsOfUser: currentUser];
+        [profileVC setArrayMicroPost: micropostOfUser];
     }
 }
 
@@ -227,8 +252,8 @@
     UIImage *placeHolder = [UIImage imageNamed:@"placeholder"];
     [imageViewUserAvatar setImageWithURL:[NSURL URLWithString:[user avatarUrl]] placeholderImage:placeHolder];
     
-    UILabel *labelUserName = (UILabel*)[cell viewWithTag:2];
-    [labelUserName setText: [user name]];
+    UIButton *buttonUserName = (UIButton*)[cell viewWithTag:2];
+    [buttonUserName setTitle:[user name] forState:UIControlStateNormal];
     
     UILabel *labelComment = (UILabel*)[cell viewWithTag:3];
     //[labelComment setAutoresizingMask: UIViewAutoresizingFlexibleHeight];
