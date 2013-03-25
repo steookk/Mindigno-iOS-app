@@ -61,6 +61,13 @@
     [labelNumberFollowers setText: numberOfFollowers];
     [labelNumberFollowing setText: numberOfFollowing];
     
+    //Se ci sono meno micropost di quelli che una chiamata restituisce (circa 8) allora evito di abilitare il lazy load
+    if ([arrayMicroPost count] <= 5) {
+        [tableViewMicroPost setEnabledLazyLoad: NO];
+    } else {
+        [tableViewMicroPost setEnabledLazyLoad: YES];
+    }
+    
     [tableViewMicroPost reloadData];
 }
 
