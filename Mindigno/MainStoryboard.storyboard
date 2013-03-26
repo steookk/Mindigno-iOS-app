@@ -1957,6 +1957,143 @@
         <image name="rilegatura.png" width="320" height="40"/>
         <image name="scroll-bar.png" width="320" height="40"/>
     </resources>
+    <classes>
+        <class className="ButtonWithBadge" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ButtonWithBadge.h"/>
+        </class>
+        <class className="CommentDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentDetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="buttonName" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="textViewComment" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CommentEditorVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentEditorVC.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="textViewContent" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CommentsVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="buttonGoToEditor" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
+                <relationship kind="outlet" name="tableViewComments" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="FollowingFollowerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FollowingFollowerVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="labelHeader" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableViewFollowingOrFollower" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GTKeyboardHelper" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTKeyboardHelper.h"/>
+        </class>
+        <class className="HomeVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buttonPlus" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollButtonBar" candidateClass="ScrollButtonBar"/>
+                <relationship kind="outlet" name="tableViewMicroPost" candidateClass="PullRefreshLazyLoadTableView"/>
+            </relationships>
+        </class>
+        <class className="IndignatiVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IndignatiVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="tableViewIndignati" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MainButtonBar" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainButtonBar.h"/>
+        </class>
+        <class className="MicroPostDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MicroPostDetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="goToSource:"/>
+                <relationship kind="outlet" name="buttonDefaultCommentText" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonGoToSource" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonIndignatiText" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMindigno" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonShare" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewBody" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewCreator" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewDescription" candidateClass="UIView"/>
+                <relationship kind="outlet" name="contentViewHeader" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageViewThumb" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSourceText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableViewComments" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MicroPostEditorVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MicroPostEditorVC.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="labelCounterCharDescrizione" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelCounterCharTitolo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textViewDescrizione" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="textViewTitolo" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ProfileSettingsVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileSettingsVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="outlet" name="buttonLogout" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ProfileUserVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileUserVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buttonFollowers" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonFollowing" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSettings" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewAvatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelFollowersText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelFollowingText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelNumberFollowers" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelNumberFollowing" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableViewMicroPost" candidateClass="PullRefreshLazyLoadTableView"/>
+            </relationships>
+        </class>
+        <class className="ProfileVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileVC.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="buttonSegue" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="PullRefreshLazyLoadTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PullRefreshLazyLoadTableView.h"/>
+        </class>
+        <class className="RootVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="containerViewProfileUser" candidateClass="UIView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainButtonBar" candidateClass="MainButtonBar"/>
+            </relationships>
+        </class>
+        <class className="ScrollButtonBar" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScrollButtonBar.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -1965,10 +2102,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="C7s-wy-Zng"/>
         <segue reference="M87-lm-PLX"/>
-        <segue reference="rZZ-R9-62i"/>
-        <segue reference="6Zr-JY-Hl3"/>
-        <segue reference="C3h-oT-Gfq"/>
-        <segue reference="um3-Ob-vQ0"/>
+        <segue reference="mxI-77-wMS"/>
+        <segue reference="Ol4-zK-bby"/>
+        <segue reference="TUN-6S-skc"/>
         <segue reference="f7F-5w-cZT"/>
+        <segue reference="C3h-oT-Gfq"/>
     </inferredMetricsTieBreakers>
 </document>

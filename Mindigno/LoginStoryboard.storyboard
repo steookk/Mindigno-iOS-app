@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdn-vr-QSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9" y="53"/>
+            <point key="canvasLocation" x="-122" y="53"/>
         </scene>
         <!--Login SignupVC-->
         <scene sceneID="oJU-2R-NLm">
@@ -29,43 +29,94 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FSK-2y-GQu">
-                                <rect key="frame" x="74" y="120" width="172" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99194497980506635" green="1" blue="0.9952536926918697" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                <state key="normal" title="Accedi">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="da7-lB-wlB" kind="push" id="zzz-b2-8br"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kio-8l-ZHb">
-                                <rect key="frame" x="74" y="202" width="172" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                <state key="normal" title="Iscriviti">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="8M9-cM-r7y" kind="push" id="cO6-jQ-eKM"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" id="yCj-ih-n2M" userLabel="Login View - Facebook" customClass="FBLoginView">
-                                <rect key="frame" x="85" y="20" width="151" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IGJ-iu-hUp" customClass="GTKeyboardHelper">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FSK-2y-GQu">
+                                        <rect key="frame" x="85" y="72" width="151" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                        <state key="normal" title="Termini di utilizzo">
+                                            <color key="titleColor" red="0.023610954054562556" green="0.055447224634373113" blue="0.41111288265306123" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="da7-lB-wlB" kind="push" identifier="" id="zzz-b2-8br"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kio-8l-ZHb">
+                                        <rect key="frame" x="74" y="347" width="172" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.66633450255102034" green="0.022537809297703725" blue="0.03700056552887148" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <state key="normal" title="Crea account">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="8M9-cM-r7y" kind="push" id="cO6-jQ-eKM"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" id="yCj-ih-n2M" userLabel="Login View - Facebook" customClass="FBLoginView">
+                                        <rect key="frame" x="85" y="20" width="151" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.2196078598" green="0.45098042490000001" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="ewg-Vf-kX0">
+                                        <rect key="frame" x="5" y="133" width="310" height="149"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andrea@prova.it" borderStyle="line" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" id="EDP-DQ-UUc">
+                                                <rect key="frame" x="15" y="37" width="280" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ciaociao" borderStyle="line" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="HaD-6o-MEp">
+                                                <rect key="frame" x="15" y="91" width="190" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gnr-rP-bdQ">
+                                                <rect key="frame" x="222" y="91" width="73" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.90479512117346939" green="0.82372724654227814" blue="0.21224362119677112" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="login:" destination="ciP-J1-GJR" eventType="touchUpInside" id="0Vj-oJ-hhI"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="oppure entra nella maniera classica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqb-ad-eEn">
+                                                <rect key="frame" x="15" y="2" width="280" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64198022959183676" green="0.64198022959183676" blue="0.64198022959183676" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -77,63 +128,56 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonLogin" destination="FSK-2y-GQu" id="Irq-4e-9ED"/>
                         <outlet property="buttonSignup" destination="Kio-8l-ZHb" id="Cj2-fV-7qB"/>
                         <outlet property="fbLoginView" destination="yCj-ih-n2M" id="xey-eQ-4dB"/>
+                        <outlet property="textFieldPassword" destination="HaD-6o-MEp" id="wRG-Dg-EQI"/>
+                        <outlet property="textFieldUsername" destination="EDP-DQ-UUc" id="c3T-2x-d3m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdd-t6-EFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="52"/>
         </scene>
-        <!--LoginVC-->
+        <!--TerminiE CondizioniVC-->
         <scene sceneID="iao-NH-z04">
             <objects>
-                <viewController id="da7-lB-wlB" customClass="LoginVC" sceneMemberID="viewController">
+                <viewController id="da7-lB-wlB" customClass="TerminiECondizioniVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HzV-Yk-Rdn">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="1jo-t3-QR5">
-                                <rect key="frame" x="0.0" y="19" width="320" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ustefano@gmail.com" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" id="ZYj-e2-49D">
-                                        <rect key="frame" x="73" y="24" width="174" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ciaociao" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="zuq-dG-Sk8">
-                                        <rect key="frame" x="73" y="76" width="174" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.18039216101169586" green="0.18039216101169586" blue="0.18039216101169586" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
+                            <webView contentMode="scaleToFill" id="UNR-qA-K8p">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="oT3-IB-eGu">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="uAX-XC-X4k">
-                            <connections>
-                                <action selector="login:" destination="da7-lB-wlB" id="jyc-Sw-pR1"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="adC-B7-xOq">
+                            <view key="customView" contentMode="scaleToFill" id="K8l-uY-IWx">
+                                <rect key="frame" x="244" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="white" id="vMY-K7-Zpj">
+                                        <rect key="frame" x="31" y="7" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textFieldPassword" destination="zuq-dG-Sk8" id="o09-bl-FZY"/>
-                        <outlet property="textFieldUsername" destination="ZYj-e2-49D" id="ySl-Bx-tvK"/>
+                        <outlet property="indicatorView" destination="vMY-K7-Zpj" id="JZl-Qr-X2r"/>
+                        <outlet property="webView" destination="UNR-qA-K8p" id="4cy-o9-F7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYb-ql-Yv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931" y="-322"/>
+            <point key="canvasLocation" x="1487" y="53"/>
         </scene>
         <!--SignupVC-->
         <scene sceneID="It5-TO-Bbw">
@@ -151,7 +195,7 @@
                                         <rect key="frame" x="0.0" y="10" width="320" height="383"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enrico" placeholder="nome" minimumFontSize="17" clearButtonMode="whileEditing" id="mU4-9h-8Wi">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enrico" borderStyle="line" placeholder="nome o alias" minimumFontSize="17" clearButtonMode="whileEditing" id="mU4-9h-8Wi">
                                                 <rect key="frame" x="20" y="11" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -159,42 +203,27 @@
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico@gmail.com" placeholder="mail" minimumFontSize="17" clearButtonMode="whileEditing" id="ezx-7j-8Vq">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico@gmail.com" borderStyle="line" placeholder="email" minimumFontSize="17" clearButtonMode="whileEditing" id="ezx-7j-8Vq">
                                                 <rect key="frame" x="20" y="51" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" id="E9Q-cx-kam">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" borderStyle="line" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" id="E9Q-cx-kam">
                                                 <rect key="frame" x="20" y="94" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" placeholder="conferma password" minimumFontSize="17" clearButtonMode="whileEditing" id="AgH-pd-8sB">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" borderStyle="line" placeholder="conferma password" minimumFontSize="17" clearButtonMode="whileEditing" id="AgH-pd-8sB">
                                                 <rect key="frame" x="20" y="132" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="MnI-Zt-rMH">
-                                                <rect key="frame" x="20" y="174" width="280" height="166"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <string key="text">Contratto:                                                        Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="nPL-V4-Yum">
-                                                <rect key="frame" x="223" y="348" width="79" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <connections>
-                                                    <action selector="switchContrattoHasChangedValue:" destination="8M9-cM-r7y" eventType="valueChanged" id="KUd-cv-0LP"/>
-                                                </connections>
-                                            </switch>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accetta contratto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ye-Rd-lMo">
                                                 <rect key="frame" x="20" y="351" width="158" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -202,8 +231,24 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bu0-bH-580">
+                                                <rect key="frame" x="20" y="179" width="151" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                <state key="normal" title="Termini di utilizzo">
+                                                    <color key="titleColor" red="0.023610954050000001" green="0.05544722463" blue="0.41111288270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="da7-lB-wlB" kind="push" id="Ctf-x7-lap"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </scrollView>
@@ -211,7 +256,8 @@
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mxd-pU-ETC">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Registrati" id="sdr-en-pfQ">
+                        <barButtonItem key="rightBarButtonItem" title="Crea!" id="sdr-en-pfQ">
+                            <color key="tintColor" red="0.82722815688775508" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="signup:" destination="8M9-cM-r7y" id="zXl-9I-isc"/>
                             </connections>
@@ -219,7 +265,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buttonBarRegistrati" destination="sdr-en-pfQ" id="5sh-j3-0ce"/>
-                        <outlet property="switchAccettaContratto" destination="nPL-V4-Yum" id="abc-gv-E31"/>
                         <outlet property="textFieldMail" destination="ezx-7j-8Vq" id="bfv-pw-uBg"/>
                         <outlet property="textFieldNome" destination="mU4-9h-8Wi" id="s6l-lO-tdM"/>
                         <outlet property="textFieldPassword" destination="E9Q-cx-kam" id="UH9-Sa-F1K"/>
@@ -245,15 +290,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginSignupVC.h"/>
             <relationships>
                 <relationship kind="action" name="exitFromModalView:"/>
-                <relationship kind="outlet" name="buttonLogin" candidateClass="UIButton"/>
+                <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="buttonSignup" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fbLoginView" candidateClass="FBLoginView"/>
-            </relationships>
-        </class>
-        <class className="LoginVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginVC.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="textFieldPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textFieldUsername" candidateClass="UITextField"/>
             </relationships>
@@ -262,13 +301,18 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupVC.h"/>
             <relationships>
                 <relationship kind="action" name="signup:"/>
-                <relationship kind="action" name="switchContrattoHasChangedValue:"/>
                 <relationship kind="outlet" name="buttonBarRegistrati" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="switchAccettaContratto" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="textFieldMail" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textFieldNome" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textFieldPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textFieldRetipedPassword" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TerminiECondizioniVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TerminiECondizioniVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="indicatorView" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
     </classes>
@@ -277,4 +321,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zzz-b2-8br"/>
+    </inferredMetricsTieBreakers>
 </document>

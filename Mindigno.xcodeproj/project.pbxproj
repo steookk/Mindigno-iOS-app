@@ -25,6 +25,7 @@
 		D909B4A616662A2F00D66AD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48016662A2F00D66AD3 /* UIKit.framework */; };
 		D909B4A716662A2F00D66AD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909B48216662A2F00D66AD3 /* Foundation.framework */; };
 		D909B4B216662A2F00D66AD3 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D909B4B116662A2F00D66AD3 /* UserTests.m */; };
+		D90A1E9A170201D8001C42B5 /* TerminiECondizioniVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A1E99170201D8001C42B5 /* TerminiECondizioniVC.m */; };
 		D90F14A816E8A20F00BCEBE8 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14A716E8A20F00BCEBE8 /* CustomBadge.m */; };
 		D90F14AB16E8A2F000BCEBE8 /* ButtonWithBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14AA16E8A2F000BCEBE8 /* ButtonWithBadge.m */; };
 		D90F14AF16E8E66100BCEBE8 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F14AE16E8E66100BCEBE8 /* HomeVC.m */; };
@@ -51,7 +52,6 @@
 		D9426297166F4CE50085D7CB /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9426296166F4CE50085D7CB /* LoginStoryboard.storyboard */; };
 		D942629F166F56BF0085D7CB /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D942629E166F56BF0085D7CB /* SignupVC.m */; };
 		D94262A2166F56FB0085D7CB /* LoginSignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D94262A1166F56FB0085D7CB /* LoginSignupVC.m */; };
-		D94262A5166F57BD0085D7CB /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D94262A4166F57BD0085D7CB /* LoginVC.m */; };
 		D94262AF166F5FC30085D7CB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94262AE166F5FC30085D7CB /* MainStoryboard.storyboard */; };
 		D94262B3166F5FDF0085D7CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94262B1166F5FDF0085D7CB /* InfoPlist.strings */; };
 		D94262C2166F85F00085D7CB /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D94262C1166F85EF0085D7CB /* Utils.m */; };
@@ -194,6 +194,8 @@
 		D909B4AC16662A2F00D66AD3 /* MindignoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MindignoTests-Info.plist"; sourceTree = "<group>"; };
 		D909B4B016662A2F00D66AD3 /* UserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTests.h; sourceTree = "<group>"; };
 		D909B4B116662A2F00D66AD3 /* UserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		D90A1E98170201D8001C42B5 /* TerminiECondizioniVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerminiECondizioniVC.h; sourceTree = "<group>"; };
+		D90A1E99170201D8001C42B5 /* TerminiECondizioniVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerminiECondizioniVC.m; sourceTree = "<group>"; };
 		D90F14A616E8A20F00BCEBE8 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
 		D90F14A716E8A20F00BCEBE8 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
 		D90F14A916E8A2F000BCEBE8 /* ButtonWithBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonWithBadge.h; sourceTree = "<group>"; };
@@ -243,8 +245,6 @@
 		D942629E166F56BF0085D7CB /* SignupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
 		D94262A0166F56FB0085D7CB /* LoginSignupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSignupVC.h; sourceTree = "<group>"; };
 		D94262A1166F56FB0085D7CB /* LoginSignupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSignupVC.m; sourceTree = "<group>"; };
-		D94262A3166F57BD0085D7CB /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
-		D94262A4166F57BD0085D7CB /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		D94262AE166F5FC30085D7CB /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D94262B2166F5FDF0085D7CB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D94262C0166F85EF0085D7CB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -603,10 +603,10 @@
 			children = (
 				D94262A0166F56FB0085D7CB /* LoginSignupVC.h */,
 				D94262A1166F56FB0085D7CB /* LoginSignupVC.m */,
-				D94262A3166F57BD0085D7CB /* LoginVC.h */,
-				D94262A4166F57BD0085D7CB /* LoginVC.m */,
 				D942629D166F56BF0085D7CB /* SignupVC.h */,
 				D942629E166F56BF0085D7CB /* SignupVC.m */,
+				D90A1E98170201D8001C42B5 /* TerminiECondizioniVC.h */,
+				D90A1E99170201D8001C42B5 /* TerminiECondizioniVC.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1089,7 +1089,6 @@
 				D9BD96F5166E6487000AD010 /* MainButtonBar.m in Sources */,
 				D942629F166F56BF0085D7CB /* SignupVC.m in Sources */,
 				D94262A2166F56FB0085D7CB /* LoginSignupVC.m in Sources */,
-				D94262A5166F57BD0085D7CB /* LoginVC.m in Sources */,
 				D94262C2166F85F00085D7CB /* Utils.m in Sources */,
 				D99774C0167642690036672F /* DDMenuController.m in Sources */,
 				D92EC66E167A09EE00124E5C /* IndignatiVC.m in Sources */,
@@ -1120,6 +1119,7 @@
 				D9763B2A16EA621300228209 /* ProfileSettingsVC.m in Sources */,
 				D9763B2D16EA625100228209 /* MicroPostEditorVC.m in Sources */,
 				D970C40716F74CED0039FCD1 /* FollowingFollowerVC.m in Sources */,
+				D90A1E9A170201D8001C42B5 /* TerminiECondizioniVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

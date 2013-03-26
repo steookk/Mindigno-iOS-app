@@ -26,6 +26,7 @@
     [textFieldPassword setDelegate:self];
     [textFieldRetipedPassword setDelegate:self];
     
+    /*
     [textFieldNome setTextColor: [UIColor whiteColor]];
     [textFieldMail setTextColor: [UIColor whiteColor]];
     [textFieldPassword setTextColor: [UIColor whiteColor]];
@@ -35,6 +36,7 @@
     [Utils setTextFieldRoundAndTrasparent: textFieldMail];
     [Utils setTextFieldRoundAndTrasparent: textFieldPassword];
     [Utils setTextFieldRoundAndTrasparent: textFieldRetipedPassword];
+     */
 }
 
 //Start UITextFieldDelegate
@@ -72,30 +74,30 @@
     } else {
         //Tutto ok, procedere con la richiesta di registrazione
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Termini di utilizzo" message:@"Accetti i Termini di utilizzo?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Si", nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    if (buttonIndex == 1) {
+        
+        //Login
         SignupResponse *signupResponse = [[Mindigno sharedMindigno] signupWithName:[textFieldNome text] mail:[textFieldMail text] password:[textFieldPassword text] passwordConfirmation: [textFieldRetipedPassword text]];
         
         if ([signupResponse isUserCreatedAndLogged]) {
             //Esco dalla modale dopo aver lanciato l'evento
             [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOTIFICATION object:nil];
             [self dismissViewControllerAnimated:YES completion:nil];
-        
+            
         } else {
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attenzione" message:[signupResponse messageError] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
         }
     }
-}
 
-- (IBAction)switchContrattoHasChangedValue:(id)sender {
-
-    if ([switchAccettaContratto isOn]) {
-        [switchAccettaContratto setOn:YES animated:YES];
-        [buttonBarRegistrati setEnabled: YES];
-    } else {
-        [switchAccettaContratto setOn:NO animated:YES];
-        [buttonBarRegistrati setEnabled: NO];
-    }
 }
 
 @end
