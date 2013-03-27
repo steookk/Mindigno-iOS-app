@@ -35,7 +35,7 @@
 
 - (void) startInizialization {
 
-    CGRect rectButtonHome = CGRectMake(77, 7, 50, 33);
+    CGRect rectButtonHome = CGRectMake(77, 6, 50, 33);
     buttonHome = [[UIButton alloc] initWithFrame: rectButtonHome];
     [buttonHome setTag: 0];
     [buttonHome addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,7 +43,9 @@
     //[buttonHome setBackgroundImage:[UIImage imageNamed:@"ico-home_hover.png"] forState:UIControlStateHighlighted];
     [buttonHome setBackgroundImage:[UIImage imageNamed:@"ico-home_click.png"] forState:UIControlStateSelected];
     
-    CGRect rectButtonProfile = CGRectMake(135, 7, 50, 33);
+    //[buttonHome setBackgroundColor: [UIColor greenColor]];
+    
+    CGRect rectButtonProfile = CGRectMake(135, 6, 50, 33);
     buttonProfile = [[UIButton alloc] initWithFrame: rectButtonProfile];
     [buttonProfile setTag: 1];
     [buttonProfile addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -51,13 +53,17 @@
     //[buttonProfile setBackgroundImage:[UIImage imageNamed:@"ico-profile_hover.png"] forState:UIControlStateHighlighted];
     [buttonProfile setBackgroundImage:[UIImage imageNamed:@"ico-profilo_click.png"] forState:UIControlStateSelected];
     
-    CGRect rectButtonSearch = CGRectMake(193, 7, 50, 33);
+    //[buttonProfile setBackgroundColor: [UIColor yellowColor]];
+    
+    CGRect rectButtonSearch = CGRectMake(193, 6, 50, 33);
     buttonSearch = [[UIButton alloc] initWithFrame: rectButtonSearch];
     [buttonSearch setTag: 2];
     [buttonSearch addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-cerca.png"] forState:UIControlStateNormal];
     //[buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-search_hover.png"] forState:UIControlStateHighlighted];
     [buttonSearch setBackgroundImage:[UIImage imageNamed:@"ico-cerca_click.png"] forState:UIControlStateSelected];
+    
+    //[buttonSearch setBackgroundColor: [UIColor redColor]];
     
     [buttonSearch setUserInteractionEnabled:NO];
     [buttonSearch setAlpha:0.25];

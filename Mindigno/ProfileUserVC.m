@@ -36,8 +36,8 @@
     
     //
     
-    [labelFollowersText setText:[currentUser followersText]];
-    [labelFollowingText setText:[currentUser followingText]];
+    [labelFollowersText setText:[[currentUser followersText] uppercaseString]];
+    [labelFollowingText setText:[[currentUser followingText] uppercaseString]];
     
     BOOL isCurrentUser = (currentUser == [[Mindigno sharedMindigno] currentUser]);
     
