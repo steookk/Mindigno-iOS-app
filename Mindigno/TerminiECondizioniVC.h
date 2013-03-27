@@ -14,4 +14,6 @@
     IBOutlet UIActivityIndicatorView *indicatorView;
 }
 
+- (IBAction) goBack:(id)sender;
+
 @end

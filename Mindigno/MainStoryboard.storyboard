@@ -46,15 +46,15 @@
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tH7-e7-3mX">
-                                <rect key="frame" x="64" y="401" width="193" height="30"/>
+                                <rect key="frame" x="85" y="379" width="151" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                <state key="normal" title="Logout" backgroundImage="barra-gialla.png">
+                                <state key="normal" backgroundImage="tasto-logout.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="highlighted" backgroundImage="tasto-logout_selezionato.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -139,21 +139,21 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Scrivi il titolo della tua indignazione" id="E6W-Vv-unb">
-                                        <rect key="frame" x="15" y="28" width="288" height="86"/>
+                                        <rect key="frame" x="15" y="27" width="288" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="0.35000000000000003" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Descrivi più dettagliatamente la tua indignazione" id="cfk-sp-MgE">
-                                        <rect key="frame" x="15" y="144" width="288" height="201"/>
+                                        <rect key="frame" x="15" y="133" width="288" height="212"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="0.35000000000000003" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="60/109" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="One-fN-LxR">
-                                        <rect key="frame" x="223" y="118" width="80" height="12"/>
+                                        <rect key="frame" x="223" y="117" width="80" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -289,7 +289,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Stefano Uliari" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vs7-3F-qE7">
-                                        <rect key="frame" x="84" y="62" width="230" height="20"/>
+                                        <rect key="frame" x="84" y="62" width="193" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -703,26 +703,30 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Row_User" rowHeight="60" id="wMy-V2-8X6">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Row_User" rowHeight="60" id="wMy-V2-8X6">
                                         <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-user.png" id="R2p-HU-LbR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="default-profilo.png" id="ANd-wz-fE5">
-                                                    <rect key="frame" x="4" y="4" width="52" height="52"/>
+                                                    <rect key="frame" x="8" y="4" width="52" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Stefano Uliari" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nx2-cf-o5F">
-                                                    <rect key="frame" x="64" y="4" width="198" height="52"/>
+                                                    <rect key="frame" x="68" y="4" width="195" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RGJ-Ay-gpp">
-                                                    <rect key="frame" x="270" y="16" width="45" height="28"/>
+                                                    <rect key="frame" x="267" y="16" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <state key="normal" backgroundImage="button-segui.png">
@@ -894,15 +898,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Row_Comment" rowHeight="62" id="f7E-Kq-dGk">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Row_Comment" rowHeight="62" id="I6c-mw-ZKs">
                                         <rect key="frame" x="0.0" y="22" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fv3-zT-jgh">
-                                                    <rect key="frame" x="41" y="4" width="272" height="25"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-commento.png" id="MYI-YH-sAk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dov-EN-uGl">
+                                                    <rect key="frame" x="47" y="4" width="263" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <state key="normal" title="Stefano Uliari">
@@ -913,25 +921,29 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="VJ9-9d-hSE" kind="push" identifier="commentsToProfile" id="8KR-Br-BTA"/>
+                                                        <segue destination="VJ9-9d-hSE" kind="push" identifier="commentsToProfile" id="xyx-BM-g4f"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="default-profilo.png" id="cZ6-XF-m1y">
-                                                    <rect key="frame" x="4" y="4" width="25" height="25"/>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="default-profilo.png" id="B8z-TS-4Au">
+                                                    <rect key="frame" x="10" y="4" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Commento Commento Commento Commento Commento Commento Commento Commento " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jyz-lD-DTF">
-                                                    <rect key="frame" x="5" y="38" width="310" height="20"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Commento Commento Commento Commento Commento Commento Commento Commento " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x7z-I1-Hlg">
+                                                    <rect key="frame" x="10" y="38" width="300" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="linea.png" id="JKa-ER-8OX">
+                                                    <rect key="frame" x="6" y="61" width="314" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="csM-Sf-dI5" kind="push" identifier="commentsToDetailComment" id="F4O-rQ-hLy"/>
+                                            <segue destination="csM-Sf-dI5" kind="push" identifier="commentsToDetailComment" id="M9G-FR-Lp2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -955,7 +967,7 @@
             <objects>
                 <viewController id="csM-Sf-dI5" customClass="CommentDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Whf-gD-5c7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="XXX-JG-IIM">
@@ -1010,8 +1022,12 @@
                                     <segue destination="VJ9-9d-hSE" kind="push" identifier="commentDetailToProfile" id="Qms-mK-PUb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CLB-MY-2pM">
-                                <rect key="frame" x="0.0" y="121" width="320" height="339"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-new-commento.png" id="Mj6-5f-gAf">
+                                <rect key="frame" x="0.0" y="122" width="320" height="338"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="CLB-MY-2pM">
+                                <rect key="frame" x="10" y="153" width="296" height="287"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1022,6 +1038,7 @@
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="5qr-hD-whW"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttonName" destination="Nig-cC-tDu" id="hfN-Rh-dkD"/>
                         <outlet property="imageViewAvatar" destination="XCF-MZ-pye" id="Ep2-vj-XnC"/>
@@ -1030,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzG-vv-eaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="1214"/>
+            <point key="canvasLocation" x="1959" y="1174"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="Leg-IC-27b">
@@ -1104,7 +1121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhH-QC-phY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="-218"/>
+            <point key="canvasLocation" x="2306" y="-160"/>
         </scene>
         <!--Micro Post DetailVC-->
         <scene sceneID="C57-Mn-Ld8">
@@ -1189,16 +1206,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="243"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-indignazione.png" id="UCo-ly-652" userLabel="Image View - si allunga">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="243"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
                                         <view contentMode="scaleToFill" id="joJ-5q-VZa">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="default-profilo.png" id="un7-y2-oRg">
-                                                    <rect key="frame" x="5" y="7" width="61" height="67"/>
+                                                    <rect key="frame" x="10" y="12" width="61" height="67"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOA-5I-6eB">
-                                                    <rect key="frame" x="74" y="8" width="240" height="65"/>
+                                                    <rect key="frame" x="79" y="13" width="232" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo </string>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
@@ -1213,7 +1234,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BlA-iw-Ng8">
-                                                    <rect key="frame" x="5" y="5" width="310" height="20"/>
+                                                    <rect key="frame" x="10" y="5" width="300" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <string key="text">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione </string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
@@ -1221,7 +1242,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.54781658327725657" blue="0.88419658864303707" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <view contentMode="scaleToFill" id="eKa-hb-iuX">
                                             <rect key="frame" x="0.0" y="111" width="320" height="132"/>
@@ -1274,22 +1295,24 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" id="yhg-4o-Tco">
-                                                    <rect key="frame" x="21" y="41" width="280" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.50729432397959184" green="0.50729432397959184" blue="0.50729432397959184" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
-                                                <view contentMode="scaleToFill" id="gdX-n2-Oef">
-                                                    <rect key="frame" x="21" y="88" width="280" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.50729432399999996" green="0.50729432399999996" blue="0.50729432399999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="button-indignati.png" id="2gX-9q-eye">
-                                                    <rect key="frame" x="274" y="51" width="27" height="27"/>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="linea.png" id="EyP-Rs-ybm">
+                                                    <rect key="frame" x="3" y="41" width="314" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="button-commenti.png" id="RJN-oM-Vco">
-                                                    <rect key="frame" x="274" y="97" width="27" height="29"/>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="linea.png" id="rwm-oa-WKX">
+                                                    <rect key="frame" x="3" y="88" width="314" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="linea.png" id="i9S-k6-k8l">
+                                                    <rect key="frame" x="3" y="131" width="314" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icona_indignato.png" id="2gX-9q-eye">
+                                                    <rect key="frame" x="276" y="52" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icona_commenti.png" id="RJN-oM-Vco">
+                                                    <rect key="frame" x="275" y="98" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pSZ-2G-Ltb">
@@ -1344,21 +1367,25 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.62627649163741039" green="1" blue="0.89391434090035182" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Row_Comment" rowHeight="62" id="nc5-ws-llL">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Row_Comment" rowHeight="62" id="nc5-ws-llL">
                                         <rect key="frame" x="0.0" y="265" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-commento.png" id="Zou-gZ-h93">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vp7-Cm-SHh">
-                                                    <rect key="frame" x="41" y="4" width="272" height="25"/>
+                                                    <rect key="frame" x="47" y="4" width="263" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <state key="normal" title="Stefano Uliari">
@@ -1373,16 +1400,20 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="default-profilo.png" id="Y8B-dG-y8n">
-                                                    <rect key="frame" x="4" y="4" width="25" height="25"/>
+                                                    <rect key="frame" x="10" y="4" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Commento Commento Commento Commento Commento Commento Commento Commento " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wg1-Tv-zUD">
-                                                    <rect key="frame" x="5" y="38" width="310" height="20"/>
+                                                    <rect key="frame" x="10" y="38" width="300" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="linea.png" id="GuW-qR-oa8">
+                                                    <rect key="frame" x="3" y="61" width="314" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1467,7 +1498,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.180392161" green="0.180392161" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-commento.png" id="PTv-9a-7Fd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-new-commento.png" id="PTv-9a-7Fd">
                                 <rect key="frame" x="0.0" y="40" width="320" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1899,26 +1930,30 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.88235294119999996" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Row_User" rowHeight="60" id="fTU-Q7-Zwu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Row_User" rowHeight="60" id="fTU-Q7-Zwu">
                                         <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-user.png" id="eeh-gx-UqT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="default-profilo.png" id="DB9-Pm-tcI">
-                                                    <rect key="frame" x="4" y="4" width="52" height="52"/>
+                                                    <rect key="frame" x="8" y="4" width="52" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Stefano Uliari" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0YG-ve-3lq">
-                                                    <rect key="frame" x="65" y="4" width="198" height="52"/>
+                                                    <rect key="frame" x="69" y="4" width="195" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jBN-H1-38G">
-                                                    <rect key="frame" x="270" y="16" width="45" height="28"/>
+                                                    <rect key="frame" x="267" y="16" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <state key="normal" backgroundImage="button-segui.png">
@@ -1955,11 +1990,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barra-gialla.png" width="100" height="40"/>
-        <image name="box-commento.png" width="320" height="204"/>
+        <image name="box-commento.png" width="320" height="62"/>
+        <image name="box-indignazione.png" width="320" height="240"/>
+        <image name="box-new-commento.png" width="320" height="204"/>
         <image name="box-nuovo-micropost.png" width="320" height="375"/>
         <image name="box-ombrato-large.png" width="320" height="380"/>
         <image name="box-ombrato.png" width="320" height="180"/>
+        <image name="box-user.png" width="320" height="60"/>
         <image name="button-annulla.png" width="75" height="28"/>
         <image name="button-annulla_selezionato.png" width="75" height="28"/>
         <image name="button-back.png" width="75" height="28"/>
@@ -1984,10 +2021,14 @@
         <image name="cornice-profilo.png" width="76" height="82"/>
         <image name="default-profilo.png" width="200" height="200"/>
         <image name="header-profilo.png" width="320" height="90"/>
+        <image name="icona_commenti.png" width="27" height="27"/>
+        <image name="icona_indignato.png" width="27" height="27"/>
         <image name="linea.png" width="320" height="1"/>
         <image name="placeholder.png" width="80" height="60"/>
         <image name="rilegatura.png" width="320" height="40"/>
         <image name="scroll-bar.png" width="320" height="40"/>
+        <image name="tasto-logout.png" width="151" height="43"/>
+        <image name="tasto-logout_selezionato.png" width="151" height="43"/>
     </resources>
     <classes>
         <class className="ButtonWithBadge" superclassName="UIButton">
@@ -2132,12 +2173,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="C7s-wy-Zng"/>
+        <segue reference="wte-45-OdG"/>
+        <segue reference="xyx-BM-g4f"/>
+        <segue reference="um3-Ob-vQ0"/>
+        <segue reference="Ol4-zK-bby"/>
+        <segue reference="6Zr-JY-Hl3"/>
+        <segue reference="k3v-Tn-sLm"/>
         <segue reference="M87-lm-PLX"/>
-        <segue reference="rZZ-R9-62i"/>
-        <segue reference="b4O-TQ-VDa"/>
-        <segue reference="jxh-Lb-BDe"/>
-        <segue reference="f7F-5w-cZT"/>
-        <segue reference="C3h-oT-Gfq"/>
     </inferredMetricsTieBreakers>
 </document>

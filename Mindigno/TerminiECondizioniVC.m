@@ -38,4 +38,9 @@
     [indicatorView stopAnimating];
 }
 
+- (IBAction) goBack:(id)sender {
+
+    [[self navigationController] popViewControllerAnimated: YES];
+}
+
 @end

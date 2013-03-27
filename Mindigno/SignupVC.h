@@ -21,5 +21,6 @@
 }
 
 - (IBAction)signup:(id)sender;
+- (IBAction) goBack:(id)sender;
 
 @end

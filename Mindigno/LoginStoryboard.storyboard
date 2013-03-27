@@ -50,15 +50,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kio-8l-ZHb">
-                                        <rect key="frame" x="74" y="347" width="172" height="40"/>
+                                        <rect key="frame" x="85" y="347" width="151" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.66633450255102034" green="0.022537809297703725" blue="0.03700056552887148" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
-                                        <state key="normal" title="Crea account">
+                                        <state key="normal" backgroundImage="tasto-account.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="highlighted">
+                                        <state key="highlighted" backgroundImage="tasto-account_selezionato.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -71,11 +71,15 @@
                                         <color key="backgroundColor" red="0.2196078598" green="0.45098042490000001" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" id="ewg-Vf-kX0">
-                                        <rect key="frame" x="5" y="133" width="310" height="149"/>
+                                        <rect key="frame" x="5" y="133" width="310" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box_login.png" id="MmB-tX-Kcq">
+                                                <rect key="frame" x="0.0" y="0.0" width="310" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andrea@prova.it" borderStyle="line" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" id="EDP-DQ-UUc">
-                                                <rect key="frame" x="15" y="37" width="280" height="30"/>
+                                                <rect key="frame" x="15" y="58" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,22 +87,22 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ciaociao" borderStyle="line" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="HaD-6o-MEp">
-                                                <rect key="frame" x="15" y="91" width="190" height="30"/>
+                                                <rect key="frame" x="15" y="103" width="190" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gnr-rP-bdQ">
-                                                <rect key="frame" x="222" y="91" width="73" height="30"/>
+                                                <rect key="frame" x="220" y="103" width="75" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.90479512117346939" green="0.82372724654227814" blue="0.21224362119677112" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                                <state key="normal" title="Login">
+                                                <state key="normal" backgroundImage="tasto_login.png">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="highlighted">
+                                                <state key="highlighted" backgroundImage="tasto_login_selezionato.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -106,14 +110,14 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="oppure entra nella maniera classica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqb-ad-eEn">
-                                                <rect key="frame" x="15" y="2" width="280" height="21"/>
+                                                <rect key="frame" x="15" y="14" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.64198022959183676" green="0.64198022959183676" blue="0.64198022959183676" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </scrollView>
@@ -121,10 +125,22 @@
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="fxq-ak-kLz">
-                        <barButtonItem key="leftBarButtonItem" title="Annulla" id="8I8-R5-EdD">
-                            <connections>
-                                <action selector="exitFromModalView:" destination="ciP-J1-GJR" id="Hfo-QY-7n4"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="uaO-8F-C1j">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OMM-ma-tc7">
+                                <rect key="frame" x="5" y="8" width="75" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="button-annulla.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-annulla_selezionato.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitFromModalView:" destination="ciP-J1-GJR" eventType="touchUpInside" id="ckS-Az-Xm9"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -155,6 +171,23 @@
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="oT3-IB-eGu">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="tUo-cG-sgg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ciw-5g-a6D">
+                                <rect key="frame" x="5" y="8" width="75" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="button-back.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-back_selezionato.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="da7-lB-wlB" eventType="touchUpInside" id="MfL-J0-IHo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="adC-B7-xOq">
                             <view key="customView" contentMode="scaleToFill" id="K8l-uY-IWx">
                                 <rect key="frame" x="244" y="5" width="71" height="33"/>
@@ -192,33 +225,37 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="99B-vs-RAl">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="383"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="box-signup.png" id="FkB-pl-pYY">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enrico" borderStyle="line" placeholder="nome o alias" minimumFontSize="17" clearButtonMode="whileEditing" id="mU4-9h-8Wi">
-                                                <rect key="frame" x="20" y="11" width="280" height="30"/>
+                                                <rect key="frame" x="20" y="23" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico@gmail.com" borderStyle="line" placeholder="email" minimumFontSize="17" clearButtonMode="whileEditing" id="ezx-7j-8Vq">
-                                                <rect key="frame" x="20" y="51" width="280" height="30"/>
+                                                <rect key="frame" x="20" y="65" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" borderStyle="line" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" id="E9Q-cx-kam">
-                                                <rect key="frame" x="20" y="94" width="280" height="30"/>
+                                                <rect key="frame" x="20" y="107" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enrico" borderStyle="line" placeholder="conferma password" minimumFontSize="17" clearButtonMode="whileEditing" id="AgH-pd-8sB">
-                                                <rect key="frame" x="20" y="132" width="280" height="30"/>
+                                                <rect key="frame" x="20" y="142" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
@@ -232,7 +269,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bu0-bH-580">
-                                                <rect key="frame" x="20" y="179" width="151" height="25"/>
+                                                <rect key="frame" x="20" y="183" width="151" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
@@ -248,7 +285,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </scrollView>
@@ -256,8 +293,25 @@
                         <color key="backgroundColor" red="0.90588235294117647" green="0.88235294117647056" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mxd-pU-ETC">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="jwP-Jg-gR4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dj8-wE-hnd">
+                                <rect key="frame" x="5" y="8" width="75" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="button-back.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="button-back_selezionato.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="8M9-cM-r7y" eventType="touchUpInside" id="AI3-4o-Ron"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Crea!" id="sdr-en-pfQ">
-                            <color key="tintColor" red="0.82722815688775508" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.86274509803921573" green="0.1803921568627451" blue="0.066666666666666666" alpha="0.0" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="signup:" destination="8M9-cM-r7y" id="zXl-9I-isc"/>
                             </connections>
@@ -276,6 +330,18 @@
             <point key="canvasLocation" x="931" y="423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="box-signup.png" width="320" height="220"/>
+        <image name="box_login.png" width="310" height="150"/>
+        <image name="button-annulla.png" width="75" height="28"/>
+        <image name="button-annulla_selezionato.png" width="75" height="28"/>
+        <image name="button-back.png" width="75" height="28"/>
+        <image name="button-back_selezionato.png" width="75" height="28"/>
+        <image name="tasto-account.png" width="151" height="43"/>
+        <image name="tasto-account_selezionato.png" width="151" height="43"/>
+        <image name="tasto_login.png" width="75" height="30"/>
+        <image name="tasto_login_selezionato.png" width="75" height="30"/>
+    </resources>
     <classes>
         <class className="FBLoginView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FBLoginView.h"/>
@@ -300,6 +366,7 @@
         <class className="SignupVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupVC.h"/>
             <relationships>
+                <relationship kind="action" name="goBack:"/>
                 <relationship kind="action" name="signup:"/>
                 <relationship kind="outlet" name="buttonBarRegistrati" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="textFieldMail" candidateClass="UITextField"/>
@@ -311,6 +378,7 @@
         <class className="TerminiECondizioniVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TerminiECondizioniVC.h"/>
             <relationships>
+                <relationship kind="action" name="goBack:"/>
                 <relationship kind="outlet" name="indicatorView" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
@@ -322,6 +390,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zzz-b2-8br"/>
+        <segue reference="Ctf-x7-lap"/>
     </inferredMetricsTieBreakers>
 </document>
